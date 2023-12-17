@@ -1,3 +1,6 @@
+using System.Reflection.Metadata;
+using HeronsNest.Enums;
+
 namespace HeronsNest
 {
     internal static class Program
@@ -11,7 +14,7 @@ namespace HeronsNest
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Landing());
         }
     }
 }

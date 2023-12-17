@@ -1,6 +1,6 @@
 ﻿namespace HeronsNest
 {
-    partial class Form1
+    partial class Landing
     {
         /// <summary>
         ///  Required designer variable.

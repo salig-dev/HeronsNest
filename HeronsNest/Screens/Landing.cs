@@ -1,8 +1,8 @@
 namespace HeronsNest
 {
-    public partial class Form1 : Form
+    public partial class Landing : Form
     {
-        public Form1()
+        public Landing()
         {
             InitializeComponent();
         }

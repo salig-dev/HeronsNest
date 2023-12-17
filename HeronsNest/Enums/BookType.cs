@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace HeronsNest.Enums
 {
-    internal class Enums
+    internal enum BookType
     {
-        public static int WINDOW_WIDTH = 1920;
-        public static int WINDOW_HEIGHT = 1080;
+        History,
+        Entertainment,
+        Fictional,
+        Novel,
+        Academic
     }
 }
