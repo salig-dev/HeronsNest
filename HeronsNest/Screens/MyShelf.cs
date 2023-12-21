@@ -36,5 +36,15 @@ namespace HeronsNest.Screens
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
