@@ -12,6 +12,7 @@ namespace HeronsNest
             // By default, the VERY FIRST screen inserted here shall be the
             // default page.
             screens.Add(new Login(this));
+            screens.Add(new Home(this));
         }
 
         public Landing()
