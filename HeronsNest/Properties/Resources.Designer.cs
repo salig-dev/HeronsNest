@@ -63,9 +63,69 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap book_solid {
+            get {
+                object obj = ResourceManager.GetObject("book-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_left {
+            get {
+                object obj = ResourceManager.GetObject("chevron-left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hamburger_menu {
+            get {
+                object obj = ResourceManager.GetObject("hamburger-menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HERONS_NEST_LOGO_NOTXT {
+            get {
+                object obj = ResourceManager.GetObject("HERONS-NEST-LOGO-NOTXT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HERONS_NEST_LOGO_TXT {
             get {
                 object obj = ResourceManager.GetObject("HERONS-NEST-LOGO-TXT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HERONS_NEST_LOGO_TXT_HORIZ {
+            get {
+                object obj = ResourceManager.GetObject("HERONS-NEST-LOGO-TXT-HORIZ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HERONS_NEST_LOGO_TXT1 {
+            get {
+                object obj = ResourceManager.GetObject("HERONS-NEST-LOGO-TXT1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +136,36 @@ namespace HeronsNest.Properties {
         internal static string HeronsNestLogo {
             get {
                 return ResourceManager.GetString("HeronsNestLogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap house_solid {
+            get {
+                object obj = ResourceManager.GetObject("house-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifying_glass_solid {
+            get {
+                object obj = ResourceManager.GetObject("magnifying-glass-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money_bills_solid {
+            get {
+                object obj = ResourceManager.GetObject("money-bills-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

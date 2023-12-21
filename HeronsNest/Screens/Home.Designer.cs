@@ -43,7 +43,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(481, 245);
+            button1.Location = new Point(363, 242);
             button1.Name = "button1";
             button1.Size = new Size(297, 23);
             button1.TabIndex = 1;
@@ -58,7 +58,7 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Home";
-            Size = new Size(1000, 700);
+            Size = new Size(1000, 600);
             ResumeLayout(false);
             PerformLayout();
         }
