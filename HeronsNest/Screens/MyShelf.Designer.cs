@@ -1,6 +1,6 @@
 ﻿namespace HeronsNest.Screens
 {
-    partial class Home
+    partial class MyShelf
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,60 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(271, 345);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 0;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(535, 273);
+            label1.Location = new Point(250, 160);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Hello from Home";
+            label1.Size = new Size(66, 20);
+            label1.TabIndex = 1;
+            label1.Text = "My Shelf";
+            label1.Click += label1_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(550, 327);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(339, 31);
-            button1.TabIndex = 1;
-            button1.Text = "Switch to Login";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(332, 413);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "My Shelf";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // Home
+            // MyShelf
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "Home";
-            Size = new Size(1143, 933);
-            Load += Home_Load;
+            Controls.Add(button1);
+            Name = "MyShelf";
+            Size = new Size(1000, 600);
+            Load += MyShelf_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
         private Button button1;
-        private Button button2;
+        private Label label1;
     }
 }
