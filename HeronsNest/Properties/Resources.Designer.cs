@@ -142,9 +142,6 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search_solid {
-            get {
-                object obj = ResourceManager.GetObject("search-solid", resourceCulture);
         internal static System.Drawing.Bitmap house_solid {
             get {
                 object obj = ResourceManager.GetObject("house-solid", resourceCulture);
@@ -168,6 +165,16 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap money_bills_solid {
             get {
                 object obj = ResourceManager.GetObject("money-bills-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_solid {
+            get {
+                object obj = ResourceManager.GetObject("search-solid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

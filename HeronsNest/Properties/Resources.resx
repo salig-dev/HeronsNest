@@ -124,9 +124,10 @@
   <data name="HeronsNestLogo" xml:space="preserve">
     <value>../Assets/HERONS-NEST-LOGO-TXT.png</value>
   </data>
-  <data name="search-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="book-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	<data name="search-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\search-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	  <data name="book-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Icons\book-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chevron-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
