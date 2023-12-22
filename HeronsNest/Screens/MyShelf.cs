@@ -10,29 +10,41 @@ using System.Windows.Forms;
 
 namespace HeronsNest.Screens
 {
-    public partial class Home : UserControl
+    public partial class MyShelf : UserControl
     {
+
         Landing mainForm;
 
-        public Home(Landing mainForm)
+        public MyShelf(Landing mainForm)
         {
             InitializeComponent();
+
             this.mainForm = mainForm;
+        }
+
+        private void MyShelf_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            mainForm.SwitchView(new Login(mainForm));
+            mainForm.SwitchView(new Home(mainForm));
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            mainForm.SwitchView(new MyShelf(mainForm));
+
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,35 +30,48 @@
         {
             label1 = new Label();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(468, 205);
+            label1.Location = new Point(535, 273);
             label1.Name = "label1";
-            label1.Size = new Size(100, 15);
+            label1.Size = new Size(126, 20);
             label1.TabIndex = 0;
             label1.Text = "Hello from Home";
             // 
             // button1
             // 
-            button1.Location = new Point(481, 245);
+            button1.Location = new Point(363, 242);
             button1.Name = "button1";
-            button1.Size = new Size(297, 23);
+            button1.Size = new Size(339, 31);
             button1.TabIndex = 1;
             button1.Text = "Switch to Login";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(332, 413);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 2;
+            button2.Text = "My Shelf";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Home";
-            Size = new Size(1000, 700);
+            Size = new Size(1000, 600);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -67,5 +80,6 @@
 
         private Label label1;
         private Button button1;
+        private Button button2;
     }
 }

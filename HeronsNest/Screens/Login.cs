@@ -19,5 +19,15 @@
         {
             mainForm.SwitchView(new Home(mainForm));
         }
+
+        private void leftNavBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void leftNavBar1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
