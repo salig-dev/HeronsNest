@@ -28,26 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            sideNavigation1 = new Components.Navigation.SideNavigation();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.HERONS_NEST_LOGO_TXT;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1000, 700);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // button1
             // 
             button1.ForeColor = SystemColors.WindowFrame;
-            button1.Location = new Point(419, 493);
+            button1.Location = new Point(463, 384);
             button1.Name = "button1";
             button1.Size = new Size(217, 23);
             button1.TabIndex = 1;
@@ -55,21 +43,27 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // sideNavigation1
+            // 
+            sideNavigation1.BackColor = Color.Transparent;
+            sideNavigation1.Location = new Point(0, 0);
+            sideNavigation1.Name = "sideNavigation1";
+            sideNavigation1.Size = new Size(200, 600);
+            sideNavigation1.TabIndex = 2;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(sideNavigation1);
             Controls.Add(button1);
-            Controls.Add(pictureBox1);
             Name = "Login";
-            Size = new Size(1000, 700);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Size = new Size(1000, 600);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Button button1;
+        private Components.Navigation.SideNavigation sideNavigation1;
     }
 }
