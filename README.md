@@ -9,6 +9,7 @@ The features of the app are as follows:
 - Online Transactions;
 - Real-Time Inventory Management, and;
 - Librarian Command Center, a set of tools that librarians can use for efficient library management.
+
 The target users for this app are:
 - Students;
 - Librarians;
