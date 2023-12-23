@@ -8,5 +8,6 @@ namespace HeronsNest.Models
 {
     internal class Book
     {
+        public int ISBN { get; set; } 
     }
 }

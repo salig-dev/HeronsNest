@@ -56,11 +56,40 @@ namespace HeronsNest.Algorithms
             return head.IsEnd ? head : null!;
         }
 
-        public List<T> SearchForRelated(string s)
+        public List<string> SearchForRelated(string s)
         {
-            TrieNode head = RootNode;
+            List<string> relatedTerms = new List<string>();
 
-            return [];
+            // Find the node corresponding to the longest matching prefix
+            TrieNode? node = Search(s);
+
+            if (node != null)
+            {
+                // Traverse the subtree rooted at the matching node
+                RecursiveSearchRelatedTerms(node, s, relatedTerms);
+            }
+
+            return relatedTerms;
+        }
+
+        private void RecursiveSearchRelatedTerms(TrieNode? node, string currentTerm, List<string> relatedTerms)
+        {
+            if (node == null)
+            {
+                return;
+            }
+
+            // Add the current term if it's a valid word
+            if (node.IsEnd)
+            {
+                relatedTerms.Add(currentTerm);
+            }
+
+            // Recursively explore child nodes
+            foreach (char childChar in node.Children.Keys)
+            {
+                RecursiveSearchRelatedTerms(node.Children[childChar], currentTerm + childChar, relatedTerms);
+            }
         }
 
 
