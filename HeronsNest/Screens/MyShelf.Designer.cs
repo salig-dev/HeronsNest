@@ -33,23 +33,14 @@
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
-            sideNavigation1 = new Components.Navigation.SideNavigation();
-            customListView1 = new Components.List.CustomListView();
-            bookCard1 = new Components.BookCard();
-            bookCard2 = new Components.BookCard();
-            bookCard3 = new Components.BookCard();
-            bookCard4 = new Components.BookCard();
-            bookCard5 = new Components.BookCard();
-            bookCard6 = new Components.BookCard();
-            customListView1.SuspendLayout();
+            leftNavBar1 = new Components.LeftNavBar();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(217, 19);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(399, 24);
             button1.Name = "button1";
-            button1.Size = new Size(82, 22);
+            button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
@@ -63,10 +54,10 @@
             label2.Font = new Font("Microsoft Sans Serif", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 149, 168);
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(217, 87);
+            label2.Location = new Point(355, 86);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(127, 31);
+            label2.Size = new Size(152, 38);
             label2.TabIndex = 2;
             label2.Text = "My Shelf";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -76,9 +67,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(217, 134);
+            label1.Location = new Point(355, 179);
             label1.Name = "label1";
-            label1.Size = new Size(84, 20);
+            label1.Size = new Size(103, 25);
             label1.TabIndex = 3;
             label1.Text = "All Books";
             // 
@@ -87,9 +78,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(323, 134);
+            label3.Location = new Point(518, 179);
             label3.Name = "label3";
-            label3.Size = new Size(129, 20);
+            label3.Size = new Size(157, 25);
             label3.TabIndex = 4;
             label3.Text = "Pending Books";
             // 
@@ -98,95 +89,36 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(486, 134);
+            label4.Location = new Point(695, 179);
             label4.Name = "label4";
-            label4.Size = new Size(140, 20);
+            label4.Size = new Size(169, 25);
             label4.TabIndex = 5;
             label4.Text = "Borrowed Books";
             // 
-            // sideNavigation1
+            // leftNavBar1
             // 
-            sideNavigation1.BackColor = Color.Transparent;
-            sideNavigation1.Location = new Point(0, 0);
-            sideNavigation1.Margin = new Padding(3, 4, 3, 4);
-            sideNavigation1.Name = "sideNavigation1";
-            sideNavigation1.Size = new Size(175, 600);
-            sideNavigation1.TabIndex = 49;
-            // 
-            // customListView1
-            // 
-            customListView1.Controls.Add(bookCard1);
-            customListView1.Controls.Add(bookCard2);
-            customListView1.Controls.Add(bookCard3);
-            customListView1.Controls.Add(bookCard4);
-            customListView1.Controls.Add(bookCard5);
-            customListView1.Controls.Add(bookCard6);
-            customListView1.DataSource = null;
-            customListView1.Location = new Point(217, 190);
-            customListView1.Name = "customListView1";
-            customListView1.Size = new Size(765, 386);
-            customListView1.TabIndex = 50;
-            // 
-            // bookCard1
-            // 
-            bookCard1.Location = new Point(3, 3);
-            bookCard1.Name = "bookCard1";
-            bookCard1.Size = new Size(223, 314);
-            bookCard1.TabIndex = 0;
-            // 
-            // bookCard2
-            // 
-            bookCard2.Location = new Point(232, 3);
-            bookCard2.Name = "bookCard2";
-            bookCard2.Size = new Size(223, 314);
-            bookCard2.TabIndex = 1;
-            // 
-            // bookCard3
-            // 
-            bookCard3.Location = new Point(461, 3);
-            bookCard3.Name = "bookCard3";
-            bookCard3.Size = new Size(223, 314);
-            bookCard3.TabIndex = 2;
-            // 
-            // bookCard4
-            // 
-            bookCard4.Location = new Point(3, 323);
-            bookCard4.Name = "bookCard4";
-            bookCard4.Size = new Size(223, 314);
-            bookCard4.TabIndex = 3;
-            // 
-            // bookCard5
-            // 
-            bookCard5.Location = new Point(232, 323);
-            bookCard5.Name = "bookCard5";
-            bookCard5.Size = new Size(223, 314);
-            bookCard5.TabIndex = 4;
-            // 
-            // bookCard6
-            // 
-            bookCard6.Location = new Point(461, 323);
-            bookCard6.Name = "bookCard6";
-            bookCard6.Size = new Size(223, 314);
-            bookCard6.TabIndex = 5;
+            leftNavBar1.BackColor = Color.White;
+            leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.Margin = new Padding(3, 4, 3, 4);
+            leftNavBar1.Name = "leftNavBar1";
+            leftNavBar1.Size = new Size(250, 600);
+            leftNavBar1.TabIndex = 51;
             // 
             // MyShelf
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(customListView1);
-            Controls.Add(sideNavigation1);
+            Controls.Add(leftNavBar1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(button1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "MyShelf";
             Size = new Size(1000, 600);
             Load += MyShelf_Load;
-            customListView1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,13 +146,12 @@
         private PictureBox pictureBox21;
         private PictureBox pictureBox22;
         private PictureBox pictureBox23;
-        private Components.Navigation.SideNavigation sideNavigation1;
-        private Components.List.CustomListView customListView1;
         private Components.BookCard bookCard1;
         private Components.BookCard bookCard2;
         private Components.BookCard bookCard3;
         private Components.BookCard bookCard4;
         private Components.BookCard bookCard5;
         private Components.BookCard bookCard6;
+        private Components.LeftNavBar leftNavBar1;
     }
 }
