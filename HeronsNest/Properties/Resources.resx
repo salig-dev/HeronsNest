@@ -133,6 +133,9 @@
   <data name="HERONS-NEST-LOGO-NOTXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\HERONS-NEST-LOGO-NOTXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Sample Images\stars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HERONS-NEST-LOGO-TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\HERONS-NEST-LOGO-TXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,16 +151,19 @@
   <data name="search-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="card_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\card-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_overdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\card-overdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="magnifying-glass-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Icons\magnifying-glass-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hamburger-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Icons\hamburger-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="card_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\card-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="card_overdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\card-overdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sampleBook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Sample Images\sampleBook.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

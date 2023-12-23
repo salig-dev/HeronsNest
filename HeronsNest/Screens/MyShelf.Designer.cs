@@ -133,6 +133,7 @@
             bookCard1.Name = "bookCard1";
             bookCard1.Size = new Size(223, 314);
             bookCard1.TabIndex = 0;
+            bookCard1.Load += bookCard1_Load;
             // 
             // bookCard2
             // 
@@ -140,6 +141,7 @@
             bookCard2.Name = "bookCard2";
             bookCard2.Size = new Size(223, 314);
             bookCard2.TabIndex = 1;
+            bookCard2.Load += bookCard2_Load;
             // 
             // bookCard3
             // 
