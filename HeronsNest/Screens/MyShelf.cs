@@ -60,6 +60,14 @@ namespace HeronsNest.Screens
 
         }
 
+<<<<<<< HEAD
+        private void bookCard2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+=======
+>>>>>>> 2d509392daa98bf29abe7e92c8a76c542dcc121f
         private void bookCard1_Load(object sender, EventArgs e)
         {
 

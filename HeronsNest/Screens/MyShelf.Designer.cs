@@ -112,16 +112,28 @@
             bookCard1.Location = new Point(16, 145);
             bookCard1.Margin = new Padding(3, 4, 3, 4);
             bookCard1.Name = "bookCard1";
+<<<<<<< HEAD
+            bookCard1.Size = new Size(223, 314);
+            bookCard1.TabIndex = 0;
+            bookCard1.Load += bookCard1_Load;
+=======
             bookCard1.Size = new Size(400, 344);
             bookCard1.TabIndex = 7;
+>>>>>>> 2d509392daa98bf29abe7e92c8a76c542dcc121f
             // 
             // bookCard2
             // 
             bookCard2.Location = new Point(340, 145);
             bookCard2.Margin = new Padding(3, 4, 3, 4);
             bookCard2.Name = "bookCard2";
+<<<<<<< HEAD
+            bookCard2.Size = new Size(223, 314);
+            bookCard2.TabIndex = 1;
+            bookCard2.Load += bookCard2_Load;
+=======
             bookCard2.Size = new Size(400, 344);
             bookCard2.TabIndex = 8;
+>>>>>>> 2d509392daa98bf29abe7e92c8a76c542dcc121f
             // 
             // bookCard3
             // 

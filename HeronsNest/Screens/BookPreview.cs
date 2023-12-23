@@ -23,5 +23,40 @@ namespace HeronsNest.Screens
         {
             mainForm.SwitchView(new Home(mainForm));
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookRating_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
