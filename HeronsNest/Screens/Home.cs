@@ -34,5 +34,10 @@ namespace HeronsNest.Screens
         {
             mainForm.SwitchView(new MyShelf(mainForm));
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new BookPreview(mainForm));
+        }
     }
 }

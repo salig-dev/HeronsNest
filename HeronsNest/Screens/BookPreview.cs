@@ -12,9 +12,16 @@ namespace HeronsNest.Screens
 {
     public partial class BookPreview : UserControl
     {
-        public BookPreview()
+        Landing mainForm;
+        public BookPreview(Landing mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }
