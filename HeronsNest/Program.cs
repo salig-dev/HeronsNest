@@ -13,12 +13,12 @@ namespace HeronsNest
         [STAThread]
         static void Main()
         {
-            Trie x = new();
+            Trie<string> x = new();
             x.Insert("machina");
             x.Insert("machinable");
             x.Insert("machination");
 
-            var r = x.Search("machine");
+            var r = x.Search("machina");
             if (r != null)
             {
                 Debug.WriteLine("Found");
