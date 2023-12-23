@@ -33,7 +33,7 @@ namespace HeronsNest.Screens
             mainForm.SwitchView(new Home(mainForm));
         }
 
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,11 @@ namespace HeronsNest.Screens
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookCard1_Load(object sender, EventArgs e)
         {
 
         }

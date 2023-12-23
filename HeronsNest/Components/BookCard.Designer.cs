@@ -48,9 +48,9 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(316, 270);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
@@ -83,7 +83,6 @@
             bookAuthor.Size = new Size(104, 12);
             bookAuthor.TabIndex = 7;
             bookAuthor.Text = "Author Name, Date";
-            bookAuthor.Click += this.bookAuthor_Click;
             // 
             // borrowedText
             // 
@@ -170,7 +169,7 @@
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "BookCard";
-            Size = new Size(316, 270);
+            Size = new Size(320, 275);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
