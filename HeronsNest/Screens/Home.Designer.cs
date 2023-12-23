@@ -31,6 +31,7 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -62,10 +63,21 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(546, 438);
+            button3.Name = "button3";
+            button3.Size = new Size(134, 29);
+            button3.TabIndex = 3;
+            button3.Text = "Book Preview";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -81,5 +93,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
