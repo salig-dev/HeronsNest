@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             bookTitle = new Label();
             bookAuthor = new Label();
@@ -38,42 +37,10 @@
             returnDate = new Label();
             borrowedBtn = new Button();
             returnBtn = new Button();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox11 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox12 = new PictureBox();
-            pictureBox13 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.card_active;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(316, 270);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -179,120 +146,21 @@
             returnBtn.Text = "Return";
             returnBtn.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            pictureBox3.BackColor = Color.Red;
-            pictureBox3.Location = new Point(3, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(20, 270);
-            pictureBox3.TabIndex = 20;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Red;
-            pictureBox4.Location = new Point(293, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(20, 270);
-            pictureBox4.TabIndex = 21;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Red;
-            pictureBox5.Location = new Point(-3, 0);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(316, 20);
-            pictureBox5.TabIndex = 22;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.Red;
-            pictureBox6.Location = new Point(-3, 253);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(319, 20);
-            pictureBox6.TabIndex = 23;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.Red;
-            pictureBox7.Location = new Point(165, 3);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(10, 270);
-            pictureBox7.TabIndex = 24;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = Color.Red;
-            pictureBox8.Location = new Point(-13, 57);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(316, 5);
-            pictureBox8.TabIndex = 25;
-            pictureBox8.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            pictureBox11.BackColor = Color.Red;
-            pictureBox11.Location = new Point(0, 25);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(316, 10);
-            pictureBox11.TabIndex = 28;
-            pictureBox11.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.BackColor = Color.Red;
-            pictureBox9.Location = new Point(-3, 79);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(316, 10);
-            pictureBox9.TabIndex = 29;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.BackColor = Color.Red;
-            pictureBox10.Location = new Point(-3, 111);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(316, 5);
-            pictureBox10.TabIndex = 30;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            pictureBox12.BackColor = Color.Red;
-            pictureBox12.Location = new Point(0, 133);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(316, 10);
-            pictureBox12.TabIndex = 31;
-            pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.BackColor = Color.Red;
-            pictureBox13.Location = new Point(-3, 200);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(178, 5);
-            pictureBox13.TabIndex = 32;
-            pictureBox13.TabStop = false;
+            pictureBox1.Image = Properties.Resources.card_active;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(316, 270);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // BookCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(pictureBox13);
-            Controls.Add(pictureBox12);
-            Controls.Add(pictureBox10);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox11);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
             Controls.Add(returnBtn);
             Controls.Add(borrowedBtn);
             Controls.Add(returnDate);
@@ -305,26 +173,13 @@
             Controls.Add(pictureBox1);
             Name = "BookCard";
             Size = new Size(316, 300);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label bookTitle;
         private Label bookAuthor;
@@ -334,16 +189,6 @@
         private Label returnDate;
         private Button borrowedBtn;
         private Button returnBtn;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox12;
-        private PictureBox pictureBox13;
+        private PictureBox pictureBox1;
     }
 }
