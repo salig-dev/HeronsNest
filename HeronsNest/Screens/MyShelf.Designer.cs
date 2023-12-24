@@ -41,9 +41,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(240, 77);
+            button1.Location = new Point(210, 58);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
@@ -57,10 +58,10 @@
             label2.Font = new Font("Microsoft Sans Serif", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 149, 168);
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(48, 118);
+            label2.Location = new Point(42, 88);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(152, 38);
+            label2.Size = new Size(127, 31);
             label2.TabIndex = 2;
             label2.Text = "My Shelf";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,9 +71,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(340, 77);
+            label1.Location = new Point(298, 58);
             label1.Name = "label1";
-            label1.Size = new Size(103, 25);
+            label1.Size = new Size(84, 20);
             label1.TabIndex = 3;
             label1.Text = "All Books";
             // 
@@ -81,9 +82,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(449, 77);
+            label3.Location = new Point(393, 58);
             label3.Name = "label3";
-            label3.Size = new Size(157, 25);
+            label3.Size = new Size(129, 20);
             label3.TabIndex = 4;
             label3.Text = "Pending Books";
             // 
@@ -92,9 +93,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(612, 77);
+            label4.Location = new Point(536, 58);
             label4.Name = "label4";
-            label4.Size = new Size(169, 25);
+            label4.Size = new Size(140, 20);
             label4.TabIndex = 5;
             label4.Text = "Borrowed Books";
             // 
@@ -102,44 +103,37 @@
             // 
             sideNavigation1.BackColor = Color.Transparent;
             sideNavigation1.Location = new Point(0, 0);
-            sideNavigation1.Margin = new Padding(3, 5, 3, 5);
+            sideNavigation1.Margin = new Padding(3, 4, 3, 4);
             sideNavigation1.Name = "sideNavigation1";
-            sideNavigation1.Size = new Size(200, 600);
+            sideNavigation1.Size = new Size(175, 450);
             sideNavigation1.TabIndex = 6;
             // 
             // bookCard1
             // 
-            bookCard1.Location = new Point(16, 145);
-            bookCard1.Margin = new Padding(3, 4, 3, 4);
+            bookCard1.Location = new Point(14, 109);
             bookCard1.Name = "bookCard1";
-            bookCard1.Size = new Size(223, 314);
-            bookCard1.TabIndex = 0;
-            bookCard1.Load += bookCard1_Load;
-            bookCard1.Size = new Size(400, 344);
+            bookCard1.Size = new Size(350, 258);
             bookCard1.TabIndex = 7;
+            bookCard1.Load += bookCard1_Load;
             // 
             // bookCard2
             // 
-            bookCard2.Location = new Point(340, 145);
-            bookCard2.Margin = new Padding(3, 4, 3, 4);
+            bookCard2.Location = new Point(298, 109);
             bookCard2.Name = "bookCard2";
-            bookCard2.Size = new Size(223, 314);
-            bookCard2.TabIndex = 1;
-            bookCard2.Load += bookCard2_Load;
-            bookCard2.Size = new Size(400, 344);
+            bookCard2.Size = new Size(350, 258);
             bookCard2.TabIndex = 8;
+            bookCard2.Load += bookCard2_Load;
             // 
             // bookCard3
             // 
-            bookCard3.Location = new Point(660, 145);
-            bookCard3.Margin = new Padding(3, 4, 3, 4);
+            bookCard3.Location = new Point(578, 109);
             bookCard3.Name = "bookCard3";
-            bookCard3.Size = new Size(400, 344);
+            bookCard3.Size = new Size(350, 258);
             bookCard3.TabIndex = 9;
             // 
             // MyShelf
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
@@ -152,6 +146,7 @@
             Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(button1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MyShelf";
             Size = new Size(1000, 600);
             Load += MyShelf_Load;
