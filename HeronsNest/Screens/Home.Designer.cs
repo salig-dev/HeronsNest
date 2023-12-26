@@ -28,71 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
+            leftNavBar1 = new Components.LeftNavBar();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            categoryListView = new Components.List.CustomListView();
+            homeSection2 = new Components.Home.HomeSection();
+            homeSection1 = new Components.Home.HomeSection();
+            categoryListView.SuspendLayout();
             SuspendLayout();
+            // 
+            // leftNavBar1
+            // 
+            leftNavBar1.AutoSize = true;
+            leftNavBar1.BackColor = Color.White;
+            leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.Name = "leftNavBar1";
+            leftNavBar1.Size = new Size(200, 600);
+            leftNavBar1.TabIndex = 21;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(535, 273);
+            label1.Font = new Font("Segoe UI", 20F);
+            label1.Location = new Point(215, 82);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Hello from Home";
+            label1.Size = new Size(267, 37);
+            label1.TabIndex = 22;
+            label1.Text = "Good Morning, User!";
             // 
-            // button1
+            // categoryListView
             // 
-            button1.Location = new Point(363, 242);
-            button1.Name = "button1";
-            button1.Size = new Size(339, 31);
-            button1.TabIndex = 1;
-            button1.Text = "Switch to Login";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            categoryListView.Anchor = AnchorStyles.None;
+            categoryListView.AutoScroll = true;
+            categoryListView.Controls.Add(homeSection2);
+            categoryListView.Controls.Add(homeSection1);
+            categoryListView.DataSource = null;
+            categoryListView.FlowDirection = FlowDirection.TopDown;
+            categoryListView.Location = new Point(215, 128);
+            categoryListView.Name = "categoryListView";
+            categoryListView.Size = new Size(769, 451);
+            categoryListView.TabIndex = 24;
+            categoryListView.WrapContents = false;
             // 
-            // button2
+            // homeSection2
             // 
-            button2.Location = new Point(332, 413);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = "My Shelf";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            homeSection2.Location = new Point(3, 3);
+            homeSection2.Name = "homeSection2";
+            homeSection2.Size = new Size(773, 251);
+            homeSection2.TabIndex = 24;
             // 
-            // button3
+            // homeSection1
             // 
-            button3.Location = new Point(546, 438);
-            button3.Name = "button3";
-            button3.Size = new Size(134, 29);
-            button3.TabIndex = 3;
-            button3.Text = "Book Preview";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            homeSection1.Location = new Point(3, 260);
+            homeSection1.Name = "homeSection1";
+            homeSection1.Size = new Size(773, 251);
+            homeSection1.TabIndex = 25;
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(categoryListView);
             Controls.Add(label1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(leftNavBar1);
             Name = "Home";
             Size = new Size(1000, 600);
+            Load += Home_Load_1;
+            categoryListView.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
+        private Components.LeftNavBar leftNavBar1;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Components.List.CustomListView categoryListView;
+        private Components.Home.HomeSection homeSection2;
+        private Components.Home.HomeSection homeSection1;
     }
 }

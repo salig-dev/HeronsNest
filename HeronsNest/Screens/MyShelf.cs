@@ -20,6 +20,7 @@ namespace HeronsNest.Screens
             InitializeComponent();
 
             this.mainForm = mainForm;
+            leftNavBar1.MainForm = mainForm;
         }
 
         private void MyShelf_Load(object sender, EventArgs e)

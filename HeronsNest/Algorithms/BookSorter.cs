@@ -23,7 +23,7 @@ namespace HeronsNest.Algorithms
 
         private Book[] Partition(Book[] books, int start, int end)
         {
-            List<Book> newBooks = new List<Book>();
+            List<Book> newBooks = [];
 
             for (int i = start; i < end; i++)
             {
@@ -58,7 +58,7 @@ namespace HeronsNest.Algorithms
             sortedBooks.AddRange(left.Skip(leftIndex));
             sortedBooks.AddRange(right.Skip(rightIndex));
 
-            return sortedBooks.ToArray();
+            return [.. sortedBooks];
         }
     }
 }
