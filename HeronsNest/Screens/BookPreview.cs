@@ -59,5 +59,15 @@ namespace HeronsNest.Screens
         {
 
         }
+
+        private void bookDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BookPreview_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
