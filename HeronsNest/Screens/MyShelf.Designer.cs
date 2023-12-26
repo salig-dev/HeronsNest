@@ -31,16 +31,20 @@
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
-            bookCard1 = new Components.BookCard();
             label1 = new Label();
             label4 = new Label();
+            bookCard1 = new Components.BookCard();
             bookCard2 = new Components.BookCard();
-            sideNavigation1 = new Components.Navigation.SideNavigation();
+            bookCard3 = new Components.BookCard();
+            leftNavBar1 = new Components.LeftNavBar();
+            bookCard4 = new Components.BookCard();
+            bookCard5 = new Components.BookCard();
+            bookCard6 = new Components.BookCard();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(348, 121);
+            button1.Location = new Point(364, 105);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(82, 22);
@@ -57,7 +61,7 @@
             label2.Font = new Font("PP Hatton", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 149, 168);
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(203, 119);
+            label2.Location = new Point(219, 103);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(142, 32);
@@ -71,18 +75,11 @@
             label3.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(76, 76, 76);
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(587, 176);
+            label3.Location = new Point(603, 150);
             label3.Name = "label3";
             label3.Size = new Size(145, 19);
             label3.TabIndex = 4;
             label3.Text = "Pending Books";
-            // 
-            // bookCard1
-            // 
-            bookCard1.Location = new Point(203, 225);
-            bookCard1.Name = "bookCard1";
-            bookCard1.Size = new Size(316, 300);
-            bookCard1.TabIndex = 7;
             // 
             // label1
             // 
@@ -90,7 +87,7 @@
             label1.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(362, 177);
+            label1.Location = new Point(378, 151);
             label1.Name = "label1";
             label1.Size = new Size(163, 19);
             label1.TabIndex = 13;
@@ -102,26 +99,61 @@
             label4.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(76, 76, 76);
             label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(206, 177);
+            label4.Location = new Point(222, 151);
             label4.Name = "label4";
             label4.Size = new Size(94, 19);
             label4.TabIndex = 14;
             label4.Text = "All Books";
             // 
+            // bookCard1
+            // 
+            bookCard1.Location = new Point(222, 199);
+            bookCard1.Name = "bookCard1";
+            bookCard1.Size = new Size(210, 200);
+            bookCard1.TabIndex = 19;
+            // 
             // bookCard2
             // 
-            bookCard2.Location = new Point(525, 225);
+            bookCard2.Location = new Point(438, 199);
             bookCard2.Name = "bookCard2";
-            bookCard2.Size = new Size(316, 300);
-            bookCard2.TabIndex = 18;
+            bookCard2.Size = new Size(210, 200);
+            bookCard2.TabIndex = 20;
             // 
-            // sideNavigation1
+            // bookCard3
             // 
-            sideNavigation1.BackColor = Color.Transparent;
-            sideNavigation1.Location = new Point(0, 0);
-            sideNavigation1.Name = "sideNavigation1";
-            sideNavigation1.Size = new Size(200, 600);
-            sideNavigation1.TabIndex = 6;
+            bookCard3.Location = new Point(654, 199);
+            bookCard3.Name = "bookCard3";
+            bookCard3.Size = new Size(210, 200);
+            bookCard3.TabIndex = 21;
+            // 
+            // leftNavBar1
+            // 
+            leftNavBar1.BackColor = Color.White;
+            leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.Name = "leftNavBar1";
+            leftNavBar1.Size = new Size(200, 600);
+            leftNavBar1.TabIndex = 22;
+            // 
+            // bookCard4
+            // 
+            bookCard4.Location = new Point(654, 397);
+            bookCard4.Name = "bookCard4";
+            bookCard4.Size = new Size(210, 200);
+            bookCard4.TabIndex = 30;
+            // 
+            // bookCard5
+            // 
+            bookCard5.Location = new Point(438, 397);
+            bookCard5.Name = "bookCard5";
+            bookCard5.Size = new Size(210, 200);
+            bookCard5.TabIndex = 29;
+            // 
+            // bookCard6
+            // 
+            bookCard6.Location = new Point(222, 397);
+            bookCard6.Name = "bookCard6";
+            bookCard6.Size = new Size(210, 200);
+            bookCard6.TabIndex = 28;
             // 
             // MyShelf
             // 
@@ -129,11 +161,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(bookCard4);
+            Controls.Add(bookCard5);
+            Controls.Add(bookCard6);
+            Controls.Add(leftNavBar1);
+            Controls.Add(bookCard3);
             Controls.Add(bookCard2);
+            Controls.Add(bookCard1);
             Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(bookCard1);
-            Controls.Add(sideNavigation1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
@@ -166,10 +202,16 @@
         private Components.BookCard bookCard4;
         private Components.BookCard bookCard5;
         private Components.BookCard bookCard6;
-        private Components.BookCard bookCard1;
         private Label label1;
         private Label label4;
+        private Components.BookCard bookCard1;
         private Components.BookCard bookCard2;
-        private Components.Navigation.SideNavigation sideNavigation1;
+        private Components.BookCard bookCard3;
+        private Components.LeftNavBar leftNavBar1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }
