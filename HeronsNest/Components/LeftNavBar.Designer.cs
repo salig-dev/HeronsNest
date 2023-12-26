@@ -35,69 +35,72 @@
             iconButton4 = new IconButton();
             userControl1 = new UserControl();
             pictureBox1 = new PictureBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            customListView2 = new List.CustomListView();
             iconButton5 = new IconButton();
-            iconButton6 = new IconButton();
+            iconButton8 = new IconButton();
             customListView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
+            customListView2.SuspendLayout();
             SuspendLayout();
             // 
             // customListView1
             // 
+            customListView1.Anchor = AnchorStyles.Top;
             customListView1.Controls.Add(iconButton1);
             customListView1.Controls.Add(iconButton2);
             customListView1.Controls.Add(iconButton3);
             customListView1.Controls.Add(iconButton4);
             customListView1.DataSource = null;
             customListView1.FlowDirection = FlowDirection.TopDown;
-            customListView1.Location = new Point(12, 136);
+            customListView1.Location = new Point(9, 132);
             customListView1.Name = "customListView1";
             customListView1.Size = new Size(188, 174);
             customListView1.TabIndex = 0;
             // 
             // iconButton1
             // 
-            iconButton1.AutoSize = true;
-            iconButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             iconButton1.Image = Properties.Resources.house_solid;
             iconButton1.Location = new Point(3, 3);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(91, 31);
+            iconButton1.Size = new Size(185, 31);
             iconButton1.TabIndex = 0;
             iconButton1.Text = "Home";
-            iconButton1.Load += iconButton1_Load;
+            iconButton1.Click += HomeClicked;
             // 
             // iconButton2
             // 
-            iconButton2.AutoSize = true;
-            iconButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButton2.Dock = DockStyle.Top;
             iconButton2.Image = Properties.Resources.magnifying_glass_solid;
             iconButton2.Location = new Point(3, 40);
             iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(95, 31);
+            iconButton2.Size = new Size(185, 31);
             iconButton2.TabIndex = 1;
             iconButton2.Text = "Search";
+            iconButton2.Click += SearchClicked;
             // 
             // iconButton3
             // 
-            iconButton3.AutoSize = true;
-            iconButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButton3.Dock = DockStyle.Top;
             iconButton3.Image = Properties.Resources.book_solid;
             iconButton3.Location = new Point(3, 77);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(105, 31);
+            iconButton3.Size = new Size(185, 31);
             iconButton3.TabIndex = 2;
             iconButton3.Text = "My Shelf";
+            iconButton3.Click += MyShelfClicked;
             // 
             // iconButton4
             // 
-            iconButton4.AutoSize = true;
-            iconButton4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButton4.Dock = DockStyle.Top;
             iconButton4.Image = Properties.Resources.money_bills_solid;
             iconButton4.Location = new Point(3, 114);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(100, 31);
+            iconButton4.Size = new Size(185, 31);
             iconButton4.TabIndex = 3;
             iconButton4.Text = "Balance";
+            iconButton4.Click += BalanceClicked;
             // 
             // userControl1
             // 
@@ -109,49 +112,84 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.HERONS_NEST_LOGO_TXT_HORIZ;
-            pictureBox1.Location = new Point(37, 58);
+            pictureBox1.Location = new Point(43, 38);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(119, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(customListView2, 0, 2);
+            tableLayoutPanel1.Controls.Add(customListView1, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.7700825F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 59.2373276F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 19.9925938F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(206, 622);
+            tableLayoutPanel1.TabIndex = 4;
+            // 
+            // customListView2
+            // 
+            customListView2.Anchor = AnchorStyles.Top;
+            customListView2.Controls.Add(iconButton5);
+            customListView2.Controls.Add(iconButton8);
+            customListView2.DataSource = null;
+            customListView2.FlowDirection = FlowDirection.TopDown;
+            customListView2.Location = new Point(9, 500);
+            customListView2.Name = "customListView2";
+            customListView2.Size = new Size(188, 85);
+            customListView2.TabIndex = 4;
             // 
             // iconButton5
             // 
             iconButton5.AutoSize = true;
-            iconButton5.Image = null;
-            iconButton5.Location = new Point(-24, 477);
+            iconButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButton5.Image = Properties.Resources.house_solid;
+            iconButton5.Location = new Point(3, 3);
             iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(93, 31);
-            iconButton5.TabIndex = 2;
-            iconButton5.Text = "About";
-            iconButton5.Load += iconButton5_Load;
+            iconButton5.Size = new Size(91, 31);
+            iconButton5.TabIndex = 0;
+            iconButton5.Text = "Home";
             // 
-            // iconButton6
+            // iconButton8
             // 
-            iconButton6.AutoSize = true;
-            iconButton6.Image = null;
-            iconButton6.Location = new Point(-24, 506);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Size = new Size(173, 31);
-            iconButton6.TabIndex = 3;
-            iconButton6.Text = "Terms and Conditions";
+            iconButton8.AutoSize = true;
+            iconButton8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            iconButton8.Image = Properties.Resources.money_bills_solid;
+            iconButton8.Location = new Point(3, 40);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(100, 31);
+            iconButton8.TabIndex = 3;
+            iconButton8.Text = "Balance";
             // 
             // LeftNavBar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.White;
-            Controls.Add(iconButton6);
-            Controls.Add(iconButton5);
-            Controls.Add(pictureBox1);
-            Controls.Add(customListView1);
+            Controls.Add(tableLayoutPanel1);
             Name = "LeftNavBar";
-            Size = new Size(200, 600);
+            Size = new Size(206, 622);
             customListView1.ResumeLayout(false);
-            customListView1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            customListView2.ResumeLayout(false);
+            customListView2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,7 +203,9 @@
         private IconButton iconButton3;
         private IconButton iconButton4;
         private PictureBox pictureBox1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private List.CustomListView customListView2;
         private IconButton iconButton5;
-        private IconButton iconButton6;
+        private IconButton iconButton8;
     }
 }

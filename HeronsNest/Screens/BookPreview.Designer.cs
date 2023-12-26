@@ -40,7 +40,6 @@
             reserveBtn = new Button();
             bookAbout = new Label();
             linkLabel1 = new LinkLabel();
-            sideNavigation1 = new Components.Navigation.SideNavigation();
             bookDetails = new Label();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookRatingStars).BeginInit();
@@ -173,11 +172,6 @@
             // 
             // sideNavigation1
             // 
-            sideNavigation1.BackColor = Color.Transparent;
-            sideNavigation1.Location = new Point(0, 0);
-            sideNavigation1.Name = "sideNavigation1";
-            sideNavigation1.Size = new Size(175, 600);
-            sideNavigation1.TabIndex = 14;
             // 
             // bookDetails
             // 
@@ -195,7 +189,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
             Controls.Add(bookDetails);
-            Controls.Add(sideNavigation1);
             Controls.Add(bookAbout);
             Controls.Add(reserveBtn);
             Controls.Add(borrowBtn);
@@ -230,7 +223,6 @@
         private Button reserveBtn;
         private Label bookAbout;
         private LinkLabel linkLabel1;
-        private Components.Navigation.SideNavigation sideNavigation1;
         private Label bookDetails;
     }
 }

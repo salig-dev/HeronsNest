@@ -18,6 +18,12 @@ namespace HeronsNest.Screens
         {
             InitializeComponent();
             this.mainForm = mainForm;
+
+            categoryListView.AutoScroll = false;
+            categoryListView.WrapContents = false;
+            categoryListView.AutoScroll = true;
+
+            leftNavBar1.MainForm = mainForm;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +44,11 @@ namespace HeronsNest.Screens
         private void button3_Click(object sender, EventArgs e)
         {
             mainForm.SwitchView(new BookPreview(mainForm));
+        }
+
+        private void Home_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

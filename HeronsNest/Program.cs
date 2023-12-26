@@ -13,23 +13,16 @@ namespace HeronsNest
         [STAThread]
         static void Main()
         {
-            Trie<string> x = new();
-            x.Insert("machina");
-            x.Insert("machinable");
-            x.Insert("machination");
-
-            var r = x.Search("machina");
-            if (r != null)
-            {
-                Debug.WriteLine("Found");
-            } else
-            {
-                Debug.WriteLine("Not Found");
-            }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Landing());
+
+            Landing main = new()
+            {
+                // Form Properties
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            Application.Run(main);
         }
     }
 }

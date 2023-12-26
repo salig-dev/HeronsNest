@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            sideNavigation1 = new Components.Navigation.SideNavigation();
             SuspendLayout();
             // 
             // button1
@@ -45,17 +44,11 @@
             // 
             // sideNavigation1
             // 
-            sideNavigation1.BackColor = Color.Transparent;
-            sideNavigation1.Location = new Point(0, 0);
-            sideNavigation1.Name = "sideNavigation1";
-            sideNavigation1.Size = new Size(200, 600);
-            sideNavigation1.TabIndex = 2;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(sideNavigation1);
             Controls.Add(button1);
             Name = "Login";
             Size = new Size(1000, 600);
@@ -64,6 +57,5 @@
 
         #endregion
         private Button button1;
-        private Components.Navigation.SideNavigation sideNavigation1;
     }
 }
