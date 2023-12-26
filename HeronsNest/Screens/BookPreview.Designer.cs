@@ -52,6 +52,7 @@
             otherbook2 = new PictureBox();
             otherbook1 = new PictureBox();
             leftNavBar1 = new Components.LeftNavBar();
+            comp_Searchbar1 = new Components.Comp_Searchbar();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookRatingStars).BeginInit();
             authorDetails.SuspendLayout();
@@ -117,7 +118,7 @@
             // bookRatingStars
             // 
             bookRatingStars.BorderStyle = BorderStyle.FixedSingle;
-            bookRatingStars.Location = new Point(470, 214);
+            bookRatingStars.Location = new Point(465, 214);
             bookRatingStars.Name = "bookRatingStars";
             bookRatingStars.Size = new Size(130, 18);
             bookRatingStars.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -302,11 +303,20 @@
             leftNavBar1.Size = new Size(194, 597);
             leftNavBar1.TabIndex = 17;
             // 
+            // comp_Searchbar1
+            // 
+            comp_Searchbar1.Location = new Point(212, 24);
+            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
+            comp_Searchbar1.Name = "comp_Searchbar1";
+            comp_Searchbar1.Size = new Size(607, 44);
+            comp_Searchbar1.TabIndex = 18;
+            // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(comp_Searchbar1);
             Controls.Add(leftNavBar1);
             Controls.Add(authorDetails);
             Controls.Add(bookDetails);
@@ -362,5 +372,6 @@
         private PictureBox otherbook3;
         private PictureBox otherbook2;
         private Components.LeftNavBar leftNavBar1;
+        private Components.Comp_Searchbar comp_Searchbar1;
     }
 }
