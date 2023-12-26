@@ -37,19 +37,9 @@
             bookCard2 = new Components.BookCard();
             bookCard3 = new Components.BookCard();
             leftNavBar1 = new Components.LeftNavBar();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
             bookCard4 = new Components.BookCard();
             bookCard5 = new Components.BookCard();
             bookCard6 = new Components.BookCard();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -144,68 +134,23 @@
             leftNavBar1.Size = new Size(200, 600);
             leftNavBar1.TabIndex = 22;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Red;
-            pictureBox1.Location = new Point(206, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(10, 600);
-            pictureBox1.TabIndex = 23;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Red;
-            pictureBox2.Location = new Point(987, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(10, 600);
-            pictureBox2.TabIndex = 24;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Red;
-            pictureBox3.Location = new Point(206, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1000, 100);
-            pictureBox3.TabIndex = 25;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Red;
-            pictureBox4.Location = new Point(-19, 138);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(1000, 10);
-            pictureBox4.TabIndex = 26;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Red;
-            pictureBox5.Location = new Point(-3, 173);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(1000, 20);
-            pictureBox5.TabIndex = 27;
-            pictureBox5.TabStop = false;
-            // 
             // bookCard4
             // 
-            bookCard4.Location = new Point(654, 405);
+            bookCard4.Location = new Point(654, 397);
             bookCard4.Name = "bookCard4";
             bookCard4.Size = new Size(210, 200);
             bookCard4.TabIndex = 30;
             // 
             // bookCard5
             // 
-            bookCard5.Location = new Point(438, 405);
+            bookCard5.Location = new Point(438, 397);
             bookCard5.Name = "bookCard5";
             bookCard5.Size = new Size(210, 200);
             bookCard5.TabIndex = 29;
             // 
             // bookCard6
             // 
-            bookCard6.Location = new Point(222, 405);
+            bookCard6.Location = new Point(222, 397);
             bookCard6.Name = "bookCard6";
             bookCard6.Size = new Size(210, 200);
             bookCard6.TabIndex = 28;
@@ -219,11 +164,6 @@
             Controls.Add(bookCard4);
             Controls.Add(bookCard5);
             Controls.Add(bookCard6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
             Controls.Add(leftNavBar1);
             Controls.Add(bookCard3);
             Controls.Add(bookCard2);
@@ -237,11 +177,6 @@
             Name = "MyShelf";
             Size = new Size(1000, 600);
             Load += MyShelf_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
