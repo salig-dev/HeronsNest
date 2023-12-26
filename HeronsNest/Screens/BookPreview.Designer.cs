@@ -51,6 +51,7 @@
             otherbook3 = new PictureBox();
             otherbook2 = new PictureBox();
             otherbook1 = new PictureBox();
+            leftNavBar1 = new Components.LeftNavBar();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookRatingStars).BeginInit();
             authorDetails.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             bookTitle.AutoSize = true;
             bookTitle.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookTitle.Location = new Point(414, 138);
+            bookTitle.Location = new Point(397, 138);
             bookTitle.Name = "bookTitle";
             bookTitle.Size = new Size(184, 25);
             bookTitle.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             bookAuthor.AutoSize = true;
             bookAuthor.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookAuthor.Location = new Point(414, 161);
+            bookAuthor.Location = new Point(397, 161);
             bookAuthor.Name = "bookAuthor";
             bookAuthor.Size = new Size(116, 18);
             bookAuthor.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             bookYear.AutoSize = true;
             bookYear.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookYear.Location = new Point(414, 179);
+            bookYear.Location = new Point(397, 179);
             bookYear.Name = "bookYear";
             bookYear.Size = new Size(38, 18);
             bookYear.TabIndex = 5;
@@ -106,7 +107,7 @@
             // 
             bookRating.AutoSize = true;
             bookRating.Font = new Font("Microsoft Sans Serif", 11.25F);
-            bookRating.Location = new Point(414, 214);
+            bookRating.Location = new Point(397, 214);
             bookRating.Name = "bookRating";
             bookRating.Size = new Size(62, 18);
             bookRating.TabIndex = 6;
@@ -116,7 +117,7 @@
             // bookRatingStars
             // 
             bookRatingStars.BorderStyle = BorderStyle.FixedSingle;
-            bookRatingStars.Location = new Point(487, 214);
+            bookRatingStars.Location = new Point(470, 214);
             bookRatingStars.Name = "bookRatingStars";
             bookRatingStars.Size = new Size(130, 18);
             bookRatingStars.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -127,7 +128,7 @@
             // 
             statusText.AutoSize = true;
             statusText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            statusText.Location = new Point(414, 244);
+            statusText.Location = new Point(397, 244);
             statusText.Name = "statusText";
             statusText.Size = new Size(58, 18);
             statusText.TabIndex = 8;
@@ -140,7 +141,7 @@
             bookStatus.BackColor = Color.FromArgb(82, 167, 133);
             bookStatus.BorderStyle = BorderStyle.FixedSingle;
             bookStatus.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookStatus.Location = new Point(414, 270);
+            bookStatus.Location = new Point(397, 270);
             bookStatus.Name = "bookStatus";
             bookStatus.Size = new Size(67, 20);
             bookStatus.TabIndex = 9;
@@ -148,7 +149,7 @@
             // 
             // borrowBtn
             // 
-            borrowBtn.Location = new Point(414, 304);
+            borrowBtn.Location = new Point(397, 304);
             borrowBtn.Name = "borrowBtn";
             borrowBtn.Size = new Size(129, 28);
             borrowBtn.TabIndex = 10;
@@ -157,7 +158,7 @@
             // 
             // reserveBtn
             // 
-            reserveBtn.Location = new Point(548, 304);
+            reserveBtn.Location = new Point(531, 304);
             reserveBtn.Name = "reserveBtn";
             reserveBtn.Size = new Size(129, 28);
             reserveBtn.TabIndex = 11;
@@ -291,11 +292,22 @@
             otherbook1.TabIndex = 2;
             otherbook1.TabStop = false;
             // 
+            // leftNavBar1
+            // 
+            leftNavBar1.AutoSize = true;
+            leftNavBar1.BackColor = Color.White;
+            leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.MainForm = null;
+            leftNavBar1.Name = "leftNavBar1";
+            leftNavBar1.Size = new Size(194, 597);
+            leftNavBar1.TabIndex = 17;
+            // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(leftNavBar1);
             Controls.Add(authorDetails);
             Controls.Add(bookDetails);
             Controls.Add(bookAbout);
@@ -349,5 +361,6 @@
         private PictureBox otherbook4;
         private PictureBox otherbook3;
         private PictureBox otherbook2;
+        private Components.LeftNavBar leftNavBar1;
     }
 }
