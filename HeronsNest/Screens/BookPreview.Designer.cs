@@ -74,7 +74,7 @@
             // 
             bookTitle.AutoSize = true;
             bookTitle.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookTitle.Location = new Point(414, 138);
+            bookTitle.Location = new Point(411, 138);
             bookTitle.Name = "bookTitle";
             bookTitle.Size = new Size(184, 25);
             bookTitle.TabIndex = 3;

@@ -1,4 +1,6 @@
-﻿namespace HeronsNest.Screens
+﻿using HeronsNest.Components.Modal;
+
+namespace HeronsNest.Screens
 {
     public partial class Login : UserControl
     {
@@ -17,7 +19,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            mainForm.SwitchView(new Home(mainForm));
+            mainForm.ShowPopup(new SuccessModal(mainForm));
         }
 
         private void leftNavBar1_Load(object sender, EventArgs e)
@@ -28,6 +30,14 @@
         private void leftNavBar1_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void OnUserLogin(object sender, EventArgs e)
+        {
+            // testing lang 'to
+            //mainForm.ShowPopup(new SuccessModal(mainForm));
+            
+            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }

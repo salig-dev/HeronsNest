@@ -1,3 +1,4 @@
+using HeronsNest.Components.Modal;
 using HeronsNest.Screens;
 using System.Diagnostics;
 
@@ -49,6 +50,27 @@ namespace HeronsNest
             
             // then saka natin sha i-add don sa mismong form
             Controls.Add(c);
+        }
+
+        public void ShowPopup(Control modal)
+        {
+            // Hide the screen (just for safety purposes)
+            Controls[0].Hide();
+
+            // Create an instance of the background and just
+            // replace the placeholder modal with  whatever is passed in the ShowPopup
+            ModalControl _modal = new();
+            _modal.Dock = DockStyle.Fill;
+            _modal.InsertNewModal(modal);
+
+            // then add it
+            Controls.Add(_modal);
+        }
+
+        public void OnPopupHide(Control currentModal)
+        {
+            Controls.RemoveAt(Controls.Count - 1);
+            Controls[0].Show();
         }
 
         private void Landing_Load(object sender, EventArgs e)

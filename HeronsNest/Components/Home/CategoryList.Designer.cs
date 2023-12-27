@@ -1,6 +1,6 @@
 ﻿namespace HeronsNest.Components.Home
 {
-    partial class HomeSection
+    partial class CategoryList
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            customListView1 = new List.CustomListView();
+            cardListView = new List.CustomListView();
             categoryListItem1 = new CategoryListItem();
             categoryListItem2 = new CategoryListItem();
             categoryListItem3 = new CategoryListItem();
             categoryListItem4 = new CategoryListItem();
             categoryListItem5 = new CategoryListItem();
             categoryListItem6 = new CategoryListItem();
-            customListView1.SuspendLayout();
+            cardListView.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -49,21 +49,21 @@
             label1.TabIndex = 0;
             label1.Text = "Category";
             // 
-            // customListView1
+            // cardListView
             // 
-            customListView1.AutoScroll = true;
-            customListView1.Controls.Add(categoryListItem1);
-            customListView1.Controls.Add(categoryListItem2);
-            customListView1.Controls.Add(categoryListItem3);
-            customListView1.Controls.Add(categoryListItem4);
-            customListView1.Controls.Add(categoryListItem5);
-            customListView1.Controls.Add(categoryListItem6);
-            customListView1.DataSource = null;
-            customListView1.Location = new Point(15, 40);
-            customListView1.Name = "customListView1";
-            customListView1.Size = new Size(772, 208);
-            customListView1.TabIndex = 1;
-            customListView1.WrapContents = false;
+            cardListView.AutoScroll = true;
+            cardListView.Controls.Add(categoryListItem1);
+            cardListView.Controls.Add(categoryListItem2);
+            cardListView.Controls.Add(categoryListItem3);
+            cardListView.Controls.Add(categoryListItem4);
+            cardListView.Controls.Add(categoryListItem5);
+            cardListView.Controls.Add(categoryListItem6);
+            cardListView.DataSource = null;
+            cardListView.Location = new Point(15, 40);
+            cardListView.Name = "cardListView";
+            cardListView.Size = new Size(772, 237);
+            cardListView.TabIndex = 1;
+            cardListView.WrapContents = false;
             // 
             // categoryListItem1
             // 
@@ -107,15 +107,15 @@
             categoryListItem6.Size = new Size(150, 201);
             categoryListItem6.TabIndex = 5;
             // 
-            // HomeSection
+            // CategoryList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(customListView1);
+            Controls.Add(cardListView);
             Controls.Add(label1);
-            Name = "HomeSection";
-            Size = new Size(800, 259);
-            customListView1.ResumeLayout(false);
+            Name = "CategoryList";
+            Size = new Size(800, 280);
+            cardListView.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,7 +123,7 @@
         #endregion
 
         private Label label1;
-        private List.CustomListView customListView1;
+        private List.CustomListView cardListView;
         private CategoryListItem categoryListItem1;
         private CategoryListItem categoryListItem2;
         private CategoryListItem categoryListItem3;

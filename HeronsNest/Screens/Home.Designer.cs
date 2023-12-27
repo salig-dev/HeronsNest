@@ -31,8 +31,9 @@
             leftNavBar1 = new Components.LeftNavBar();
             label1 = new Label();
             categoryListView = new Components.List.CustomListView();
-            homeSection2 = new Components.Home.HomeSection();
-            homeSection1 = new Components.Home.HomeSection();
+            homeSection2 = new Components.Home.CategoryList();
+            homeSection1 = new Components.Home.CategoryList();
+            comp_Searchbar1 = new Components.Comp_Searchbar();
             categoryListView.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             leftNavBar1.AutoSize = true;
             leftNavBar1.BackColor = Color.White;
             leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.MainForm = null;
             leftNavBar1.Name = "leftNavBar1";
             leftNavBar1.Size = new Size(200, 600);
             leftNavBar1.TabIndex = 21;
@@ -83,10 +85,19 @@
             homeSection1.Size = new Size(773, 251);
             homeSection1.TabIndex = 25;
             // 
+            // comp_Searchbar1
+            // 
+            comp_Searchbar1.Location = new Point(215, 19);
+            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
+            comp_Searchbar1.Name = "comp_Searchbar1";
+            comp_Searchbar1.Size = new Size(769, 44);
+            comp_Searchbar1.TabIndex = 25;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(comp_Searchbar1);
             Controls.Add(categoryListView);
             Controls.Add(label1);
             Controls.Add(leftNavBar1);
@@ -102,7 +113,8 @@
         private Components.LeftNavBar leftNavBar1;
         private Label label1;
         private Components.List.CustomListView categoryListView;
-        private Components.Home.HomeSection homeSection2;
-        private Components.Home.HomeSection homeSection1;
+        private Components.Home.CategoryList homeSection2;
+        private Components.Home.CategoryList homeSection1;
+        private Components.Comp_Searchbar comp_Searchbar1;
     }
 }
