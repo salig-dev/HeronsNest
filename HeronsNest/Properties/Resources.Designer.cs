@@ -63,6 +63,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_us_icon {
+            get {
+                object obj = ResourceManager.GetObject("about-us-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_placeholder {
             get {
                 object obj = ResourceManager.GetObject("book_placeholder", resourceCulture);
@@ -202,6 +212,26 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap popup_bg {
+            get {
+                object obj = ResourceManager.GetObject("popup-bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SaligDevLogo {
+            get {
+                object obj = ResourceManager.GetObject("SaligDevLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sampleBook {
             get {
                 object obj = ResourceManager.GetObject("sampleBook", resourceCulture);
@@ -215,6 +245,36 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap search_solid {
             get {
                 object obj = ResourceManager.GetObject("search-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap success_icon {
+            get {
+                object obj = ResourceManager.GetObject("success-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tandc {
+            get {
+                object obj = ResourceManager.GetObject("tandc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UMak_Gradient_Blue {
+            get {
+                object obj = ResourceManager.GetObject("UMak-Gradient-Blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

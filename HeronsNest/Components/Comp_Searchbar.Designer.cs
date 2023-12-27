@@ -35,14 +35,14 @@
             btnSearch = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
+            dateText = new Label();
+            pictureBox2 = new PictureBox();
             timeText = new Label();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // cmbCategory
@@ -97,7 +97,7 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(dateText);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(timeText);
             panel2.Controls.Add(pictureBox1);
@@ -106,6 +106,30 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(241, 35);
             panel2.TabIndex = 5;
+            // 
+            // dateText
+            // 
+            dateText.AutoSize = true;
+            dateText.BackColor = Color.Transparent;
+            dateText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateText.Location = new Point(137, 13);
+            dateText.Name = "dateText";
+            dateText.Size = new Size(80, 15);
+            dateText.TabIndex = 3;
+            dateText.Text = "27 - 11 - 2023";
+            dateText.TextAlign = ContentAlignment.MiddleCenter;
+            dateText.Click += label1_Click_1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(111, 10);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(26, 20);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // timeText
             // 
@@ -130,30 +154,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(137, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 15);
-            label1.TabIndex = 3;
-            label1.Text = "27 - 11 - 2023";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click_1;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(106, 10);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(26, 20);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // Comp_Searchbar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -163,13 +163,14 @@
             Controls.Add(panel2);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Comp_Searchbar";
-            Size = new Size(607, 44);
+            Size = new Size(641, 44);
+            Load += Comp_Searchbar_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -188,7 +189,7 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Label timeText;
-        private Label label1;
+        private Label dateText;
         private PictureBox pictureBox2;
     }
 }
