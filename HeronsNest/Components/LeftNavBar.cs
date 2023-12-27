@@ -56,7 +56,7 @@ namespace HeronsNest.Components
 
         private void BalanceClicked(object sender, EventArgs e)
         {
-
+            MainForm?.SwitchView(new Balance(MainForm));
         }
     }
 }
