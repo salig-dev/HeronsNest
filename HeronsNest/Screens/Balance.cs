@@ -12,9 +12,13 @@ namespace HeronsNest.Screens
 {
     public partial class Balance : UserControl
     {
-        public Balance()
+        Landing mainForm;
+        public Balance(Landing mainForm)
         {
             InitializeComponent();
+
+            this.mainForm = mainForm;
+            leftNavBar1.MainForm = mainForm;
         }
     }
 }
