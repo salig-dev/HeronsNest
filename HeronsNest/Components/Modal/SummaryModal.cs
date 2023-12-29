@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HeronsNest.Components.Modal
 {
-    public partial class ReserveBook : UserControl
+    public partial class SummaryModal : UserControl
     {
-        public ReserveBook()
+        public SummaryModal()
         {
             InitializeComponent();
-        }
-
-        private void ReserveBook_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
