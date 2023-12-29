@@ -80,7 +80,6 @@
             FromMonthBorrow.Name = "FromMonthBorrow";
             FromMonthBorrow.Size = new Size(66, 23);
             FromMonthBorrow.TabIndex = 3;
-            FromMonthBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // FromDayBorrow
             // 
@@ -89,7 +88,6 @@
             FromDayBorrow.Name = "FromDayBorrow";
             FromDayBorrow.Size = new Size(66, 23);
             FromDayBorrow.TabIndex = 3;
-            FromDayBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // FromYearBorrow
             // 
@@ -98,7 +96,6 @@
             FromYearBorrow.Name = "FromYearBorrow";
             FromYearBorrow.Size = new Size(97, 23);
             FromYearBorrow.TabIndex = 3;
-            FromYearBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // ToMonthBorrow
             // 
@@ -107,7 +104,6 @@
             ToMonthBorrow.Name = "ToMonthBorrow";
             ToMonthBorrow.Size = new Size(66, 23);
             ToMonthBorrow.TabIndex = 3;
-            ToMonthBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // ToDayBorrow
             // 
@@ -116,7 +112,6 @@
             ToDayBorrow.Name = "ToDayBorrow";
             ToDayBorrow.Size = new Size(66, 23);
             ToDayBorrow.TabIndex = 3;
-            ToDayBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // ToYearBorrow
             // 
@@ -125,7 +120,6 @@
             ToYearBorrow.Name = "ToYearBorrow";
             ToYearBorrow.Size = new Size(97, 23);
             ToYearBorrow.TabIndex = 3;
-            ToYearBorrow.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // fromBorrow
             // 
@@ -135,7 +129,6 @@
             fromBorrow.Size = new Size(35, 15);
             fromBorrow.TabIndex = 4;
             fromBorrow.Text = "From";
-            fromBorrow.Click += this.fromBorrow_Click;
             // 
             // toBorrow
             // 
@@ -193,7 +186,6 @@
             Controls.Add(bookBorrow);
             Name = "BorrowBook";
             Size = new Size(420, 360);
-            Load += this.BorrowBook_Load;
             ResumeLayout(false);
             PerformLayout();
         }

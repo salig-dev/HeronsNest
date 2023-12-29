@@ -35,7 +35,7 @@
             // 
             // iconHolder
             // 
-            iconHolder.Location = new Point(14, 13);
+            iconHolder.Location = new Point(18, 10);
             iconHolder.Name = "iconHolder";
             iconHolder.Size = new Size(15, 15);
             iconHolder.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -46,7 +46,7 @@
             // 
             buttonTitle.AutoSize = true;
             buttonTitle.Font = new Font("Segoe UI", 8F);
-            buttonTitle.Location = new Point(51, 15);
+            buttonTitle.Location = new Point(55, 12);
             buttonTitle.Name = "buttonTitle";
             buttonTitle.Size = new Size(65, 13);
             buttonTitle.TabIndex = 1;
