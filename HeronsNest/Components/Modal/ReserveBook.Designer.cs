@@ -53,7 +53,6 @@
             returnButtonreserve.Size = new Size(27, 21);
             returnButtonreserve.TabIndex = 2;
             returnButtonreserve.Text = "<-";
-            returnButtonreserve.Click += this.returnButtonborrow_Click;
             // 
             // reserveDetails
             // 
@@ -73,7 +72,6 @@
             fromReserve.Size = new Size(35, 15);
             fromReserve.TabIndex = 4;
             fromReserve.Text = "From";
-            fromReserve.Click += this.fromBorrow_Click;
             // 
             // FromMonthReserve
             // 
@@ -82,7 +80,6 @@
             FromMonthReserve.Name = "FromMonthReserve";
             FromMonthReserve.Size = new Size(66, 23);
             FromMonthReserve.TabIndex = 3;
-            FromMonthReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // FromDayReserve
             // 
@@ -91,7 +88,6 @@
             FromDayReserve.Name = "FromDayReserve";
             FromDayReserve.Size = new Size(66, 23);
             FromDayReserve.TabIndex = 3;
-            FromDayReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // FromYearReserve
             // 
@@ -100,7 +96,6 @@
             FromYearReserve.Name = "FromYearReserve";
             FromYearReserve.Size = new Size(97, 23);
             FromYearReserve.TabIndex = 3;
-            FromYearReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // toReserve
             // 
@@ -118,7 +113,6 @@
             ToMonthReserve.Name = "ToMonthReserve";
             ToMonthReserve.Size = new Size(66, 23);
             ToMonthReserve.TabIndex = 3;
-            ToMonthReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // ToDayReserve
             // 
@@ -127,7 +121,6 @@
             ToDayReserve.Name = "ToDayReserve";
             ToDayReserve.Size = new Size(66, 23);
             ToDayReserve.TabIndex = 3;
-            ToDayReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // ToYearReserve
             // 
@@ -136,7 +129,6 @@
             ToYearReserve.Name = "ToYearReserve";
             ToYearReserve.Size = new Size(97, 23);
             ToYearReserve.TabIndex = 3;
-            ToYearReserve.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // serialReserve
             // 
@@ -146,7 +138,6 @@
             serialReserve.Size = new Size(87, 15);
             serialReserve.TabIndex = 4;
             serialReserve.Text = "Book Serial No.";
-            serialReserve.Click += this.serialBorrow_Click;
             // 
             // textBox1
             // 
@@ -155,7 +146,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(274, 20);
             textBox1.TabIndex = 5;
-            textBox1.TextChanged += this.textBox1_TextChanged;
             // 
             // verificationReserve
             // 
@@ -166,7 +156,6 @@
             verificationReserve.Size = new Size(85, 13);
             verificationReserve.TabIndex = 4;
             verificationReserve.Text = "For Verification";
-            verificationReserve.Click += this.verificationBorrow_Click;
             // 
             // bookReserve
             // 

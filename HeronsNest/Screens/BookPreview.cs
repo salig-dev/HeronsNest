@@ -7,7 +7,7 @@
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            // leftNavBar1.MainForm = mainForm;
+            leftNavBar1.MainForm = mainForm;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

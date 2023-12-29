@@ -56,52 +56,49 @@
             customListView1.FlowDirection = FlowDirection.TopDown;
             customListView1.Location = new Point(9, 132);
             customListView1.Name = "customListView1";
-            customListView1.Size = new Size(188, 174);
+            customListView1.Size = new Size(188, 231);
             customListView1.TabIndex = 0;
             // 
             // iconButton1
             // 
-            iconButton1.AutoSize = true;
+            iconButton1.Dock = DockStyle.Left;
             iconButton1.Image = Properties.Resources.house_solid;
             iconButton1.Location = new Point(3, 3);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(91, 31);
+            iconButton1.Size = new Size(159, 44);
             iconButton1.TabIndex = 0;
             iconButton1.Text = "Home";
             iconButton1.Click += HomeClicked;
             // 
             // iconButton2
             // 
-            iconButton2.AutoSize = true;
-            iconButton2.Dock = DockStyle.Top;
+            iconButton2.Dock = DockStyle.Left;
             iconButton2.Image = Properties.Resources.magnifying_glass_solid;
-            iconButton2.Location = new Point(3, 40);
+            iconButton2.Location = new Point(3, 53);
             iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(105, 31);
+            iconButton2.Size = new Size(154, 44);
             iconButton2.TabIndex = 1;
             iconButton2.Text = "Search";
             iconButton2.Click += SearchClicked;
             // 
             // iconButton3
             // 
-            iconButton3.AutoSize = true;
             iconButton3.Dock = DockStyle.Top;
             iconButton3.Image = Properties.Resources.book_solid;
-            iconButton3.Location = new Point(3, 77);
+            iconButton3.Location = new Point(3, 103);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(105, 31);
+            iconButton3.Size = new Size(159, 43);
             iconButton3.TabIndex = 2;
             iconButton3.Text = "My Shelf";
             iconButton3.Click += MyShelfClicked;
             // 
             // iconButton4
             // 
-            iconButton4.AutoSize = true;
             iconButton4.Dock = DockStyle.Top;
             iconButton4.Image = Properties.Resources.money_bills_solid;
-            iconButton4.Location = new Point(3, 114);
+            iconButton4.Location = new Point(3, 152);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(105, 31);
+            iconButton4.Size = new Size(159, 45);
             iconButton4.TabIndex = 3;
             iconButton4.Text = "Balance";
             iconButton4.Click += BalanceClicked;
@@ -190,7 +187,6 @@
             Name = "LeftNavBar";
             Size = new Size(206, 622);
             customListView1.ResumeLayout(false);
-            customListView1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             customListView2.ResumeLayout(false);
