@@ -82,7 +82,7 @@
             // 
             bookCard1.Location = new Point(203, 225);
             bookCard1.Name = "bookCard1";
-            bookCard1.Size = new Size(316, 300);
+            bookCard1.Size = new Size(207, 187);
             bookCard1.TabIndex = 7;
             // 
             // label1
@@ -111,9 +111,9 @@
             // 
             // bookCard2
             // 
-            bookCard2.Location = new Point(525, 225);
+            bookCard2.Location = new Point(416, 225);
             bookCard2.Name = "bookCard2";
-            bookCard2.Size = new Size(316, 300);
+            bookCard2.Size = new Size(214, 187);
             bookCard2.TabIndex = 18;
             // 
             // comp_Searchbar1
@@ -126,8 +126,10 @@
             // 
             // leftNavBar1
             // 
+            leftNavBar1.AutoSize = true;
             leftNavBar1.BackColor = Color.White;
             leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.MainForm = null;
             leftNavBar1.Name = "leftNavBar1";
             leftNavBar1.Size = new Size(200, 600);
             leftNavBar1.TabIndex = 20;
