@@ -31,10 +31,7 @@
             leftNavBar1 = new Components.LeftNavBar();
             label1 = new Label();
             categoryListView = new Components.List.CustomListView();
-            homeSection2 = new Components.Home.CategoryList();
-            homeSection1 = new Components.Home.CategoryList();
             comp_Searchbar1 = new Components.Comp_Searchbar();
-            categoryListView.SuspendLayout();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -61,8 +58,6 @@
             // 
             categoryListView.Anchor = AnchorStyles.None;
             categoryListView.AutoScroll = true;
-            categoryListView.Controls.Add(homeSection2);
-            categoryListView.Controls.Add(homeSection1);
             categoryListView.DataSource = null;
             categoryListView.FlowDirection = FlowDirection.TopDown;
             categoryListView.Location = new Point(215, 128);
@@ -70,20 +65,6 @@
             categoryListView.Size = new Size(769, 451);
             categoryListView.TabIndex = 24;
             categoryListView.WrapContents = false;
-            // 
-            // homeSection2
-            // 
-            homeSection2.Location = new Point(3, 3);
-            homeSection2.Name = "homeSection2";
-            homeSection2.Size = new Size(773, 251);
-            homeSection2.TabIndex = 24;
-            // 
-            // homeSection1
-            // 
-            homeSection1.Location = new Point(3, 260);
-            homeSection1.Name = "homeSection1";
-            homeSection1.Size = new Size(773, 251);
-            homeSection1.TabIndex = 25;
             // 
             // comp_Searchbar1
             // 
@@ -103,8 +84,7 @@
             Controls.Add(leftNavBar1);
             Name = "Home";
             Size = new Size(1000, 600);
-            Load += Home_Load_1;
-            categoryListView.ResumeLayout(false);
+            Load += OnScreenLoaded;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,8 +93,6 @@
         private Components.LeftNavBar leftNavBar1;
         private Label label1;
         private Components.List.CustomListView categoryListView;
-        private Components.Home.CategoryList homeSection2;
-        private Components.Home.CategoryList homeSection1;
         private Components.Comp_Searchbar comp_Searchbar1;
     }
 }

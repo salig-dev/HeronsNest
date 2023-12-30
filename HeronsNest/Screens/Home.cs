@@ -1,7 +1,11 @@
-﻿using System;
+﻿using HeronsNest.Components.Home;
+using HeronsNest.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +17,7 @@ namespace HeronsNest.Screens
     public partial class Home : UserControl
     {
         Landing mainForm;
+        private BookContext? bookContext;
 
         public Home(Landing mainForm)
         {
@@ -26,29 +31,31 @@ namespace HeronsNest.Screens
             leftNavBar1.MainForm = mainForm;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        ~Home()
         {
-            mainForm.SwitchView(new Login(mainForm));
+            if (bookContext != null) {
+                bookContext.Dispose();  
+                bookContext = null;
+            }
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void OnScreenLoaded(object sender, EventArgs e)
         {
+            int amount = 5;
+            var categories = mainForm.CategoryLoader?.GetRandomCategories(amount);
+            Debug.WriteLine(categories?.Count);
 
-        }
+            for (int i = 0; i < categories?.Count; i++)
+            {
+                var relatedBooks = mainForm.BookLoader?.GetBooksFromCategory(categories[i]);
+                CategoryList list = new();
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mainForm.SwitchView(new MyShelf(mainForm));
-        }
+                Debug.WriteLine(categories[i].categoryName);
+                
+                list.RenderCategory(relatedBooks);
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainForm.SwitchView(new BookPreview(mainForm));
-        }
-
-        private void Home_Load_1(object sender, EventArgs e)
-        {
-
+                categoryListView.Controls.Add(list);
+            }
         }
     }
 }

@@ -40,7 +40,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Landing";
             Text = "Heron's Nest";
-            Load += Landing_Load;
+            Load += OnLoad;
             ResumeLayout(false);
         }
 

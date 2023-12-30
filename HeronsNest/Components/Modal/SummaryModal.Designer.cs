@@ -52,7 +52,6 @@
             label.Size = new Size(98, 25);
             label.TabIndex = 1;
             label.Text = "Summary";
-            label.Click += this.label_Click;
             // 
             // bookTitletext
             // 
@@ -63,7 +62,6 @@
             bookTitletext.Size = new Size(91, 21);
             bookTitletext.TabIndex = 2;
             bookTitletext.Text = "Book Title:";
-            bookTitletext.Click += this.label1_Click;
             // 
             // BorrowerNameText
             // 
@@ -74,7 +72,6 @@
             BorrowerNameText.Size = new Size(134, 21);
             BorrowerNameText.TabIndex = 3;
             BorrowerNameText.Text = "Borrower Name:";
-            BorrowerNameText.Click += this.BorrowerNameText_Click;
             // 
             // bookSerialNumberText
             // 
@@ -85,7 +82,6 @@
             bookSerialNumberText.Size = new Size(168, 21);
             bookSerialNumberText.TabIndex = 4;
             bookSerialNumberText.Text = "Book Serial Number:";
-            bookSerialNumberText.Click += this.bookSerialNumberText_Click;
             // 
             // DueDateText
             // 
@@ -138,7 +134,6 @@
             bookTitle.Size = new Size(102, 19);
             bookTitle.TabIndex = 9;
             bookTitle.Text = "Book Title Here";
-            bookTitle.Click += this.label1_Click_1;
             // 
             // bookSerialNumber
             // 
@@ -199,7 +194,6 @@
             Controls.Add(label);
             Name = "SummaryModal";
             Size = new Size(360, 420);
-            Load += this.SummaryModal_Load;
             ResumeLayout(false);
             PerformLayout();
         }
