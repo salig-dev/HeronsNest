@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeronsNest.Algorithms
+namespace HeronsNest.Algorithms.Books
 {
     internal class BooksSorter
     {
-
-
         public Book[] Sort(Book[] books)
         {
-            int pivot = ((int)Math.Floor((double)books.Length / 2));
+            int pivot = (int)Math.Floor((double)books.Length / 2);
 
             Book[] left = Sort(Partition(books, 0, pivot));
             Book[] right = Sort(Partition(books, pivot, books.Length - 1));
@@ -42,7 +40,7 @@ namespace HeronsNest.Algorithms
             // Iterate through both arrays until one is exhausted
             while (leftIndex < left.Length && rightIndex < right.Length)
             {
-                if (left[leftIndex].ISBN <= right[rightIndex].ISBN)
+                if (Convert.ToInt32(left[leftIndex].ISBN) <= Convert.ToInt32(right[rightIndex].ISBN))
                 {
                     sortedBooks.Add(left[leftIndex]);
                     leftIndex++;

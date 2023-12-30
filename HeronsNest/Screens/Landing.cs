@@ -1,12 +1,22 @@
+using HeronsNest.Algorithms.Loaders;
 using HeronsNest.Components.Modal;
+using HeronsNest.Context;
 using HeronsNest.Screens;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.Diagnostics;
 
 namespace HeronsNest
 {
     public partial class Landing : Form
     {
-        List<Control> screens = new List<Control>();
+        List<Control> screens = [];
+        BookContext? bookDbContext;
+        BookLoader? bookLoader;
+        CategoryLoader? categoryLoader;
+
+        public BookLoader? BookLoader { get { return bookLoader; } }
+        public CategoryLoader? CategoryLoader { get { return categoryLoader; } }
 
         private void InitializeScreens()
         {
@@ -47,7 +57,7 @@ namespace HeronsNest
             // meaning neto, c will fill the whole 
             // form
             c.Dock = DockStyle.Fill;
-            
+
             // then saka natin sha i-add don sa mismong form
             Controls.Add(c);
         }
@@ -73,9 +83,31 @@ namespace HeronsNest
             Controls[0].Show();
         }
 
-        private void Landing_Load(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
 
+            bookDbContext = new();
+
+            bookDbContext.Database.EnsureCreated();
+            
+            bookDbContext.Categories.Load();
+            bookDbContext.Books.Load();
+
+            bookLoader = new(bookDbContext);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+
+            bookDbContext?.Dispose();
+            bookDbContext = null;
+        }
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            
         }
     }
 }

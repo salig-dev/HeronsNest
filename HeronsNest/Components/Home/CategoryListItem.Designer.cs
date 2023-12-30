@@ -30,8 +30,8 @@
         {
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
+            bookTitleLabel = new Label();
+            authorInformationlabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -57,33 +57,33 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // label1
+            // bookTitleLabel
             // 
-            label1.BackColor = SystemColors.ControlLightLight;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(7, 123);
-            label1.Name = "label1";
-            label1.Size = new Size(134, 32);
-            label1.TabIndex = 2;
-            label1.Text = "Book Title";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            bookTitleLabel.BackColor = SystemColors.ControlLightLight;
+            bookTitleLabel.Font = new Font("Segoe UI", 12F);
+            bookTitleLabel.Location = new Point(7, 123);
+            bookTitleLabel.Name = "bookTitleLabel";
+            bookTitleLabel.Size = new Size(134, 32);
+            bookTitleLabel.TabIndex = 2;
+            bookTitleLabel.Text = "Book Title";
+            bookTitleLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // authorInformationlabel
             // 
-            label2.BackColor = SystemColors.ControlLightLight;
-            label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(7, 157);
-            label2.Name = "label2";
-            label2.Size = new Size(134, 31);
-            label2.TabIndex = 3;
-            label2.Text = "Author, Year";
+            authorInformationlabel.BackColor = SystemColors.ControlLightLight;
+            authorInformationlabel.Font = new Font("Segoe UI", 9F);
+            authorInformationlabel.Location = new Point(7, 157);
+            authorInformationlabel.Name = "authorInformationlabel";
+            authorInformationlabel.Size = new Size(134, 31);
+            authorInformationlabel.TabIndex = 3;
+            authorInformationlabel.Text = "Author, Year";
             // 
             // CategoryListItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(authorInformationlabel);
+            Controls.Add(bookTitleLabel);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "CategoryListItem";
@@ -97,7 +97,7 @@
 
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label1;
-        private Label label2;
+        private Label bookTitleLabel;
+        private Label authorInformationlabel;
     }
 }
