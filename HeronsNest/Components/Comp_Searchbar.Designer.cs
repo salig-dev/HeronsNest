@@ -65,7 +65,7 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.ForeColor = SystemColors.ButtonHighlight;
             btnSearch.Image = (Image)resources.GetObject("btnSearch.Image");
-            btnSearch.Location = new Point(268, 15);
+            btnSearch.Location = new Point(264, 15);
             btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(24, 20);
@@ -93,7 +93,7 @@
             Controls.Add(cmbCategory);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Comp_Searchbar";
-            Size = new Size(382, 35);
+            Size = new Size(387, 35);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
