@@ -51,6 +51,7 @@ namespace HeronsNest.Screens
             {
                 var relatedBooks = mainForm.BookLoader?.GetBooksFromCategory(categories[i]);
 
+                // if walang laman si relatedBooks then wag siya i-add para di sayang yung UI space
                 if (relatedBooks?.Count == 0)
                 {
                     continue;

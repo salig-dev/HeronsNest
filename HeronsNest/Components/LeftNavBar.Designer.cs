@@ -61,44 +61,48 @@
             // 
             // iconButton1
             // 
+            iconButton1.AutoSize = true;
             iconButton1.Dock = DockStyle.Left;
             iconButton1.Image = Properties.Resources.house_solid;
             iconButton1.Location = new Point(3, 3);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(159, 44);
+            iconButton1.Size = new Size(95, 28);
             iconButton1.TabIndex = 0;
             iconButton1.Text = "Home";
             iconButton1.Click += HomeClicked;
             // 
             // iconButton2
             // 
+            iconButton2.AutoSize = true;
             iconButton2.Dock = DockStyle.Left;
             iconButton2.Image = Properties.Resources.magnifying_glass_solid;
-            iconButton2.Location = new Point(3, 53);
+            iconButton2.Location = new Point(3, 37);
             iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(154, 44);
+            iconButton2.Size = new Size(99, 28);
             iconButton2.TabIndex = 1;
             iconButton2.Text = "Search";
             iconButton2.Click += SearchClicked;
             // 
             // iconButton3
             // 
+            iconButton3.AutoSize = true;
             iconButton3.Dock = DockStyle.Top;
             iconButton3.Image = Properties.Resources.book_solid;
-            iconButton3.Location = new Point(3, 103);
+            iconButton3.Location = new Point(3, 71);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(159, 43);
+            iconButton3.Size = new Size(109, 28);
             iconButton3.TabIndex = 2;
             iconButton3.Text = "My Shelf";
             iconButton3.Click += MyShelfClicked;
             // 
             // iconButton4
             // 
+            iconButton4.AutoSize = true;
             iconButton4.Dock = DockStyle.Top;
             iconButton4.Image = Properties.Resources.money_bills_solid;
-            iconButton4.Location = new Point(3, 152);
+            iconButton4.Location = new Point(3, 105);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(159, 45);
+            iconButton4.Size = new Size(109, 28);
             iconButton4.TabIndex = 3;
             iconButton4.Text = "Balance";
             iconButton4.Click += BalanceClicked;
@@ -162,7 +166,7 @@
             iconButton5.Image = Properties.Resources.about_us_icon;
             iconButton5.Location = new Point(3, 3);
             iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(144, 31);
+            iconButton5.Size = new Size(148, 28);
             iconButton5.TabIndex = 0;
             iconButton5.Text = "About SaligTech";
             // 
@@ -171,11 +175,11 @@
             iconButton8.AutoSize = true;
             iconButton8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             iconButton8.Image = Properties.Resources.tandc;
-            iconButton8.Location = new Point(3, 40);
+            iconButton8.Location = new Point(3, 37);
             iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(173, 31);
+            iconButton8.Size = new Size(108, 28);
             iconButton8.TabIndex = 3;
-            iconButton8.Text = "Terms and Conditions";
+            iconButton8.Text = "Log-Out";
             // 
             // LeftNavBar
             // 
@@ -187,6 +191,7 @@
             Name = "LeftNavBar";
             Size = new Size(206, 622);
             customListView1.ResumeLayout(false);
+            customListView1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             customListView2.ResumeLayout(false);

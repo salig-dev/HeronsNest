@@ -23,7 +23,7 @@ namespace HeronsNest.Components.Home
 
 
         protected override void OnLoad(EventArgs e)
-        {
+        {  
             base.OnLoad(e);
             authorInformationlabel.Text = Book.Author;
             bookTitleLabel.Text = Book.Title;

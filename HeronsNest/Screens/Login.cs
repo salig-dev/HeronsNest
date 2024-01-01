@@ -1,4 +1,6 @@
-﻿using HeronsNest.Components.Modal;
+﻿using HeronsNest.Algorithms.Authentication;
+using HeronsNest.Components.Modal;
+using HeronsNest.Context;
 
 namespace HeronsNest.Screens
 {
@@ -22,22 +24,33 @@ namespace HeronsNest.Screens
             mainForm.ShowPopup(new SuccessModal(mainForm));
         }
 
-        private void leftNavBar1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void leftNavBar1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void OnUserLogin(object sender, EventArgs e)
         {
-            // testing lang 'to
+            var Result = mainForm.Authenticator!.LoginUser(new Models.DTO.UserDTO()
+            {
+                Id = usernameTextBox.Text,
+                Password = passwordTextBox.Text,
+            });
+
+            tipTextLabel.Text = "Loading...";
+
+            switch (Result)
+            {
+                case Enums.AuthResult.Success:
+                    mainForm.ShowPopup(new SuccessModal(mainForm));
+                    mainForm.SwitchView(new Home(mainForm));
+                    break;
+                case Enums.AuthResult.Failed:
+                    tipTextLabel.Text = "Invalid Credentials!";
+                    break;
+                case Enums.AuthResult.NotFound:
+                    tipTextLabel.Text = "Account not found!";
+                    break;
+            }
+
+
+            // popup testing
             //mainForm.ShowPopup(new SuccessModal(mainForm));
-            
-            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }

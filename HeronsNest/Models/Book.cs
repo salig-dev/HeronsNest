@@ -41,13 +41,9 @@ public partial class Book
 
     public double? AvgRating { get; set; }
 
-    public string? Rated1 { get; set; }
+    public string? FkReservedBy { get; set; }
 
-    public string? Rated2 { get; set; }
+    public virtual ICollection<BookReservation> BookReservations { get; set; } = new List<BookReservation>();
 
-    public string? Rated3 { get; set; }
-
-    public string? Rated4 { get; set; }
-
-    public string? Rated5 { get; set; }
+    public virtual User? FkReservedByNavigation { get; set; }
 }
