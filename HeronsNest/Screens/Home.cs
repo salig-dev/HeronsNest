@@ -39,8 +39,10 @@ namespace HeronsNest.Screens
             }
         }
 
-        private void OnScreenLoaded(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+
             int amount = 5;
             var categories = mainForm.CategoryLoader?.GetRandomCategories(amount);
             Debug.WriteLine(categories?.Count);
@@ -48,14 +50,20 @@ namespace HeronsNest.Screens
             for (int i = 0; i < categories?.Count; i++)
             {
                 var relatedBooks = mainForm.BookLoader?.GetBooksFromCategory(categories[i]);
-                CategoryList list = new();
 
-                Debug.WriteLine(categories[i].categoryName);
-                
-                list.RenderCategory(relatedBooks);
+                if (relatedBooks?.Count == 0)
+                {
+                    continue;
+                }
 
+                CategoryList list = new(categories[i], relatedBooks);
                 categoryListView.Controls.Add(list);
             }
+        }
+
+        private void OnScreenLoaded(object sender, EventArgs e)
+        {
+            
         }
     }
 }

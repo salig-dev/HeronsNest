@@ -5,25 +5,32 @@ namespace HeronsNest.Components.Home
 {
     public partial class CategoryList : UserControl
     {
-        public CategoryList()
+        private readonly List<Book> Books;
+        private readonly Category Category;
+        public CategoryList(Category category, List<Book> books)
         {
             InitializeComponent();
+
+            Books = books;
+            Category = category;
 
             cardListView.AutoScroll = false;
             cardListView.WrapContents = false;
             cardListView.AutoScroll = true;
         }
 
-        public void RenderCategory(List<Book> listOfBooks)
+        protected override void OnLoad(EventArgs e)
         {
-            
-            foreach (Book book in listOfBooks)
-            {
-                CategoryListItem item = new CategoryListItem();
-                item.RenderInformation(book);
+            base.OnLoad(e);
 
-                Controls.Add(item);
+            categoryLabel.Text = Category.CategoryName;
+            foreach (Book book in Books)
+            {
+                CategoryListItem item = new(book);
+
+                cardListView.Controls.Add(item);
             }
         }
+
     }
 }

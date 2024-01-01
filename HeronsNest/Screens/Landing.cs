@@ -89,12 +89,11 @@ namespace HeronsNest
 
             bookDbContext = new();
 
-            bookDbContext.Database.EnsureCreated();
-            
-            bookDbContext.Categories.Load();
             bookDbContext.Books.Load();
+            bookDbContext.Categories.Load();
 
             bookLoader = new(bookDbContext);
+            categoryLoader = new(bookDbContext);
         }
 
         protected override void OnClosing(CancelEventArgs e)
