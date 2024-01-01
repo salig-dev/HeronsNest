@@ -31,6 +31,7 @@
             leftNavBar1 = new Components.LeftNavBar();
             label1 = new Label();
             categoryListView = new Components.List.CustomListView();
+            comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
             SuspendLayout();
             // 
@@ -66,12 +67,19 @@
             categoryListView.TabIndex = 24;
             categoryListView.WrapContents = false;
             // 
+            // comp_DateTime1
+            // 
+            comp_DateTime1.Location = new Point(587, 22);
+            comp_DateTime1.Name = "comp_DateTime1";
+            comp_DateTime1.Size = new Size(248, 44);
+            comp_DateTime1.TabIndex = 26;
+            // 
             // comp_Searchbar1
             // 
-            comp_Searchbar1.Location = new Point(215, 19);
+            comp_Searchbar1.Location = new Point(216, 28);
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(769, 44);
+            comp_Searchbar1.Size = new Size(381, 35);
             comp_Searchbar1.TabIndex = 25;
             // 
             // Home
@@ -82,6 +90,7 @@
             Controls.Add(categoryListView);
             Controls.Add(label1);
             Controls.Add(leftNavBar1);
+            Controls.Add(comp_DateTime1);
             Name = "Home";
             Size = new Size(1000, 600);
             Load += OnScreenLoaded;
@@ -93,6 +102,7 @@
         private Components.LeftNavBar leftNavBar1;
         private Label label1;
         private Components.List.CustomListView categoryListView;
+        private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;
     }
 }

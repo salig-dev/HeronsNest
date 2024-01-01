@@ -7,24 +7,14 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Component Designer generated code
+        private Panel timeFrame;
+        private Label dateText;
+        private Label timeText;
+        private PictureBox icon_Calendar;
+        private PictureBox icon_Clock;
 
         /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -47,7 +37,7 @@
             timeFrame.Controls.Add(icon_Calendar);
             timeFrame.Controls.Add(timeText);
             timeFrame.Controls.Add(icon_Clock);
-            timeFrame.Location = new Point(4, 4);
+            timeFrame.Location = new Point(5, 3);
             timeFrame.MaximumSize = new Size(300, 48);
             timeFrame.Name = "timeFrame";
             timeFrame.Size = new Size(241, 35);
@@ -104,20 +94,12 @@
             Controls.Add(timeFrame);
             Name = "Comp_DateTime";
             Size = new Size(249, 44);
+            Load += Comp_DataTime_Load;
             timeFrame.ResumeLayout(false);
             timeFrame.PerformLayout();
-            Load += Comp_DataTime_Load;
             ((System.ComponentModel.ISupportInitialize)icon_Calendar).EndInit();
             ((System.ComponentModel.ISupportInitialize)icon_Clock).EndInit();
             ResumeLayout(false);
         }
-
-        #endregion
-
-        private Panel timeFrame;
-        private Label dateText;
-        private Label timeText;
-        private PictureBox icon_Calendar;
-        private PictureBox icon_Clock;
     }
 }
