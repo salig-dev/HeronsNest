@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HeronsNest;
 using Microsoft.EntityFrameworkCore;
 using HeronsNest.Models;
+using System.Diagnostics;
 namespace HeronsNest.Context;
 
 public partial class BookContext : DbContext
@@ -25,7 +26,16 @@ public partial class BookContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("DataSource=C:\\Users\\UZER\\source\\repos\\HeronsNest\\HeronsNest\\Context\\BookInformation.db");
+    {
+        // Use environment variable for database location
+        var databasePath = Environment.GetEnvironmentVariable("BOOK_INFORMATION_DB_PATH");
+        string workingDirectory = Environment.CurrentDirectory;
+        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+        // If no environment variable is set, use current directory as a fallback
+        databasePath ??= Path.Combine(projectDirectory + "\\Context\\BookInformation.db");
+        Debug.WriteLine(databasePath);
+        optionsBuilder.UseSqlite($"DataSource={databasePath}");
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
