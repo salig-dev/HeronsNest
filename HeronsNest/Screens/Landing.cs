@@ -1,3 +1,4 @@
+using HeronsNest.Algorithms;
 using HeronsNest.Algorithms.Authentication;
 using HeronsNest.Algorithms.Loaders;
 using HeronsNest.Components.Modal;
@@ -13,13 +14,16 @@ namespace HeronsNest
     {
         List<Control> screens = [];
         BookContext? bookDbContext;
+
         BookLoader? bookLoader;
         CategoryLoader? categoryLoader;
         Authenticator authenticator;
+        ReservationHandler reservationHandler;
 
         public BookLoader? BookLoader { get { return bookLoader; } }
         public CategoryLoader? CategoryLoader { get { return categoryLoader; } }
         public Authenticator? Authenticator { get { return authenticator; } }
+        public ReservationHandler? ReservationHandler { get { return reservationHandler; } }
 
         private void InitializeScreens()
         {
@@ -98,6 +102,7 @@ namespace HeronsNest
             bookLoader = new(bookDbContext);
             categoryLoader = new(bookDbContext);
             authenticator = new(bookDbContext);
+            reservationHandler = new(bookDbContext);
         }
 
         protected override void OnClosing(CancelEventArgs e)
