@@ -53,6 +53,7 @@
             otherbook1 = new PictureBox();
             leftNavBar1 = new Components.LeftNavBar();
             comp_Searchbar1 = new Components.Comp_Searchbar();
+            comp_DateTime1 = new Components.Comp_DateTime();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookRatingStars).BeginInit();
             authorDetails.SuspendLayout();
@@ -305,11 +306,18 @@
             // 
             // comp_Searchbar1
             // 
-            comp_Searchbar1.Location = new Point(212, 24);
+            comp_Searchbar1.Location = new Point(205, 28);
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(607, 44);
+            comp_Searchbar1.Size = new Size(382, 35);
             comp_Searchbar1.TabIndex = 18;
+            // 
+            // comp_DateTime1
+            // 
+            comp_DateTime1.Location = new Point(577, 23);
+            comp_DateTime1.Name = "comp_DateTime1";
+            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.TabIndex = 19;
             // 
             // BookPreview
             // 
@@ -332,6 +340,7 @@
             Controls.Add(bookTitle);
             Controls.Add(bookImage);
             Controls.Add(linkLabel1);
+            Controls.Add(comp_DateTime1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "BookPreview";
             Size = new Size(1000, 600);
@@ -373,5 +382,6 @@
         private PictureBox otherbook2;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_Searchbar comp_Searchbar1;
+        private Components.Comp_DateTime comp_DateTime1;
     }
 }

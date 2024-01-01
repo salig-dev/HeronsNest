@@ -35,13 +35,14 @@
             label1 = new Label();
             label4 = new Label();
             bookCard2 = new Components.BookCard();
-            comp_Searchbar1 = new Components.Comp_Searchbar();
             leftNavBar1 = new Components.LeftNavBar();
+            comp_DateTime1 = new Components.Comp_DateTime();
+            comp_Searchbar1 = new Components.Comp_Searchbar();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(348, 121);
+            button1.Location = new Point(359, 121);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(82, 22);
@@ -58,7 +59,7 @@
             label2.Font = new Font("Microsoft Sans Serif", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(0, 149, 168);
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(203, 119);
+            label2.Location = new Point(214, 119);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(127, 31);
@@ -72,7 +73,7 @@
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(76, 76, 76);
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(587, 176);
+            label3.Location = new Point(598, 176);
             label3.Name = "label3";
             label3.Size = new Size(129, 20);
             label3.TabIndex = 4;
@@ -80,7 +81,7 @@
             // 
             // bookCard1
             // 
-            bookCard1.Location = new Point(203, 225);
+            bookCard1.Location = new Point(214, 225);
             bookCard1.Name = "bookCard1";
             bookCard1.Size = new Size(207, 187);
             bookCard1.TabIndex = 7;
@@ -91,7 +92,7 @@
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(362, 177);
+            label1.Location = new Point(373, 177);
             label1.Name = "label1";
             label1.Size = new Size(140, 20);
             label1.TabIndex = 13;
@@ -103,7 +104,7 @@
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(76, 76, 76);
             label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(206, 177);
+            label4.Location = new Point(217, 177);
             label4.Name = "label4";
             label4.Size = new Size(84, 20);
             label4.TabIndex = 14;
@@ -111,18 +112,10 @@
             // 
             // bookCard2
             // 
-            bookCard2.Location = new Point(416, 225);
+            bookCard2.Location = new Point(427, 225);
             bookCard2.Name = "bookCard2";
             bookCard2.Size = new Size(214, 187);
             bookCard2.TabIndex = 18;
-            // 
-            // comp_Searchbar1
-            // 
-            comp_Searchbar1.Location = new Point(193, 26);
-            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
-            comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(394, 38);
-            comp_Searchbar1.TabIndex = 19;
             // 
             // leftNavBar1
             // 
@@ -134,14 +127,29 @@
             leftNavBar1.Size = new Size(200, 600);
             leftNavBar1.TabIndex = 20;
             // 
+            // comp_DateTime1
+            // 
+            comp_DateTime1.Location = new Point(576, 25);
+            comp_DateTime1.Name = "comp_DateTime1";
+            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.TabIndex = 22;
+            // 
+            // comp_Searchbar1
+            // 
+            comp_Searchbar1.Location = new Point(211, 30);
+            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
+            comp_Searchbar1.Name = "comp_Searchbar1";
+            comp_Searchbar1.Size = new Size(382, 35);
+            comp_Searchbar1.TabIndex = 21;
+            // 
             // MyShelf
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(leftNavBar1);
             Controls.Add(comp_Searchbar1);
+            Controls.Add(leftNavBar1);
             Controls.Add(bookCard2);
             Controls.Add(label4);
             Controls.Add(label1);
@@ -149,6 +157,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
+            Controls.Add(comp_DateTime1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MyShelf";
             Size = new Size(1000, 600);
@@ -182,7 +191,8 @@
         private Label label1;
         private Label label4;
         private Components.BookCard bookCard2;
-        private Components.Comp_Searchbar comp_Searchbar1;
         private Components.LeftNavBar leftNavBar1;
+        private Components.Comp_DateTime comp_DateTime1;
+        private Components.Comp_Searchbar comp_Searchbar1;
     }
 }

@@ -36,6 +36,8 @@
             label4 = new Label();
             label5 = new Label();
             balanceBookCard2 = new Components.BalanceBookCard();
+            comp_DateTime1 = new Components.Comp_DateTime();
+            comp_Searchbar2 = new Components.Comp_Searchbar();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -117,11 +119,27 @@
             balanceBookCard2.Size = new Size(658, 150);
             balanceBookCard2.TabIndex = 15;
             // 
+            // comp_DateTime1
+            // 
+            comp_DateTime1.Location = new Point(598, 22);
+            comp_DateTime1.Name = "comp_DateTime1";
+            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.TabIndex = 21;
+            // 
+            // comp_Searchbar2
+            // 
+            comp_Searchbar2.Location = new Point(225, 28);
+            comp_Searchbar2.Margin = new Padding(3, 2, 3, 2);
+            comp_Searchbar2.Name = "comp_Searchbar2";
+            comp_Searchbar2.Size = new Size(387, 35);
+            comp_Searchbar2.TabIndex = 22;
+            // 
             // Balance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 246, 246);
+            Controls.Add(comp_Searchbar2);
             Controls.Add(balanceBookCard2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -130,6 +148,7 @@
             Controls.Add(balanceBookCard1);
             Controls.Add(label1);
             Controls.Add(leftNavBar1);
+            Controls.Add(comp_DateTime1);
             Name = "Balance";
             Size = new Size(1000, 600);
             ResumeLayout(false);
@@ -146,5 +165,7 @@
         private Label label4;
         private Label label5;
         private Components.BalanceBookCard balanceBookCard2;
+        private Components.Comp_DateTime comp_DateTime1;
+        private Components.Comp_Searchbar comp_Searchbar2;
     }
 }
