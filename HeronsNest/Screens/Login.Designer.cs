@@ -30,9 +30,10 @@
         {
             pictureBox1 = new PictureBox();
             usernameTextBox = new TextBox();
-            textBox1 = new TextBox();
+            passwordTextBox = new TextBox();
             loginButton = new Button();
             pictureBox2 = new PictureBox();
+            tipTextLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -55,13 +56,13 @@
             usernameTextBox.Size = new Size(379, 23);
             usernameTextBox.TabIndex = 2;
             // 
-            // textBox1
+            // passwordTextBox
             // 
-            textBox1.Location = new Point(564, 353);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Password";
-            textBox1.Size = new Size(379, 23);
-            textBox1.TabIndex = 3;
+            passwordTextBox.Location = new Point(564, 353);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.PlaceholderText = "Password";
+            passwordTextBox.Size = new Size(379, 23);
+            passwordTextBox.TabIndex = 3;
             // 
             // loginButton
             // 
@@ -88,12 +89,23 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
+            // tipTextLabel
+            // 
+            tipTextLabel.Font = new Font("Segoe UI", 12F);
+            tipTextLabel.Location = new Point(564, 435);
+            tipTextLabel.Name = "tipTextLabel";
+            tipTextLabel.Size = new Size(379, 23);
+            tipTextLabel.TabIndex = 5;
+            tipTextLabel.Text = " ";
+            tipTextLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tipTextLabel);
             Controls.Add(loginButton);
-            Controls.Add(textBox1);
+            Controls.Add(passwordTextBox);
             Controls.Add(usernameTextBox);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -109,8 +121,9 @@
 
         private PictureBox pictureBox1;
         private TextBox usernameTextBox;
-        private TextBox textBox1;
+        private TextBox passwordTextBox;
         private Button loginButton;
         private PictureBox pictureBox2;
+        private Label tipTextLabel;
     }
 }

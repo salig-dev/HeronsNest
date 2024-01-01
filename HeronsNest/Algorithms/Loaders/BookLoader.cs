@@ -11,8 +11,8 @@ namespace HeronsNest.Algorithms.Loaders
 {
     public class BookLoader(BookContext context)
     {
-        private BookContext bookContext = context;
-        private BookFinder bookFinder = new();
+        private readonly BookContext bookContext = context;
+        private readonly BookFinder bookFinder = new();
 
         public List<Book> GetBooksFromCategory(Category category)
         {

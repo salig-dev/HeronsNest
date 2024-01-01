@@ -59,6 +59,7 @@
             // 
             // bookTitleLabel
             // 
+            bookTitleLabel.AutoEllipsis = true;
             bookTitleLabel.BackColor = SystemColors.ControlLightLight;
             bookTitleLabel.Font = new Font("Segoe UI", 12F);
             bookTitleLabel.Location = new Point(7, 123);
@@ -70,6 +71,7 @@
             // 
             // authorInformationlabel
             // 
+            authorInformationlabel.AutoEllipsis = true;
             authorInformationlabel.BackColor = SystemColors.ControlLightLight;
             authorInformationlabel.Font = new Font("Segoe UI", 9F);
             authorInformationlabel.Location = new Point(7, 157);

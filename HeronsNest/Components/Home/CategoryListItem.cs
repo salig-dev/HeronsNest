@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,19 @@ namespace HeronsNest.Components.Home
 {
     public partial class CategoryListItem : UserControl
     {
-        public CategoryListItem()
+        private readonly Book Book;
+        public CategoryListItem(Book book)
         {
             InitializeComponent();
+            Book = book;
         }
 
-        public void RenderInformation(Book book)
-        {
-            authorInformationlabel.Text = book.Author;
-            bookTitleLabel.Text = book.Title;
+
+        protected override void OnLoad(EventArgs e)
+        {  
+            base.OnLoad(e);
+            authorInformationlabel.Text = Book.Author;
+            bookTitleLabel.Text = Book.Title;
         }
     }
 }

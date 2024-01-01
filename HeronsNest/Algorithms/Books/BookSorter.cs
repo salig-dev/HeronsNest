@@ -40,7 +40,7 @@ namespace HeronsNest.Algorithms.Books
             // Iterate through both arrays until one is exhausted
             while (leftIndex < left.Length && rightIndex < right.Length)
             {
-                if (Convert.ToInt32(left[leftIndex].ISBN) <= Convert.ToInt32(right[rightIndex].ISBN))
+                if (Convert.ToInt32(left[leftIndex].Isbn) <= Convert.ToInt32(right[rightIndex].Isbn))
                 {
                     sortedBooks.Add(left[leftIndex]);
                     leftIndex++;
