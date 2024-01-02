@@ -1,13 +1,26 @@
-﻿namespace HeronsNest.Screens
+﻿using HeronsNest.Models;
+
+namespace HeronsNest.Screens
 {
     public partial class BookPreview : UserControl
     {
         Landing mainForm;
-        public BookPreview(Landing mainForm)
+        Book Book;
+        public BookPreview(Landing mainForm, Book book)
         {
             InitializeComponent();
             this.mainForm = mainForm;
             leftNavBar1.MainForm = mainForm;
+
+            Book = book;
+
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            bookTitle.Text = Book.Title;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

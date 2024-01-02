@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HeronsNest.Components;
+using HeronsNest.Models;
+using HeronsNest.Singleton;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +24,21 @@ namespace HeronsNest.Screens
 
             this.mainForm = mainForm;
             leftNavBar1.MainForm = mainForm;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            var userReservations = mainForm.ReservationHandler.UserReservations(UserSession.Instance.User);
+            
+            foreach (BookReservation r in userReservations)
+            {
+                var currentBook = mainForm.BookLoader.GetBookWithISBN(r.BookReserved);
+                BookCard card = new(r, currentBook);
+
+                cardListView.Controls.Add(card);
+            }
         }
 
         private void MyShelf_Load(object sender, EventArgs e)

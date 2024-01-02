@@ -27,11 +27,9 @@ public partial class BookContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        // Use environment variable for database location
         var databasePath = Environment.GetEnvironmentVariable("BOOK_INFORMATION_DB_PATH");
         string workingDirectory = Environment.CurrentDirectory;
         string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        // If no environment variable is set, use current directory as a fallback
         databasePath ??= Path.Combine(projectDirectory + "\\Context\\BookInformation.db");
         Debug.WriteLine(databasePath);
         optionsBuilder.UseSqlite($"DataSource={databasePath}");

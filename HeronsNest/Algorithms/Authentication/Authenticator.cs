@@ -7,6 +7,7 @@ using HeronsNest.Algorithms.Loaders;
 using HeronsNest.Context;
 using HeronsNest.Enums;
 using HeronsNest.Models.DTO;
+using HeronsNest.Singleton;
 
 namespace HeronsNest.Algorithms.Authentication
 {
@@ -21,6 +22,8 @@ namespace HeronsNest.Algorithms.Authentication
             var User = UserLoader.FindUser(credentials.Id);
 
             if (User == null) return AuthResult.NotFound;
+
+            UserSession.Instance.User = User;
 
             return User.Id == credentials.Id && User.Password == credentials.Password ? AuthResult.Success : AuthResult.Failed;
         }
