@@ -44,7 +44,6 @@ namespace HeronsNest.Components
 
         private void SearchClicked(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new BookPreview(MainForm));
 
         }
 
