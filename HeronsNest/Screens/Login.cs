@@ -1,6 +1,7 @@
 ﻿using HeronsNest.Algorithms.Authentication;
 using HeronsNest.Components.Modal;
 using HeronsNest.Context;
+using HeronsNest.Singleton;
 
 namespace HeronsNest.Screens
 {

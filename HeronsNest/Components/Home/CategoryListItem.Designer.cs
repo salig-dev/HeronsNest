@@ -46,6 +46,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += this.pictureBox1_Click;
             // 
             // pictureBox2
             // 
@@ -56,6 +57,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += this.pictureBox2_Click;
             // 
             // bookTitleLabel
             // 
@@ -68,6 +70,7 @@
             bookTitleLabel.TabIndex = 2;
             bookTitleLabel.Text = "Book Title";
             bookTitleLabel.TextAlign = ContentAlignment.MiddleLeft;
+            bookTitleLabel.Click += bookTitleLabel_Click;
             // 
             // authorInformationlabel
             // 
@@ -79,6 +82,7 @@
             authorInformationlabel.Size = new Size(134, 31);
             authorInformationlabel.TabIndex = 3;
             authorInformationlabel.Text = "Author, Year";
+            authorInformationlabel.Click += authorInformationlabel_Click;
             // 
             // CategoryListItem
             // 

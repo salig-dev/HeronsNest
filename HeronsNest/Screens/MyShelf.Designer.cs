@@ -31,13 +31,12 @@
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
-            bookCard1 = new Components.BookCard();
             label1 = new Label();
             label4 = new Label();
-            bookCard2 = new Components.BookCard();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
+            cardListView = new Components.List.CustomListView();
             SuspendLayout();
             // 
             // button1
@@ -79,20 +78,13 @@
             label3.TabIndex = 4;
             label3.Text = "Pending Books";
             // 
-            // bookCard1
-            // 
-            bookCard1.Location = new Point(214, 225);
-            bookCard1.Name = "bookCard1";
-            bookCard1.Size = new Size(207, 187);
-            bookCard1.TabIndex = 7;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(373, 177);
+            label1.Location = new Point(385, 177);
             label1.Name = "label1";
             label1.Size = new Size(140, 20);
             label1.TabIndex = 13;
@@ -109,13 +101,6 @@
             label4.Size = new Size(84, 20);
             label4.TabIndex = 14;
             label4.Text = "All Books";
-            // 
-            // bookCard2
-            // 
-            bookCard2.Location = new Point(427, 225);
-            bookCard2.Name = "bookCard2";
-            bookCard2.Size = new Size(214, 187);
-            bookCard2.TabIndex = 18;
             // 
             // leftNavBar1
             // 
@@ -142,18 +127,25 @@
             comp_Searchbar1.Size = new Size(382, 35);
             comp_Searchbar1.TabIndex = 21;
             // 
+            // cardListView
+            // 
+            cardListView.DataSource = null;
+            cardListView.Location = new Point(217, 210);
+            cardListView.Name = "cardListView";
+            cardListView.Size = new Size(759, 367);
+            cardListView.TabIndex = 23;
+            // 
             // MyShelf
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(cardListView);
             Controls.Add(comp_Searchbar1);
             Controls.Add(leftNavBar1);
-            Controls.Add(bookCard2);
             Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(bookCard1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
@@ -184,15 +176,12 @@
         private PictureBox pictureBox21;
         private PictureBox pictureBox22;
         private PictureBox pictureBox23;
-        private Components.BookCard bookCard4;
-        private Components.BookCard bookCard5;
-        private Components.BookCard bookCard6;
-        private Components.BookCard bookCard1;
+       
         private Label label1;
         private Label label4;
-        private Components.BookCard bookCard2;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;
+        private Components.List.CustomListView cardListView;
     }
 }
