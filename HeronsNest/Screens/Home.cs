@@ -57,7 +57,7 @@ namespace HeronsNest.Screens
                     continue;
                 }
 
-                CategoryList list = new(categories[i], relatedBooks);
+                CategoryList list = new(categories[i], relatedBooks, mainForm);
                 categoryListView.Controls.Add(list);
             }
         }

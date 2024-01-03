@@ -15,6 +15,19 @@ namespace HeronsNest.Components.Home
     public partial class CategoryListItem : UserControl
     {
         private readonly Book Book;
+        private EventHandler OnClickHandler;
+        public event EventHandler OnCardClick
+        {
+            add
+            {
+                OnClickHandler += value;
+            }
+
+            remove
+            {
+                OnClickHandler -= value;
+            }
+        }
         public CategoryListItem(Book book)
         {
             InitializeComponent();
@@ -38,6 +51,11 @@ namespace HeronsNest.Components.Home
         private void bookTitleLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OnCardClicked(object sender, EventArgs e)
+        {
+            OnClickHandler?.Invoke(this, e);
         }
     }
 }
