@@ -5,7 +5,7 @@ namespace HeronsNest.Screens
     public partial class BookPreview : UserControl
     {
         Landing mainForm;
-        Book Book;
+        private readonly Book Book;
         public BookPreview(Landing mainForm, Book book)
         {
             InitializeComponent();
