@@ -65,7 +65,7 @@
             // 
             // bookImage
             // 
-            bookImage.BorderStyle = BorderStyle.FixedSingle;
+            bookImage.Image = Properties.Resources.card_active;
             bookImage.Location = new Point(212, 138);
             bookImage.Name = "bookImage";
             bookImage.Size = new Size(164, 200);
