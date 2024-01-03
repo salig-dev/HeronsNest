@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using HeronsNest.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,9 +26,14 @@ public partial class BookContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlite("DataSource=C:\\Users\\UZER\\source\\repos\\HeronsNest\\HeronsNest\\Context\\BookInformation.db");
-
+    {
+        var databasePath = Environment.GetEnvironmentVariable("BOOK_INFORMATION_DB_PATH");
+        string workingDirectory = Environment.CurrentDirectory;
+        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+        databasePath ??= Path.Combine(projectDirectory + "\\Context\\BookInformation.db");
+        Debug.WriteLine(databasePath);
+        optionsBuilder.UseSqlite($"DataSource={databasePath}");
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Book>(entity =>
