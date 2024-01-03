@@ -32,9 +32,6 @@ namespace HeronsNest.Algorithms.Loaders
             return bookFinder.FindFromISBN(data, ISBN);
         }
 
-        public List<Book> GetBooksFromAuthor()
-        {
-            return [];
-        }
+        public List<Book> GetAllBooks() => bookContext.Books.ToList();
     }
 }

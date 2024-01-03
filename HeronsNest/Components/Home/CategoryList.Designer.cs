@@ -48,7 +48,7 @@
             cardListView.DataSource = null;
             cardListView.Location = new Point(15, 40);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(772, 237);
+            cardListView.Size = new Size(772, 345);
             cardListView.TabIndex = 1;
             cardListView.WrapContents = false;
             // 
@@ -59,7 +59,7 @@
             Controls.Add(cardListView);
             Controls.Add(categoryLabel);
             Name = "CategoryList";
-            Size = new Size(800, 280);
+            Size = new Size(800, 388);
             ResumeLayout(false);
             PerformLayout();
         }

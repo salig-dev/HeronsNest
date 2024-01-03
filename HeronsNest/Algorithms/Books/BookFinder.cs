@@ -11,12 +11,13 @@ namespace HeronsNest.Algorithms.Books
     {
         public List<Book> FindFromCategory(List<Book> source, Category category, int limit = 0)
         {
+
             var foundBooks = source.FindAll(match => match.Genres!.Contains(category.CategoryName!));
 
             if (foundBooks.Count >= limit) return foundBooks;
             if (limit > 0) return foundBooks[..limit];
 
-            return foundBooks;
+            return [];
         }
 
         public Book? FindFromISBN(List<Book> source, string ISBN)

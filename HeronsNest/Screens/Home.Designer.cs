@@ -69,7 +69,7 @@
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(587, 22);
+            comp_DateTime1.Location = new Point(672, 23);
             comp_DateTime1.Name = "comp_DateTime1";
             comp_DateTime1.Size = new Size(248, 44);
             comp_DateTime1.TabIndex = 26;
@@ -77,10 +77,13 @@
             // comp_Searchbar1
             // 
             comp_Searchbar1.Location = new Point(216, 28);
+            comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(381, 35);
+            comp_Searchbar1.Size = new Size(482, 35);
             comp_Searchbar1.TabIndex = 25;
+            comp_Searchbar1.Load += comp_Searchbar1_Load;
+            comp_Searchbar1.MouseDown += OnSearchEnter;
             // 
             // Home
             // 

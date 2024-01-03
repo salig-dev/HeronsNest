@@ -40,7 +40,12 @@ namespace HeronsNest.Components.Home
             base.OnLoad(e);
             authorInformationlabel.Text = Book.Author;
             bookTitleLabel.Text = Book.Title;
-
+            try
+            {
+                pictureBox2.LoadAsync(Book.CoverImg);
+            } catch {
+                Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
+            }
         }
 
         private void authorInformationlabel_Click(object sender, EventArgs e)

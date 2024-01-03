@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using HeronsNest;
-using Microsoft.EntityFrameworkCore;
 using HeronsNest.Models;
-using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+
 namespace HeronsNest.Context;
 
 public partial class BookContext : DbContext
@@ -26,14 +25,8 @@ public partial class BookContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        var databasePath = Environment.GetEnvironmentVariable("BOOK_INFORMATION_DB_PATH");
-        string workingDirectory = Environment.CurrentDirectory;
-        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        databasePath ??= Path.Combine(projectDirectory + "\\Context\\BookInformation.db");
-        Debug.WriteLine(databasePath);
-        optionsBuilder.UseSqlite($"DataSource={databasePath}");
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlite("DataSource=C:\\Users\\UZER\\source\\repos\\HeronsNest\\HeronsNest\\Context\\BookInformation.db");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,11 +37,7 @@ public partial class BookContext : DbContext
             entity.ToTable("Book");
 
             entity.Property(e => e.Isbn).HasColumnName("ISBN");
-            entity.Property(e => e.FkReservedBy).HasColumnName("FK_ReservedBy");
-            entity.Property(e => e.Isbn13).HasColumnName("ISBN13");
-            entity.Property(e => e.NumPages).HasColumnType("INTEGER");
-
-            entity.HasOne(d => d.FkReservedByNavigation).WithMany(p => p.Books).HasForeignKey(d => d.FkReservedBy);
+            entity.Property(e => e.Ratings).HasColumnType("INTEGER");
         });
 
         modelBuilder.Entity<BookReservation>(entity =>
@@ -88,7 +77,7 @@ public partial class BookContext : DbContext
             entity.HasIndex(e => e.Password, "IX_User_Password").IsUnique();
 
             entity.Property(e => e.IsAdmin)
-                .HasDefaultValueSql("0")
+                .HasDefaultValue(0)
                 .HasColumnType("NUMERIC (0, 1)");
         });
 

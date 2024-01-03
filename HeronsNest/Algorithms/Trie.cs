@@ -1,30 +1,28 @@
-﻿using System;
+﻿using HeronsNest.Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HeronsNest.Algorithms
 {
-    internal class TrieNode
+    internal class TrieNode(bool isEnd, Dictionary<char, TrieNode> children)
     {
-        public bool IsEnd { get; set; }
-        public Dictionary<char, TrieNode> Children;
-
-        public TrieNode(bool isEnd, Dictionary<char, TrieNode> children)
-        {
-            IsEnd = isEnd;
-            Children = children;
-        }
+        public bool IsEnd { get; set; } = isEnd;
+        public Book? BookData { get; set; }
+        public Dictionary<char, TrieNode> Children = children;
     }
     internal class Trie<T>
     {
         private TrieNode RootNode = new(false, new());
 
-        public void Insert(string s)
+        public void Insert(Book book)
         {
             TrieNode node = RootNode;
+            string s = book.Isbn;
 
             foreach (char character in s)
             {
@@ -40,9 +38,10 @@ namespace HeronsNest.Algorithms
             }
 
             node.IsEnd = true;
+            node.BookData = book;
         }
 
-        public TrieNode Search(string s)
+        public Book Search(string s)
         {
             TrieNode head = RootNode;
 
@@ -52,46 +51,91 @@ namespace HeronsNest.Algorithms
                 head = value;
             }
 
-            Debug.WriteLine(head.IsEnd);
-            return head.IsEnd ? head : null!;
+            return head.BookData != null ? head.BookData : null!;
         }
 
-        public List<string> SearchForRelated(string s)
+        public List<Book> FindRelatedBooks(string isbn)
         {
-            List<string> relatedTerms = new List<string>();
+            List<Book> relatedBooks = new List<Book>();
 
-            // Find the node corresponding to the longest matching prefix
-            TrieNode? node = Search(s);
+            // Find the node associated with the input ISBN
+            TrieNode? node = FindNodeByISBN(isbn);
 
             if (node != null)
             {
-                // Traverse the subtree rooted at the matching node
-                RecursiveSearchRelatedTerms(node, s, relatedTerms);
+                // Recursively explore the subtree, collecting related books
+                RecursiveSearchRelatedBooks(node, "", relatedBooks);
             }
 
-            return relatedTerms;
+            return relatedBooks;
         }
 
-        private void RecursiveSearchRelatedTerms(TrieNode? node, string currentTerm, List<string> relatedTerms)
+        private TrieNode? FindNodeByISBN(string isbn)
+        {
+            TrieNode? node = RootNode;
+
+            foreach (char c in isbn)
+            {
+                if (!node.Children.TryGetValue(c, out node))
+                {
+                    return null;
+                }
+            }
+
+            return node;
+        }
+
+        private void RecursiveSearchRelatedBooks(TrieNode? node, string currentISBN, List<Book> relatedBooks)
         {
             if (node == null)
             {
                 return;
             }
 
-            // Add the current term if it's a valid word
-            if (node.IsEnd)
+            if (IsTermRelatedToBook(node.BookData, currentISBN))
             {
-                relatedTerms.Add(currentTerm);
+                if (node.BookData != null)
+                {
+                    relatedBooks.Add(node.BookData);
+                }
             }
 
-            // Recursively explore child nodes
             foreach (char childChar in node.Children.Keys)
             {
-                RecursiveSearchRelatedTerms(node.Children[childChar], currentTerm + childChar, relatedTerms);
+                RecursiveSearchRelatedBooks(node.Children[childChar], currentISBN + childChar, relatedBooks);
             }
         }
 
+        private bool IsTermRelatedToBook(Book? node, string term)
+        {
+            // Check for title match
+            if (node.Title.Contains(term))
+            {
+                return true;
+            }
+
+            // Check for ISBN match (case-insensitive)
+            if (node.Isbn.Contains(term, StringComparison.CurrentCultureIgnoreCase))
+            {
+                return true;
+            }
+
+            // Check for author match (case-insensitive)
+            if (node.Author.ToLower().Contains(term.ToLower()))
+            {
+                return true;
+            }
+
+            // Check for date published match (flexible format handling)
+            if (DateTime.TryParseExact(node.PublishDate, "mm:dd:yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime publishedDate) &&
+                publishedDate.ToString().Contains(term))
+            {
+                return true;
+            }
+
+            // If none of the above criteria match, return false
+            return false;
+        }
 
         public bool Delete(string s, int i)
         {

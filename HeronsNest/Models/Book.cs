@@ -5,6 +5,8 @@ namespace HeronsNest.Models;
 
 public partial class Book
 {
+    public string Isbn { get; set; } = null!;
+
     public int? BookId { get; set; }
 
     public string? Title { get; set; }
@@ -19,31 +21,19 @@ public partial class Book
 
     public string? Awards { get; set; }
 
-    public string? Characters { get; set; }
+    public double? Ratings { get; set; }
 
-    public string? Places { get; set; }
+    public string? BookForm { get; set; }
 
-    public string Isbn { get; set; } = null!;
-
-    public string? Isbn13 { get; set; }
-
-    public string? Language { get; set; }
+    public string? Publisher { get; set; }
 
     public string? FirstPublishDate { get; set; }
 
     public string? PublishDate { get; set; }
 
-    public string? NumPages { get; set; }
+    public int? LikedPercentage { get; set; }
 
-    public int? NumRatings { get; set; }
-
-    public int? NumReviews { get; set; }
-
-    public double? AvgRating { get; set; }
-
-    public string? FkReservedBy { get; set; }
+    public string? CoverImg { get; set; }
 
     public virtual ICollection<BookReservation> BookReservations { get; set; } = new List<BookReservation>();
-
-    public virtual User? FkReservedByNavigation { get; set; }
 }

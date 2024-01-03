@@ -1,16 +1,6 @@
 ﻿using HeronsNest.Components.Home;
 using HeronsNest.Context;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HeronsNest.Screens
 {
@@ -29,12 +19,14 @@ namespace HeronsNest.Screens
             categoryListView.AutoScroll = true;
 
             leftNavBar1.MainForm = mainForm;
+            comp_Searchbar1.MainForm = mainForm;
         }
 
         ~Home()
         {
-            if (bookContext != null) {
-                bookContext.Dispose();  
+            if (bookContext != null)
+            {
+                bookContext.Dispose();
                 bookContext = null;
             }
         }
@@ -42,6 +34,11 @@ namespace HeronsNest.Screens
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            comp_Searchbar1.OnSearchClicked += (sender, e) =>
+            {
+                mainForm.SwitchView(new Search(mainForm));
+            };
 
             int amount = 5;
             var categories = mainForm.CategoryLoader?.GetRandomCategories(amount);
@@ -64,7 +61,17 @@ namespace HeronsNest.Screens
 
         private void OnScreenLoaded(object sender, EventArgs e)
         {
+
+        }
+
+        private void OnSearchEnter(object sender, MouseEventArgs e)
+        {
             
+        }
+
+        private void comp_Searchbar1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
