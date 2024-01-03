@@ -35,6 +35,11 @@ namespace HeronsNest.Screens
         {
             base.OnLoad(e);
 
+            comp_Searchbar1.OnSearchClicked += (sender, e) =>
+            {
+                mainForm.SwitchView(new Search(mainForm));
+            };
+
             int amount = 5;
             var categories = mainForm.CategoryLoader?.GetRandomCategories(amount);
             Debug.WriteLine(categories?.Count);
@@ -61,8 +66,7 @@ namespace HeronsNest.Screens
 
         private void OnSearchEnter(object sender, MouseEventArgs e)
         {
-            mainForm.SwitchView(new Search());
-
+            
         }
 
         private void comp_Searchbar1_Load(object sender, EventArgs e)

@@ -12,9 +12,13 @@ namespace HeronsNest.Screens
 {
     public partial class Search : UserControl
     {
-        public Search()
+        Landing MainForm;
+        public Search(Landing mainForm)
         {
             InitializeComponent();
+            MainForm = mainForm;
+
+            leftNavBar1.MainForm = mainForm;
         }
     }
 }

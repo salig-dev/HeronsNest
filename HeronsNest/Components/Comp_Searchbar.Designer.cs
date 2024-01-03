@@ -44,9 +44,10 @@
             cmbCategory.Location = new Point(9, 6);
             cmbCategory.Margin = new Padding(3, 2, 3, 2);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(64, 23);
+            cmbCategory.Size = new Size(147, 23);
             cmbCategory.TabIndex = 0;
             cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
+            cmbCategory.MouseDown += OnSearchBarClicked;
             // 
             // txtSearch
             // 
@@ -58,6 +59,7 @@
             txtSearch.Size = new Size(272, 16);
             txtSearch.TabIndex = 1;
             txtSearch.TextChanged += OnSearchInput;
+            txtSearch.MouseDown += OnSearchBarClicked;
             // 
             // btnSearch
             // 
@@ -72,6 +74,7 @@
             btnSearch.TabIndex = 2;
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
+            btnSearch.MouseDown += OnSearchBarClicked;
             // 
             // panel1
             // 
@@ -79,11 +82,12 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(txtSearch);
-            panel1.Location = new Point(76, -8);
+            panel1.Location = new Point(162, -8);
             panel1.MaximumSize = new Size(300, 48);
             panel1.Name = "panel1";
             panel1.Size = new Size(300, 43);
             panel1.TabIndex = 4;
+            panel1.MouseDown += OnSearchBarClicked;
             // 
             // Comp_Searchbar
             // 
@@ -93,7 +97,7 @@
             Controls.Add(cmbCategory);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Comp_Searchbar";
-            Size = new Size(387, 35);
+            Size = new Size(472, 35);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

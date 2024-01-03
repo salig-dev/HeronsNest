@@ -42,7 +42,7 @@
             pictureBox1.Image = Properties.Resources.card_active;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 200);
+            pictureBox1.Size = new Size(184, 290);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -51,9 +51,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.book_placeholder;
-            pictureBox2.Location = new Point(7, 12);
+            pictureBox2.Location = new Point(15, 13);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(134, 111);
+            pictureBox2.Size = new Size(157, 173);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -64,12 +64,12 @@
             bookTitleLabel.AutoEllipsis = true;
             bookTitleLabel.BackColor = SystemColors.ControlLightLight;
             bookTitleLabel.Font = new Font("Segoe UI", 12F);
-            bookTitleLabel.Location = new Point(7, 123);
+            bookTitleLabel.Location = new Point(13, 193);
             bookTitleLabel.Name = "bookTitleLabel";
-            bookTitleLabel.Size = new Size(134, 32);
+            bookTitleLabel.Size = new Size(161, 43);
             bookTitleLabel.TabIndex = 2;
             bookTitleLabel.Text = "Book Title";
-            bookTitleLabel.TextAlign = ContentAlignment.MiddleLeft;
+            bookTitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             bookTitleLabel.Click += bookTitleLabel_Click;
             // 
             // authorInformationlabel
@@ -77,11 +77,12 @@
             authorInformationlabel.AutoEllipsis = true;
             authorInformationlabel.BackColor = SystemColors.ControlLightLight;
             authorInformationlabel.Font = new Font("Segoe UI", 9F);
-            authorInformationlabel.Location = new Point(7, 157);
+            authorInformationlabel.Location = new Point(12, 236);
             authorInformationlabel.Name = "authorInformationlabel";
-            authorInformationlabel.Size = new Size(134, 31);
+            authorInformationlabel.Size = new Size(161, 31);
             authorInformationlabel.TabIndex = 3;
             authorInformationlabel.Text = "Author, Year";
+            authorInformationlabel.TextAlign = ContentAlignment.MiddleCenter;
             authorInformationlabel.Click += authorInformationlabel_Click;
             // 
             // CategoryListItem
@@ -93,7 +94,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "CategoryListItem";
-            Size = new Size(150, 200);
+            Size = new Size(184, 290);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

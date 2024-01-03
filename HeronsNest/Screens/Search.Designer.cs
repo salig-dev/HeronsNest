@@ -47,15 +47,16 @@
             // 
             // comp_Searchbar1
             // 
-            comp_Searchbar1.Location = new Point(215, 15);
+            comp_Searchbar1.Location = new Point(215, 23);
+            comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(387, 35);
+            comp_Searchbar1.Size = new Size(480, 35);
             comp_Searchbar1.TabIndex = 1;
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(603, 9);
+            comp_DateTime1.Location = new Point(669, 19);
             comp_DateTime1.Name = "comp_DateTime1";
             comp_DateTime1.Size = new Size(249, 44);
             comp_DateTime1.TabIndex = 2;
@@ -73,9 +74,9 @@
             // cardListView
             // 
             cardListView.DataSource = null;
-            cardListView.Location = new Point(225, 119);
+            cardListView.Location = new Point(225, 139);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(751, 466);
+            cardListView.Size = new Size(751, 446);
             cardListView.TabIndex = 4;
             // 
             // Search

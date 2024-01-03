@@ -14,6 +14,13 @@ namespace HeronsNest.Components
     public partial class Comp_Searchbar : UserControl
     {
         private Landing? mainForm;
+        private EventHandler onControlClicked;
+
+        public event EventHandler OnSearchClicked
+        {
+            add => onControlClicked += value;
+            remove => onControlClicked -= value;
+        }
 
         public Landing? MainForm { get { return mainForm; } set { mainForm = value; } }
 
@@ -33,6 +40,8 @@ namespace HeronsNest.Components
             txtSearch.AutoCompleteCustomSource = allowedTypes;
             txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            cmbCategory.SelectedIndex = 0;
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,7 +57,7 @@ namespace HeronsNest.Components
                     break;
                 case "Book Title":
                     autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Title).ToList();
-                     allowedTypes = [.. autocompleteList];
+                    allowedTypes = [.. autocompleteList];
                     break;
                 case "Author":
                     autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Author).ToList();
@@ -89,6 +98,11 @@ namespace HeronsNest.Components
         private void OnSearchInput(object sender, EventArgs e)
         {
 
+        }
+
+        private void OnSearchBarClicked(object sender, MouseEventArgs e)
+        {
+            onControlClicked?.Invoke(this, e);
         }
     }
 }
