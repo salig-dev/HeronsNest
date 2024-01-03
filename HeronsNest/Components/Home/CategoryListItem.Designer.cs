@@ -46,6 +46,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += OnCardClicked;
             // 
             // pictureBox2
             // 
@@ -56,6 +57,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += OnCardClicked;
             // 
             // bookTitleLabel
             // 

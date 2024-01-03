@@ -5,7 +5,7 @@ namespace HeronsNest.Screens
     public partial class BookPreview : UserControl
     {
         Landing mainForm;
-        Book Book;
+        private readonly Book Book;
         public BookPreview(Landing mainForm, Book book)
         {
             InitializeComponent();
@@ -21,6 +21,10 @@ namespace HeronsNest.Screens
             base.OnLoad(e);
 
             bookTitle.Text = Book.Title;
+            bookAuthor.Text = Book.Author;
+            bookYear.Text = Book.PublishDate;
+            bookDetails.Text = Book.Description;
+            authorName.Text = Book.Author;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
