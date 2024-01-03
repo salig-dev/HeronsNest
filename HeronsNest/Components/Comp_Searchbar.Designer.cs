@@ -40,7 +40,7 @@
             // cmbCategory
             // 
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Items.AddRange(new object[] { "Category1", "Category2", "Category3" });
+            cmbCategory.Items.AddRange(new object[] { "ISBN", "Book Title", "Author" });
             cmbCategory.Location = new Point(9, 6);
             cmbCategory.Margin = new Padding(3, 2, 3, 2);
             cmbCategory.Name = "cmbCategory";
@@ -57,7 +57,7 @@
             txtSearch.PlaceholderText = "Search";
             txtSearch.Size = new Size(272, 16);
             txtSearch.TabIndex = 1;
-            txtSearch.TextChanged += txtSearch_TextChanged_1;
+            txtSearch.TextChanged += OnSearchInput;
             // 
             // btnSearch
             // 

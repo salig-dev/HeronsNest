@@ -13,19 +13,52 @@ namespace HeronsNest.Components
 {
     public partial class Comp_Searchbar : UserControl
     {
+        private Landing? mainForm;
+
+        public Landing? MainForm { get { return mainForm; } set { mainForm = value; } }
+
         public Comp_Searchbar()
         {
             InitializeComponent();
-
         }
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-        {
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (MainForm == null) return;
+
+            List<string> isbnList = MainForm.BookLoader.GetAllBooks().Select(x => x.Isbn).ToList();
+            AutoCompleteStringCollection allowedTypes = [.. isbnList];
+            txtSearch.AutoCompleteCustomSource = allowedTypes;
+            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboBox comboBox = (ComboBox)sender;
+            List<string> autocompleteList = [];
+            AutoCompleteStringCollection allowedTypes = [];
+            switch (comboBox.SelectedItem)
+            {
+                case "ISBN":
+                    autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Isbn).ToList();
+                    allowedTypes = [.. autocompleteList];
+                    break;
+                case "Book Title":
+                    autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Title).ToList();
+                     allowedTypes = [.. autocompleteList];
+                    break;
+                case "Author":
+                    autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Author).ToList();
+                    allowedTypes = [.. autocompleteList];
+                    break;
+            }
 
+            txtSearch.AutoCompleteCustomSource = allowedTypes;
+            txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,6 +82,11 @@ namespace HeronsNest.Components
         }
 
         private void Comp_Searchbar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnSearchInput(object sender, EventArgs e)
         {
 
         }
