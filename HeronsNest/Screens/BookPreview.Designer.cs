@@ -78,7 +78,7 @@
             bookTitle.Anchor = AnchorStyles.None;
             bookTitle.AutoEllipsis = true;
             bookTitle.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookTitle.Location = new Point(393, 138);
+            bookTitle.Location = new Point(373, 138);
             bookTitle.Name = "bookTitle";
             bookTitle.Size = new Size(267, 25);
             bookTitle.TabIndex = 3;

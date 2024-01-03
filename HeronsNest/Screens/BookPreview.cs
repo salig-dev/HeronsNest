@@ -21,6 +21,10 @@ namespace HeronsNest.Screens
             base.OnLoad(e);
 
             bookTitle.Text = Book.Title;
+            bookAuthor.Text = Book.Author;
+            bookYear.Text = Book.PublishDate;
+            bookDetails.Text = Book.Description;
+            authorName.Text = Book.Author;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
