@@ -28,79 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label2 = new Label();
-            label3 = new Label();
-            label1 = new Label();
-            label4 = new Label();
+            backBtn = new Button();
+            myShelfTitle = new Label();
+            completedBooks = new Label();
+            pendingBooks = new Label();
+            allBooks = new Label();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
             cardListView = new Components.List.CustomListView();
             SuspendLayout();
             // 
-            // button1
+            // backBtn
             // 
-            button1.Location = new Point(359, 121);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 0;
-            button1.Text = "Back";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            backBtn.Location = new Point(359, 119);
+            backBtn.Margin = new Padding(3, 2, 3, 2);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(82, 22);
+            backBtn.TabIndex = 0;
+            backBtn.Text = "Back";
+            backBtn.UseVisualStyleBackColor = true;
+            backBtn.Click += button1_Click;
             // 
-            // label2
+            // myShelfTitle
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("Microsoft Sans Serif", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(0, 149, 168);
-            label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(214, 119);
-            label2.Margin = new Padding(0);
-            label2.Name = "label2";
-            label2.Size = new Size(127, 31);
-            label2.TabIndex = 2;
-            label2.Text = "My Shelf";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            myShelfTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            myShelfTitle.AutoSize = true;
+            myShelfTitle.FlatStyle = FlatStyle.Flat;
+            myShelfTitle.Font = new Font("PP Hatton", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            myShelfTitle.ForeColor = Color.FromArgb(0, 149, 168);
+            myShelfTitle.ImageAlign = ContentAlignment.MiddleLeft;
+            myShelfTitle.Location = new Point(214, 119);
+            myShelfTitle.Margin = new Padding(0);
+            myShelfTitle.Name = "myShelfTitle";
+            myShelfTitle.Size = new Size(142, 32);
+            myShelfTitle.TabIndex = 2;
+            myShelfTitle.Text = "My Shelf";
+            myShelfTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // completedBooks
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(76, 76, 76);
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(598, 176);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Pending Books";
+            completedBooks.AutoSize = true;
+            completedBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            completedBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            completedBooks.Location = new Point(598, 176);
+            completedBooks.Name = "completedBooks";
+            completedBooks.Size = new Size(172, 19);
+            completedBooks.TabIndex = 4;
+            completedBooks.Text = "Completed Books";
             // 
-            // label1
+            // pendingBooks
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(76, 76, 76);
-            label1.ImageAlign = ContentAlignment.MiddleLeft;
-            label1.Location = new Point(385, 177);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 20);
-            label1.TabIndex = 13;
-            label1.Text = "Borrowed Books";
+            pendingBooks.AutoSize = true;
+            pendingBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pendingBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            pendingBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            pendingBooks.Location = new Point(385, 177);
+            pendingBooks.Name = "pendingBooks";
+            pendingBooks.Size = new Size(145, 19);
+            pendingBooks.TabIndex = 13;
+            pendingBooks.Text = "Pending Books";
             // 
-            // label4
+            // allBooks
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(76, 76, 76);
-            label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(217, 177);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 20);
-            label4.TabIndex = 14;
-            label4.Text = "All Books";
+            allBooks.AutoSize = true;
+            allBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            allBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            allBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            allBooks.Location = new Point(217, 177);
+            allBooks.Name = "allBooks";
+            allBooks.Size = new Size(94, 19);
+            allBooks.TabIndex = 14;
+            allBooks.Text = "All Books";
             // 
             // leftNavBar1
             // 
@@ -122,6 +122,7 @@
             // comp_Searchbar1
             // 
             comp_Searchbar1.Location = new Point(211, 30);
+            comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
             comp_Searchbar1.Size = new Size(382, 35);
@@ -130,9 +131,9 @@
             // cardListView
             // 
             cardListView.DataSource = null;
-            cardListView.Location = new Point(217, 210);
+            cardListView.Location = new Point(217, 214);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(759, 367);
+            cardListView.Size = new Size(760, 360);
             cardListView.TabIndex = 23;
             // 
             // MyShelf
@@ -144,11 +145,11 @@
             Controls.Add(cardListView);
             Controls.Add(comp_Searchbar1);
             Controls.Add(leftNavBar1);
-            Controls.Add(label4);
-            Controls.Add(label1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(button1);
+            Controls.Add(allBooks);
+            Controls.Add(pendingBooks);
+            Controls.Add(completedBooks);
+            Controls.Add(myShelfTitle);
+            Controls.Add(backBtn);
             Controls.Add(comp_DateTime1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MyShelf";
@@ -160,25 +161,11 @@
 
         #endregion
 
-        private Button button1;
-        private Label label2;
-        private Label label3;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
-        private PictureBox pictureBox13;
-        private PictureBox pictureBox14;
-        private PictureBox pictureBox15;
-        private PictureBox pictureBox16;
-        private PictureBox pictureBox17;
-        private PictureBox pictureBox18;
-        private PictureBox pictureBox20;
-        private PictureBox pictureBox21;
-        private PictureBox pictureBox22;
-        private PictureBox pictureBox23;
-       
-        private Label label1;
-        private Label label4;
+        private Button backBtn;
+        private Label myShelfTitle;
+        private Label completedBooks;
+        private Label pendingBooks;
+        private Label allBooks;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;
