@@ -28,82 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox2 = new PictureBox();
             bookTitle = new Label();
             bookAuthor = new Label();
             borrowedText = new Label();
-            borrowedInfo = new Label();
+            borrowedDate = new Label();
             returnText = new Label();
             returnDate = new Label();
             borrowedBtn = new Button();
             returnBtn = new Button();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            bookImage = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.book_placeholder;
-            pictureBox2.Location = new Point(16, 10);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(90, 120);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // bookTitle
             // 
-            bookTitle.AutoSize = true;
+            bookTitle.AutoEllipsis = true;
+            bookTitle.BackColor = Color.White;
+            bookTitle.FlatStyle = FlatStyle.Flat;
             bookTitle.Font = new Font("Nourd-Bold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
-            bookTitle.Location = new Point(16, 132);
+            bookTitle.Location = new Point(14, 142);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(64, 13);
+            bookTitle.Size = new Size(90, 15);
             bookTitle.TabIndex = 6;
             bookTitle.Text = "Book Title";
             // 
             // bookAuthor
             // 
-            bookAuthor.AutoSize = true;
+            bookAuthor.AutoEllipsis = true;
+            bookAuthor.BackColor = Color.White;
             bookAuthor.Font = new Font("Nourd-Bold", 5.99999952F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bookAuthor.ForeColor = Color.FromArgb(116, 115, 115);
-            bookAuthor.Location = new Point(16, 156);
+            bookAuthor.Location = new Point(14, 157);
             bookAuthor.Name = "bookAuthor";
-            bookAuthor.Size = new Size(83, 10);
+            bookAuthor.Size = new Size(90, 10);
             bookAuthor.TabIndex = 7;
             bookAuthor.Text = "Author Name, Date";
             // 
             // borrowedText
             // 
             borrowedText.AutoSize = true;
-            borrowedText.BackColor = Color.Transparent;
+            borrowedText.BackColor = Color.White;
             borrowedText.Font = new Font("PP Hatton", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             borrowedText.ForeColor = Color.FromArgb(76, 76, 76);
-            borrowedText.Location = new Point(112, 23);
+            borrowedText.Location = new Point(114, 22);
             borrowedText.Name = "borrowedText";
             borrowedText.Size = new Size(73, 11);
             borrowedText.TabIndex = 10;
             borrowedText.Text = "Borrowed on";
             // 
-            // borrowedInfo
+            // borrowedDate
             // 
-            borrowedInfo.AutoSize = true;
-            borrowedInfo.Font = new Font("Nourd-Bold", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowedInfo.ForeColor = Color.FromArgb(116, 116, 115);
-            borrowedInfo.Location = new Point(112, 45);
-            borrowedInfo.Name = "borrowedInfo";
-            borrowedInfo.Size = new Size(56, 10);
-            borrowedInfo.TabIndex = 11;
-            borrowedInfo.Text = "25 Dec 2023";
+            borrowedDate.AutoSize = true;
+            borrowedDate.BackColor = Color.White;
+            borrowedDate.Font = new Font("Nourd-Bold", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedDate.ForeColor = Color.FromArgb(116, 116, 115);
+            borrowedDate.Location = new Point(114, 44);
+            borrowedDate.Name = "borrowedDate";
+            borrowedDate.Size = new Size(56, 10);
+            borrowedDate.TabIndex = 11;
+            borrowedDate.Text = "25 Dec 2023";
             // 
             // returnText
             // 
             returnText.AutoSize = true;
+            returnText.BackColor = Color.White;
             returnText.Font = new Font("PP Hatton", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             returnText.ForeColor = Color.FromArgb(76, 76, 76);
-            returnText.Location = new Point(112, 66);
+            returnText.Location = new Point(114, 65);
             returnText.Name = "returnText";
             returnText.Size = new Size(54, 11);
             returnText.TabIndex = 14;
@@ -112,9 +106,10 @@
             // returnDate
             // 
             returnDate.AutoSize = true;
+            returnDate.BackColor = Color.White;
             returnDate.Font = new Font("Nourd-Bold", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             returnDate.ForeColor = Color.FromArgb(116, 115, 115);
-            returnDate.Location = new Point(112, 88);
+            returnDate.Location = new Point(114, 87);
             returnDate.Name = "returnDate";
             returnDate.Size = new Size(56, 10);
             returnDate.TabIndex = 16;
@@ -123,12 +118,14 @@
             // borrowedBtn
             // 
             borrowedBtn.BackColor = Color.FromArgb(0, 149, 168);
-            borrowedBtn.Font = new Font("PP Hatton Medium", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedBtn.FlatAppearance.BorderSize = 0;
+            borrowedBtn.FlatStyle = FlatStyle.Flat;
+            borrowedBtn.Font = new Font("PP Hatton Medium", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             borrowedBtn.ForeColor = Color.White;
-            borrowedBtn.Location = new Point(112, 111);
+            borrowedBtn.Location = new Point(114, 108);
             borrowedBtn.Margin = new Padding(3, 2, 3, 2);
             borrowedBtn.Name = "borrowedBtn";
-            borrowedBtn.Size = new Size(80, 30);
+            borrowedBtn.Size = new Size(90, 30);
             borrowedBtn.TabIndex = 18;
             borrowedBtn.Text = "Borrowed";
             borrowedBtn.UseVisualStyleBackColor = false;
@@ -136,59 +133,70 @@
             // returnBtn
             // 
             returnBtn.BackColor = Color.FromArgb(82, 167, 133);
+            returnBtn.FlatAppearance.BorderSize = 0;
+            returnBtn.FlatStyle = FlatStyle.Flat;
             returnBtn.Font = new Font("PP Hatton Medium", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             returnBtn.ForeColor = Color.White;
-            returnBtn.Location = new Point(112, 145);
+            returnBtn.Location = new Point(114, 142);
             returnBtn.Margin = new Padding(3, 2, 3, 2);
             returnBtn.Name = "returnBtn";
-            returnBtn.Size = new Size(80, 30);
+            returnBtn.Size = new Size(90, 30);
             returnBtn.TabIndex = 19;
             returnBtn.Text = "Return";
             returnBtn.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.card_active;
+            pictureBox1.Image = Properties.Resources.shelfCard;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(208, 188);
+            pictureBox1.Size = new Size(218, 188);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // bookImage
+            // 
+            bookImage.BackColor = SystemColors.ControlDarkDark;
+            bookImage.Location = new Point(14, 10);
+            bookImage.Name = "bookImage";
+            bookImage.Size = new Size(90, 130);
+            bookImage.TabIndex = 20;
+            bookImage.TabStop = false;
             // 
             // BookCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(bookImage);
             Controls.Add(returnBtn);
             Controls.Add(borrowedBtn);
             Controls.Add(returnDate);
             Controls.Add(returnText);
-            Controls.Add(borrowedInfo);
+            Controls.Add(borrowedDate);
             Controls.Add(borrowedText);
             Controls.Add(bookAuthor);
             Controls.Add(bookTitle);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Name = "BookCard";
-            Size = new Size(210, 200);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            Size = new Size(225, 200);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pictureBox2;
         private Label bookTitle;
         private Label bookAuthor;
         private Label borrowedText;
-        private Label borrowedInfo;
+        private Label borrowedDate;
         private Label returnText;
         private Label returnDate;
         private Button borrowedBtn;
         private Button returnBtn;
         private PictureBox pictureBox1;
+        private PictureBox bookImage;
     }
 }
