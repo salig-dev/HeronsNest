@@ -40,13 +40,18 @@
             borrowBtn = new Button();
             reserveBtn = new Button();
             bookAbout = new Label();
-            linkLabel1 = new LinkLabel();
             bookDetails = new Label();
             authorDetails = new GroupBox();
+            likepercentageText = new Label();
+            bookLikepercentage = new Label();
+            bookPublisher = new Label();
+            publisherText = new Label();
+            bookGenre = new Label();
+            bookGenreText = new Label();
+            bookSeries = new Label();
+            seriesText = new Label();
             label1 = new Label();
-            authorAbt = new Label();
-            authorName = new Label();
-            aboutAuthor = new Label();
+            aboutBook = new Label();
             otherbook4 = new PictureBox();
             otherbook3 = new PictureBox();
             otherbook2 = new PictureBox();
@@ -58,6 +63,9 @@
             bookImg = new PictureBox();
             pictureBox1 = new PictureBox();
             ratingtext = new Label();
+            bookIdText = new Label();
+            BookId = new Label();
+            ReturnToLibraryBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             authorDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)otherbook4).BeginInit();
@@ -83,7 +91,7 @@
             bookTitle.AutoEllipsis = true;
             bookTitle.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bookTitle.ImageAlign = ContentAlignment.MiddleLeft;
-            bookTitle.Location = new Point(397, 138);
+            bookTitle.Location = new Point(394, 139);
             bookTitle.Name = "bookTitle";
             bookTitle.Size = new Size(267, 25);
             bookTitle.TabIndex = 3;
@@ -116,7 +124,7 @@
             // 
             bookRating.AutoSize = true;
             bookRating.Font = new Font("Microsoft Sans Serif", 11.25F);
-            bookRating.Location = new Point(449, 214);
+            bookRating.Location = new Point(449, 240);
             bookRating.Name = "bookRating";
             bookRating.Size = new Size(86, 18);
             bookRating.TabIndex = 6;
@@ -127,7 +135,7 @@
             // 
             statusText.AutoSize = true;
             statusText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            statusText.Location = new Point(397, 246);
+            statusText.Location = new Point(397, 265);
             statusText.Name = "statusText";
             statusText.Size = new Size(58, 18);
             statusText.TabIndex = 8;
@@ -140,7 +148,7 @@
             bookStatus.BackColor = Color.FromArgb(82, 167, 133);
             bookStatus.BorderStyle = BorderStyle.FixedSingle;
             bookStatus.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookStatus.Location = new Point(449, 246);
+            bookStatus.Location = new Point(449, 265);
             bookStatus.Name = "bookStatus";
             bookStatus.Size = new Size(67, 20);
             bookStatus.TabIndex = 9;
@@ -176,17 +184,6 @@
             bookAbout.Text = "About The Book:";
             bookAbout.Click += label2_Click_2;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(212, 100);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(101, 15);
-            linkLabel1.TabIndex = 1;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "<- Back to Library";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // bookDetails
             // 
             bookDetails.AutoEllipsis = true;
@@ -202,63 +199,132 @@
             // authorDetails
             // 
             authorDetails.BackColor = Color.White;
+            authorDetails.Controls.Add(likepercentageText);
+            authorDetails.Controls.Add(bookLikepercentage);
+            authorDetails.Controls.Add(bookPublisher);
+            authorDetails.Controls.Add(publisherText);
+            authorDetails.Controls.Add(bookGenre);
+            authorDetails.Controls.Add(bookGenreText);
+            authorDetails.Controls.Add(bookSeries);
+            authorDetails.Controls.Add(seriesText);
             authorDetails.Controls.Add(label1);
-            authorDetails.Controls.Add(authorAbt);
-            authorDetails.Controls.Add(authorName);
-            authorDetails.Controls.Add(aboutAuthor);
+            authorDetails.Controls.Add(aboutBook);
             authorDetails.Controls.Add(otherbook4);
             authorDetails.Controls.Add(otherbook3);
             authorDetails.Controls.Add(otherbook2);
             authorDetails.Controls.Add(otherbook1);
             authorDetails.Location = new Point(694, 109);
             authorDetails.Name = "authorDetails";
-            authorDetails.Size = new Size(279, 258);
+            authorDetails.Size = new Size(279, 262);
             authorDetails.TabIndex = 16;
             authorDetails.TabStop = false;
+            authorDetails.Enter += authorDetails_Enter;
+            // 
+            // likepercentageText
+            // 
+            likepercentageText.AutoSize = true;
+            likepercentageText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            likepercentageText.Location = new Point(17, 114);
+            likepercentageText.Name = "likepercentageText";
+            likepercentageText.Size = new Size(96, 18);
+            likepercentageText.TabIndex = 18;
+            likepercentageText.Text = "User Review:";
+            // 
+            // bookLikepercentage
+            // 
+            bookLikepercentage.AutoEllipsis = true;
+            bookLikepercentage.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookLikepercentage.Location = new Point(109, 114);
+            bookLikepercentage.Name = "bookLikepercentage";
+            bookLikepercentage.Size = new Size(143, 18);
+            bookLikepercentage.TabIndex = 17;
+            bookLikepercentage.Text = "like percentage here";
+            // 
+            // bookPublisher
+            // 
+            bookPublisher.AutoEllipsis = true;
+            bookPublisher.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookPublisher.Location = new Point(84, 51);
+            bookPublisher.Name = "bookPublisher";
+            bookPublisher.Size = new Size(168, 18);
+            bookPublisher.TabIndex = 16;
+            bookPublisher.Text = "publisher here";
+            // 
+            // publisherText
+            // 
+            publisherText.AutoSize = true;
+            publisherText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            publisherText.Location = new Point(17, 51);
+            publisherText.Name = "publisherText";
+            publisherText.Size = new Size(73, 18);
+            publisherText.TabIndex = 14;
+            publisherText.Text = "Publisher:";
+            // 
+            // bookGenre
+            // 
+            bookGenre.AutoEllipsis = true;
+            bookGenre.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookGenre.Location = new Point(65, 92);
+            bookGenre.Name = "bookGenre";
+            bookGenre.Size = new Size(188, 18);
+            bookGenre.TabIndex = 12;
+            bookGenre.Text = "genre here";
+            // 
+            // bookGenreText
+            // 
+            bookGenreText.AutoSize = true;
+            bookGenreText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookGenreText.Location = new Point(17, 92);
+            bookGenreText.Name = "bookGenreText";
+            bookGenreText.Size = new Size(53, 18);
+            bookGenreText.TabIndex = 11;
+            bookGenreText.Text = "Genre:";
+            // 
+            // bookSeries
+            // 
+            bookSeries.AutoEllipsis = true;
+            bookSeries.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookSeries.Location = new Point(66, 71);
+            bookSeries.Name = "bookSeries";
+            bookSeries.Size = new Size(188, 18);
+            bookSeries.TabIndex = 10;
+            bookSeries.Text = "series name here";
+            bookSeries.Click += bookSeries_Click;
+            // 
+            // seriesText
+            // 
+            seriesText.AutoSize = true;
+            seriesText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            seriesText.Location = new Point(17, 71);
+            seriesText.Name = "seriesText";
+            seriesText.Size = new Size(58, 18);
+            seriesText.TabIndex = 9;
+            seriesText.Text = "Series: ";
             // 
             // label1
             // 
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 152);
+            label1.Location = new Point(17, 159);
             label1.Name = "label1";
             label1.Size = new Size(74, 14);
             label1.TabIndex = 0;
             label1.Text = "Other Books";
             // 
-            // authorAbt
+            // aboutBook
             // 
-            authorAbt.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            authorAbt.Location = new Point(17, 65);
-            authorAbt.Name = "authorAbt";
-            authorAbt.Size = new Size(244, 87);
-            authorAbt.TabIndex = 0;
-            authorAbt.Text = resources.GetString("authorAbt.Text");
-            // 
-            // authorName
-            // 
-            authorName.AutoEllipsis = true;
-            authorName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            authorName.Location = new Point(17, 45);
-            authorName.Name = "authorName";
-            authorName.Size = new Size(244, 18);
-            authorName.TabIndex = 0;
-            authorName.Text = "Author Name";
-            // 
-            // aboutAuthor
-            // 
-            aboutAuthor.AutoSize = true;
-            aboutAuthor.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            aboutAuthor.Location = new Point(17, 19);
-            aboutAuthor.Name = "aboutAuthor";
-            aboutAuthor.Size = new Size(187, 26);
-            aboutAuthor.TabIndex = 0;
-            aboutAuthor.Text = "About The Author:";
-            aboutAuthor.TextAlign = ContentAlignment.MiddleLeft;
+            aboutBook.AutoSize = true;
+            aboutBook.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            aboutBook.Location = new Point(17, 19);
+            aboutBook.Name = "aboutBook";
+            aboutBook.Size = new Size(135, 26);
+            aboutBook.TabIndex = 0;
+            aboutBook.Text = "Book Details";
+            aboutBook.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // otherbook4
             // 
             otherbook4.BorderStyle = BorderStyle.FixedSingle;
-            otherbook4.Location = new Point(215, 169);
+            otherbook4.Location = new Point(215, 176);
             otherbook4.Name = "otherbook4";
             otherbook4.Size = new Size(46, 67);
             otherbook4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -268,7 +334,7 @@
             // otherbook3
             // 
             otherbook3.BorderStyle = BorderStyle.FixedSingle;
-            otherbook3.Location = new Point(151, 169);
+            otherbook3.Location = new Point(151, 176);
             otherbook3.Name = "otherbook3";
             otherbook3.Size = new Size(46, 67);
             otherbook3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -278,7 +344,7 @@
             // otherbook2
             // 
             otherbook2.BorderStyle = BorderStyle.FixedSingle;
-            otherbook2.Location = new Point(85, 169);
+            otherbook2.Location = new Point(85, 176);
             otherbook2.Name = "otherbook2";
             otherbook2.Size = new Size(46, 67);
             otherbook2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -288,7 +354,7 @@
             // otherbook1
             // 
             otherbook1.BorderStyle = BorderStyle.FixedSingle;
-            otherbook1.Location = new Point(17, 169);
+            otherbook1.Location = new Point(17, 176);
             otherbook1.Name = "otherbook1";
             otherbook1.Size = new Size(46, 67);
             otherbook1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -351,17 +417,51 @@
             // 
             ratingtext.AutoSize = true;
             ratingtext.Font = new Font("Microsoft Sans Serif", 11.25F);
-            ratingtext.Location = new Point(397, 214);
+            ratingtext.Location = new Point(397, 240);
             ratingtext.Name = "ratingtext";
             ratingtext.Size = new Size(54, 18);
             ratingtext.TabIndex = 22;
             ratingtext.Text = "Rating:";
+            // 
+            // bookIdText
+            // 
+            bookIdText.AutoSize = true;
+            bookIdText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bookIdText.Location = new Point(397, 201);
+            bookIdText.Name = "bookIdText";
+            bookIdText.Size = new Size(63, 18);
+            bookIdText.TabIndex = 23;
+            bookIdText.Text = "Book Id:";
+            // 
+            // BookId
+            // 
+            BookId.AutoEllipsis = true;
+            BookId.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BookId.Location = new Point(455, 201);
+            BookId.Name = "BookId";
+            BookId.Size = new Size(205, 18);
+            BookId.TabIndex = 24;
+            BookId.Text = "book ID here";
+            // 
+            // ReturnToLibraryBtn
+            // 
+            ReturnToLibraryBtn.Location = new Point(212, 73);
+            ReturnToLibraryBtn.Name = "ReturnToLibraryBtn";
+            ReturnToLibraryBtn.Size = new Size(129, 44);
+            ReturnToLibraryBtn.TabIndex = 25;
+            ReturnToLibraryBtn.Text = "<- Return To Library";
+            ReturnToLibraryBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ReturnToLibraryBtn.UseVisualStyleBackColor = true;
+            ReturnToLibraryBtn.Click += ReturnToLibraryBtn_Click;
             // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(ReturnToLibraryBtn);
+            Controls.Add(BookId);
+            Controls.Add(bookIdText);
             Controls.Add(ratingtext);
             Controls.Add(bookImg);
             Controls.Add(comp_Searchbar1);
@@ -378,7 +478,6 @@
             Controls.Add(bookAuthor);
             Controls.Add(bookTitle);
             Controls.Add(bookImage);
-            Controls.Add(linkLabel1);
             Controls.Add(comp_DateTime1);
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 2, 3, 2);
@@ -409,12 +508,9 @@
         private Button borrowBtn;
         private Button reserveBtn;
         private Label bookAbout;
-        private LinkLabel linkLabel1;
         private Label bookDetails;
         private GroupBox authorDetails;
-        private Label authorName;
-        private Label aboutAuthor;
-        private Label authorAbt;
+        private Label aboutBook;
         private PictureBox otherbook1;
         private Label label1;
         private PictureBox otherbook4;
@@ -427,5 +523,16 @@
         private PictureBox bookImg;
         private PictureBox pictureBox1;
         private Label ratingtext;
+        private Label bookSeries;
+        private Label seriesText;
+        private Label bookIdText;
+        private Label BookId;
+        private Label bookGenreText;
+        private Label bookGenre;
+        private Label bookPublisher;
+        private Label publisherText;
+        private Label bookLikepercentage;
+        private Label likepercentageText;
+        private Button ReturnToLibraryBtn;
     }
 }

@@ -26,9 +26,12 @@ namespace HeronsNest.Screens
             bookAuthor.Text = Book.Author;
             bookYear.Text = Book.PublishDate;
             bookDetails.Text = Book.Description;
-            authorName.Text = Book.Author;
-            bookRating.Text = Book.Ratings.ToString();
-            
+            bookRating.Text = Book.Ratings.ToString() + " Stars";
+            bookSeries.Text = Book.Series;
+            BookId.Text = Book.BookId.ToString();
+            bookGenre.Text = Book.Genres;
+            bookPublisher.Text = Book.Publisher;
+            bookLikepercentage.Text = Book.LikedPercentage.ToString() + "%";
             try
             {
                 bookImg.LoadAsync(Book.CoverImg);
@@ -43,7 +46,6 @@ namespace HeronsNest.Screens
         {
             mainForm.SwitchView(new Home(mainForm));
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -87,6 +89,21 @@ namespace HeronsNest.Screens
         private void BookPreview_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bookSeries_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authorDetails_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnToLibraryBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }
