@@ -1,4 +1,6 @@
 ﻿using HeronsNest.Models;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace HeronsNest.Screens
 {
@@ -25,6 +27,16 @@ namespace HeronsNest.Screens
             bookYear.Text = Book.PublishDate;
             bookDetails.Text = Book.Description;
             authorName.Text = Book.Author;
+            bookRating.Text = Book.Ratings.ToString();
+            
+            try
+            {
+                bookImg.LoadAsync(Book.CoverImg);
+            }
+            catch
+            {
+                Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
