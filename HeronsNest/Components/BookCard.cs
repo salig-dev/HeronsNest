@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,10 +29,22 @@ namespace HeronsNest.Components
         {
             base.OnLoad(e);
 
-            borrowedText.Text = DateTime.Parse(BookReservation.DateReserved).ToShortDateString();
+            borrowedDate.Text = DateTime.Parse(BookReservation.DateReserved).ToShortDateString();
             returnDate.Text = DateTime.Parse(BookReservation.DateReturn).ToShortDateString();
 
             bookAuthor.Text = Book.Author;
+            bookTitle.Text = Book.Title;
+
+            // TODO: LOAD IMAGE
+            try
+            {
+                bookImage.LoadAsync(Book.CoverImg);
+            }
+            catch
+            {
+                Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
+            }
+
         }
 
     }
