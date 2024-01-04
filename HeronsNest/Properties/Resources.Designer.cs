@@ -272,6 +272,26 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shelfCard {
+            get {
+                object obj = ResourceManager.GetObject("shelfCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shelfCardOverdue {
+            get {
+                object obj = ResourceManager.GetObject("shelfCardOverdue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap success_icon {
             get {
                 object obj = ResourceManager.GetObject("success-icon", resourceCulture);
