@@ -28,64 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox4 = new PictureBox();
+            bookImage = new PictureBox();
             bookTitle = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            bookAuthor = new Label();
+            bookStatus = new Label();
             returnBtn = new Button();
             penaltyVal = new Label();
             totalVal = new Label();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox4
+            // bookImage
             // 
-            pictureBox4.Image = Properties.Resources.book_placeholder;
-            pictureBox4.Location = new Point(26, 16);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(80, 100);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
+            bookImage.Image = Properties.Resources.book_placeholder;
+            bookImage.Location = new Point(26, 7);
+            bookImage.Name = "bookImage";
+            bookImage.Size = new Size(80, 110);
+            bookImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            bookImage.TabIndex = 3;
+            bookImage.TabStop = false;
             // 
             // bookTitle
             // 
-            bookTitle.AutoSize = true;
+            bookTitle.BackColor = Color.White;
             bookTitle.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
             bookTitle.Location = new Point(138, 43);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(74, 14);
+            bookTitle.Size = new Size(110, 30);
             bookTitle.TabIndex = 7;
             bookTitle.Text = "Book Title";
             // 
-            // label1
+            // bookAuthor
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("PP Hatton Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(76, 76, 76);
-            label1.Location = new Point(138, 73);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 13);
-            label1.TabIndex = 8;
-            label1.Text = "Book Title";
+            bookAuthor.AutoEllipsis = true;
+            bookAuthor.BackColor = Color.White;
+            bookAuthor.Font = new Font("PP Hatton Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookAuthor.ForeColor = Color.FromArgb(76, 76, 76);
+            bookAuthor.Location = new Point(138, 80);
+            bookAuthor.Name = "bookAuthor";
+            bookAuthor.Size = new Size(110, 20);
+            bookAuthor.TabIndex = 8;
+            bookAuthor.Text = "Author Name";
             // 
-            // label2
+            // bookStatus
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(76, 76, 76);
-            label2.Location = new Point(277, 56);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 14);
-            label2.TabIndex = 16;
-            label2.Text = "{Status}";
+            bookStatus.AutoSize = true;
+            bookStatus.BackColor = Color.White;
+            bookStatus.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookStatus.ForeColor = Color.FromArgb(76, 76, 76);
+            bookStatus.Location = new Point(277, 56);
+            bookStatus.Name = "bookStatus";
+            bookStatus.Size = new Size(59, 14);
+            bookStatus.TabIndex = 16;
+            bookStatus.Text = "{Status}";
             // 
             // returnBtn
             // 
             returnBtn.BackColor = Color.FromArgb(0, 149, 168);
+            returnBtn.FlatAppearance.BorderSize = 0;
+            returnBtn.FlatStyle = FlatStyle.Flat;
             returnBtn.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             returnBtn.ForeColor = Color.White;
             returnBtn.Location = new Point(552, 46);
@@ -98,6 +102,7 @@
             // penaltyVal
             // 
             penaltyVal.AutoSize = true;
+            penaltyVal.BackColor = Color.White;
             penaltyVal.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             penaltyVal.ForeColor = Color.FromArgb(76, 76, 76);
             penaltyVal.Location = new Point(391, 56);
@@ -109,6 +114,7 @@
             // totalVal
             // 
             totalVal.AutoSize = true;
+            totalVal.BackColor = Color.White;
             totalVal.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalVal.ForeColor = Color.FromArgb(76, 76, 76);
             totalVal.Location = new Point(480, 56);
@@ -134,24 +140,24 @@
             Controls.Add(totalVal);
             Controls.Add(penaltyVal);
             Controls.Add(returnBtn);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(bookStatus);
+            Controls.Add(bookAuthor);
             Controls.Add(bookTitle);
-            Controls.Add(pictureBox4);
+            Controls.Add(bookImage);
             Controls.Add(pictureBox1);
             Name = "BalanceBookCard";
             Size = new Size(700, 150);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pictureBox4;
+        private PictureBox bookImage;
         private Label bookTitle;
-        private Label label1;
-        private Label label2;
+        private Label bookAuthor;
+        private Label bookStatus;
         private Button returnBtn;
         private Label penaltyVal;
         private Label totalVal;

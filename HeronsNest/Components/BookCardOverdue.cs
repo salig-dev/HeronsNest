@@ -12,30 +12,31 @@ using System.Windows.Forms;
 
 namespace HeronsNest.Components
 {
-    public partial class BalanceBookCard : UserControl
+    public partial class BookCardOverdue : UserControl
     {
+
         private readonly BookReservation BookReservation;
         private readonly Book Book;
 
-        public BalanceBookCard(BookReservation bookReservation, Book book)
+        public BookCardOverdue(BookReservation bookReservation, Book book)
         {
             InitializeComponent();
 
             BookReservation = bookReservation;
             Book = book;
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
+            borrowedDate.Text = DateTime.Parse(BookReservation.DateReserved).ToShortDateString();
+            returnDate.Text = DateTime.Parse(BookReservation.DateReturn).ToShortDateString();
+
             bookAuthor.Text = Book.Author;
             bookTitle.Text = Book.Title;
 
-            // bookStatus.Text = 
-            // penaltyVal.Text =
-            // totalValText = 
-
-            // Load Image - di ko pa na test kung gumagana
+            // TODO: LOAD IMAGE
             try
             {
                 bookImage.LoadAsync(Book.CoverImg);
