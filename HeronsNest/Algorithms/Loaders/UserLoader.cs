@@ -15,7 +15,7 @@ namespace HeronsNest.Algorithms.Loaders
         readonly BookContext context = _context;
 
         public User? FindUser(string userId) {
-            var data = _context.Users.Find(userId);
+            var data =  _context.Users.Find(userId);
             if (data != null)
             {
                 return data;

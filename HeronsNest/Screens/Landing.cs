@@ -3,6 +3,7 @@ using HeronsNest.Algorithms.Authentication;
 using HeronsNest.Algorithms.Loaders;
 using HeronsNest.Components.Modal;
 using HeronsNest.Context;
+using HeronsNest.Models;
 using HeronsNest.Screens;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
@@ -20,10 +21,19 @@ namespace HeronsNest
         Authenticator authenticator;
         ReservationHandler reservationHandler;
 
+        Trie<Book> bookTrie = new();
+        Trie<Book> authorBookTrie = new();
+        Trie<Book> titleBookTrie = new();
+        Trie<Book> categoryBookTrie = new();
+
         public BookLoader? BookLoader { get { return bookLoader; } }
         public CategoryLoader? CategoryLoader { get { return categoryLoader; } }
         public Authenticator? Authenticator { get { return authenticator; } }
         public ReservationHandler? ReservationHandler { get { return reservationHandler; } }
+        public Trie<Book> BookTrie {  get { return bookTrie; } }  
+        public Trie<Book> AuthorBookTrie {  get { return authorBookTrie; } }
+        public Trie<Book> TitleBookTrie {  get { return titleBookTrie; } }
+        public Trie<Book> CategoryBookTrie { get { return categoryBookTrie; } }
 
         private void InitializeScreens()
         {
@@ -103,6 +113,28 @@ namespace HeronsNest
             categoryLoader = new(bookDbContext);
             authenticator = new(bookDbContext);
             reservationHandler = new(bookDbContext);
+
+            // load trie tree in another thread
+            Task.Run(() =>
+            {
+                var allBooks = BookLoader.GetAllBooks();
+
+                foreach (var book in allBooks)
+                {
+                    bookTrie.Insert(book, book.Isbn);
+                    authorBookTrie.Insert(book, book.Author ?? "");
+                    titleBookTrie.Insert(book, book.Title ?? "");
+
+                    // different loading way for category
+                    var diffGenres = book.Genres.Split(",");
+                    foreach(var genre in diffGenres)
+                    {
+                        categoryBookTrie.Insert(book, genre);
+                    }
+                }
+
+                Debug.WriteLine("All books are loaded into Trie");
+            });
         }
 
         protected override void OnClosing(CancelEventArgs e)

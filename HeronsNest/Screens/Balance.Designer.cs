@@ -30,12 +30,10 @@
         {
             leftNavBar1 = new Components.LeftNavBar();
             label1 = new Label();
-            balanceBookCard1 = new Components.BalanceBookCard();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            balanceBookCard2 = new Components.BalanceBookCard();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar2 = new Components.Comp_Searchbar();
             SuspendLayout();
@@ -63,10 +61,7 @@
             // 
             // balanceBookCard1
             // 
-            balanceBookCard1.Location = new Point(276, 244);
-            balanceBookCard1.Name = "balanceBookCard1";
-            balanceBookCard1.Size = new Size(658, 150);
-            balanceBookCard1.TabIndex = 6;
+            
             // 
             // label2
             // 
@@ -114,10 +109,7 @@
             // 
             // balanceBookCard2
             // 
-            balanceBookCard2.Location = new Point(276, 400);
-            balanceBookCard2.Name = "balanceBookCard2";
-            balanceBookCard2.Size = new Size(658, 150);
-            balanceBookCard2.TabIndex = 15;
+            
             // 
             // comp_DateTime1
             // 
@@ -140,12 +132,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 246, 246);
             Controls.Add(comp_Searchbar2);
-            Controls.Add(balanceBookCard2);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(balanceBookCard1);
             Controls.Add(label1);
             Controls.Add(leftNavBar1);
             Controls.Add(comp_DateTime1);
@@ -159,12 +149,10 @@
 
         private Components.LeftNavBar leftNavBar1;
         private Label label1;
-        private Components.BalanceBookCard balanceBookCard1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private Components.BalanceBookCard balanceBookCard2;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar2;
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HeronsNest.Components.Home;
+using HeronsNest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,14 +16,36 @@ namespace HeronsNest.Components.List
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public List<UserControl> DataSource { get; set; }
 
-        public void PopulateList()
-        {
-            if (DataSource.Count < 0 || DataSource == null) return;
+        private int DataLoaded = 10;
 
-            for (int i = 0; i < DataSource.Count; i++)
+        public void LazyLoadData<T>(List<T> data, Func<T, CategoryListItem>? func)
+        {
+            if (Controls.Count > 0) Controls.RemoveAt(Controls.Count - 1);
+
+            List<T> splitList = data[DataLoaded..(DataLoaded + 10)];
+
+            foreach(var item in splitList)
             {
-                Controls.Add(DataSource[i]);
+                Controls.Add(func?.Invoke(item));
             }
+
+            if (DataLoaded > data.Count) return;
+            DataLoaded += 10;
+
+            var loadMoreCard = new LoadMoreCard();
+
+            loadMoreCard.onCardClicked += (object sender, EventArgs e) =>
+            {
+                LazyLoadData<T>(data, func);
+            };
+
+            Controls.Add(loadMoreCard);
+        }
+
+        public void ResetLazyLoadSettings()
+        {
+            DataLoaded = 0;
+            Controls.Clear();
         }
     }
 }

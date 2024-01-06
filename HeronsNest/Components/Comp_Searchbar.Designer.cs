@@ -40,7 +40,7 @@
             // cmbCategory
             // 
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Items.AddRange(new object[] { "ISBN", "Book Title", "Author" });
+            cmbCategory.Items.AddRange(new object[] { "ISBN", "Book Title", "Author", "Category" });
             cmbCategory.Location = new Point(9, 6);
             cmbCategory.Margin = new Padding(3, 2, 3, 2);
             cmbCategory.Name = "cmbCategory";
@@ -73,7 +73,7 @@
             btnSearch.Size = new Size(24, 20);
             btnSearch.TabIndex = 2;
             btnSearch.UseVisualStyleBackColor = false;
-            btnSearch.Click += btnSearch_Click;
+            btnSearch.Click += OnSearchConfirm;
             btnSearch.MouseDown += OnSearchBarClicked;
             // 
             // panel1

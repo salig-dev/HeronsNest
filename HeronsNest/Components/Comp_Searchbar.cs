@@ -1,4 +1,5 @@
-﻿using HeronsNest.Models;
+﻿using HeronsNest.Enums;
+using HeronsNest.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,18 @@ namespace HeronsNest.Components
     {
         private Landing? mainForm;
         private EventHandler onControlClicked;
+        private EventHandler<SearchEventArgs> onSearchButtonClicked;
 
         public event EventHandler OnSearchClicked
         {
             add => onControlClicked += value;
             remove => onControlClicked -= value;
+        }
+
+        public event EventHandler<SearchEventArgs> OnSearchButtonClicked
+        {
+            add => onSearchButtonClicked += value;
+            remove => onSearchButtonClicked -= value;
         }
 
         public Landing? MainForm { get { return mainForm; } set { mainForm = value; } }
@@ -62,37 +70,16 @@ namespace HeronsNest.Components
                 case "Author":
                     autocompleteList = MainForm.BookLoader.GetAllBooks().Select(x => x.Author).ToList();
                     allowedTypes = [.. autocompleteList];
+                    break;;
+                case "Category":
+                    autocompleteList = MainForm.CategoryLoader.GetAllCategories().Select(x => x.CategoryName).ToList();
+                    allowedTypes = [.. autocompleteList];
                     break;
             }
 
             txtSearch.AutoCompleteCustomSource = allowedTypes;
             txtSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Comp_Searchbar_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void OnSearchInput(object sender, EventArgs e)
@@ -103,6 +90,11 @@ namespace HeronsNest.Components
         private void OnSearchBarClicked(object sender, MouseEventArgs e)
         {
             onControlClicked?.Invoke(this, e);
+        }
+
+        private void OnSearchConfirm(object sender, EventArgs e)
+        {
+            onSearchButtonClicked?.Invoke(this, new(keyword: txtSearch.Text, filter: cmbCategory?.SelectedItem?.ToString() ?? ""));
         }
     }
 }
