@@ -12,22 +12,20 @@ namespace HeronsNest.Algorithms
     internal class TrieNode(bool isEnd, Dictionary<char, TrieNode> children)
     {
         public bool IsEnd { get; set; } = isEnd;
-        public Book? BookData { get; set; }
+        public List<Book> BooksData = [];
         public Dictionary<char, TrieNode> Children = children;
     }
-    internal class Trie<T>
+    public class Trie<T>
     {
-        private TrieNode RootNode = new(false, new());
+        private readonly TrieNode RootNode = new(false, []);
 
-        public void Insert(Book book)
+        public void Insert(Book book, string key)
         {
             TrieNode node = RootNode;
-            string s = book.Isbn;
 
-            foreach (char character in s)
+            foreach (char character in key)
             {
                 // Ensure Children is initialized and add child if needed
-                node.Children ??= [];
                 if (!node.Children.TryGetValue(character, out TrieNode? child))
                 {
                     child = new TrieNode(false, []);  // Use default constructor for clarity
@@ -38,10 +36,10 @@ namespace HeronsNest.Algorithms
             }
 
             node.IsEnd = true;
-            node.BookData = book;
+            node.BooksData.Add(book);
         }
 
-        public Book Search(string s)
+        public List<Book> Search(string s)
         {
             TrieNode head = RootNode;
 
@@ -51,26 +49,26 @@ namespace HeronsNest.Algorithms
                 head = value;
             }
 
-            return head.BookData != null ? head.BookData : null!;
+            return head.BooksData.Count > 0 ? head.BooksData : null!;
         }
 
-        public List<Book> FindRelatedBooks(string isbn)
+        public List<Book> FindRelatedBooks(string term)
         {
-            List<Book> relatedBooks = new List<Book>();
+            List<Book> relatedBooks = [];
 
             // Find the node associated with the input ISBN
-            TrieNode? node = FindNodeByISBN(isbn);
+            TrieNode? node = FindNodeByTerm(term);
 
             if (node != null)
             {
                 // Recursively explore the subtree, collecting related books
-                RecursiveSearchRelatedBooks(node, "", relatedBooks);
+                RecursiveSearchRelatedBooks(node, term, relatedBooks);
             }
 
             return relatedBooks;
         }
 
-        private TrieNode? FindNodeByISBN(string isbn)
+        private TrieNode? FindNodeByTerm(string isbn)
         {
             TrieNode? node = RootNode;
 
@@ -85,49 +83,54 @@ namespace HeronsNest.Algorithms
             return node;
         }
 
-        private void RecursiveSearchRelatedBooks(TrieNode? node, string currentISBN, List<Book> relatedBooks)
+        private void RecursiveSearchRelatedBooks(TrieNode? node, string term, List<Book> relatedBooks)
         {
             if (node == null)
             {
                 return;
             }
 
-            if (IsTermRelatedToBook(node.BookData, currentISBN))
+            foreach (Book BookData in node.BooksData)
             {
-                if (node.BookData != null)
+                if (IsTermRelatedToBook(BookData, term))
                 {
-                    relatedBooks.Add(node.BookData);
+                    if (BookData != null)
+                    {
+                        relatedBooks.Add(BookData);
+                    }
                 }
             }
 
             foreach (char childChar in node.Children.Keys)
             {
-                RecursiveSearchRelatedBooks(node.Children[childChar], currentISBN + childChar, relatedBooks);
+                RecursiveSearchRelatedBooks(node.Children[childChar], term + childChar, relatedBooks);
             }
         }
 
-        private bool IsTermRelatedToBook(Book? node, string term)
+        private static bool IsTermRelatedToBook(Book? book, string term)
         {
+            if (book == null) return false;
+
             // Check for title match
-            if (node.Title.Contains(term))
+            if (book.Title.Contains(term, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
 
             // Check for ISBN match (case-insensitive)
-            if (node.Isbn.Contains(term, StringComparison.CurrentCultureIgnoreCase))
+            if (book.Isbn.Contains(term, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
 
             // Check for author match (case-insensitive)
-            if (node.Author.ToLower().Contains(term.ToLower()))
+            if (book.Author.Contains(term, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
 
             // Check for date published match (flexible format handling)
-            if (DateTime.TryParseExact(node.PublishDate, "mm:dd:yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime publishedDate) &&
+            if (DateTime.TryParseExact(book.PublishDate, "mm:dd:yy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime publishedDate) &&
                 publishedDate.ToString().Contains(term))
             {
                 return true;

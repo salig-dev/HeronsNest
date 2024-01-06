@@ -33,6 +33,9 @@
             comp_DateTime1 = new Components.Comp_DateTime();
             searchResultLabel = new Label();
             cardListView = new Components.List.CustomListView();
+            timeTakenLabel = new Label();
+            labelResults = new Label();
+            memoryUsedLabel = new Label();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -67,22 +70,56 @@
             searchResultLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             searchResultLabel.Location = new Point(225, 68);
             searchResultLabel.Name = "searchResultLabel";
-            searchResultLabel.Size = new Size(368, 37);
+            searchResultLabel.Size = new Size(264, 37);
             searchResultLabel.TabIndex = 3;
-            searchResultLabel.Text = "Search Results for \"{DATA}\"";
+            searchResultLabel.Text = "Use the Search Bar!";
             // 
             // cardListView
             // 
+            cardListView.AutoScroll = true;
             cardListView.DataSource = null;
             cardListView.Location = new Point(225, 139);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(751, 446);
+            cardListView.Size = new Size(775, 446);
             cardListView.TabIndex = 4;
+            // 
+            // timeTakenLabel
+            // 
+            timeTakenLabel.AutoSize = true;
+            timeTakenLabel.ForeColor = SystemColors.ControlDark;
+            timeTakenLabel.Location = new Point(237, 113);
+            timeTakenLabel.Name = "timeTakenLabel";
+            timeTakenLabel.Size = new Size(87, 15);
+            timeTakenLabel.TabIndex = 5;
+            timeTakenLabel.Text = "Time Taken: 0.0";
+            // 
+            // labelResults
+            // 
+            labelResults.AutoSize = true;
+            labelResults.ForeColor = SystemColors.ControlDark;
+            labelResults.Location = new Point(339, 113);
+            labelResults.Name = "labelResults";
+            labelResults.Size = new Size(56, 15);
+            labelResults.TabIndex = 6;
+            labelResults.Text = "Results: 0";
+            // 
+            // memoryUsedLabel
+            // 
+            memoryUsedLabel.AutoSize = true;
+            memoryUsedLabel.ForeColor = SystemColors.ControlDark;
+            memoryUsedLabel.Location = new Point(414, 113);
+            memoryUsedLabel.Name = "memoryUsedLabel";
+            memoryUsedLabel.Size = new Size(114, 15);
+            memoryUsedLabel.TabIndex = 7;
+            memoryUsedLabel.Text = "Memory Used: 0 MB";
             // 
             // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(memoryUsedLabel);
+            Controls.Add(labelResults);
+            Controls.Add(timeTakenLabel);
             Controls.Add(cardListView);
             Controls.Add(searchResultLabel);
             Controls.Add(comp_DateTime1);
@@ -101,5 +138,8 @@
         private Components.Comp_DateTime comp_DateTime1;
         private Label searchResultLabel;
         private Components.List.CustomListView cardListView;
+        private Label timeTakenLabel;
+        private Label labelResults;
+        private Label memoryUsedLabel;
     }
 }

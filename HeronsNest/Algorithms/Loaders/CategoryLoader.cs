@@ -27,5 +27,7 @@ namespace HeronsNest.Algorithms.Loaders
 
             return randomData;
         }
+
+        public List<Category> GetAllCategories() => context.Categories.ToList();
     }
 }

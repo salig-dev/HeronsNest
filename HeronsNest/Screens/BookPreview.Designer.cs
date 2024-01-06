@@ -52,10 +52,6 @@
             seriesText = new Label();
             label1 = new Label();
             aboutBook = new Label();
-            otherbook4 = new PictureBox();
-            otherbook3 = new PictureBox();
-            otherbook2 = new PictureBox();
-            otherbook1 = new PictureBox();
             leftNavBar1 = new Components.LeftNavBar();
             comp_Searchbar1 = new Components.Comp_Searchbar();
             comp_DateTime1 = new Components.Comp_DateTime();
@@ -66,12 +62,9 @@
             bookIdText = new Label();
             BookId = new Label();
             ReturnToLibraryBtn = new Button();
+            customListView1 = new Components.List.CustomListView();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             authorDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)otherbook4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -199,6 +192,7 @@
             // authorDetails
             // 
             authorDetails.BackColor = Color.White;
+            authorDetails.Controls.Add(customListView1);
             authorDetails.Controls.Add(likepercentageText);
             authorDetails.Controls.Add(bookLikepercentage);
             authorDetails.Controls.Add(bookPublisher);
@@ -209,10 +203,6 @@
             authorDetails.Controls.Add(seriesText);
             authorDetails.Controls.Add(label1);
             authorDetails.Controls.Add(aboutBook);
-            authorDetails.Controls.Add(otherbook4);
-            authorDetails.Controls.Add(otherbook3);
-            authorDetails.Controls.Add(otherbook2);
-            authorDetails.Controls.Add(otherbook1);
             authorDetails.Location = new Point(694, 109);
             authorDetails.Name = "authorDetails";
             authorDetails.Size = new Size(279, 262);
@@ -321,46 +311,6 @@
             aboutBook.Text = "Book Details";
             aboutBook.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // otherbook4
-            // 
-            otherbook4.BorderStyle = BorderStyle.FixedSingle;
-            otherbook4.Location = new Point(215, 176);
-            otherbook4.Name = "otherbook4";
-            otherbook4.Size = new Size(46, 67);
-            otherbook4.SizeMode = PictureBoxSizeMode.StretchImage;
-            otherbook4.TabIndex = 2;
-            otherbook4.TabStop = false;
-            // 
-            // otherbook3
-            // 
-            otherbook3.BorderStyle = BorderStyle.FixedSingle;
-            otherbook3.Location = new Point(151, 176);
-            otherbook3.Name = "otherbook3";
-            otherbook3.Size = new Size(46, 67);
-            otherbook3.SizeMode = PictureBoxSizeMode.StretchImage;
-            otherbook3.TabIndex = 2;
-            otherbook3.TabStop = false;
-            // 
-            // otherbook2
-            // 
-            otherbook2.BorderStyle = BorderStyle.FixedSingle;
-            otherbook2.Location = new Point(85, 176);
-            otherbook2.Name = "otherbook2";
-            otherbook2.Size = new Size(46, 67);
-            otherbook2.SizeMode = PictureBoxSizeMode.StretchImage;
-            otherbook2.TabIndex = 2;
-            otherbook2.TabStop = false;
-            // 
-            // otherbook1
-            // 
-            otherbook1.BorderStyle = BorderStyle.FixedSingle;
-            otherbook1.Location = new Point(17, 176);
-            otherbook1.Name = "otherbook1";
-            otherbook1.Size = new Size(46, 67);
-            otherbook1.SizeMode = PictureBoxSizeMode.StretchImage;
-            otherbook1.TabIndex = 2;
-            otherbook1.TabStop = false;
-            // 
             // leftNavBar1
             // 
             leftNavBar1.AutoSize = true;
@@ -454,6 +404,14 @@
             ReturnToLibraryBtn.UseVisualStyleBackColor = true;
             ReturnToLibraryBtn.Click += ReturnToLibraryBtn_Click;
             // 
+            // customListView1
+            // 
+            customListView1.DataSource = null;
+            customListView1.Location = new Point(17, 176);
+            customListView1.Name = "customListView1";
+            customListView1.Size = new Size(256, 80);
+            customListView1.TabIndex = 19;
+            // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -487,10 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
             authorDetails.ResumeLayout(false);
             authorDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)otherbook4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)otherbook1).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -511,11 +465,7 @@
         private Label bookDetails;
         private GroupBox authorDetails;
         private Label aboutBook;
-        private PictureBox otherbook1;
         private Label label1;
-        private PictureBox otherbook4;
-        private PictureBox otherbook3;
-        private PictureBox otherbook2;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_Searchbar comp_Searchbar1;
         private Components.Comp_DateTime comp_DateTime1;
@@ -534,5 +484,6 @@
         private Label bookLikepercentage;
         private Label likepercentageText;
         private Button ReturnToLibraryBtn;
+        private Components.List.CustomListView customListView1;
     }
 }
