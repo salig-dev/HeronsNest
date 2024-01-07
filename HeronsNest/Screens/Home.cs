@@ -1,5 +1,6 @@
 ﻿using HeronsNest.Components.Home;
 using HeronsNest.Context;
+using HeronsNest.Singleton;
 using System.Diagnostics;
 
 namespace HeronsNest.Screens
@@ -34,6 +35,17 @@ namespace HeronsNest.Screens
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+
+            // load greeting
+
+            var timeOfDay = DateTime.Now.Hour switch
+            {
+                < 12 => "morning",
+                < 18 => "afternoon",
+                _ => "evening"
+            };
+
+            greetingLabel.Text = $"Good {timeOfDay}, {UserSession.Instance.User.Name}!";
 
             comp_Searchbar1.OnSearchClicked += (sender, e) =>
             {

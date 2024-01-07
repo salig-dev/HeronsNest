@@ -42,6 +42,8 @@
             bookAbout = new Label();
             bookDetails = new Label();
             authorDetails = new GroupBox();
+            otherBooksList = new Components.List.CustomListView();
+            otherBookCover = new PictureBox();
             likepercentageText = new Label();
             bookLikepercentage = new Label();
             bookPublisher = new Label();
@@ -59,14 +61,17 @@
             bookImg = new PictureBox();
             pictureBox1 = new PictureBox();
             ratingtext = new Label();
-            bookIdText = new Label();
-            BookId = new Label();
+            isbnText = new Label();
+            ISBN = new Label();
             ReturnToLibraryBtn = new Button();
             customListView1 = new Components.List.CustomListView();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             authorDetails.SuspendLayout();
+            otherBooksList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)otherBookCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            customListView1.SuspendLayout();
             SuspendLayout();
             // 
             // bookImage
@@ -180,11 +185,12 @@
             // bookDetails
             // 
             bookDetails.AutoEllipsis = true;
+            bookDetails.AutoSize = true;
             bookDetails.BackColor = Color.White;
             bookDetails.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookDetails.Location = new Point(224, 436);
+            bookDetails.Location = new Point(3, 0);
             bookDetails.Name = "bookDetails";
-            bookDetails.Size = new Size(692, 105);
+            bookDetails.Size = new Size(675, 54);
             bookDetails.TabIndex = 15;
             bookDetails.Text = resources.GetString("bookDetails.Text");
             bookDetails.Click += bookDetails_Click;
@@ -192,7 +198,7 @@
             // authorDetails
             // 
             authorDetails.BackColor = Color.White;
-            authorDetails.Controls.Add(customListView1);
+            authorDetails.Controls.Add(otherBooksList);
             authorDetails.Controls.Add(likepercentageText);
             authorDetails.Controls.Add(bookLikepercentage);
             authorDetails.Controls.Add(bookPublisher);
@@ -209,6 +215,26 @@
             authorDetails.TabIndex = 16;
             authorDetails.TabStop = false;
             authorDetails.Enter += authorDetails_Enter;
+            // 
+            // otherBooksList
+            // 
+            otherBooksList.AutoScroll = true;
+            otherBooksList.Controls.Add(otherBookCover);
+            otherBooksList.DataSource = null;
+            otherBooksList.Location = new Point(17, 162);
+            otherBooksList.Name = "otherBooksList";
+            otherBooksList.Size = new Size(256, 94);
+            otherBooksList.TabIndex = 19;
+            // 
+            // otherBookCover
+            // 
+            otherBookCover.Image = Properties.Resources.book_placeholder;
+            otherBookCover.Location = new Point(3, 3);
+            otherBookCover.Name = "otherBookCover";
+            otherBookCover.Size = new Size(70, 85);
+            otherBookCover.SizeMode = PictureBoxSizeMode.StretchImage;
+            otherBookCover.TabIndex = 26;
+            otherBookCover.TabStop = false;
             // 
             // likepercentageText
             // 
@@ -294,7 +320,7 @@
             // label1
             // 
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(17, 159);
+            label1.Location = new Point(17, 145);
             label1.Name = "label1";
             label1.Size = new Size(74, 14);
             label1.TabIndex = 0;
@@ -373,25 +399,25 @@
             ratingtext.TabIndex = 22;
             ratingtext.Text = "Rating:";
             // 
-            // bookIdText
+            // isbnText
             // 
-            bookIdText.AutoSize = true;
-            bookIdText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bookIdText.Location = new Point(397, 201);
-            bookIdText.Name = "bookIdText";
-            bookIdText.Size = new Size(63, 18);
-            bookIdText.TabIndex = 23;
-            bookIdText.Text = "Book Id:";
+            isbnText.AutoSize = true;
+            isbnText.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            isbnText.Location = new Point(397, 201);
+            isbnText.Name = "isbnText";
+            isbnText.Size = new Size(46, 18);
+            isbnText.TabIndex = 23;
+            isbnText.Text = "ISBN:";
             // 
-            // BookId
+            // ISBN
             // 
-            BookId.AutoEllipsis = true;
-            BookId.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BookId.Location = new Point(455, 201);
-            BookId.Name = "BookId";
-            BookId.Size = new Size(205, 18);
-            BookId.TabIndex = 24;
-            BookId.Text = "book ID here";
+            ISBN.AutoEllipsis = true;
+            ISBN.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ISBN.Location = new Point(455, 201);
+            ISBN.Name = "ISBN";
+            ISBN.Size = new Size(205, 18);
+            ISBN.TabIndex = 24;
+            ISBN.Text = "ISBN Here";
             // 
             // ReturnToLibraryBtn
             // 
@@ -406,26 +432,29 @@
             // 
             // customListView1
             // 
+            customListView1.AutoScroll = true;
+            customListView1.BackColor = Color.White;
+            customListView1.Controls.Add(bookDetails);
             customListView1.DataSource = null;
-            customListView1.Location = new Point(17, 176);
+            customListView1.Location = new Point(212, 433);
             customListView1.Name = "customListView1";
-            customListView1.Size = new Size(256, 80);
-            customListView1.TabIndex = 19;
+            customListView1.Size = new Size(707, 100);
+            customListView1.TabIndex = 26;
             // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(customListView1);
             Controls.Add(ReturnToLibraryBtn);
-            Controls.Add(BookId);
-            Controls.Add(bookIdText);
+            Controls.Add(ISBN);
+            Controls.Add(isbnText);
             Controls.Add(ratingtext);
             Controls.Add(bookImg);
             Controls.Add(comp_Searchbar1);
             Controls.Add(leftNavBar1);
             Controls.Add(authorDetails);
-            Controls.Add(bookDetails);
             Controls.Add(bookAbout);
             Controls.Add(reserveBtn);
             Controls.Add(borrowBtn);
@@ -445,8 +474,12 @@
             ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
             authorDetails.ResumeLayout(false);
             authorDetails.PerformLayout();
+            otherBooksList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)otherBookCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            customListView1.ResumeLayout(false);
+            customListView1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -475,8 +508,8 @@
         private Label ratingtext;
         private Label bookSeries;
         private Label seriesText;
-        private Label bookIdText;
-        private Label BookId;
+        private Label isbnText;
+        private Label ISBN;
         private Label bookGenreText;
         private Label bookGenre;
         private Label bookPublisher;
@@ -484,6 +517,8 @@
         private Label bookLikepercentage;
         private Label likepercentageText;
         private Button ReturnToLibraryBtn;
+        private Components.List.CustomListView otherBooksList;
+        private PictureBox otherBookCover;
         private Components.List.CustomListView customListView1;
     }
 }
