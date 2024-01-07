@@ -30,27 +30,23 @@
         {
             returnButtonborrow = new Label();
             borrowDetails = new Label();
-            textBox1 = new TextBox();
-            verificationBorrow = new Label();
-            serialBorrow = new Label();
             toBorrow = new Label();
             fromBorrow = new Label();
-            FromYearBorrow = new ComboBox();
-            FromDayBorrow = new ComboBox();
-            ToYearBorrow = new ComboBox();
-            ToDayBorrow = new ComboBox();
-            ToMonthBorrow = new ComboBox();
-            FromMonthBorrow = new ComboBox();
             bookReturn = new Button();
-            textBox2 = new TextBox();
-            label1 = new Label();
+            DaysPenalty = new TextBox();
+            Penalty = new Label();
+            label2 = new Label();
+            BookBorrow = new TextBox();
+            Dateborrow = new DateTimePicker();
+            DateReturn = new DateTimePicker();
+            label3 = new Label();
             SuspendLayout();
             // 
             // returnButtonborrow
             // 
             returnButtonborrow.AutoSize = true;
             returnButtonborrow.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnButtonborrow.Location = new Point(66, 25);
+            returnButtonborrow.Location = new Point(40, 25);
             returnButtonborrow.Name = "returnButtonborrow";
             returnButtonborrow.Size = new Size(27, 21);
             returnButtonborrow.TabIndex = 4;
@@ -60,104 +56,31 @@
             // 
             borrowDetails.AutoSize = true;
             borrowDetails.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowDetails.Location = new Point(163, 25);
+            borrowDetails.Location = new Point(114, 25);
             borrowDetails.Name = "borrowDetails";
             borrowDetails.Size = new Size(116, 21);
             borrowDetails.TabIndex = 3;
             borrowDetails.Text = "Fill Up Details";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(43, 241);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(274, 20);
-            textBox1.TabIndex = 17;
-            // 
-            // verificationBorrow
-            // 
-            verificationBorrow.AutoSize = true;
-            verificationBorrow.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            verificationBorrow.Location = new Point(43, 264);
-            verificationBorrow.Name = "verificationBorrow";
-            verificationBorrow.Size = new Size(85, 13);
-            verificationBorrow.TabIndex = 13;
-            verificationBorrow.Text = "For Verification";
-            // 
-            // serialBorrow
-            // 
-            serialBorrow.AutoSize = true;
-            serialBorrow.Location = new Point(43, 223);
-            serialBorrow.Name = "serialBorrow";
-            serialBorrow.Size = new Size(87, 15);
-            serialBorrow.TabIndex = 14;
-            serialBorrow.Text = "Book Serial No.";
-            // 
             // toBorrow
             // 
             toBorrow.AutoSize = true;
-            toBorrow.Location = new Point(43, 151);
+            toBorrow.Location = new Point(43, 203);
             toBorrow.Name = "toBorrow";
-            toBorrow.Size = new Size(19, 15);
+            toBorrow.Size = new Size(82, 15);
             toBorrow.TabIndex = 15;
-            toBorrow.Text = "To";
+            toBorrow.Text = "Date Returned";
+            toBorrow.TextAlign = ContentAlignment.TopCenter;
+            toBorrow.Click += toBorrow_Click;
             // 
             // fromBorrow
             // 
             fromBorrow.AutoSize = true;
-            fromBorrow.Location = new Point(43, 85);
+            fromBorrow.Location = new Point(40, 141);
             fromBorrow.Name = "fromBorrow";
-            fromBorrow.Size = new Size(35, 15);
+            fromBorrow.Size = new Size(85, 15);
             fromBorrow.TabIndex = 16;
-            fromBorrow.Text = "From";
-            // 
-            // FromYearBorrow
-            // 
-            FromYearBorrow.FormattingEnabled = true;
-            FromYearBorrow.Location = new Point(220, 114);
-            FromYearBorrow.Name = "FromYearBorrow";
-            FromYearBorrow.Size = new Size(97, 23);
-            FromYearBorrow.TabIndex = 7;
-            // 
-            // FromDayBorrow
-            // 
-            FromDayBorrow.FormattingEnabled = true;
-            FromDayBorrow.Location = new Point(132, 114);
-            FromDayBorrow.Name = "FromDayBorrow";
-            FromDayBorrow.Size = new Size(66, 23);
-            FromDayBorrow.TabIndex = 8;
-            // 
-            // ToYearBorrow
-            // 
-            ToYearBorrow.FormattingEnabled = true;
-            ToYearBorrow.Location = new Point(220, 178);
-            ToYearBorrow.Name = "ToYearBorrow";
-            ToYearBorrow.Size = new Size(97, 23);
-            ToYearBorrow.TabIndex = 9;
-            // 
-            // ToDayBorrow
-            // 
-            ToDayBorrow.FormattingEnabled = true;
-            ToDayBorrow.Location = new Point(132, 178);
-            ToDayBorrow.Name = "ToDayBorrow";
-            ToDayBorrow.Size = new Size(66, 23);
-            ToDayBorrow.TabIndex = 10;
-            // 
-            // ToMonthBorrow
-            // 
-            ToMonthBorrow.FormattingEnabled = true;
-            ToMonthBorrow.Location = new Point(43, 178);
-            ToMonthBorrow.Name = "ToMonthBorrow";
-            ToMonthBorrow.Size = new Size(66, 23);
-            ToMonthBorrow.TabIndex = 11;
-            // 
-            // FromMonthBorrow
-            // 
-            FromMonthBorrow.FormattingEnabled = true;
-            FromMonthBorrow.Location = new Point(43, 114);
-            FromMonthBorrow.Name = "FromMonthBorrow";
-            FromMonthBorrow.Size = new Size(66, 23);
-            FromMonthBorrow.TabIndex = 12;
+            fromBorrow.Text = "Date Borrowed";
             // 
             // bookReturn
             // 
@@ -168,41 +91,78 @@
             bookReturn.Text = "Return";
             bookReturn.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // DaysPenalty
             // 
-            textBox2.Location = new Point(43, 307);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(274, 20);
-            textBox2.TabIndex = 18;
-            textBox2.TextChanged += textBox2_TextChanged;
+            DaysPenalty.Location = new Point(43, 288);
+            DaysPenalty.Multiline = true;
+            DaysPenalty.Name = "DaysPenalty";
+            DaysPenalty.Size = new Size(274, 20);
+            DaysPenalty.TabIndex = 18;
+            DaysPenalty.TextChanged += textBox2_TextChanged;
             // 
-            // label1
+            // Penalty
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(43, 289);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 15);
-            label1.TabIndex = 19;
-            label1.Text = "Penalty";
+            Penalty.AutoSize = true;
+            Penalty.Location = new Point(43, 265);
+            Penalty.Name = "Penalty";
+            Penalty.Size = new Size(46, 15);
+            Penalty.TabIndex = 19;
+            Penalty.Text = "Penalty";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(40, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(88, 15);
+            label2.TabIndex = 20;
+            label2.Text = "Book Borrowed";
+            label2.Click += label2_Click;
+            // 
+            // BookBorrow
+            // 
+            BookBorrow.Location = new Point(40, 101);
+            BookBorrow.Name = "BookBorrow";
+            BookBorrow.Size = new Size(277, 23);
+            BookBorrow.TabIndex = 21;
+            // 
+            // Dateborrow
+            // 
+            Dateborrow.Location = new Point(40, 164);
+            Dateborrow.Name = "Dateborrow";
+            Dateborrow.Size = new Size(277, 23);
+            Dateborrow.TabIndex = 22;
+            // 
+            // DateReturn
+            // 
+            DateReturn.Location = new Point(43, 226);
+            DateReturn.Name = "DateReturn";
+            DateReturn.Size = new Size(274, 23);
+            DateReturn.TabIndex = 23;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 7F);
+            label3.Location = new Point(48, 319);
+            label3.Name = "label3";
+            label3.Size = new Size(174, 12);
+            label3.TabIndex = 24;
+            label3.Text = "Note: 20php for everyday past the due";
             // 
             // ReturnBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(verificationBorrow);
-            Controls.Add(serialBorrow);
+            Controls.Add(label3);
+            Controls.Add(DateReturn);
+            Controls.Add(Dateborrow);
+            Controls.Add(BookBorrow);
+            Controls.Add(label2);
+            Controls.Add(Penalty);
+            Controls.Add(DaysPenalty);
             Controls.Add(toBorrow);
             Controls.Add(fromBorrow);
-            Controls.Add(FromYearBorrow);
-            Controls.Add(FromDayBorrow);
-            Controls.Add(ToYearBorrow);
-            Controls.Add(ToDayBorrow);
-            Controls.Add(ToMonthBorrow);
-            Controls.Add(FromMonthBorrow);
             Controls.Add(bookReturn);
             Controls.Add(returnButtonborrow);
             Controls.Add(borrowDetails);
@@ -216,19 +176,15 @@
 
         private Label returnButtonborrow;
         private Label borrowDetails;
-        private TextBox textBox1;
-        private Label verificationBorrow;
-        private Label serialBorrow;
         private Label toBorrow;
         private Label fromBorrow;
-        private ComboBox FromYearBorrow;
-        private ComboBox FromDayBorrow;
-        private ComboBox ToYearBorrow;
-        private ComboBox ToDayBorrow;
-        private ComboBox ToMonthBorrow;
-        private ComboBox FromMonthBorrow;
         private Button bookReturn;
-        private TextBox textBox2;
-        private Label label1;
+        private TextBox DaysPenalty;
+        private Label Penalty;
+        private Label label2;
+        private TextBox BookBorrow;
+        private DateTimePicker Dateborrow;
+        private DateTimePicker DateReturn;
+        private Label label3;
     }
 }

@@ -22,5 +22,15 @@ namespace HeronsNest.Components.Modal
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toBorrow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
