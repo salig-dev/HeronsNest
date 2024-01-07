@@ -28,9 +28,10 @@ namespace HeronsNest.Screens
             bookDetails.Text = Book.Description;
             bookRating.Text = Book.Ratings.ToString() + " Stars";
             bookSeries.Text = Book.Series;
-            BookId.Text = Book.BookId.ToString();
+            ISBN.Text = Book.Isbn.ToString();
             bookGenre.Text = Book.Genres;
             bookPublisher.Text = Book.Publisher;
+
             bookLikepercentage.Text = Book.LikedPercentage.ToString() + "%";
             try
             {
@@ -40,6 +41,31 @@ namespace HeronsNest.Screens
             {
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }
+
+            var relatedBooksOfAuthor = mainForm.AuthorBookTrie.FindRelatedBooks(Book.Author!);
+            foreach (var book in relatedBooksOfAuthor)
+            {
+                var pictureBox = new PictureBox();
+                pictureBox.Size = otherBookCover.Size;
+                try
+                {
+                    pictureBox.LoadAsync(book.CoverImg);
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Click += (object sender, EventArgs e) =>
+                    {
+                        mainForm.SwitchView(new BookPreview(mainForm, book));
+                    };
+                } catch
+                {
+                    Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
+
+                }
+
+                otherBooksList.Controls.Add(pictureBox);
+            }
+
+            otherBooksList.Controls.RemoveAt(0);
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

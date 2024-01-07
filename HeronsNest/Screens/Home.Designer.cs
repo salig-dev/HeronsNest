@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             leftNavBar1 = new Components.LeftNavBar();
-            label1 = new Label();
+            greetingLabel = new Label();
             categoryListView = new Components.List.CustomListView();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
@@ -45,15 +45,15 @@
             leftNavBar1.Size = new Size(200, 600);
             leftNavBar1.TabIndex = 21;
             // 
-            // label1
+            // greetingLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(215, 82);
-            label1.Name = "label1";
-            label1.Size = new Size(267, 37);
-            label1.TabIndex = 22;
-            label1.Text = "Good Morning, User!";
+            greetingLabel.AutoSize = true;
+            greetingLabel.Font = new Font("Segoe UI", 20F);
+            greetingLabel.Location = new Point(215, 82);
+            greetingLabel.Name = "greetingLabel";
+            greetingLabel.Size = new Size(267, 37);
+            greetingLabel.TabIndex = 22;
+            greetingLabel.Text = "Good Morning, User!";
             // 
             // categoryListView
             // 
@@ -91,7 +91,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(comp_Searchbar1);
             Controls.Add(categoryListView);
-            Controls.Add(label1);
+            Controls.Add(greetingLabel);
             Controls.Add(leftNavBar1);
             Controls.Add(comp_DateTime1);
             Name = "Home";
@@ -103,7 +103,7 @@
 
         #endregion
         private Components.LeftNavBar leftNavBar1;
-        private Label label1;
+        private Label greetingLabel;
         private Components.List.CustomListView categoryListView;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;

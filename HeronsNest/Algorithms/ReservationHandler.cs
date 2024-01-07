@@ -1,4 +1,5 @@
 ﻿using HeronsNest.Context;
+using HeronsNest.Enums;
 using HeronsNest.Models;
 using HeronsNest.Singleton;
 using System;
@@ -16,9 +17,10 @@ namespace HeronsNest.Algorithms
         private readonly BookContext Context = _context;
         private readonly UserSession Session = UserSession.Instance;
         
-        public void CreateReservation(Book book, DateTime From, DateTime To)
+        public ReservationActionResult CreateReservation(Book book, DateTime From, DateTime? To = null)
         {
-            if (Session.User == null) return;
+            if (Session.User == null) return ReservationActionResult.Failed;
+            if (HasUserMaxReservations(Session.User)) return ReservationActionResult.MaxReservation;
 
             Context.BookReservations.Add(new()
             {
@@ -26,28 +28,39 @@ namespace HeronsNest.Algorithms
                 ReservedBy = Session.User.Id,
                 DateReserved = From.ToString(),
                 PenaltyCost = 0,
-                DateReturn = To.ToString()
+                DateReturn = (To ?? DateTime.Now.AddDays(3)).ToString()
             });
             SaveChanges();
+
+            return ReservationActionResult.Success;
         }
 
-        public void UpdateReservation(BookReservation Reservation) 
+        public ReservationActionResult UpdateReservation(BookReservation Reservation) 
         {
-            Context.BookReservations.Update(Reservation);
-            SaveChanges();
+            try
+            {
+                Context.BookReservations.Update(Reservation);
+                SaveChanges();
+            } catch
+            {
+                return ReservationActionResult.Failed;
+            }
+            return ReservationActionResult.Success;
         }
 
-        public void ResolveReservation(Book book)
+        public ReservationActionResult ResolveReservation(Book book)
         {
             var BookReserved = Context.BookReservations.First(reservedBook => reservedBook.BookReserved == book.Isbn);
 
-            if (BookReserved == null) return;
+            if (BookReserved == null) return ReservationActionResult.Failed;
 
             BookReserved.DateReturned = DateTime.Now.ToString();
             BookReserved.PenaltyCost = 0;
 
             UpdateReservation(BookReserved);
             SaveChanges();
+
+            return ReservationActionResult.Success;
         }
 
         public void DeleteReservation(Book book)
@@ -59,9 +72,16 @@ namespace HeronsNest.Algorithms
             SaveChanges();
         }
 
+        public bool HasUserMaxReservations(User user)
+        {
+            var userReservations = UserReservations(user).Select(x => x.DateReturned == null).ToList();
+
+            return userReservations.Count >= (user.IsAdmin == 1 ? 999 : 5);
+        }
+
         public List<BookReservation> UserReservations(User user)
         {
-            return Context.BookReservations.Where(reservation => reservation.ReservedBy == user.Id).ToList();
+            return [.. Context.BookReservations.Where(reservation => reservation.ReservedBy == user.Id)];
         }
 
         public List<BookReservation> UserDueReservation(User user)

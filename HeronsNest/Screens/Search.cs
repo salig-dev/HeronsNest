@@ -93,7 +93,12 @@ namespace HeronsNest.Screens
                         {
                             foreach (var book in results)
                             {
-                                cardListView.Controls.Add(new CategoryListItem(book));
+                                var bookCard = new CategoryListItem(book);
+                                bookCard.OnCardClick += (object s, EventArgs e) =>
+                                {
+                                    mainForm.SwitchView(new BookPreview(mainForm, book));
+                                };
+                                cardListView.Controls.Add(bookCard);
                             }
                         }
                         
