@@ -31,17 +31,11 @@
             returnButtonreserve = new Label();
             reserveDetails = new Label();
             fromReserve = new Label();
-            FromMonthReserve = new ComboBox();
-            FromDayReserve = new ComboBox();
-            FromYearReserve = new ComboBox();
-            toReserve = new Label();
-            ToMonthReserve = new ComboBox();
-            ToDayReserve = new ComboBox();
-            ToYearReserve = new ComboBox();
-            serialReserve = new Label();
-            textBox1 = new TextBox();
-            verificationReserve = new Label();
             bookReserve = new Button();
+            Note = new Label();
+            To = new Label();
+            DateReserve = new DateTimePicker();
+            toRerserve = new DateTimePicker();
             SuspendLayout();
             // 
             // returnButtonreserve
@@ -58,7 +52,7 @@
             // 
             reserveDetails.AutoSize = true;
             reserveDetails.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reserveDetails.Location = new Point(137, 25);
+            reserveDetails.Location = new Point(129, 25);
             reserveDetails.Name = "reserveDetails";
             reserveDetails.Size = new Size(116, 21);
             reserveDetails.TabIndex = 1;
@@ -73,116 +67,59 @@
             fromReserve.TabIndex = 4;
             fromReserve.Text = "From";
             // 
-            // FromMonthReserve
-            // 
-            FromMonthReserve.FormattingEnabled = true;
-            FromMonthReserve.Location = new Point(41, 104);
-            FromMonthReserve.Name = "FromMonthReserve";
-            FromMonthReserve.Size = new Size(66, 23);
-            FromMonthReserve.TabIndex = 3;
-            // 
-            // FromDayReserve
-            // 
-            FromDayReserve.FormattingEnabled = true;
-            FromDayReserve.Location = new Point(137, 104);
-            FromDayReserve.Name = "FromDayReserve";
-            FromDayReserve.Size = new Size(66, 23);
-            FromDayReserve.TabIndex = 3;
-            // 
-            // FromYearReserve
-            // 
-            FromYearReserve.FormattingEnabled = true;
-            FromYearReserve.Location = new Point(232, 104);
-            FromYearReserve.Name = "FromYearReserve";
-            FromYearReserve.Size = new Size(97, 23);
-            FromYearReserve.TabIndex = 3;
-            // 
-            // toReserve
-            // 
-            toReserve.AutoSize = true;
-            toReserve.Location = new Point(41, 147);
-            toReserve.Name = "toReserve";
-            toReserve.Size = new Size(19, 15);
-            toReserve.TabIndex = 4;
-            toReserve.Text = "To";
-            // 
-            // ToMonthReserve
-            // 
-            ToMonthReserve.FormattingEnabled = true;
-            ToMonthReserve.Location = new Point(41, 176);
-            ToMonthReserve.Name = "ToMonthReserve";
-            ToMonthReserve.Size = new Size(66, 23);
-            ToMonthReserve.TabIndex = 3;
-            // 
-            // ToDayReserve
-            // 
-            ToDayReserve.FormattingEnabled = true;
-            ToDayReserve.Location = new Point(137, 176);
-            ToDayReserve.Name = "ToDayReserve";
-            ToDayReserve.Size = new Size(66, 23);
-            ToDayReserve.TabIndex = 3;
-            // 
-            // ToYearReserve
-            // 
-            ToYearReserve.FormattingEnabled = true;
-            ToYearReserve.Location = new Point(232, 176);
-            ToYearReserve.Name = "ToYearReserve";
-            ToYearReserve.Size = new Size(97, 23);
-            ToYearReserve.TabIndex = 3;
-            // 
-            // serialReserve
-            // 
-            serialReserve.AutoSize = true;
-            serialReserve.Location = new Point(41, 217);
-            serialReserve.Name = "serialReserve";
-            serialReserve.Size = new Size(87, 15);
-            serialReserve.TabIndex = 4;
-            serialReserve.Text = "Book Serial No.";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(43, 235);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(274, 20);
-            textBox1.TabIndex = 5;
-            // 
-            // verificationReserve
-            // 
-            verificationReserve.AutoSize = true;
-            verificationReserve.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            verificationReserve.Location = new Point(41, 258);
-            verificationReserve.Name = "verificationReserve";
-            verificationReserve.Size = new Size(85, 13);
-            verificationReserve.TabIndex = 4;
-            verificationReserve.Text = "For Verification";
-            // 
             // bookReserve
             // 
-            bookReserve.Location = new Point(131, 293);
+            bookReserve.Location = new Point(120, 258);
             bookReserve.Name = "bookReserve";
             bookReserve.Size = new Size(122, 34);
             bookReserve.TabIndex = 0;
             bookReserve.Text = "Reserve";
             bookReserve.UseVisualStyleBackColor = true;
             // 
+            // Note
+            // 
+            Note.AutoSize = true;
+            Note.Font = new Font("Segoe UI", 7F);
+            Note.Location = new Point(47, 203);
+            Note.Name = "Note";
+            Note.Size = new Size(118, 12);
+            Note.TabIndex = 6;
+            Note.Text = "Note: 20 php per day due";
+            // 
+            // To
+            // 
+            To.AutoSize = true;
+            To.Location = new Point(44, 148);
+            To.Name = "To";
+            To.Size = new Size(19, 15);
+            To.TabIndex = 7;
+            To.Text = "To";
+            // 
+            // DateReserve
+            // 
+            DateReserve.Location = new Point(44, 99);
+            DateReserve.Name = "DateReserve";
+            DateReserve.Size = new Size(245, 23);
+            DateReserve.TabIndex = 5;
+            // 
+            // toRerserve
+            // 
+            toRerserve.Location = new Point(44, 168);
+            toRerserve.Name = "toRerserve";
+            toRerserve.Size = new Size(245, 23);
+            toRerserve.TabIndex = 8;
+            // 
             // ReserveBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox1);
-            Controls.Add(verificationReserve);
+            Controls.Add(toRerserve);
+            Controls.Add(To);
+            Controls.Add(Note);
+            Controls.Add(DateReserve);
             Controls.Add(returnButtonreserve);
             Controls.Add(reserveDetails);
-            Controls.Add(serialReserve);
             Controls.Add(fromReserve);
-            Controls.Add(toReserve);
-            Controls.Add(FromDayReserve);
-            Controls.Add(FromMonthReserve);
-            Controls.Add(FromYearReserve);
-            Controls.Add(ToYearReserve);
-            Controls.Add(ToMonthReserve);
-            Controls.Add(ToDayReserve);
             Controls.Add(bookReserve);
             Name = "ReserveBook";
             Size = new Size(360, 420);
@@ -196,16 +133,12 @@
         private Label returnButtonreserve;
         private Label reserveDetails;
         private Label fromReserve;
-        private ComboBox FromMonthReserve;
-        private ComboBox FromDayReserve;
-        private ComboBox FromYearReserve;
         private Label toReserve;
-        private ComboBox ToMonthReserve;
-        private ComboBox ToDayReserve;
-        private ComboBox ToYearReserve;
-        private Label serialReserve;
-        private TextBox textBox1;
-        private Label verificationReserve;
         private Button bookReserve;
+        private Label Note;
+        private Label To;
+        private DateTimePicker DateReserve;
+        private DateTimePicker toRerserve;
+        private DateTimePicker dateTimePicker2;
     }
 }

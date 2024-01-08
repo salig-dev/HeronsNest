@@ -21,5 +21,10 @@ namespace HeronsNest.Components.Modal
         {
 
         }
+
+        private void toReserve_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
