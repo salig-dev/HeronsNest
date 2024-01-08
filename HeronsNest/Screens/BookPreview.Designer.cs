@@ -160,6 +160,7 @@
             borrowBtn.TabIndex = 10;
             borrowBtn.Text = "BORROW";
             borrowBtn.UseVisualStyleBackColor = true;
+            borrowBtn.Click += borrowBtn_Click;
             // 
             // reserveBtn
             // 
@@ -169,6 +170,7 @@
             reserveBtn.TabIndex = 11;
             reserveBtn.Text = "RESERVE";
             reserveBtn.UseVisualStyleBackColor = true;
+            reserveBtn.Click += reserveBtn_Click;
             // 
             // bookAbout
             // 

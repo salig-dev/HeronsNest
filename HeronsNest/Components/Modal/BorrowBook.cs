@@ -12,7 +12,7 @@ namespace HeronsNest.Components.Modal
 {
     public partial class BorrowBook : UserControl
     {
-        public BorrowBook()
+        public BorrowBook(Landing mainForm)
         {
             InitializeComponent();
         }

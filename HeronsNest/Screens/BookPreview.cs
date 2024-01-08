@@ -1,4 +1,5 @@
-﻿using HeronsNest.Models;
+﻿using HeronsNest.Components.Modal;
+using HeronsNest.Models;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -55,7 +56,8 @@ namespace HeronsNest.Screens
                     {
                         mainForm.SwitchView(new BookPreview(mainForm, book));
                     };
-                } catch
+                }
+                catch
                 {
                     Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
 
@@ -130,6 +132,16 @@ namespace HeronsNest.Screens
         private void ReturnToLibraryBtn_Click(object sender, EventArgs e)
         {
             mainForm.SwitchView(new Home(mainForm));
+        }
+
+        private void borrowBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.ShowPopup(new BorrowBook(mainForm));
+        }
+
+        private void reserveBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.ShowPopup(new ReserveBook(mainForm));
         }
     }
 }
