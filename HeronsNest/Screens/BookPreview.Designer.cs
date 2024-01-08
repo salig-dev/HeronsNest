@@ -423,9 +423,9 @@
             // 
             // ReturnToLibraryBtn
             // 
-            ReturnToLibraryBtn.Location = new Point(212, 73);
+            ReturnToLibraryBtn.Location = new Point(212, 81);
             ReturnToLibraryBtn.Name = "ReturnToLibraryBtn";
-            ReturnToLibraryBtn.Size = new Size(129, 44);
+            ReturnToLibraryBtn.Size = new Size(129, 27);
             ReturnToLibraryBtn.TabIndex = 25;
             ReturnToLibraryBtn.Text = "<- Return To Library";
             ReturnToLibraryBtn.TextAlign = ContentAlignment.MiddleLeft;

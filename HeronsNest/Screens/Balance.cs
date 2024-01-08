@@ -20,5 +20,10 @@ namespace HeronsNest.Screens
             this.mainForm = mainForm;
             leftNavBar1.MainForm = mainForm;
         }
+
+        private void btn_Return_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
+        }
     }
 }
