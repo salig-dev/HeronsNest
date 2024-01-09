@@ -82,7 +82,7 @@ public partial class BookContext : DbContext
 
             entity.HasIndex(e => e.Password, "IX_User_Password").IsUnique();
 
-            entity.Property(e => e.IsAdmin)
+            entity.Property(e => e.IsTeacher)
                 .HasDefaultValue(0)
                 .HasColumnType("NUMERIC (0, 1)");
         });

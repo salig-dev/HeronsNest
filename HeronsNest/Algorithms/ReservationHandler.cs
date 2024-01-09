@@ -76,7 +76,7 @@ namespace HeronsNest.Algorithms
         {
             var userReservations = UserReservations(user).Select(x => x.DateReturned == null).ToList();
 
-            return userReservations.Count >= (user.IsAdmin == 1 ? 999 : 5);
+            return userReservations.Count >= (user.IsTeacher == 1 ? 999 : 5);
         }
 
         public List<BookReservation> UserReservations(User user)

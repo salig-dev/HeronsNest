@@ -66,6 +66,7 @@
             returnButtonborrow.Size = new Size(27, 21);
             returnButtonborrow.TabIndex = 2;
             returnButtonborrow.Text = "<-";
+            returnButtonborrow.Click += OnModalExit;
             // 
             // fromBorrow
             // 
