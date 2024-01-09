@@ -13,7 +13,7 @@ namespace HeronsNest.Components.Modal
 
         private void OnModalClose(object sender, EventArgs e)
         {
-            mainForm.RemovePopup(this);
+            mainForm.RemovePopup();
         }
     }
 }
