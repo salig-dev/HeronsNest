@@ -60,7 +60,7 @@ namespace HeronsNest.Components
 
         private void iconButton8_Load(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new Modal.LogoutWindow(MainForm));
+            MainForm?.ShowPopup(new Modal.LogoutWindow(MainForm));
         }
     }
 }
