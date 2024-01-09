@@ -153,6 +153,26 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hero_bg {
+            get {
+                object obj = ResourceManager.GetObject("hero_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hero_bg_dark {
+            get {
+                object obj = ResourceManager.GetObject("hero_bg_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HERONS_NEST_LOGO_NOTXT {
             get {
                 object obj = ResourceManager.GetObject("HERONS-NEST-LOGO-NOTXT", resourceCulture);
@@ -205,6 +225,16 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap house_solid {
             get {
                 object obj = ResourceManager.GetObject("house-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_header {
+            get {
+                object obj = ResourceManager.GetObject("logo_header", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
