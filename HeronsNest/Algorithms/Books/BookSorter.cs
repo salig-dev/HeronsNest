@@ -37,7 +37,6 @@ namespace HeronsNest.Algorithms.Books
             int rightIndex = 0;
             List<Book> sortedBooks = [];
 
-            // Iterate through both arrays until one is exhausted
             while (leftIndex < left.Length && rightIndex < right.Length)
             {
                 if (left[leftIndex].BookId <= right[rightIndex].BookId)
@@ -52,7 +51,6 @@ namespace HeronsNest.Algorithms.Books
                 }
             }
 
-            // Append any remaining elements from the non-exhausted array
             sortedBooks.AddRange(left.Skip(leftIndex));
             sortedBooks.AddRange(right.Skip(rightIndex));
 
