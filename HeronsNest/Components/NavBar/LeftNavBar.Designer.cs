@@ -223,6 +223,7 @@
             iconButton8.Size = new Size(108, 28);
             iconButton8.TabIndex = 3;
             iconButton8.Text = "Log-Out";
+            iconButton8.Load += iconButton8_Load;
             // 
             // LeftNavBar
             // 

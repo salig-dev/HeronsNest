@@ -35,85 +35,99 @@
             DateBorrow = new DateTimePicker();
             DateReturn = new DateTimePicker();
             label3 = new Label();
-            btnReturn = new Button();
+            backBtn = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             SuspendLayout();
             // 
             // bookBorrow
             // 
-            bookBorrow.Location = new Point(127, 295);
+            bookBorrow.BackColor = Color.FromArgb(0, 149, 168);
+            bookBorrow.FlatAppearance.BorderSize = 0;
+            bookBorrow.FlatStyle = FlatStyle.Flat;
+            bookBorrow.Font = new Font("PP Hatton", 9F);
+            bookBorrow.ForeColor = Color.White;
+            bookBorrow.Location = new Point(112, 330);
             bookBorrow.Name = "bookBorrow";
-            bookBorrow.Size = new Size(122, 34);
+            bookBorrow.Size = new Size(137, 34);
             bookBorrow.TabIndex = 0;
-            bookBorrow.Text = "Borrow";
-            bookBorrow.UseVisualStyleBackColor = true;
+            bookBorrow.Text = "BORROW";
+            bookBorrow.UseVisualStyleBackColor = false;
             // 
             // borrowDetails
             // 
-            borrowDetails.AutoSize = true;
-            borrowDetails.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowDetails.Location = new Point(129, 30);
+            borrowDetails.Font = new Font("PP Hatton", 12F);
+            borrowDetails.ForeColor = Color.FromArgb(76, 76, 76);
+            borrowDetails.Location = new Point(112, 53);
             borrowDetails.Name = "borrowDetails";
-            borrowDetails.Size = new Size(116, 21);
+            borrowDetails.Size = new Size(137, 21);
             borrowDetails.TabIndex = 1;
             borrowDetails.Text = "Fill Up Details";
+            borrowDetails.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // fromBorrow
             // 
             fromBorrow.AutoSize = true;
-            fromBorrow.Location = new Point(38, 78);
+            fromBorrow.Font = new Font("PP Hatton", 9F);
+            fromBorrow.ForeColor = Color.FromArgb(76, 76, 76);
+            fromBorrow.Location = new Point(31, 90);
             fromBorrow.Name = "fromBorrow";
-            fromBorrow.Size = new Size(35, 15);
+            fromBorrow.Size = new Size(42, 14);
             fromBorrow.TabIndex = 4;
             fromBorrow.Text = "From";
             // 
             // toBorrow
             // 
             toBorrow.AutoSize = true;
-            toBorrow.Location = new Point(38, 144);
+            toBorrow.Font = new Font("PP Hatton", 9F);
+            toBorrow.ForeColor = Color.FromArgb(76, 76, 76);
+            toBorrow.Location = new Point(31, 149);
             toBorrow.Name = "toBorrow";
-            toBorrow.Size = new Size(19, 15);
+            toBorrow.Size = new Size(23, 14);
             toBorrow.TabIndex = 4;
             toBorrow.Text = "To";
             // 
             // DateBorrow
             // 
-            DateBorrow.Location = new Point(39, 102);
+            DateBorrow.Font = new Font("Nourd-Regular", 9F);
+            DateBorrow.Location = new Point(31, 107);
             DateBorrow.Name = "DateBorrow";
-            DateBorrow.Size = new Size(273, 23);
+            DateBorrow.Size = new Size(298, 22);
             DateBorrow.TabIndex = 6;
             // 
             // DateReturn
             // 
-            DateReturn.Location = new Point(39, 165);
+            DateReturn.Font = new Font("Nourd-Regular", 9F);
+            DateReturn.Location = new Point(31, 166);
             DateReturn.Name = "DateReturn";
-            DateReturn.Size = new Size(273, 23);
+            DateReturn.Size = new Size(298, 22);
             DateReturn.TabIndex = 7;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 7F);
-            label3.Location = new Point(45, 199);
+            label3.Font = new Font("Nourd-Regular", 8F);
+            label3.Location = new Point(31, 208);
             label3.Name = "label3";
-            label3.Size = new Size(174, 12);
+            label3.Size = new Size(298, 20);
             label3.TabIndex = 25;
-            label3.Text = "Note: 20php for everyday past the due";
+            label3.Text = "NOTE: 20 PHP for everyday past the due";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnReturn
+            // backBtn
             // 
-            btnReturn.Location = new Point(26, 20);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(47, 40);
-            btnReturn.TabIndex = 26;
-            btnReturn.Text = "<-";
-            btnReturn.UseVisualStyleBackColor = true;
-            btnReturn.Click += btnReturn_Click;
+            backBtn.Image = Properties.Resources.back;
+            backBtn.Location = new Point(31, 53);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(14, 14);
+            backBtn.SizeMode = PictureBoxSizeMode.AutoSize;
+            backBtn.TabIndex = 31;
+            backBtn.TabStop = false;
+            backBtn.Click += backBtn_Click;
             // 
             // BorrowBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnReturn);
+            Controls.Add(backBtn);
             Controls.Add(label3);
             Controls.Add(DateReturn);
             Controls.Add(DateBorrow);
@@ -123,6 +137,7 @@
             Controls.Add(bookBorrow);
             Name = "BorrowBook";
             Size = new Size(360, 420);
+            ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,6 +151,8 @@
         private DateTimePicker DateBorrow;
         private DateTimePicker DateReturn;
         private Label label3;
-        private Button btnReturn;
+        private PictureBox pictureBox5;
+        private PictureBox btnReturn;
+        private PictureBox backBtn;
     }
 }

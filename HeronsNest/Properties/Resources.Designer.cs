@@ -73,6 +73,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap balance_card {
             get {
                 object obj = ResourceManager.GetObject("balance-card", resourceCulture);
@@ -255,6 +265,16 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap magnifying_glass_solid {
             get {
                 object obj = ResourceManager.GetObject("magnifying-glass-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modalCard {
+            get {
+                object obj = ResourceManager.GetObject("modalCard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

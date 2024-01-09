@@ -12,9 +12,22 @@ namespace HeronsNest.Components.Modal
 {
     public partial class LogoutWindow : UserControl
     {
-        public LogoutWindow()
+        Landing MainForm;
+        public LogoutWindow(Landing mainForm)
         {
             InitializeComponent();
+
+            MainForm = mainForm;
+        }
+
+        private void logout_No_Click(object sender, EventArgs e)
+        {
+            MainForm.OnPopupHide(this);
+        }
+
+        private void logout_Yes_Click(object sender, EventArgs e)
+        {
+            MainForm?.SwitchView(new Screens.Login(MainForm));
         }
     }
 }

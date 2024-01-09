@@ -18,12 +18,23 @@ namespace HeronsNest.Screens
             InitializeComponent();
 
             this.mainForm = mainForm;
-            leftNavBar1.MainForm = mainForm;
+            leftNavBar.MainForm = mainForm;
         }
 
-        private void btn_Return_Click(object sender, EventArgs e)
+        private void backIcon_Click(object sender, EventArgs e)
         {
             mainForm.SwitchView(new Home(mainForm));
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
+        }
+
+        private void backIcon_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

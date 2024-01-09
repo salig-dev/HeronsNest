@@ -141,10 +141,6 @@ namespace HeronsNest.Screens
 
         }
 
-        private void ReturnToLibraryBtn_Click(object sender, EventArgs e)
-        {
-            mainForm.SwitchView(new Home(mainForm));
-        }
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
@@ -159,6 +155,16 @@ namespace HeronsNest.Screens
         private void bookAuthor_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backIcon_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }
