@@ -26,15 +26,15 @@ namespace HeronsNest.Screens
             leftNavBar1.MainForm = mainForm;
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected async override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
-            var userReservations = mainForm.ReservationHandler.UserReservations(UserSession.Instance.User);
+            var userReservations = await mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User);
             
-            foreach (BookReservation r in userReservations)
+            foreach (BookBorrow r in userReservations)
             {
-                var currentBook = mainForm.BookLoader.GetBookWithISBN(r.BookReserved);
+                var currentBook = mainForm.BookTrie.Search(r.BookId!)[0];
                 BookCard card = new(r, currentBook);
 
                 cardListView.Controls.Add(card);

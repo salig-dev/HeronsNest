@@ -16,15 +16,19 @@ namespace HeronsNest.Components.List
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public List<UserControl> DataSource { get; set; }
 
-        private int DataLoaded = 10;
+        private int DataLoaded = 0;
 
         public void LazyLoadData<T>(List<T> data, Func<T, CategoryListItem>? func)
         {
             if (Controls.Count > 0) Controls.RemoveAt(Controls.Count - 1);
+            if (data.Count == 0) return;
 
-            List<T> splitList = data[DataLoaded..(DataLoaded + 10)];
+            int endIndex = Math.Min(DataLoaded + 10, data.Count);
 
-            foreach(var item in splitList)
+            // Load up to 10 items if the list size allows, otherwise load the remaining items
+            var splitList = data.Skip(DataLoaded).Take(endIndex - DataLoaded);
+
+            foreach (var item in splitList)
             {
                 Controls.Add(func?.Invoke(item));
             }
@@ -32,14 +36,17 @@ namespace HeronsNest.Components.List
             if (DataLoaded > data.Count) return;
             DataLoaded += 10;
 
-            var loadMoreCard = new LoadMoreCard();
-
-            loadMoreCard.onCardClicked += (object sender, EventArgs e) =>
+            if (data.Count > DataLoaded && (data.Count - DataLoaded) > 10)
             {
-                LazyLoadData<T>(data, func);
-            };
+                var loadMoreCard = new LoadMoreCard();
 
-            Controls.Add(loadMoreCard);
+                loadMoreCard.onCardClicked += (object sender, EventArgs e) =>
+                {
+                    LazyLoadData(data, func);
+                };
+
+                Controls.Add(loadMoreCard);
+            }
         }
 
         public void ResetLazyLoadSettings()

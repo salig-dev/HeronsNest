@@ -1,4 +1,5 @@
 ﻿using HeronsNest.Screens;
+using System.Diagnostics;
 
 namespace HeronsNest.Components
 {
@@ -10,7 +11,30 @@ namespace HeronsNest.Components
         {
             InitializeComponent();
 
+            /**
+             * Task.Run(async () =>
+            {
+                while (true)
+                {
+                    long memoryBefore = GC.GetTotalMemory(true);
+                    await Task.Delay(1000);
+                    GC.Collect();
+                    long memoryAfter = GC.GetTotalMemory(true);
+                    long memoryUsed = memoryAfter - memoryBefore;
+                    long maxMemory = Process.GetCurrentProcess().MaxWorkingSet;
+                    double memoryPercentage = (double)memoryUsed / maxMemory * 100;
+
+                    Invoke(delegate ()
+                    {
+                        memPercentageLbl.Text = $"{memoryPercentage}%";
+                        memoryOutOf.Text = $"{memoryUsed}/{maxMemory}";
+                    });
+                }
+            });
+             */
         }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {

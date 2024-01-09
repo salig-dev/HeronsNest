@@ -4,6 +4,11 @@ using HeronsNest.Algorithms.Loaders;
 using HeronsNest.Components.Modal;
 using HeronsNest.Context;
 using HeronsNest.Models;
+using HeronsNest.Modules;
+using HeronsNest.Modules.Repository;
+using HeronsNest.Modules.Repository.BookBorrow;
+using HeronsNest.Modules.Repository.BookReserve;
+using HeronsNest.Modules.Repository.Trie;
 using HeronsNest.Screens;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
@@ -19,22 +24,33 @@ namespace HeronsNest
         BookLoader? bookLoader;
         CategoryLoader? categoryLoader;
         Authenticator authenticator;
-        ReservationHandler reservationHandler;
 
-        Trie<Book> bookTrie = new();
-        Trie<Book> authorBookTrie = new();
-        Trie<Book> titleBookTrie = new();
-        Trie<Book> categoryBookTrie = new();
+        readonly Trie<Book> bookTrie = new();
+        readonly Trie<Book> authorBookTrie = new();
+        readonly Trie<Book> titleBookTrie = new();
+        readonly Trie<Book> categoryBookTrie = new();
+
+        readonly Sorter<Book> sorter = new();
+
+        private IBorrowRepository borrowRepository;
+        private IReserveRepository reserveRepository;
+
+        private Modules.Books.BorrowBook borrowBook;
+        private Modules.Books.ReserveBook reserveBook;
 
         public BookLoader? BookLoader { get { return bookLoader; } }
         public CategoryLoader? CategoryLoader { get { return categoryLoader; } }
         public Authenticator? Authenticator { get { return authenticator; } }
-        public ReservationHandler? ReservationHandler { get { return reservationHandler; } }
+
         public Trie<Book> BookTrie {  get { return bookTrie; } }  
         public Trie<Book> AuthorBookTrie {  get { return authorBookTrie; } }
         public Trie<Book> TitleBookTrie {  get { return titleBookTrie; } }
         public Trie<Book> CategoryBookTrie { get { return categoryBookTrie; } }
 
+        public Sorter<Book> Sorter { get { return sorter; } }
+
+        public Modules.Books.BorrowBook BorrowBook { get { return borrowBook;  } }
+        public Modules.Books.ReserveBook ReserveBook { get { return reserveBook; } }
         private void InitializeScreens()
         {
             // By default, the VERY FIRST screen inserted here shall be the
@@ -112,7 +128,12 @@ namespace HeronsNest
             bookLoader = new(bookDbContext);
             categoryLoader = new(bookDbContext);
             authenticator = new(bookDbContext);
-            reservationHandler = new(bookDbContext);
+
+            borrowRepository = new BorrowRepository(bookDbContext);
+            reserveRepository = new ReserveRepository(bookDbContext);
+
+            borrowBook = new(borrowRepository);
+            reserveBook = new(reserveRepository);
 
             // load trie tree in another thread
             Task.Run(() =>

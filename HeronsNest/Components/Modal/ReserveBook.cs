@@ -25,11 +25,6 @@ namespace HeronsNest.Components.Modal
 
         }
 
-        private void toReserve_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReturn_Click(object sender, EventArgs e)
         {
             MainForm.RemovePopup();

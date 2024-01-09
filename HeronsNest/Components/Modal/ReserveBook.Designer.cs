@@ -29,74 +29,40 @@
         private void InitializeComponent()
         {
             reserveDetails = new Label();
-            fromReserve = new Label();
             bookReserve = new Button();
-            Note = new Label();
-            To = new Label();
-            DateReserve = new DateTimePicker();
             toRerserve = new DateTimePicker();
             btnReturn = new Button();
+            customListView1 = new List.CustomListView();
+            unavailableReservedDatesLbl = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // reserveDetails
             // 
             reserveDetails.AutoSize = true;
             reserveDetails.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reserveDetails.Location = new Point(129, 25);
+            reserveDetails.Location = new Point(130, 28);
             reserveDetails.Name = "reserveDetails";
             reserveDetails.Size = new Size(116, 21);
             reserveDetails.TabIndex = 1;
             reserveDetails.Text = "Fill Up Details";
             // 
-            // fromReserve
-            // 
-            fromReserve.AutoSize = true;
-            fromReserve.Location = new Point(41, 77);
-            fromReserve.Name = "fromReserve";
-            fromReserve.Size = new Size(35, 15);
-            fromReserve.TabIndex = 4;
-            fromReserve.Text = "From";
-            // 
             // bookReserve
             // 
-            bookReserve.Location = new Point(120, 258);
+            bookReserve.BackColor = Color.FromArgb(128, 255, 128);
+            bookReserve.FlatStyle = FlatStyle.Flat;
+            bookReserve.Location = new Point(220, 371);
             bookReserve.Name = "bookReserve";
             bookReserve.Size = new Size(122, 34);
             bookReserve.TabIndex = 0;
             bookReserve.Text = "Reserve";
-            bookReserve.UseVisualStyleBackColor = true;
-            // 
-            // Note
-            // 
-            Note.AutoSize = true;
-            Note.Font = new Font("Segoe UI", 7F);
-            Note.Location = new Point(47, 203);
-            Note.Name = "Note";
-            Note.Size = new Size(118, 12);
-            Note.TabIndex = 6;
-            Note.Text = "Note: 20 php per day due";
-            // 
-            // To
-            // 
-            To.AutoSize = true;
-            To.Location = new Point(44, 148);
-            To.Name = "To";
-            To.Size = new Size(19, 15);
-            To.TabIndex = 7;
-            To.Text = "To";
-            // 
-            // DateReserve
-            // 
-            DateReserve.Location = new Point(44, 99);
-            DateReserve.Name = "DateReserve";
-            DateReserve.Size = new Size(245, 23);
-            DateReserve.TabIndex = 5;
+            bookReserve.UseVisualStyleBackColor = false;
             // 
             // toRerserve
             // 
-            toRerserve.Location = new Point(44, 168);
+            toRerserve.Location = new Point(24, 342);
             toRerserve.Name = "toRerserve";
-            toRerserve.Size = new Size(245, 23);
+            toRerserve.Size = new Size(313, 23);
             toRerserve.TabIndex = 8;
             // 
             // btnReturn
@@ -109,17 +75,44 @@
             btnReturn.UseVisualStyleBackColor = true;
             btnReturn.Click += btnReturn_Click;
             // 
+            // customListView1
+            // 
+            customListView1.DataSource = null;
+            customListView1.Location = new Point(24, 107);
+            customListView1.Name = "customListView1";
+            customListView1.Size = new Size(313, 187);
+            customListView1.TabIndex = 28;
+            // 
+            // unavailableReservedDatesLbl
+            // 
+            unavailableReservedDatesLbl.AutoSize = true;
+            unavailableReservedDatesLbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            unavailableReservedDatesLbl.Location = new Point(24, 77);
+            unavailableReservedDatesLbl.Name = "unavailableReservedDatesLbl";
+            unavailableReservedDatesLbl.Size = new Size(223, 21);
+            unavailableReservedDatesLbl.TabIndex = 29;
+            unavailableReservedDatesLbl.Text = "Unavailable Reserved Dates";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(23, 312);
+            label1.Name = "label1";
+            label1.Size = new Size(141, 21);
+            label1.TabIndex = 30;
+            label1.Text = "Reservation Date";
+            // 
             // ReserveBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Controls.Add(unavailableReservedDatesLbl);
+            Controls.Add(customListView1);
             Controls.Add(btnReturn);
             Controls.Add(toRerserve);
-            Controls.Add(To);
-            Controls.Add(Note);
-            Controls.Add(DateReserve);
             Controls.Add(reserveDetails);
-            Controls.Add(fromReserve);
             Controls.Add(bookReserve);
             Name = "ReserveBook";
             Size = new Size(360, 420);
@@ -130,14 +123,13 @@
 
         #endregion
         private Label reserveDetails;
-        private Label fromReserve;
         private Label toReserve;
         private Button bookReserve;
-        private Label Note;
-        private Label To;
-        private DateTimePicker DateReserve;
         private DateTimePicker toRerserve;
         private DateTimePicker dateTimePicker2;
         private Button btnReturn;
+        private List.CustomListView customListView1;
+        private Label unavailableReservedDatesLbl;
+        private Label label1;
     }
 }
