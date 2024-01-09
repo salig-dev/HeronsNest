@@ -94,7 +94,7 @@ namespace HeronsNest
             Controls.Add(_modal);
         }
 
-        public void RemovePopup(Control currentModal)
+        public void RemovePopup()
         {
             Controls.RemoveAt(Controls.Count - 1);
             Controls[0].Show();

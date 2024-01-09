@@ -36,6 +36,8 @@
             timeTakenLabel = new Label();
             labelResults = new Label();
             memoryUsedLabel = new Label();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -107,16 +109,36 @@
             // 
             memoryUsedLabel.AutoSize = true;
             memoryUsedLabel.ForeColor = SystemColors.ControlDark;
-            memoryUsedLabel.Location = new Point(414, 113);
+            memoryUsedLabel.Location = new Point(438, 113);
             memoryUsedLabel.Name = "memoryUsedLabel";
             memoryUsedLabel.Size = new Size(114, 15);
             memoryUsedLabel.TabIndex = 7;
             memoryUsedLabel.Text = "Memory Used: 0 MB";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(876, 105);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(941, 83);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Sort By...";
+            // 
             // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(memoryUsedLabel);
             Controls.Add(labelResults);
             Controls.Add(timeTakenLabel);
@@ -141,5 +163,7 @@
         private Label timeTakenLabel;
         private Label labelResults;
         private Label memoryUsedLabel;
+        private ComboBox comboBox1;
+        private Label label1;
     }
 }
