@@ -41,12 +41,11 @@
             // 
             // backBtn
             // 
-            backBtn.Location = new Point(359, 119);
-            backBtn.Margin = new Padding(3, 2, 3, 2);
+            backBtn.Location = new Point(219, 83);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(82, 22);
+            backBtn.Size = new Size(129, 27);
             backBtn.TabIndex = 0;
-            backBtn.Text = "Back";
+            backBtn.Text = "<- Return to Library";
             backBtn.UseVisualStyleBackColor = true;
             backBtn.Click += button1_Click;
             // 
@@ -55,13 +54,13 @@
             myShelfTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             myShelfTitle.AutoSize = true;
             myShelfTitle.FlatStyle = FlatStyle.Flat;
-            myShelfTitle.Font = new Font("PP Hatton", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            myShelfTitle.Font = new Font("Microsoft Sans Serif", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             myShelfTitle.ForeColor = Color.FromArgb(0, 149, 168);
             myShelfTitle.ImageAlign = ContentAlignment.MiddleLeft;
-            myShelfTitle.Location = new Point(214, 119);
+            myShelfTitle.Location = new Point(500, 123);
             myShelfTitle.Margin = new Padding(0);
             myShelfTitle.Name = "myShelfTitle";
-            myShelfTitle.Size = new Size(142, 32);
+            myShelfTitle.Size = new Size(127, 31);
             myShelfTitle.TabIndex = 2;
             myShelfTitle.Text = "My Shelf";
             myShelfTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -69,36 +68,36 @@
             // completedBooks
             // 
             completedBooks.AutoSize = true;
-            completedBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            completedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             completedBooks.ForeColor = Color.FromArgb(76, 76, 76);
             completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
             completedBooks.Location = new Point(598, 176);
             completedBooks.Name = "completedBooks";
-            completedBooks.Size = new Size(172, 19);
+            completedBooks.Size = new Size(150, 20);
             completedBooks.TabIndex = 4;
             completedBooks.Text = "Completed Books";
             // 
             // pendingBooks
             // 
             pendingBooks.AutoSize = true;
-            pendingBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pendingBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pendingBooks.ForeColor = Color.FromArgb(76, 76, 76);
             pendingBooks.ImageAlign = ContentAlignment.MiddleLeft;
             pendingBooks.Location = new Point(385, 177);
             pendingBooks.Name = "pendingBooks";
-            pendingBooks.Size = new Size(145, 19);
+            pendingBooks.Size = new Size(129, 20);
             pendingBooks.TabIndex = 13;
             pendingBooks.Text = "Pending Books";
             // 
             // allBooks
             // 
             allBooks.AutoSize = true;
-            allBooks.Font = new Font("PP Hatton", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            allBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allBooks.ForeColor = Color.FromArgb(76, 76, 76);
             allBooks.ImageAlign = ContentAlignment.MiddleLeft;
             allBooks.Location = new Point(217, 177);
             allBooks.Name = "allBooks";
-            allBooks.Size = new Size(94, 19);
+            allBooks.Size = new Size(84, 20);
             allBooks.TabIndex = 14;
             allBooks.Text = "All Books";
             // 

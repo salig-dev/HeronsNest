@@ -36,6 +36,7 @@
             label5 = new Label();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar2 = new Components.Comp_Searchbar();
+            btn_Return = new Button();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -51,65 +52,57 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("PP Hatton", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(0, 149, 168);
             label1.Location = new Point(231, 156);
             label1.Name = "label1";
-            label1.Size = new Size(284, 32);
+            label1.Size = new Size(257, 31);
             label1.TabIndex = 1;
             label1.Text = "Pending Payments";
-            // 
-            // balanceBookCard1
-            // 
-            
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(76, 76, 76);
             label2.Location = new Point(412, 214);
             label2.Name = "label2";
-            label2.Size = new Size(49, 19);
+            label2.Size = new Size(43, 20);
             label2.TabIndex = 7;
             label2.Text = "Title";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(76, 76, 76);
             label3.Location = new Point(553, 214);
             label3.Name = "label3";
-            label3.Size = new Size(66, 19);
+            label3.Size = new Size(62, 20);
             label3.TabIndex = 10;
             label3.Text = "Status";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(76, 76, 76);
             label4.Location = new Point(651, 214);
             label4.Name = "label4";
-            label4.Size = new Size(74, 19);
+            label4.Size = new Size(68, 20);
             label4.TabIndex = 12;
             label4.Text = "Penalty";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(76, 76, 76);
             label5.Location = new Point(747, 214);
             label5.Name = "label5";
-            label5.Size = new Size(53, 19);
+            label5.Size = new Size(49, 20);
             label5.TabIndex = 14;
             label5.Text = "Total";
-            // 
-            // balanceBookCard2
-            // 
-            
             // 
             // comp_DateTime1
             // 
@@ -121,16 +114,28 @@
             // comp_Searchbar2
             // 
             comp_Searchbar2.Location = new Point(225, 28);
+            comp_Searchbar2.MainForm = null;
             comp_Searchbar2.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar2.Name = "comp_Searchbar2";
             comp_Searchbar2.Size = new Size(387, 35);
             comp_Searchbar2.TabIndex = 22;
+            // 
+            // btn_Return
+            // 
+            btn_Return.Location = new Point(231, 101);
+            btn_Return.Name = "btn_Return";
+            btn_Return.Size = new Size(129, 27);
+            btn_Return.TabIndex = 23;
+            btn_Return.Text = "<- Return to Library";
+            btn_Return.UseVisualStyleBackColor = true;
+            btn_Return.Click += btn_Return_Click;
             // 
             // Balance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 246, 246);
+            Controls.Add(btn_Return);
             Controls.Add(comp_Searchbar2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -155,5 +160,6 @@
         private Label label5;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar2;
+        private Button btn_Return;
     }
 }
