@@ -28,102 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             usernameTextBox = new TextBox();
             passwordTextBox = new TextBox();
             loginButton = new Button();
-            pictureBox2 = new PictureBox();
             tipTextLabel = new Label();
+            loginFormBackground = new PictureBox();
+            pictureBox1 = new PictureBox();
+            loginBackground = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)loginFormBackground).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loginBackground).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.UMak_Gradient_Blue;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(496, 600);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // usernameTextBox
             // 
-            usernameTextBox.Location = new Point(564, 313);
+            usernameTextBox.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameTextBox.Location = new Point(583, 310);
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.PlaceholderText = "Username";
-            usernameTextBox.Size = new Size(379, 23);
+            usernameTextBox.Size = new Size(360, 20);
             usernameTextBox.TabIndex = 2;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(564, 353);
+            passwordTextBox.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordTextBox.Location = new Point(583, 350);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PlaceholderText = "Password";
-            passwordTextBox.Size = new Size(379, 23);
+            passwordTextBox.Size = new Size(360, 20);
             passwordTextBox.TabIndex = 3;
             // 
             // loginButton
             // 
             loginButton.BackColor = Color.FromArgb(82, 167, 133);
             loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            loginButton.Font = new Font("PP Hatton", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginButton.ForeColor = Color.White;
-            loginButton.Location = new Point(564, 397);
+            loginButton.Location = new Point(583, 395);
             loginButton.Name = "loginButton";
-            loginButton.Size = new Size(379, 35);
+            loginButton.Size = new Size(360, 35);
             loginButton.TabIndex = 4;
             loginButton.Text = "LOGIN";
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += OnUserLogin;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = Properties.Resources.HERONS_NEST_LOGO_TXT_HORIZ;
-            pictureBox2.Location = new Point(626, 192);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(248, 104);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            // 
             // tipTextLabel
             // 
-            tipTextLabel.Font = new Font("Segoe UI", 12F);
-            tipTextLabel.Location = new Point(564, 435);
+            tipTextLabel.BackColor = Color.FromArgb(246, 246, 246);
+            tipTextLabel.Font = new Font("Nourd-Regular", 12F);
+            tipTextLabel.Location = new Point(583, 449);
             tipTextLabel.Name = "tipTextLabel";
-            tipTextLabel.Size = new Size(379, 23);
+            tipTextLabel.Size = new Size(360, 23);
             tipTextLabel.TabIndex = 5;
             tipTextLabel.Text = " ";
             tipTextLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // loginFormBackground
+            // 
+            loginFormBackground.BackColor = Color.FromArgb(246, 246, 246);
+            loginFormBackground.Location = new Point(510, 0);
+            loginFormBackground.Name = "loginFormBackground";
+            loginFormBackground.Size = new Size(490, 600);
+            loginFormBackground.TabIndex = 6;
+            loginFormBackground.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo_header;
+            pictureBox1.Location = new Point(583, 131);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(360, 137);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // loginBackground
+            // 
+            loginBackground.Image = Properties.Resources.hero_bg_dark;
+            loginBackground.Location = new Point(0, 0);
+            loginBackground.Name = "loginBackground";
+            loginBackground.Size = new Size(1000, 600);
+            loginBackground.SizeMode = PictureBoxSizeMode.AutoSize;
+            loginBackground.TabIndex = 8;
+            loginBackground.TabStop = false;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(246, 246, 246);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(pictureBox1);
             Controls.Add(tipTextLabel);
             Controls.Add(loginButton);
             Controls.Add(passwordTextBox);
             Controls.Add(usernameTextBox);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(loginFormBackground);
+            Controls.Add(loginBackground);
             Name = "Login";
             Size = new Size(1000, 600);
+            ((System.ComponentModel.ISupportInitialize)loginFormBackground).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loginBackground).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private TextBox usernameTextBox;
         private TextBox passwordTextBox;
         private Button loginButton;
-        private PictureBox pictureBox2;
         private Label tipTextLabel;
+        private PictureBox loginFormBackground;
+        private PictureBox pictureBox1;
+        private PictureBox loginBackground;
     }
 }
