@@ -28,81 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            leftNavBar1 = new Components.LeftNavBar();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            leftNavBar = new Components.LeftNavBar();
+            balanceTitle = new Label();
+            titleText = new Label();
+            statusText = new Label();
+            penaltyText = new Label();
+            totalText = new Label();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar2 = new Components.Comp_Searchbar();
-            btn_Return = new Button();
+            backBtn = new Label();
+            backIcon = new PictureBox();
+            balanceListView = new Components.List.CustomListView();
+            ((System.ComponentModel.ISupportInitialize)backIcon).BeginInit();
             SuspendLayout();
             // 
-            // leftNavBar1
+            // leftNavBar
             // 
-            leftNavBar1.AutoSize = true;
-            leftNavBar1.BackColor = Color.White;
-            leftNavBar1.Location = new Point(0, 0);
-            leftNavBar1.MainForm = null;
-            leftNavBar1.Name = "leftNavBar1";
-            leftNavBar1.Size = new Size(200, 600);
-            leftNavBar1.TabIndex = 0;
+            leftNavBar.AutoSize = true;
+            leftNavBar.BackColor = Color.White;
+            leftNavBar.Location = new Point(0, 0);
+            leftNavBar.MainForm = null;
+            leftNavBar.Name = "leftNavBar";
+            leftNavBar.Size = new Size(200, 600);
+            leftNavBar.TabIndex = 0;
             // 
-            // label1
+            // balanceTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(0, 149, 168);
-            label1.Location = new Point(231, 156);
-            label1.Name = "label1";
-            label1.Size = new Size(257, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Pending Payments";
+            balanceTitle.AutoSize = true;
+            balanceTitle.Font = new Font("PP Hatton", 20F);
+            balanceTitle.ForeColor = Color.FromArgb(0, 149, 168);
+            balanceTitle.Location = new Point(231, 156);
+            balanceTitle.Name = "balanceTitle";
+            balanceTitle.Size = new Size(284, 32);
+            balanceTitle.TabIndex = 1;
+            balanceTitle.Text = "Pending Payments";
             // 
-            // label2
+            // titleText
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(76, 76, 76);
-            label2.Location = new Point(412, 214);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 20);
-            label2.TabIndex = 7;
-            label2.Text = "Title";
+            titleText.AutoSize = true;
+            titleText.Font = new Font("PP Hatton", 12F);
+            titleText.ForeColor = Color.FromArgb(76, 76, 76);
+            titleText.Location = new Point(412, 214);
+            titleText.Name = "titleText";
+            titleText.Size = new Size(49, 19);
+            titleText.TabIndex = 7;
+            titleText.Text = "Title";
             // 
-            // label3
+            // statusText
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(76, 76, 76);
-            label3.Location = new Point(553, 214);
-            label3.Name = "label3";
-            label3.Size = new Size(62, 20);
-            label3.TabIndex = 10;
-            label3.Text = "Status";
+            statusText.AutoSize = true;
+            statusText.Font = new Font("PP Hatton", 12F);
+            statusText.ForeColor = Color.FromArgb(76, 76, 76);
+            statusText.Location = new Point(553, 214);
+            statusText.Name = "statusText";
+            statusText.Size = new Size(66, 19);
+            statusText.TabIndex = 10;
+            statusText.Text = "Status";
             // 
-            // label4
+            // penaltyText
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(76, 76, 76);
-            label4.Location = new Point(651, 214);
-            label4.Name = "label4";
-            label4.Size = new Size(68, 20);
-            label4.TabIndex = 12;
-            label4.Text = "Penalty";
+            penaltyText.AutoSize = true;
+            penaltyText.Font = new Font("PP Hatton", 12F);
+            penaltyText.ForeColor = Color.FromArgb(76, 76, 76);
+            penaltyText.Location = new Point(651, 214);
+            penaltyText.Name = "penaltyText";
+            penaltyText.Size = new Size(74, 19);
+            penaltyText.TabIndex = 12;
+            penaltyText.Text = "Penalty";
             // 
-            // label5
+            // totalText
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(76, 76, 76);
-            label5.Location = new Point(747, 214);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 20);
-            label5.TabIndex = 14;
-            label5.Text = "Total";
+            totalText.AutoSize = true;
+            totalText.Font = new Font("PP Hatton", 12F);
+            totalText.ForeColor = Color.FromArgb(76, 76, 76);
+            totalText.Location = new Point(747, 214);
+            totalText.Name = "totalText";
+            totalText.Size = new Size(53, 19);
+            totalText.TabIndex = 14;
+            totalText.Text = "Total";
             // 
             // comp_DateTime1
             // 
@@ -120,46 +123,73 @@
             comp_Searchbar2.Size = new Size(387, 35);
             comp_Searchbar2.TabIndex = 22;
             // 
-            // btn_Return
+            // backBtn
             // 
-            btn_Return.Location = new Point(231, 101);
-            btn_Return.Name = "btn_Return";
-            btn_Return.Size = new Size(129, 27);
-            btn_Return.TabIndex = 23;
-            btn_Return.Text = "<- Return to Library";
-            btn_Return.UseVisualStyleBackColor = true;
-            btn_Return.Click += btn_Return_Click;
+            backBtn.AutoSize = true;
+            backBtn.Font = new Font("PP Hatton", 9F);
+            backBtn.ForeColor = Color.FromArgb(76, 76, 76);
+            backBtn.Location = new Point(251, 126);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(116, 14);
+            backBtn.TabIndex = 28;
+            backBtn.Text = "Back to Library";
+            backBtn.Click += backBtn_Click;
+            // 
+            // backIcon
+            // 
+            backIcon.Image = Properties.Resources.back;
+            backIcon.Location = new Point(231, 126);
+            backIcon.Name = "backIcon";
+            backIcon.Size = new Size(14, 14);
+            backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
+            backIcon.TabIndex = 29;
+            backIcon.TabStop = false;
+            backIcon.Click += backIcon_Click;
+            // 
+            // balanceListView
+            // 
+            balanceListView.DataSource = null;
+            balanceListView.Location = new Point(231, 240);
+            balanceListView.Name = "balanceListView";
+            balanceListView.Size = new Size(711, 360);
+            balanceListView.TabIndex = 30;
             // 
             // Balance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 246, 246);
-            Controls.Add(btn_Return);
+            Controls.Add(balanceListView);
+            Controls.Add(backIcon);
+            Controls.Add(backBtn);
             Controls.Add(comp_Searchbar2);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(leftNavBar1);
+            Controls.Add(totalText);
+            Controls.Add(penaltyText);
+            Controls.Add(statusText);
+            Controls.Add(titleText);
+            Controls.Add(balanceTitle);
+            Controls.Add(leftNavBar);
             Controls.Add(comp_DateTime1);
             Name = "Balance";
             Size = new Size(1000, 600);
+            ((System.ComponentModel.ISupportInitialize)backIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Components.LeftNavBar leftNavBar1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Components.LeftNavBar leftNavBar;
+        private Label balanceTitle;
+        private Label titleText;
+        private Label statusText;
+        private Label penaltyText;
+        private Label totalText;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar2;
         private Button btn_Return;
+        private Label backBtn;
+        private PictureBox backIcon;
+        private Components.List.CustomListView balanceListView;
     }
 }
