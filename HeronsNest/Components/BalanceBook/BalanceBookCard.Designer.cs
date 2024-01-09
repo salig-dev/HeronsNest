@@ -32,12 +32,12 @@
             bookTitle = new Label();
             bookAuthor = new Label();
             bookStatus = new Label();
-            returnBtn = new Button();
+            payBtn = new Button();
             penaltyVal = new Label();
             totalVal = new Label();
-            pictureBox1 = new PictureBox();
+            balanceCard = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)balanceCard).BeginInit();
             SuspendLayout();
             // 
             // bookImage
@@ -53,7 +53,7 @@
             // bookTitle
             // 
             bookTitle.BackColor = Color.White;
-            bookTitle.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookTitle.Font = new Font("PP Hatton", 10F);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
             bookTitle.Location = new Point(138, 43);
             bookTitle.Name = "bookTitle";
@@ -65,7 +65,7 @@
             // 
             bookAuthor.AutoEllipsis = true;
             bookAuthor.BackColor = Color.White;
-            bookAuthor.Font = new Font("PP Hatton Medium", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookAuthor.Font = new Font("PP Hatton", 8F);
             bookAuthor.ForeColor = Color.FromArgb(76, 76, 76);
             bookAuthor.Location = new Point(138, 80);
             bookAuthor.Name = "bookAuthor";
@@ -77,37 +77,37 @@
             // 
             bookStatus.AutoSize = true;
             bookStatus.BackColor = Color.White;
-            bookStatus.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookStatus.Font = new Font("PP Hatton", 10F);
             bookStatus.ForeColor = Color.FromArgb(76, 76, 76);
             bookStatus.Location = new Point(277, 56);
             bookStatus.Name = "bookStatus";
-            bookStatus.Size = new Size(59, 14);
+            bookStatus.Size = new Size(70, 17);
             bookStatus.TabIndex = 16;
             bookStatus.Text = "{Status}";
             // 
-            // returnBtn
+            // payBtn
             // 
-            returnBtn.BackColor = Color.FromArgb(0, 149, 168);
-            returnBtn.FlatAppearance.BorderSize = 0;
-            returnBtn.FlatStyle = FlatStyle.Flat;
-            returnBtn.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnBtn.ForeColor = Color.White;
-            returnBtn.Location = new Point(552, 46);
-            returnBtn.Name = "returnBtn";
-            returnBtn.Size = new Size(80, 40);
-            returnBtn.TabIndex = 19;
-            returnBtn.Text = "Return";
-            returnBtn.UseVisualStyleBackColor = false;
+            payBtn.BackColor = Color.FromArgb(0, 149, 168);
+            payBtn.FlatAppearance.BorderSize = 0;
+            payBtn.FlatStyle = FlatStyle.Flat;
+            payBtn.Font = new Font("PP Hatton", 10F);
+            payBtn.ForeColor = Color.White;
+            payBtn.Location = new Point(552, 46);
+            payBtn.Name = "payBtn";
+            payBtn.Size = new Size(80, 40);
+            payBtn.TabIndex = 19;
+            payBtn.Text = "PAY";
+            payBtn.UseVisualStyleBackColor = false;
             // 
             // penaltyVal
             // 
             penaltyVal.AutoSize = true;
             penaltyVal.BackColor = Color.White;
-            penaltyVal.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            penaltyVal.Font = new Font("PP Hatton", 10F);
             penaltyVal.ForeColor = Color.FromArgb(76, 76, 76);
             penaltyVal.Location = new Point(391, 56);
             penaltyVal.Name = "penaltyVal";
-            penaltyVal.Size = new Size(35, 14);
+            penaltyVal.Size = new Size(41, 17);
             penaltyVal.TabIndex = 20;
             penaltyVal.Text = "₱69";
             // 
@@ -115,23 +115,23 @@
             // 
             totalVal.AutoSize = true;
             totalVal.BackColor = Color.White;
-            totalVal.Font = new Font("PP Hatton Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalVal.Font = new Font("PP Hatton", 10F);
             totalVal.ForeColor = Color.FromArgb(76, 76, 76);
             totalVal.Location = new Point(480, 56);
             totalVal.Name = "totalVal";
-            totalVal.Size = new Size(35, 14);
+            totalVal.Size = new Size(41, 17);
             totalVal.TabIndex = 21;
             totalVal.Text = "₱69";
             // 
-            // pictureBox1
+            // balanceCard
             // 
-            pictureBox1.Image = Properties.Resources.balance_card1;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(658, 133);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            balanceCard.Image = Properties.Resources.balance_card1;
+            balanceCard.Location = new Point(0, 0);
+            balanceCard.Name = "balanceCard";
+            balanceCard.Size = new Size(658, 133);
+            balanceCard.SizeMode = PictureBoxSizeMode.AutoSize;
+            balanceCard.TabIndex = 0;
+            balanceCard.TabStop = false;
             // 
             // BalanceBookCard
             // 
@@ -139,16 +139,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(totalVal);
             Controls.Add(penaltyVal);
-            Controls.Add(returnBtn);
+            Controls.Add(payBtn);
             Controls.Add(bookStatus);
             Controls.Add(bookAuthor);
             Controls.Add(bookTitle);
             Controls.Add(bookImage);
-            Controls.Add(pictureBox1);
+            Controls.Add(balanceCard);
             Name = "BalanceBookCard";
-            Size = new Size(700, 150);
+            Size = new Size(670, 150);
             ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)balanceCard).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -158,9 +158,9 @@
         private Label bookTitle;
         private Label bookAuthor;
         private Label bookStatus;
-        private Button returnBtn;
+        private Button payBtn;
         private Label penaltyVal;
         private Label totalVal;
-        private PictureBox pictureBox1;
+        private PictureBox balanceCard;
     }
 }
