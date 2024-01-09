@@ -34,13 +34,13 @@
             bookSerialNumberText = new Label();
             DueDateText = new Label();
             ReturnDateText = new Label();
-            returnButtonsummary = new Label();
             proceedButton = new Button();
             bookTitle = new Label();
             bookSerialNumber = new Label();
             bookBorrowerName = new Label();
             bookDueDate = new Label();
             bookReturnHere = new Label();
+            btnReturn = new Button();
             SuspendLayout();
             // 
             // label
@@ -102,16 +102,6 @@
             ReturnDateText.Size = new Size(105, 21);
             ReturnDateText.TabIndex = 6;
             ReturnDateText.Text = "Return Date:";
-            // 
-            // returnButtonsummary
-            // 
-            returnButtonsummary.AutoSize = true;
-            returnButtonsummary.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnButtonsummary.Location = new Point(33, 16);
-            returnButtonsummary.Name = "returnButtonsummary";
-            returnButtonsummary.Size = new Size(27, 21);
-            returnButtonsummary.TabIndex = 7;
-            returnButtonsummary.Text = "<-";
             // 
             // proceedButton
             // 
@@ -175,17 +165,27 @@
             bookReturnHere.TabIndex = 13;
             bookReturnHere.Text = "Return Date Here";
             // 
+            // btnReturn
+            // 
+            btnReturn.Location = new Point(33, 12);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(47, 40);
+            btnReturn.TabIndex = 27;
+            btnReturn.Text = "<-";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // SummaryModal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnReturn);
             Controls.Add(bookReturnHere);
             Controls.Add(bookDueDate);
             Controls.Add(bookBorrowerName);
             Controls.Add(bookSerialNumber);
             Controls.Add(bookTitle);
             Controls.Add(proceedButton);
-            Controls.Add(returnButtonsummary);
             Controls.Add(ReturnDateText);
             Controls.Add(DueDateText);
             Controls.Add(bookSerialNumberText);
@@ -205,12 +205,12 @@
         private Label bookSerialNumberText;
         private Label DueDateText;
         private Label ReturnDateText;
-        private Label returnButtonsummary;
         private Button proceedButton;
         private Label bookTitle;
         private Label bookSerialNumber;
         private Label bookBorrowerName;
         private Label bookDueDate;
         private Label bookReturnHere;
+        private Button btnReturn;
     }
 }

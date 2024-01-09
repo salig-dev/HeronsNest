@@ -12,9 +12,12 @@ namespace HeronsNest.Components.Modal
 {
     public partial class ReserveBook : UserControl
     {
+        Landing MainForm;
         public ReserveBook(Landing mainForm)
         {
             InitializeComponent();
+
+            MainForm = mainForm;
         }
 
         private void ReserveBook_Load(object sender, EventArgs e)
@@ -25,6 +28,11 @@ namespace HeronsNest.Components.Modal
         private void toReserve_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            MainForm.OnPopupHide(this);
         }
     }
 }

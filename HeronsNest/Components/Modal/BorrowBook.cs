@@ -19,10 +19,9 @@ namespace HeronsNest.Components.Modal
 
             MainForm = mainForm;
         }
-
-        private void OnModalExit(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e)
         {
-            MainForm.RemovePopup(this);
+            MainForm.OnPopupHide(this);
         }
     }
 }
