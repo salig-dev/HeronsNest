@@ -1,27 +1,21 @@
 ﻿using HeronsNest.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using HeronsNest.Modules.Books;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace HeronsNest.Components
 {
     public partial class BookCard : UserControl
     {
-        private readonly BookReservation BookReservation;
+        private readonly BookBorrow BookBorrow;
         private readonly Book Book;
 
-        public BookCard(BookReservation bookReservation, Book book)
+        public BookCard(BookBorrow bookBorrow, Book book)
         {
             InitializeComponent();
 
-            BookReservation = bookReservation;
+            BookBorrow = bookBorrow;
             Book = book;
         }
 
@@ -29,8 +23,8 @@ namespace HeronsNest.Components
         {
             base.OnLoad(e);
 
-            borrowedDate.Text = DateTime.Parse(BookReservation.DateReserved).ToShortDateString();
-            returnDate.Text = DateTime.Parse(BookReservation.DateReturn).ToShortDateString();
+            borrowedDate.Text = DateTime.Parse(BookBorrow.DateBorrowed!).ToShortDateString();
+            returnDate.Text = DateTime.Parse(BookBorrow.DateDue!).ToShortDateString();
 
             bookAuthor.Text = Book.Author;
             bookTitle.Text = Book.Title;

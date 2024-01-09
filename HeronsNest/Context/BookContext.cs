@@ -19,7 +19,9 @@ public partial class BookContext : DbContext
 
     public virtual DbSet<Book> Books { get; set; }
 
-    public virtual DbSet<BookReservation> BookReservations { get; set; }
+    public virtual DbSet<BookBorrow> BookBorrows { get; set; }
+
+    public virtual DbSet<BookReserve> BookReserves { get; set; }
 
     public virtual DbSet<Category> Categories { get; set; }
 
@@ -34,6 +36,7 @@ public partial class BookContext : DbContext
         Debug.WriteLine(databasePath);
         optionsBuilder.UseSqlite($"DataSource={databasePath}");
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Book>(entity =>
@@ -43,26 +46,38 @@ public partial class BookContext : DbContext
             entity.ToTable("Book");
 
             entity.Property(e => e.Isbn).HasColumnName("ISBN");
-            entity.Property(e => e.Ratings).HasColumnType("INTEGER");
+            entity.Property(e => e.BookId).HasColumnType("INTEGER");
+            entity.Property(e => e.LikedPercentage).HasColumnType("INTEGER");
         });
 
-        modelBuilder.Entity<BookReservation>(entity =>
+        modelBuilder.Entity<BookBorrow>(entity =>
+        {
+            entity.ToTable("BookBorrow");
+
+            entity.Property(e => e.Id).HasColumnType("TEXT (0, 24)");
+            entity.Property(e => e.Penalty)
+                .HasDefaultValueSql("20")
+                .HasColumnType("NUMERIC");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.BookBorrows).HasForeignKey(d => d.BookId);
+
+            entity.HasOne(d => d.UserNavigation).WithMany(p => p.BookBorrows).HasForeignKey(d => d.User);
+        });
+
+        modelBuilder.Entity<BookReserve>(entity =>
         {
             entity.HasKey(e => e.ReservationId);
 
-            entity.ToTable("BookReservation");
+            entity.ToTable("BookReserve");
 
             entity.Property(e => e.ReservationId).HasColumnType("TEXT (0, 24)");
-            entity.Property(e => e.PenaltyCost)
-                .HasDefaultValueSql("0")
-                .HasColumnType("NUMERIC");
 
-            entity.HasOne(d => d.BookReservedNavigation).WithMany(p => p.BookReservations)
-                .HasForeignKey(d => d.BookReserved)
+            entity.HasOne(d => d.BookNavigation).WithMany(p => p.BookReserves)
+                .HasForeignKey(d => d.Book)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            entity.HasOne(d => d.ReservedByNavigation).WithMany(p => p.BookReservations)
-                .HasForeignKey(d => d.ReservedBy)
+            entity.HasOne(d => d.User).WithMany(p => p.BookReserves)
+                .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
         });
 
@@ -83,8 +98,9 @@ public partial class BookContext : DbContext
             entity.HasIndex(e => e.Password, "IX_User_Password").IsUnique();
 
             entity.Property(e => e.IsTeacher)
-                .HasDefaultValue(0)
+                .HasDefaultValueSql("0")
                 .HasColumnType("NUMERIC (0, 1)");
+            entity.Property(e => e.YearLevel).HasColumnType("INTEGER (1, 4)");
         });
 
         OnModelCreatingPartial(modelBuilder);

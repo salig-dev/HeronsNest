@@ -82,7 +82,7 @@
             cardListView.DataSource = null;
             cardListView.Location = new Point(225, 139);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(775, 446);
+            cardListView.Size = new Size(796, 446);
             cardListView.TabIndex = 4;
             // 
             // timeTakenLabel
@@ -118,10 +118,12 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "ISBN", "High to Low Ratings", "Low to High Ratings", "High to Low Likes", "Low to High Likes" });
             comboBox1.Location = new Point(876, 105);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 8;
+            comboBox1.SelectedIndexChanged += OnSelectedIndexChanged;
             // 
             // label1
             // 

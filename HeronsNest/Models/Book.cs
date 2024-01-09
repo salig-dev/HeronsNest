@@ -7,7 +7,7 @@ public partial class Book
 {
     public string Isbn { get; set; } = null!;
 
-    public int? BookId { get; set; }
+    public string? BookId { get; set; }
 
     public string? Title { get; set; }
 
@@ -21,7 +21,7 @@ public partial class Book
 
     public string? Awards { get; set; }
 
-    public double? Ratings { get; set; }
+    public int? Ratings { get; set; }
 
     public string? BookForm { get; set; }
 
@@ -31,9 +31,11 @@ public partial class Book
 
     public string? PublishDate { get; set; }
 
-    public int? LikedPercentage { get; set; }
+    public string? LikedPercentage { get; set; }
 
     public string? CoverImg { get; set; }
 
-    public virtual ICollection<BookReservation> BookReservations { get; set; } = new List<BookReservation>();
+    public virtual ICollection<BookBorrow> BookBorrows { get; set; } = new List<BookBorrow>();
+
+    public virtual ICollection<BookReserve> BookReserves { get; set; } = new List<BookReserve>();
 }

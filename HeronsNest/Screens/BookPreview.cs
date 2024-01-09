@@ -32,6 +32,18 @@ namespace HeronsNest.Screens
             ISBN.Text = "ISBN: " + Book.Isbn.ToString();
             bookGenre.Text = "Genre: " + Book.Genres;
             bookPublisher.Text = "Publisher: " + Book.Publisher;
+            // var IsBookReserved = mainForm.ReservationHandler.IsBookReserved(Book);
+
+            /**
+             * bookStatus.Text = IsBookReserved ? "UNAVAILABLE" : "AVAILABLE";
+            bookStatus.BackColor = IsBookReserved ? Color.Red : Color.Green;
+
+            if (IsBookReserved)
+            {
+                reserveBtn.Location = borrowBtn.Location;
+                Controls.Remove(borrowBtn);
+            }
+             */
 
             bookLikepercentage.Text = "Liked: " + Book.LikedPercentage.ToString() + "%";
             try
@@ -43,7 +55,7 @@ namespace HeronsNest.Screens
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }
 
-            var relatedBooksOfAuthor = mainForm.AuthorBookTrie.FindRelatedBooks(Book.Author!);
+            var relatedBooksOfAuthor = mainForm.AuthorBookTrie.SearchRelated(Book.Author!);
             foreach (var book in relatedBooksOfAuthor)
             {
                 var pictureBox = new PictureBox();
