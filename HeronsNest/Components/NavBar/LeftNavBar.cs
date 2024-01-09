@@ -9,7 +9,7 @@ namespace HeronsNest.Components
         public LeftNavBar()
         {
             InitializeComponent();
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,6 +56,11 @@ namespace HeronsNest.Components
         private void BalanceClicked(object sender, EventArgs e)
         {
             MainForm?.SwitchView(new Balance(MainForm));
+        }
+
+        private void iconButton8_Load(object sender, EventArgs e)
+        {
+            MainForm?.SwitchView(new Modal.LogoutWindow(MainForm));
         }
     }
 }

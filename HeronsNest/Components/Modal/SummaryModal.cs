@@ -17,7 +17,7 @@ namespace HeronsNest.Components.Modal
         {
             InitializeComponent();
 
-            mainForm = mainForm;
+            MainForm = mainForm;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
