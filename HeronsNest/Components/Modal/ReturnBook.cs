@@ -12,10 +12,12 @@ namespace HeronsNest.Components.Modal
 {
     public partial class ReturnBook : UserControl
     {
-
-        public ReturnBook()
+        Landing MainForm;
+        public ReturnBook(Landing mainForm)
         {
             InitializeComponent();
+
+            MainForm = mainForm;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -31,6 +33,11 @@ namespace HeronsNest.Components.Modal
         private void toBorrow_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+           MainForm.OnPopupHide(this);
         }
     }
 }

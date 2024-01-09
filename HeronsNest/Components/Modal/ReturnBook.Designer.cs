@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            returnButtonborrow = new Label();
             borrowDetails = new Label();
             toBorrow = new Label();
             fromBorrow = new Label();
@@ -40,17 +39,8 @@
             Dateborrow = new DateTimePicker();
             DateReturn = new DateTimePicker();
             label3 = new Label();
+            btnReturn = new Button();
             SuspendLayout();
-            // 
-            // returnButtonborrow
-            // 
-            returnButtonborrow.AutoSize = true;
-            returnButtonborrow.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnButtonborrow.Location = new Point(40, 25);
-            returnButtonborrow.Name = "returnButtonborrow";
-            returnButtonborrow.Size = new Size(27, 21);
-            returnButtonborrow.TabIndex = 4;
-            returnButtonborrow.Text = "<-";
             // 
             // borrowDetails
             // 
@@ -150,10 +140,21 @@
             label3.TabIndex = 24;
             label3.Text = "Note: 20php for everyday past the due";
             // 
+            // btnReturn
+            // 
+            btnReturn.Location = new Point(40, 17);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(47, 40);
+            btnReturn.TabIndex = 27;
+            btnReturn.Text = "<-";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // ReturnBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnReturn);
             Controls.Add(label3);
             Controls.Add(DateReturn);
             Controls.Add(Dateborrow);
@@ -164,7 +165,6 @@
             Controls.Add(toBorrow);
             Controls.Add(fromBorrow);
             Controls.Add(bookReturn);
-            Controls.Add(returnButtonborrow);
             Controls.Add(borrowDetails);
             Name = "ReturnBook";
             Size = new Size(360, 420);
@@ -173,8 +173,6 @@
         }
 
         #endregion
-
-        private Label returnButtonborrow;
         private Label borrowDetails;
         private Label toBorrow;
         private Label fromBorrow;
@@ -186,5 +184,6 @@
         private DateTimePicker Dateborrow;
         private DateTimePicker DateReturn;
         private Label label3;
+        private Button btnReturn;
     }
 }

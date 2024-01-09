@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            returnButtonreserve = new Label();
             reserveDetails = new Label();
             fromReserve = new Label();
             bookReserve = new Button();
@@ -36,17 +35,8 @@
             To = new Label();
             DateReserve = new DateTimePicker();
             toRerserve = new DateTimePicker();
+            btnReturn = new Button();
             SuspendLayout();
-            // 
-            // returnButtonreserve
-            // 
-            returnButtonreserve.AutoSize = true;
-            returnButtonreserve.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            returnButtonreserve.Location = new Point(41, 25);
-            returnButtonreserve.Name = "returnButtonreserve";
-            returnButtonreserve.Size = new Size(27, 21);
-            returnButtonreserve.TabIndex = 2;
-            returnButtonreserve.Text = "<-";
             // 
             // reserveDetails
             // 
@@ -109,15 +99,25 @@
             toRerserve.Size = new Size(245, 23);
             toRerserve.TabIndex = 8;
             // 
+            // btnReturn
+            // 
+            btnReturn.Location = new Point(29, 17);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(47, 40);
+            btnReturn.TabIndex = 27;
+            btnReturn.Text = "<-";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // ReserveBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnReturn);
             Controls.Add(toRerserve);
             Controls.Add(To);
             Controls.Add(Note);
             Controls.Add(DateReserve);
-            Controls.Add(returnButtonreserve);
             Controls.Add(reserveDetails);
             Controls.Add(fromReserve);
             Controls.Add(bookReserve);
@@ -129,8 +129,6 @@
         }
 
         #endregion
-
-        private Label returnButtonreserve;
         private Label reserveDetails;
         private Label fromReserve;
         private Label toReserve;
@@ -140,5 +138,6 @@
         private DateTimePicker DateReserve;
         private DateTimePicker toRerserve;
         private DateTimePicker dateTimePicker2;
+        private Button btnReturn;
     }
 }

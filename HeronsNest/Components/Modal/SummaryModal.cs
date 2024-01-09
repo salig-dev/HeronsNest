@@ -12,9 +12,17 @@ namespace HeronsNest.Components.Modal
 {
     public partial class SummaryModal : UserControl
     {
-        public SummaryModal()
+        Landing MainForm;
+        public SummaryModal(Landing mainForm)
         {
             InitializeComponent();
+
+            mainForm = mainForm;
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            MainForm.OnPopupHide(this);
         }
     }
 }
