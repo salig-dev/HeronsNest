@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            modalBackground = new PictureBox();
             modalPlaceholder = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)modalBackground).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // modalBackground
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.popup_bg;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1000, 600);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            modalBackground.Dock = DockStyle.Fill;
+            modalBackground.Image = Properties.Resources.hero_bg_dark;
+            modalBackground.Location = new Point(0, 0);
+            modalBackground.Name = "modalBackground";
+            modalBackground.Size = new Size(1000, 600);
+            modalBackground.SizeMode = PictureBoxSizeMode.StretchImage;
+            modalBackground.TabIndex = 0;
+            modalBackground.TabStop = false;
             // 
             // modalPlaceholder
             // 
@@ -56,16 +56,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(modalPlaceholder);
-            Controls.Add(pictureBox1);
+            Controls.Add(modalBackground);
             Name = "ModalControl";
             Size = new Size(1000, 600);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)modalBackground).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox modalBackground;
         private Panel modalPlaceholder;
     }
 }
