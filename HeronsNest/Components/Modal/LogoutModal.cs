@@ -22,12 +22,12 @@ namespace HeronsNest.Components.Modal
 
         private void logout_No_Click(object sender, EventArgs e)
         {
-            MainForm.OnPopupHide(this);
+            MainForm.RemovePopup();
         }
 
         private void logout_Yes_Click(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new Screens.Login(MainForm));
+            MainForm.SwitchView(new Screens.Login(MainForm));
         }
     }
 }
