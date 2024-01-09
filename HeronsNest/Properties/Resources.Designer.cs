@@ -73,6 +73,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap balance_card {
             get {
                 object obj = ResourceManager.GetObject("balance-card", resourceCulture);
@@ -113,6 +123,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookCardHome {
+            get {
+                object obj = ResourceManager.GetObject("bookCardHome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap card_active {
             get {
                 object obj = ResourceManager.GetObject("card_active", resourceCulture);
@@ -146,6 +166,26 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap hamburger_menu {
             get {
                 object obj = ResourceManager.GetObject("hamburger-menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hero_bg {
+            get {
+                object obj = ResourceManager.GetObject("hero_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hero_bg_dark {
+            get {
+                object obj = ResourceManager.GetObject("hero_bg_dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -212,6 +252,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_header {
+            get {
+                object obj = ResourceManager.GetObject("logo_header", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnifying_glass_solid {
             get {
                 object obj = ResourceManager.GetObject("magnifying-glass-solid", resourceCulture);
@@ -235,6 +285,16 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap popup_bg {
             get {
                 object obj = ResourceManager.GetObject("popup-bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap previewCard {
+            get {
+                object obj = ResourceManager.GetObject("previewCard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

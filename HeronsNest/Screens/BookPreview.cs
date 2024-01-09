@@ -27,13 +27,13 @@ namespace HeronsNest.Screens
             bookAuthor.Text = Book.Author;
             bookYear.Text = Book.PublishDate;
             bookDetails.Text = Book.Description;
-            bookRating.Text = Book.Ratings.ToString() + " Stars";
-            bookSeries.Text = Book.Series;
-            ISBN.Text = Book.Isbn.ToString();
-            bookGenre.Text = Book.Genres;
-            bookPublisher.Text = Book.Publisher;
+            bookRating.Text = "Rating: " + Book.Ratings.ToString() + " Stars";
+            bookSeries.Text = "Series: " + Book.Series;
+            ISBN.Text = "ISBN: " + Book.Isbn.ToString();
+            bookGenre.Text = "Genre: " + Book.Genres;
+            bookPublisher.Text = "Publisher: " + Book.Publisher;
 
-            bookLikepercentage.Text = Book.LikedPercentage.ToString() + "%";
+            bookLikepercentage.Text = "Liked: " + Book.LikedPercentage.ToString() + "%";
             try
             {
                 bookImg.LoadAsync(Book.CoverImg);
@@ -129,10 +129,6 @@ namespace HeronsNest.Screens
 
         }
 
-        private void ReturnToLibraryBtn_Click(object sender, EventArgs e)
-        {
-            mainForm.SwitchView(new Home(mainForm));
-        }
 
         private void borrowBtn_Click(object sender, EventArgs e)
         {
@@ -142,6 +138,21 @@ namespace HeronsNest.Screens
         private void reserveBtn_Click(object sender, EventArgs e)
         {
             mainForm.ShowPopup(new ReserveBook(mainForm));
+        }
+
+        private void bookAuthor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backIcon_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            mainForm.SwitchView(new Home(mainForm));
         }
     }
 }
