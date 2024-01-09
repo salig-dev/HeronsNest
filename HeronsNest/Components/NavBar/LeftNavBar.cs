@@ -81,5 +81,10 @@ namespace HeronsNest.Components
         {
             MainForm?.SwitchView(new Balance(MainForm));
         }
+
+        private void iconButton8_Load(object sender, EventArgs e)
+        {
+            MainForm?.ShowPopup(new Modal.LogoutWindow(MainForm));
+        }
     }
 }
