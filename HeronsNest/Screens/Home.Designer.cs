@@ -48,10 +48,11 @@
             // greetingLabel
             // 
             greetingLabel.AutoSize = true;
-            greetingLabel.Font = new Font("Segoe UI", 20F);
+            greetingLabel.Font = new Font("PP Hatton", 20F);
+            greetingLabel.ForeColor = Color.FromArgb(82, 167, 133);
             greetingLabel.Location = new Point(215, 82);
             greetingLabel.Name = "greetingLabel";
-            greetingLabel.Size = new Size(267, 37);
+            greetingLabel.Size = new Size(331, 32);
             greetingLabel.TabIndex = 22;
             greetingLabel.Text = "Good Morning, User!";
             // 
