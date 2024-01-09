@@ -56,14 +56,16 @@
             imageList1 = new ImageList(components);
             bookImg = new PictureBox();
             ISBN = new Label();
-            ReturnToLibraryBtn = new Button();
             customListView1 = new Components.List.CustomListView();
+            backBtn = new Label();
+            backIcon = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             authorDetails.SuspendLayout();
             otherBooksList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)otherBookCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).BeginInit();
             customListView1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)backIcon).BeginInit();
             SuspendLayout();
             // 
             // bookImage
@@ -359,21 +361,6 @@
             ISBN.TabIndex = 24;
             ISBN.Text = "ISBN Here";
             // 
-            // ReturnToLibraryBtn
-            // 
-            ReturnToLibraryBtn.BackColor = Color.Transparent;
-            ReturnToLibraryBtn.FlatAppearance.BorderSize = 0;
-            ReturnToLibraryBtn.FlatStyle = FlatStyle.Flat;
-            ReturnToLibraryBtn.Font = new Font("PP Hatton Medium", 8F);
-            ReturnToLibraryBtn.Location = new Point(229, 86);
-            ReturnToLibraryBtn.Name = "ReturnToLibraryBtn";
-            ReturnToLibraryBtn.Size = new Size(129, 27);
-            ReturnToLibraryBtn.TabIndex = 25;
-            ReturnToLibraryBtn.Text = "<- Back to Library";
-            ReturnToLibraryBtn.TextAlign = ContentAlignment.MiddleLeft;
-            ReturnToLibraryBtn.UseVisualStyleBackColor = false;
-            ReturnToLibraryBtn.Click += ReturnToLibraryBtn_Click;
-            // 
             // customListView1
             // 
             customListView1.AutoScroll = true;
@@ -385,13 +372,37 @@
             customListView1.Size = new Size(751, 119);
             customListView1.TabIndex = 26;
             // 
+            // backBtn
+            // 
+            backBtn.AutoSize = true;
+            backBtn.Font = new Font("PP Hatton", 9F);
+            backBtn.ForeColor = Color.FromArgb(76, 76, 76);
+            backBtn.Location = new Point(252, 92);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(116, 14);
+            backBtn.TabIndex = 27;
+            backBtn.Text = "Back to Library";
+            backBtn.Click += backBtn_Click;
+            // 
+            // backIcon
+            // 
+            backIcon.Image = Properties.Resources.back;
+            backIcon.Location = new Point(232, 92);
+            backIcon.Name = "backIcon";
+            backIcon.Size = new Size(14, 14);
+            backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
+            backIcon.TabIndex = 28;
+            backIcon.TabStop = false;
+            backIcon.Click += backIcon_Click;
+            // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(backIcon);
+            Controls.Add(backBtn);
             Controls.Add(customListView1);
-            Controls.Add(ReturnToLibraryBtn);
             Controls.Add(ISBN);
             Controls.Add(bookImg);
             Controls.Add(comp_Searchbar1);
@@ -420,6 +431,7 @@
             ((System.ComponentModel.ISupportInitialize)bookImg).EndInit();
             customListView1.ResumeLayout(false);
             customListView1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)backIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -455,7 +467,6 @@
         private Label publisherText;
         private Label bookLikepercentage;
         private Label likepercentageText;
-        private Button ReturnToLibraryBtn;
         private Components.List.CustomListView otherBooksList;
         private PictureBox otherBookCover;
         private Components.List.CustomListView customListView1;
@@ -468,5 +479,7 @@
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
+        private Label backBtn;
+        private PictureBox backIcon;
     }
 }
