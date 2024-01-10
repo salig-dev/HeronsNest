@@ -32,6 +32,17 @@ namespace HeronsNest.Components
                 }
             });
              */
+
+
+            homeButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Screens.Home(MainForm));
+            searchButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Search(MainForm));
+            myShelfButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new MyShelf(MainForm));
+            balanceButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Balance(MainForm));
+        }
+
+        private void NavigateTo(Control control)
+        {
+            MainForm.SwitchView(control);
         }
 
 
@@ -63,28 +74,23 @@ namespace HeronsNest.Components
 
         private void HomeClicked(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new Screens.Home(MainForm));
         }
 
         private void SearchClicked(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new Search(MainForm));
         }
 
         private void MyShelfClicked(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new MyShelf(MainForm));
 
         }
 
         private void BalanceClicked(object sender, EventArgs e)
         {
-            MainForm?.SwitchView(new Balance(MainForm));
         }
 
-        private void iconButton8_Load(object sender, EventArgs e)
+        private void iconButton8(object sender, EventArgs e)
         {
-            MainForm?.ShowPopup(new Modal.LogoutWindow(MainForm));
         }
     }
 }

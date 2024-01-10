@@ -163,7 +163,7 @@
             borrowBtn.TabIndex = 10;
             borrowBtn.Text = "BORROW";
             borrowBtn.UseVisualStyleBackColor = false;
-            borrowBtn.Click += borrowBtn_Click;
+            borrowBtn.Click += OnBorrowButtonClicked;
             // 
             // reserveBtn
             // 
@@ -289,7 +289,7 @@
             // 
             // label1
             // 
-            label1.Font = new Font("PP Hatton Italic", 9F);
+            label1.Font = new Font("Microsoft Sans Serif", 9F);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.Location = new Point(6, 170);
             label1.Name = "label1";
@@ -300,11 +300,11 @@
             // aboutBook
             // 
             aboutBook.AutoSize = true;
-            aboutBook.Font = new Font("PP Hatton Italic", 12F);
+            aboutBook.Font = new Font("Microsoft Sans Serif", 12F);
             aboutBook.ForeColor = Color.FromArgb(76, 76, 76);
             aboutBook.Location = new Point(6, 19);
             aboutBook.Name = "aboutBook";
-            aboutBook.Size = new Size(115, 21);
+            aboutBook.Size = new Size(99, 20);
             aboutBook.TabIndex = 0;
             aboutBook.Text = "Book Details";
             aboutBook.TextAlign = ContentAlignment.MiddleLeft;
@@ -316,7 +316,7 @@
             leftNavBar1.Location = new Point(0, 0);
             leftNavBar1.MainForm = null;
             leftNavBar1.Name = "leftNavBar1";
-            leftNavBar1.Size = new Size(200, 600);
+            leftNavBar1.Size = new Size(206, 648);
             leftNavBar1.TabIndex = 17;
             // 
             // comp_Searchbar1

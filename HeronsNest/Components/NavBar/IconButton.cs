@@ -40,14 +40,22 @@ namespace HeronsNest.Components
             }
         }
 
+        private EventHandler IconButtonClicked;
+
+        public event EventHandler OnIconButtonClicked
+        {
+            add => IconButtonClicked += value;
+            remove => IconButtonClicked = null!;
+        }
+
         public IconButton()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void IconButtonClick(object sender, EventArgs e)
         {
-
+            IconButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

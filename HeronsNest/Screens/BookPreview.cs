@@ -32,18 +32,22 @@ namespace HeronsNest.Screens
             ISBN.Text = "ISBN: " + Book.Isbn.ToString();
             bookGenre.Text = "Genre: " + Book.Genres;
             bookPublisher.Text = "Publisher: " + Book.Publisher;
-            // var IsBookReserved = mainForm.ReservationHandler.IsBookReserved(Book);
+            var IsBookReserved = mainForm.BorrowBook.CanBorrowBook(Book.Isbn);
 
-            /**
-             * bookStatus.Text = IsBookReserved ? "UNAVAILABLE" : "AVAILABLE";
-            bookStatus.BackColor = IsBookReserved ? Color.Red : Color.Green;
-
-            if (IsBookReserved)
+            if (IsBookReserved.Result != null)
             {
-                reserveBtn.Location = borrowBtn.Location;
-                Controls.Remove(borrowBtn);
+                bookStatus.Text = IsBookReserved.Result.Data ? "UNAVAILABLE" : "AVAILABLE";
+                bookStatus.BackColor = IsBookReserved.Result.Data ? Color.Red : Color.Green;
+
+                if (IsBookReserved.Result.Data)
+                {
+                    reserveBtn.Location = borrowBtn.Location;
+                    Controls.Remove(borrowBtn);
+                }
             }
-             */
+            
+            
+             
 
             bookLikepercentage.Text = "Liked: " + Book.LikedPercentage.ToString() + "%";
             try
@@ -91,16 +95,6 @@ namespace HeronsNest.Screens
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click_1(object sender, EventArgs e)
         {
 
@@ -141,12 +135,6 @@ namespace HeronsNest.Screens
 
         }
 
-
-        private void borrowBtn_Click(object sender, EventArgs e)
-        {
-            mainForm.ShowPopup(new BorrowBook(mainForm));
-        }
-
         private void reserveBtn_Click(object sender, EventArgs e)
         {
             mainForm.ShowPopup(new ReserveBook(mainForm));
@@ -165,6 +153,11 @@ namespace HeronsNest.Screens
         private void backBtn_Click(object sender, EventArgs e)
         {
             mainForm.SwitchView(new Home(mainForm));
+        }
+
+        private void OnBorrowButtonClicked(object sender, EventArgs e)
+        {
+            mainForm.ShowPopup(new BorrowBook(mainForm, Book));
         }
     }
 }

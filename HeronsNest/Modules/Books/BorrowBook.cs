@@ -1,5 +1,6 @@
 ﻿using HeronsNest.Models;
 using HeronsNest.Modules.Repository.BookBorrow;
+using HeronsNest.Modules.Response;
 using HeronsNest.Singleton;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace HeronsNest.Modules.Books
         public async Task<List<BookBorrow>> GetAllBorrows(User? user)
         {
             return (await _borrowRepository.GetBorrowedBooksAsync(user)).ToList();
+        }
+
+        public Task<Response<bool>> CanBorrowBook(string borrowId)
+        {
+            return _borrowRepository.CanBorrowAsync(borrowId);   
         }
     }
 }

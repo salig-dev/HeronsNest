@@ -52,7 +52,10 @@ namespace HeronsNest.Components.List
         public void ResetLazyLoadSettings()
         {
             DataLoaded = 0;
-            Controls.Clear();
+            Invoke(delegate ()
+            {
+                Controls.Clear();
+            });
         }
     }
 }

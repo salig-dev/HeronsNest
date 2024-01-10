@@ -52,6 +52,7 @@
             bookBorrow.TabIndex = 0;
             bookBorrow.Text = "BORROW";
             bookBorrow.UseVisualStyleBackColor = false;
+            bookBorrow.Click += OnReserve;
             // 
             // borrowDetails
             // 
