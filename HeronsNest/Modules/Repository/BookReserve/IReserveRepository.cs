@@ -12,7 +12,7 @@ namespace HeronsNest.Modules.Repository.BookReserve
     {
         public Task<Response<Book?>> ReserveBookAsync(Models.BookReserve book);
         public Task<Response<Book?>> RevokeReservationAsync(string reserveId);
-        public Task<IEnumerable<Models.BookReserve>> GetReservedBooksAsync(User? user);
+        public Task<IEnumerable<Models.BookReserve>> GetReservedBooksAsync(User? user, string bookIsbn = "");
         public Task<Response<bool>> CanReserveAsync(Book book, DateOnly Date);
 
         public void SaveChanges();

@@ -32,22 +32,13 @@ namespace HeronsNest.Screens
             ISBN.Text = "ISBN: " + Book.Isbn.ToString();
             bookGenre.Text = "Genre: " + Book.Genres;
             bookPublisher.Text = "Publisher: " + Book.Publisher;
-            var IsBookReserved = mainForm.BorrowBook.CanBorrowBook(Book.Isbn);
 
-            if (IsBookReserved.Result != null)
-            {
-                bookStatus.Text = IsBookReserved.Result.Data ? "UNAVAILABLE" : "AVAILABLE";
-                bookStatus.BackColor = IsBookReserved.Result.Data ? Color.Red : Color.Green;
+            var IsBookBorrowed = mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result;
+            var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book, DateTime.Now).Result;
 
-                if (IsBookReserved.Result.Data)
-                {
-                    reserveBtn.Location = borrowBtn.Location;
-                    Controls.Remove(borrowBtn);
-                }
-            }
-            
-            
-             
+            bookStatus.Text = IsBookReserved.Data ? "RESERVED TODAY" : (IsBookBorrowed.Data ? "BORROWED TODAY" : "AVAILABLE");
+
+            bookStatus.BackColor = IsBookBorrowed.Data || IsBookReserved.Data ? Color.Orange : Color.Green;
 
             bookLikepercentage.Text = "Liked: " + Book.LikedPercentage.ToString() + "%";
             try
@@ -137,7 +128,7 @@ namespace HeronsNest.Screens
 
         private void reserveBtn_Click(object sender, EventArgs e)
         {
-            mainForm.ShowPopup(new ReserveBook(mainForm));
+            mainForm.ShowPopup(new ReserveBook(mainForm, Book.Isbn));
         }
 
         private void bookAuthor_Click(object sender, EventArgs e)
@@ -158,6 +149,11 @@ namespace HeronsNest.Screens
         private void OnBorrowButtonClicked(object sender, EventArgs e)
         {
             mainForm.ShowPopup(new BorrowBook(mainForm, Book));
+        }
+
+        private void OnBookBorrowReserveDateCheck(object sender, EventArgs e)
+        {
+            mainForm.ShowPopup(new ReserveBorrowDateCheckModal(mainForm, Book.Isbn));
         }
     }
 }

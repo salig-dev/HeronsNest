@@ -8,7 +8,8 @@ namespace HeronsNest.Components
 {
     public partial class BookCard : UserControl
     {
-        private readonly BookBorrow BookBorrow;
+        private readonly BookBorrow? BookBorrow;
+        private readonly BookReserve? BookReserve;
         private readonly Book Book;
 
         public BookCard(BookBorrow bookBorrow, Book book)
@@ -19,12 +20,29 @@ namespace HeronsNest.Components
             Book = book;
         }
 
+        public BookCard(BookReserve bookReserve, Book book)
+        {
+            InitializeComponent();
+
+            BookReserve = bookReserve;
+            Book = book;
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
-            borrowedDate.Text = DateTime.Parse(BookBorrow.DateBorrowed!).ToShortDateString();
-            returnDate.Text = DateTime.Parse(BookBorrow.DateDue!).ToShortDateString();
+            if (BookBorrow != null)
+            {
+                borrowedDate.Text = DateTime.Parse(BookBorrow.DateBorrowed!).ToShortDateString();
+                returnDate.Text = DateTime.Parse(BookBorrow.DateDue!).ToShortDateString();
+            }
+
+            if (BookReserve != null)
+            {
+                borrowedDate.Text = DateTime.Parse(BookReserve.DateReserved!).ToShortDateString();
+                returnDate.Text = "--";
+            }
 
             bookAuthor.Text = Book.Author;
             bookTitle.Text = Book.Title;

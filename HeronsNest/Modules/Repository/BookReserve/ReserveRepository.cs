@@ -3,6 +3,7 @@ using HeronsNest.Models;
 using HeronsNest.Modules.Repository.BookBorrow;
 using HeronsNest.Modules.Response;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace HeronsNest.Modules.Repository.BookReserve
 {
@@ -10,18 +11,33 @@ namespace HeronsNest.Modules.Repository.BookReserve
     {
         private readonly BookContext Context = context;
 
-        public async Task<Response<bool>> CanReserveAsync(Book book, DateOnly Date)
+        public async Task<Response<bool>> CanReserveAsync(Book? book, DateOnly Date)
         {
-            var Book = await Context.BookReserves.FindAsync(book);
-
-            return new(Book != null && DateOnly.FromDateTime(DateTime.Now) != DateOnly.Parse(Book.DateReserved!), Enums.ActionResult.Success);
+            var Book = (await Context.BookReserves.ToListAsync()).Where(
+                x =>
+                x.Book.Equals(book.Isbn)
+                && DateOnly.FromDateTime(DateTime.Parse(x.DateReserved!)) == Date
+                );
+            
+            return new(Book.Any(), Enums.ActionResult.Success);
         }
 
-        public async Task<IEnumerable<Models.BookReserve>> GetReservedBooksAsync(User? user)
+        public async Task<IEnumerable<Models.BookReserve>> GetReservedBooksAsync(User? user, string bookIsbn = "")
         {
-            return user != null 
-                ? Context.BookReserves.Where(x => x.UserId == user.Id) 
-                : await Context.BookReserves.ToListAsync();
+            var query = Context.BookReserves.AsQueryable();
+
+            if (user != null)
+            {
+                query = query.Where(x => x.User.Id.Equals(user.Id));
+            }
+
+            if (bookIsbn != "")
+            {
+                query = query.Where(x => x.Book == bookIsbn);
+            }
+
+            var reserves = await query.ToListAsync();
+            return reserves;
         }
 
         public async Task<Response<Book?>> ReserveBookAsync(Models.BookReserve book)

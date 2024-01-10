@@ -2,6 +2,7 @@
 using HeronsNest.Models;
 using HeronsNest.Modules.Response;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace HeronsNest.Modules.Repository.BookBorrow
 {
@@ -11,12 +12,20 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<Book?>> BorrowBookAsync(Models.BookBorrow borrowDetails)
         {
-            if (!(await CanBorrowAsync(borrowDetails.Id)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else.");
-            var AddResult = await Context.AddAsync(borrowDetails);
-
-            if (AddResult != null)
+            if ((await CanBorrowAsync(borrowDetails.BookId  )).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
+            
+            try
             {
-                return new(AddResult.Entity.Book, Enums.ActionResult.Success);
+                var AddResult = Context.BookBorrows.Add(borrowDetails);
+                SaveChanges();
+
+                if (AddResult != null)
+                {
+                    return new(AddResult.Entity.Book, Enums.ActionResult.Success);
+                }
+            } catch (Exception e)
+            {
+                Debug.WriteLine(e.InnerException);
             }
 
             return new(null, Enums.ActionResult.Failed);
@@ -24,45 +33,54 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<bool>> CanBorrowAsync(string borrowId)
         {
-            DateOnly res;
-            
-            try
-            {
-                var IsAlreadyBorrowed = (await Context.BookBorrows.ToListAsync()).First(
-                x => x.Id == borrowId
-                && x.DateBorrowed != null
-                && DateOnly.TryParse(x.DateBorrowed, out res)
-                && res.AddDays(3).CompareTo(DateOnly.FromDateTime(DateTime.Now)) < 0
-                );
 
-                return new(IsAlreadyBorrowed != null, Enums.ActionResult.Success);
+            var IsAlreadyBorrowed = (await Context.BookBorrows.ToListAsync()).FirstOrDefault(
+                x 
+                => x != null
+                && x.BookId == borrowId
+                && (x.DateBorrowed != null || x.DateBorrowed != string.Empty)
+                && DateTime.TryParse(x.DateBorrowed, out DateTime res)
+                && res <= (DateTime.Now).AddDays(3)
+                , null);
 
-            }   
-            catch
-            {
-                return new(false, Enums.ActionResult.Success);
-            }
+            return new(IsAlreadyBorrowed != null, Enums.ActionResult.Success);
 
         }
 
-        public async Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(Models.User? user)
+        public async Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(Models.User? user, string bookIsbn = "")
         {
-            return user == null
-                ? await Context.BookBorrows.ToListAsync()
-                : await Context.BookBorrows.Where(x => x.User!.Equals(user)).ToListAsync();
+            var query = Context.BookBorrows.AsQueryable();
+
+            if (user != null)
+            {
+                query = query.Where(x => x.User.Equals(user.Id));
+            }
+
+            if (bookIsbn != "")
+            {
+                query = query.Where(x => x.BookId == bookIsbn);
+            }
+
+            var borrows = await query.ToListAsync();
+            return borrows;
         }
 
 
         public async Task<Response<Models.BookBorrow?>> ReturnBookAsync(string borrowId, Models.User? user)
         {
+            DateTime res;
+
             var BookToBeUpdated = await Context.BookBorrows.FirstAsync(
                 x => x.Id == borrowId && x.User == user.Id
-                && DateOnly.Parse(x.DateBorrowed!).AddDays(3).CompareTo(DateOnly.FromDateTime(DateTime.Now)) <= 0
+                && x.DateBorrowed != null
+                && DateTime.TryParse(x.DateBorrowed, out res)
+                && res >= DateTime.Now.AddDays(3)
                 );
 
             BookToBeUpdated.DateReturned = DateOnly.FromDateTime(DateTime.Now).ToString();
 
             var UpdateResult = Context.BookBorrows.Update(BookToBeUpdated);
+            SaveChanges();
 
             if (UpdateResult.State == EntityState.Modified) return new(BookToBeUpdated, Enums.ActionResult.Success);
 
@@ -71,9 +89,13 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<Book?>> RevokeBorrowAsync(string borrowId, Models.User? user)
         {
+            DateTime res;
+
             var ReferenceToBeDeleted = await Context.BookBorrows.FirstAsync(
                 x => x.Id == borrowId && x.User == user.Id
-                && DateOnly.Parse(x.DateBorrowed!).AddDays(3).CompareTo(DateOnly.FromDateTime(DateTime.Now)) <= 0
+               && x.DateBorrowed != null
+                && DateTime.TryParse(x.DateBorrowed, out res)
+                && res >= DateTime.Now.AddDays(3)
                 );
 
             if (ReferenceToBeDeleted != null)

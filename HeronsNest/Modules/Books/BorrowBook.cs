@@ -13,25 +13,25 @@ namespace HeronsNest.Modules.Books
     public class BorrowBook(IBorrowRepository borrowRepository)
     {
         private readonly IBorrowRepository _borrowRepository = borrowRepository;
-        
-        public void Borrow(Models.BookBorrow borrowDetails)
+
+        public Task<Response<Book?>> Borrow(Models.BookBorrow borrowDetails)
         {
-            _borrowRepository.BorrowBookAsync(borrowDetails);
+            return _borrowRepository.BorrowBookAsync(borrowDetails);
         }
 
-        public void Return(string borrowId)
+        public Task<Response<BookBorrow?>> Return(string borrowId)
         {
-            _borrowRepository.ReturnBookAsync(borrowId, UserSession.Instance.User);
+            return _borrowRepository.ReturnBookAsync(borrowId, UserSession.Instance.User);
         }
 
-        public void Revoke(string borrowId)
+        public Task<Response<Book?>> Revoke(string borrowId)
         {
-            _borrowRepository.RevokeBorrowAsync(borrowId, UserSession.Instance.User);
+            return _borrowRepository.RevokeBorrowAsync(borrowId, UserSession.Instance.User);
         }
 
-        public async Task<List<BookBorrow>> GetAllBorrows(User? user)
+        public async Task<List<BookBorrow>> GetAllBorrows(User? user, string bookIsbn = "")
         {
-            return (await _borrowRepository.GetBorrowedBooksAsync(user)).ToList();
+            return (await _borrowRepository.GetBorrowedBooksAsync(user, bookIsbn)).ToList();
         }
 
         public Task<Response<bool>> CanBorrowBook(string borrowId)

@@ -34,7 +34,7 @@
             toBorrow = new Label();
             DateBorrow = new DateTimePicker();
             DateReturn = new DateTimePicker();
-            label3 = new Label();
+            actionMessageLbl = new Label();
             backBtn = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             SuspendLayout();
@@ -44,7 +44,7 @@
             bookBorrow.BackColor = Color.FromArgb(0, 149, 168);
             bookBorrow.FlatAppearance.BorderSize = 0;
             bookBorrow.FlatStyle = FlatStyle.Flat;
-            bookBorrow.Font = new Font("PP Hatton", 9F);
+            bookBorrow.Font = new Font("Microsoft Sans Serif", 9F);
             bookBorrow.ForeColor = Color.White;
             bookBorrow.Location = new Point(112, 330);
             bookBorrow.Name = "bookBorrow";
@@ -56,7 +56,7 @@
             // 
             // borrowDetails
             // 
-            borrowDetails.Font = new Font("PP Hatton", 12F);
+            borrowDetails.Font = new Font("Microsoft Sans Serif", 12F);
             borrowDetails.ForeColor = Color.FromArgb(76, 76, 76);
             borrowDetails.Location = new Point(112, 53);
             borrowDetails.Name = "borrowDetails";
@@ -68,50 +68,51 @@
             // fromBorrow
             // 
             fromBorrow.AutoSize = true;
-            fromBorrow.Font = new Font("PP Hatton", 9F);
+            fromBorrow.Font = new Font("Microsoft Sans Serif", 9F);
             fromBorrow.ForeColor = Color.FromArgb(76, 76, 76);
             fromBorrow.Location = new Point(31, 90);
             fromBorrow.Name = "fromBorrow";
-            fromBorrow.Size = new Size(42, 14);
+            fromBorrow.Size = new Size(36, 15);
             fromBorrow.TabIndex = 4;
             fromBorrow.Text = "From";
             // 
             // toBorrow
             // 
             toBorrow.AutoSize = true;
-            toBorrow.Font = new Font("PP Hatton", 9F);
+            toBorrow.Font = new Font("Microsoft Sans Serif", 9F);
             toBorrow.ForeColor = Color.FromArgb(76, 76, 76);
             toBorrow.Location = new Point(31, 149);
             toBorrow.Name = "toBorrow";
-            toBorrow.Size = new Size(23, 14);
+            toBorrow.Size = new Size(21, 15);
             toBorrow.TabIndex = 4;
             toBorrow.Text = "To";
             // 
             // DateBorrow
             // 
-            DateBorrow.Font = new Font("Nourd-Regular", 9F);
+            DateBorrow.Font = new Font("Microsoft Sans Serif", 9F);
             DateBorrow.Location = new Point(31, 107);
             DateBorrow.Name = "DateBorrow";
-            DateBorrow.Size = new Size(298, 22);
+            DateBorrow.Size = new Size(298, 21);
             DateBorrow.TabIndex = 6;
+            DateBorrow.ValueChanged += OnDateValueChanged;
             // 
             // DateReturn
             // 
-            DateReturn.Font = new Font("Nourd-Regular", 9F);
+            DateReturn.Enabled = false;
+            DateReturn.Font = new Font("Microsoft Sans Serif", 9F);
             DateReturn.Location = new Point(31, 166);
             DateReturn.Name = "DateReturn";
-            DateReturn.Size = new Size(298, 22);
+            DateReturn.Size = new Size(298, 21);
             DateReturn.TabIndex = 7;
             // 
-            // label3
+            // actionMessageLbl
             // 
-            label3.Font = new Font("Nourd-Regular", 8F);
-            label3.Location = new Point(31, 208);
-            label3.Name = "label3";
-            label3.Size = new Size(298, 20);
-            label3.TabIndex = 25;
-            label3.Text = "NOTE: 20 PHP for everyday past the due";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            actionMessageLbl.Font = new Font("Microsoft Sans Serif", 8F);
+            actionMessageLbl.Location = new Point(31, 208);
+            actionMessageLbl.Name = "actionMessageLbl";
+            actionMessageLbl.Size = new Size(298, 20);
+            actionMessageLbl.TabIndex = 25;
+            actionMessageLbl.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // backBtn
             // 
@@ -129,7 +130,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(backBtn);
-            Controls.Add(label3);
+            Controls.Add(actionMessageLbl);
             Controls.Add(DateReturn);
             Controls.Add(DateBorrow);
             Controls.Add(toBorrow);
@@ -151,7 +152,7 @@
         private Label toBorrow;
         private DateTimePicker DateBorrow;
         private DateTimePicker DateReturn;
-        private Label label3;
+        private Label actionMessageLbl;
         private PictureBox pictureBox5;
         private PictureBox btnReturn;
         private PictureBox backBtn;
