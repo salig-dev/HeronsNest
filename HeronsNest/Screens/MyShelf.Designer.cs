@@ -35,13 +35,13 @@
             allBooks = new Label();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
-            comp_Searchbar1 = new Components.Comp_Searchbar();
             cardListView = new Components.List.CustomListView();
+            comp_Searchbar1 = new Components.Comp_Searchbar();
             SuspendLayout();
             // 
             // backBtn
             // 
-            backBtn.Location = new Point(219, 83);
+            backBtn.Location = new Point(217, 30);
             backBtn.Name = "backBtn";
             backBtn.Size = new Size(129, 27);
             backBtn.TabIndex = 0;
@@ -57,7 +57,7 @@
             myShelfTitle.Font = new Font("Microsoft Sans Serif", 19.7999973F, FontStyle.Bold, GraphicsUnit.Point, 0);
             myShelfTitle.ForeColor = Color.FromArgb(0, 149, 168);
             myShelfTitle.ImageAlign = ContentAlignment.MiddleLeft;
-            myShelfTitle.Location = new Point(500, 123);
+            myShelfTitle.Location = new Point(217, 79);
             myShelfTitle.Margin = new Padding(0);
             myShelfTitle.Name = "myShelfTitle";
             myShelfTitle.Size = new Size(127, 31);
@@ -71,7 +71,7 @@
             completedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             completedBooks.ForeColor = Color.FromArgb(76, 76, 76);
             completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            completedBooks.Location = new Point(598, 176);
+            completedBooks.Location = new Point(604, 123);
             completedBooks.Name = "completedBooks";
             completedBooks.Size = new Size(150, 20);
             completedBooks.TabIndex = 4;
@@ -83,7 +83,7 @@
             pendingBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pendingBooks.ForeColor = Color.FromArgb(76, 76, 76);
             pendingBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            pendingBooks.Location = new Point(385, 177);
+            pendingBooks.Location = new Point(391, 124);
             pendingBooks.Name = "pendingBooks";
             pendingBooks.Size = new Size(129, 20);
             pendingBooks.TabIndex = 13;
@@ -95,7 +95,7 @@
             allBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allBooks.ForeColor = Color.FromArgb(76, 76, 76);
             allBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            allBooks.Location = new Point(217, 177);
+            allBooks.Location = new Point(223, 124);
             allBooks.Name = "allBooks";
             allBooks.Size = new Size(84, 20);
             allBooks.TabIndex = 14;
@@ -108,32 +108,32 @@
             leftNavBar1.Location = new Point(0, 0);
             leftNavBar1.MainForm = null;
             leftNavBar1.Name = "leftNavBar1";
-            leftNavBar1.Size = new Size(200, 600);
+            leftNavBar1.Size = new Size(206, 648);
             leftNavBar1.TabIndex = 20;
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(576, 25);
+            comp_DateTime1.Location = new Point(728, 22);
             comp_DateTime1.Name = "comp_DateTime1";
             comp_DateTime1.Size = new Size(249, 44);
             comp_DateTime1.TabIndex = 22;
             // 
-            // comp_Searchbar1
-            // 
-            comp_Searchbar1.Location = new Point(211, 30);
-            comp_Searchbar1.MainForm = null;
-            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
-            comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(382, 35);
-            comp_Searchbar1.TabIndex = 21;
-            // 
             // cardListView
             // 
             cardListView.DataSource = null;
-            cardListView.Location = new Point(217, 214);
+            cardListView.Location = new Point(217, 211);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(760, 360);
+            cardListView.Size = new Size(760, 363);
             cardListView.TabIndex = 23;
+            // 
+            // comp_Searchbar1
+            // 
+            comp_Searchbar1.Location = new Point(223, 160);
+            comp_Searchbar1.MainForm = null;
+            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
+            comp_Searchbar1.Name = "comp_Searchbar1";
+            comp_Searchbar1.Size = new Size(531, 35);
+            comp_Searchbar1.TabIndex = 24;
             // 
             // MyShelf
             // 
@@ -141,8 +141,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(cardListView);
             Controls.Add(comp_Searchbar1);
+            Controls.Add(cardListView);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
             Controls.Add(pendingBooks);
@@ -167,7 +167,7 @@
         private Label allBooks;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
-        private Components.Comp_Searchbar comp_Searchbar1;
         private Components.List.CustomListView cardListView;
+        private Components.Comp_Searchbar comp_Searchbar1;
     }
 }

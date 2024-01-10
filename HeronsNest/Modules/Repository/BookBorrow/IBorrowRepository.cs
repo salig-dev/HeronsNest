@@ -13,7 +13,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
         public Task<Response<Book?>> BorrowBookAsync(Models.BookBorrow borrowDetails);
         public Task<Response<Models.BookBorrow?>> ReturnBookAsync(string borrowId, User user);
         public Task<Response<Book?>> RevokeBorrowAsync(string borrowId, User user);
-        public Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(User? user);
+        public Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(User? user, string bookIsbn = "");
         public Task<Response<bool>> CanBorrowAsync(string borrowId);
 
         public void SaveChanges();

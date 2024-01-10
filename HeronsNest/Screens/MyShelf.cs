@@ -30,13 +30,18 @@ namespace HeronsNest.Screens
         {
             base.OnLoad(e);
 
-            var userReservations = await mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User);
+            var BorrowedBooksUser = await mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User);
+            var ReservedBooksUser = await mainForm.ReserveBook.GetAllReservations(UserSession.Instance.User);
             
-            foreach (BookBorrow r in userReservations)
+            foreach (BookBorrow r in BorrowedBooksUser)
             {
-                var currentBook = mainForm.BookTrie.Search(r.BookId!)[0];
-                BookCard card = new(r, currentBook);
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                cardListView.Controls.Add(card);
+            }
 
+            foreach (BookReserve r in ReservedBooksUser)
+            {
+                BookCard card = new(r, mainForm.BookTrie.Search(r.Book!)[0]);
                 cardListView.Controls.Add(card);
             }
         }

@@ -1,5 +1,6 @@
 ﻿using HeronsNest.Models;
 using HeronsNest.Modules.Repository.BookReserve;
+using HeronsNest.Modules.Response;
 
 namespace HeronsNest.Modules.Books
 {
@@ -17,10 +18,15 @@ namespace HeronsNest.Modules.Books
             _reserveRepository.RevokeReservationAsync(reserveId);
         }
 
-        public async Task<List<BookReserve>> GetAllReservations(User? user)
+        public async Task<List<BookReserve>> GetAllReservations(User? user, string bookIsbn = "")
         {
-            return (await _reserveRepository.GetReservedBooksAsync(user)).ToList();
+            return (await _reserveRepository.GetReservedBooksAsync(user, bookIsbn)).ToList();
         }
+
+        public Task<Response<bool>> CanReserveBook(Book book, DateTime date)
+        {
+            return _reserveRepository.CanReserveAsync(book, DateOnly.FromDateTime(date));
+        } 
 
     }
 }

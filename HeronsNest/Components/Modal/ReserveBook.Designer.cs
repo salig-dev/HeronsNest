@@ -30,9 +30,9 @@
         {
             reserveDetails = new Label();
             bookReserve = new Button();
-            toRerserve = new DateTimePicker();
+            reserveDate = new DateTimePicker();
             btnReturn = new Button();
-            customListView1 = new List.CustomListView();
+            reservedDatesList = new List.CustomListView();
             unavailableReservedDatesLbl = new Label();
             label1 = new Label();
             SuspendLayout();
@@ -51,19 +51,21 @@
             // 
             bookReserve.BackColor = Color.FromArgb(128, 255, 128);
             bookReserve.FlatStyle = FlatStyle.Flat;
-            bookReserve.Location = new Point(220, 371);
+            bookReserve.Location = new Point(216, 371);
             bookReserve.Name = "bookReserve";
             bookReserve.Size = new Size(122, 34);
             bookReserve.TabIndex = 0;
             bookReserve.Text = "Reserve";
             bookReserve.UseVisualStyleBackColor = false;
+            bookReserve.Click += OnReserve;
             // 
-            // toRerserve
+            // reserveDate
             // 
-            toRerserve.Location = new Point(24, 342);
-            toRerserve.Name = "toRerserve";
-            toRerserve.Size = new Size(313, 23);
-            toRerserve.TabIndex = 8;
+            reserveDate.Location = new Point(24, 334);
+            reserveDate.MinDate = new DateTime(2024, 1, 10, 0, 0, 0, 0);
+            reserveDate.Name = "reserveDate";
+            reserveDate.Size = new Size(313, 23);
+            reserveDate.TabIndex = 8;
             // 
             // btnReturn
             // 
@@ -75,13 +77,13 @@
             btnReturn.UseVisualStyleBackColor = true;
             btnReturn.Click += btnReturn_Click;
             // 
-            // customListView1
+            // reservedDatesList
             // 
-            customListView1.DataSource = null;
-            customListView1.Location = new Point(24, 107);
-            customListView1.Name = "customListView1";
-            customListView1.Size = new Size(313, 187);
-            customListView1.TabIndex = 28;
+            reservedDatesList.DataSource = null;
+            reservedDatesList.Location = new Point(24, 107);
+            reservedDatesList.Name = "reservedDatesList";
+            reservedDatesList.Size = new Size(313, 187);
+            reservedDatesList.TabIndex = 28;
             // 
             // unavailableReservedDatesLbl
             // 
@@ -97,7 +99,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 312);
+            label1.Location = new Point(23, 304);
             label1.Name = "label1";
             label1.Size = new Size(141, 21);
             label1.TabIndex = 30;
@@ -109,9 +111,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Controls.Add(unavailableReservedDatesLbl);
-            Controls.Add(customListView1);
+            Controls.Add(reservedDatesList);
             Controls.Add(btnReturn);
-            Controls.Add(toRerserve);
+            Controls.Add(reserveDate);
             Controls.Add(reserveDetails);
             Controls.Add(bookReserve);
             Name = "ReserveBook";
@@ -125,10 +127,10 @@
         private Label reserveDetails;
         private Label toReserve;
         private Button bookReserve;
-        private DateTimePicker toRerserve;
+        private DateTimePicker reserveDate;
         private DateTimePicker dateTimePicker2;
         private Button btnReturn;
-        private List.CustomListView customListView1;
+        private List.CustomListView reservedDatesList;
         private Label unavailableReservedDatesLbl;
         private Label label1;
     }
