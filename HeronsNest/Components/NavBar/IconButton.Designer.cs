@@ -41,6 +41,7 @@
             iconHolder.SizeMode = PictureBoxSizeMode.StretchImage;
             iconHolder.TabIndex = 0;
             iconHolder.TabStop = false;
+            iconHolder.Click += IconButtonClick;
             // 
             // buttonTitle
             // 
@@ -52,13 +53,12 @@
             buttonTitle.TabIndex = 1;
             buttonTitle.Text = "Button Text";
             buttonTitle.TextAlign = ContentAlignment.MiddleCenter;
-            buttonTitle.Click += label1_Click;
+            buttonTitle.Click += IconButtonClick;
             // 
             // IconButton
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             Controls.Add(buttonTitle);
             Controls.Add(iconHolder);
             Cursor = Cursors.Hand;
