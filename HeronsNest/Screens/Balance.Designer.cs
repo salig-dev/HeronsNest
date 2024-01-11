@@ -35,7 +35,6 @@
             penaltyText = new Label();
             totalText = new Label();
             comp_DateTime1 = new Components.Comp_DateTime();
-            comp_Searchbar2 = new Components.Comp_Searchbar();
             backBtn = new Label();
             backIcon = new PictureBox();
             balanceListView = new Components.List.CustomListView();
@@ -49,7 +48,7 @@
             leftNavBar.Location = new Point(0, 0);
             leftNavBar.MainForm = null;
             leftNavBar.Name = "leftNavBar";
-            leftNavBar.Size = new Size(200, 600);
+            leftNavBar.Size = new Size(206, 648);
             leftNavBar.TabIndex = 0;
             // 
             // balanceTitle
@@ -57,7 +56,7 @@
             balanceTitle.AutoSize = true;
             balanceTitle.Font = new Font("PP Hatton", 20F);
             balanceTitle.ForeColor = Color.FromArgb(0, 149, 168);
-            balanceTitle.Location = new Point(231, 156);
+            balanceTitle.Location = new Point(231, 73);
             balanceTitle.Name = "balanceTitle";
             balanceTitle.Size = new Size(284, 32);
             balanceTitle.TabIndex = 1;
@@ -68,7 +67,7 @@
             titleText.AutoSize = true;
             titleText.Font = new Font("PP Hatton", 12F);
             titleText.ForeColor = Color.FromArgb(76, 76, 76);
-            titleText.Location = new Point(412, 214);
+            titleText.Location = new Point(412, 131);
             titleText.Name = "titleText";
             titleText.Size = new Size(49, 19);
             titleText.TabIndex = 7;
@@ -79,7 +78,7 @@
             statusText.AutoSize = true;
             statusText.Font = new Font("PP Hatton", 12F);
             statusText.ForeColor = Color.FromArgb(76, 76, 76);
-            statusText.Location = new Point(553, 214);
+            statusText.Location = new Point(553, 131);
             statusText.Name = "statusText";
             statusText.Size = new Size(66, 19);
             statusText.TabIndex = 10;
@@ -90,7 +89,7 @@
             penaltyText.AutoSize = true;
             penaltyText.Font = new Font("PP Hatton", 12F);
             penaltyText.ForeColor = Color.FromArgb(76, 76, 76);
-            penaltyText.Location = new Point(651, 214);
+            penaltyText.Location = new Point(651, 131);
             penaltyText.Name = "penaltyText";
             penaltyText.Size = new Size(74, 19);
             penaltyText.TabIndex = 12;
@@ -101,7 +100,7 @@
             totalText.AutoSize = true;
             totalText.Font = new Font("PP Hatton", 12F);
             totalText.ForeColor = Color.FromArgb(76, 76, 76);
-            totalText.Location = new Point(747, 214);
+            totalText.Location = new Point(747, 119);
             totalText.Name = "totalText";
             totalText.Size = new Size(53, 19);
             totalText.TabIndex = 14;
@@ -109,26 +108,17 @@
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(598, 22);
+            comp_DateTime1.Location = new Point(725, 20);
             comp_DateTime1.Name = "comp_DateTime1";
             comp_DateTime1.Size = new Size(249, 44);
             comp_DateTime1.TabIndex = 21;
-            // 
-            // comp_Searchbar2
-            // 
-            comp_Searchbar2.Location = new Point(225, 28);
-            comp_Searchbar2.MainForm = null;
-            comp_Searchbar2.Margin = new Padding(3, 2, 3, 2);
-            comp_Searchbar2.Name = "comp_Searchbar2";
-            comp_Searchbar2.Size = new Size(387, 35);
-            comp_Searchbar2.TabIndex = 22;
             // 
             // backBtn
             // 
             backBtn.AutoSize = true;
             backBtn.Font = new Font("PP Hatton", 9F);
             backBtn.ForeColor = Color.FromArgb(76, 76, 76);
-            backBtn.Location = new Point(251, 126);
+            backBtn.Location = new Point(251, 43);
             backBtn.Name = "backBtn";
             backBtn.Size = new Size(116, 14);
             backBtn.TabIndex = 28;
@@ -138,7 +128,7 @@
             // backIcon
             // 
             backIcon.Image = Properties.Resources.back;
-            backIcon.Location = new Point(231, 126);
+            backIcon.Location = new Point(231, 43);
             backIcon.Name = "backIcon";
             backIcon.Size = new Size(14, 14);
             backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -149,9 +139,9 @@
             // balanceListView
             // 
             balanceListView.DataSource = null;
-            balanceListView.Location = new Point(231, 240);
+            balanceListView.Location = new Point(231, 157);
             balanceListView.Name = "balanceListView";
-            balanceListView.Size = new Size(711, 360);
+            balanceListView.Size = new Size(711, 443);
             balanceListView.TabIndex = 30;
             // 
             // Balance
@@ -162,7 +152,6 @@
             Controls.Add(balanceListView);
             Controls.Add(backIcon);
             Controls.Add(backBtn);
-            Controls.Add(comp_Searchbar2);
             Controls.Add(totalText);
             Controls.Add(penaltyText);
             Controls.Add(statusText);
@@ -186,7 +175,6 @@
         private Label penaltyText;
         private Label totalText;
         private Components.Comp_DateTime comp_DateTime1;
-        private Components.Comp_Searchbar comp_Searchbar2;
         private Button btn_Return;
         private Label backBtn;
         private PictureBox backIcon;

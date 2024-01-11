@@ -54,20 +54,16 @@ namespace HeronsNest.Screens
 
             int amount = 5;
             var categories = mainForm.CategoryLoader?.GetRandomCategories(amount);
-            Debug.WriteLine(categories?.Count);
 
-            for (int i = 0; i < categories?.Count; i++)
+            for (int i = 0; categories?.Count > i; i++)
             {
                 var relatedBooks = mainForm.CategoryBookTrie.SearchRelated(categories[i].CategoryName!);
 
-                // if walang laman si relatedBooks then wag siya i-add para di sayang yung UI space
-                if (relatedBooks?.Count == 0)
+                if (relatedBooks is not null && relatedBooks.Count != 0)
                 {
-                    continue;
+                    CategoryList list = new(categories[i], relatedBooks, mainForm);
+                    categoryListView.Controls.Add(list);
                 }
-
-                CategoryList list = new(categories[i], relatedBooks, mainForm);
-                categoryListView.Controls.Add(list);
             }
         }
 

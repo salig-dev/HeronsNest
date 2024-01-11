@@ -34,14 +34,35 @@ namespace HeronsNest.Screens
             bookGenre.Text = "Genre: " + Book.Genres;
             bookPublisher.Text = "Publisher: " + Book.Publisher;
 
-            var IsBookBorrowed = mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result;
-            var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book, DateTime.Now, UserSession.Instance.User.Id).Result;
+            if (!Book.Genres.Contains("Academ"))
+            {
+                var IsBookBorrowed = !mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result.Data;
+                var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data
+                    || mainForm.ReserveBook.CanReserveBook(Book.Isbn, DateTime.Now, "").Result.Data;
+                var CanUserBorrow = !mainForm.BorrowBook.CanUserBorrow(UserSession.Instance.User).Result.Data;
 
-            bookStatus.Text = IsBookReserved.Data ? "RESERVED TODAY" : (IsBookBorrowed.Data ? "BORROWED TODAY" : "AVAILABLE");
+                bookStatus.Text = CanUserBorrow ? "MAX BORROWS" :
+                           (IsBookReserved ? "RESERVED TODAY" :
+                           (IsBookBorrowed ? "BORROWED TODAY" : "AVAILABLE"));
 
-            bookStatus.BackColor = IsBookBorrowed.Data || IsBookReserved.Data ? Color.Orange : Color.Green;
+                bookStatus.BackColor = IsBookBorrowed || IsBookReserved || CanUserBorrow ? Color.Orange : Color.Green;
 
-            borrowAndReserveDates.Visible = IsBookBorrowed.Data || IsBookReserved.Data;
+                borrowAndReserveDates.Visible = IsBookBorrowed || IsBookReserved;
+
+            } else
+            {
+                
+
+                bookStatus.Text = "CAN'T BORROW";
+
+                bookStatus.BackColor = Color.Orange;
+                borrowBtn.Visible = false;
+                reserveBtn.Visible = false;
+
+                borrowAndReserveDates.Visible = false;
+            }
+
+            
 
             bookLikepercentage.Text = "Liked: " + Book.LikedPercentage!.ToString() + "%";
             try

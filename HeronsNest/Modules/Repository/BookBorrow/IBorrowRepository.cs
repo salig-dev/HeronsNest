@@ -15,6 +15,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
         public Task<Response<Book?>> RevokeBorrowAsync(string borrowId, User user);
         public Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(User? user, string bookIsbn = "");
         public Task<Response<bool>> CanBorrowAsync(string borrowId);
+        public Task<Response<bool>> CanUserBorrow(User user);
 
         public void SaveChanges();
 

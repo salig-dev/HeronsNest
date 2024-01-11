@@ -20,10 +20,6 @@ namespace HeronsNest.Screens
             this.mainForm = mainForm;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            mainForm.ShowPopup(new SuccessModal(mainForm));
-        }
 
         private void OnUserLogin(object sender, EventArgs e)
         {
@@ -38,8 +34,7 @@ namespace HeronsNest.Screens
             switch (Result)
             {
                 case Enums.AuthResult.Success:
-                    mainForm.ShowPopup(new SuccessModal(mainForm));
-                    mainForm.SwitchView(new Home(mainForm));
+                    mainForm.ShowPopup(new SuccessModal(mainForm, new Home(mainForm), "Successfully Logged In!"));
                     break;
                 case Enums.AuthResult.Failed:
                     tipTextLabel.Text = "Invalid Credentials!";

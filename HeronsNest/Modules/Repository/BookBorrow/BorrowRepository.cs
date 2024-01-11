@@ -12,11 +12,20 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<Book?>> BorrowBookAsync(Models.BookBorrow borrowDetails)
         {
-            if ((await CanBorrowAsync(borrowDetails.BookId  )).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
-            
+            if (!(await CanBorrowAsync(borrowDetails.BookId)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
+            if (!(await CanUserBorrow(borrowDetails.UserNavigation!)).Data) return new(null, Enums.ActionResult.Failed, "User has max borrows already!");
+            if (Context.BookReserves.Any(x => x.UserId == borrowDetails.User && x.Book == borrowDetails.BookId && DateTime.Parse(x.DateReserved) == DateTime.Parse(borrowDetails.DateBorrowed))) return new(null, Enums.ActionResult.Failed, "Already Reserved by Someone Else!");
+
             try
-            {
+            {            
                 var AddResult = Context.BookBorrows.Add(borrowDetails);
+
+                if (Context.BookReserves.Any(x => x.UserId == borrowDetails.User && x.Book == borrowDetails.BookId))
+                {
+                    var res = Context.BookReserves.Where(x => x.UserId == borrowDetails.User && x.Book == borrowDetails.BookId);
+                    Context.BookReserves.RemoveRange(res);
+                }
+
                 SaveChanges();
 
                 if (AddResult != null)
@@ -40,10 +49,10 @@ namespace HeronsNest.Modules.Repository.BookBorrow
                 && x.BookId == borrowId
                 && (x.DateBorrowed != null || x.DateBorrowed != string.Empty)
                 && DateTime.TryParse(x.DateBorrowed, out DateTime res)
-                && res <= (DateTime.Now).AddDays(3)
+                && res <= DateTime.Now.AddDays(3)
                 , null);
 
-            return new(IsAlreadyBorrowed != null, Enums.ActionResult.Success);
+            return new(IsAlreadyBorrowed == null, Enums.ActionResult.Success);
 
         }
 
@@ -73,8 +82,6 @@ namespace HeronsNest.Modules.Repository.BookBorrow
             var BookToBeUpdated = await Context.BookBorrows.FirstAsync(
                 x => x.Id == borrowId && x.User == user.Id
                 && x.DateBorrowed != null
-                && DateTime.TryParse(x.DateBorrowed, out res)
-                && res >= DateTime.Now.AddDays(3)
                 );
 
             BookToBeUpdated.DateReturned = DateOnly.FromDateTime(DateTime.Now).ToString();
@@ -108,9 +115,19 @@ namespace HeronsNest.Modules.Repository.BookBorrow
             return new(null, Enums.ActionResult.Failed, "Book Reference could not be found");
         }
 
+        public async Task<Response<bool>> CanUserBorrow(User user)
+        {
+            var AllUserBorrowedBooks = (await GetBorrowedBooksAsync(user)).ToList();
+
+            if (Convert.ToBoolean(user.IsTeacher)) return new(AllUserBorrowedBooks.Count < 5, Enums.ActionResult.Success);
+            return new(AllUserBorrowedBooks.Count < 3, Enums.ActionResult.Success);
+        }
+
         public void SaveChanges()
         {
             Context.SaveChanges();
         }
+
+        
     }
 }

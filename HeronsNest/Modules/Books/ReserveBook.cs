@@ -9,9 +9,9 @@ namespace HeronsNest.Modules.Books
     {
         private readonly IReserveRepository _reserveRepository = reserveRepository;
 
-        public void Reserve(Models.BookReserve bookReserveDetails)
+        public Task<Response<Book?>> Reserve(Models.BookReserve bookReserveDetails)
         {
-            _reserveRepository.ReserveBookAsync(bookReserveDetails);
+            return _reserveRepository.ReserveBookAsync(bookReserveDetails);
         }
 
         public void Revoke(string reserveId)
@@ -24,9 +24,9 @@ namespace HeronsNest.Modules.Books
             return (await _reserveRepository.GetReservedBooksAsync(user, bookIsbn)).ToList();
         }
 
-        public Task<Response<bool>> CanReserveBook(Book book, DateTime date, string userId)
+        public Task<Response<bool>> CanReserveBook(string bookIsbn, DateTime date, string userId)
         {
-            return _reserveRepository.CanReserveAsync(book, DateOnly.FromDateTime(date), userId);
+            return _reserveRepository.CanReserveAsync(bookIsbn, DateOnly.FromDateTime(date), userId);
         } 
 
     }

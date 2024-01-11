@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HeronsNest.Components;
+using HeronsNest.Models;
+using HeronsNest.Singleton;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +22,21 @@ namespace HeronsNest.Screens
 
             this.mainForm = mainForm;
             leftNavBar.MainForm = mainForm;
+
+            var overdueUserBorrows = mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User).Result.Where(
+                x =>
+                {
+                    DateTime dateBorrowed = DateTime.Parse(x.DateBorrowed);
+                    DateTime dateDue = DateTime.Parse(x.DateDue);
+                    TimeSpan span = dateDue - dateBorrowed;
+                    return span.Days > 3;
+                }
+                );
+
+            foreach (BookBorrow data in overdueUserBorrows)
+            {
+                balanceListView.Controls.Add(new BalanceBookCard(mainForm, data));
+            }
         }
 
         private void backIcon_Click(object sender, EventArgs e)

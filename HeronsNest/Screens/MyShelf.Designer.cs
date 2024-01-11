@@ -35,11 +35,8 @@
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
             cardListView = new Components.List.CustomListView();
-            comp_Searchbar1 = new Components.Comp_Searchbar();
+            shelfSearchBar = new Components.Comp_Searchbar();
             completedBooks = new Label();
-            backIcon = new PictureBox();
-            backBtn = new Label();
-            ((System.ComponentModel.ISupportInitialize)backIcon).BeginInit();
             SuspendLayout();
             // 
             // myShelfTitle
@@ -65,11 +62,11 @@
             borrowedBooks.Font = new Font("PP Hatton", 12F);
             borrowedBooks.ForeColor = Color.FromArgb(76, 76, 76);
             borrowedBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            borrowedBooks.Location = new Point(520, 123);
+            borrowedBooks.Location = new Point(514, 123);
             borrowedBooks.Name = "borrowedBooks";
-            borrowedBooks.Size = new Size(145, 19);
+            borrowedBooks.Size = new Size(163, 19);
             borrowedBooks.TabIndex = 4;
-            borrowedBooks.Text = "Pending Books";
+            borrowedBooks.Text = "Borrowed Books";
             borrowedBooks.Click += OnPendingBooksNavigate;
             // 
             // reservedBooks
@@ -128,15 +125,15 @@
             cardListView.Size = new Size(760, 363);
             cardListView.TabIndex = 23;
             // 
-            // comp_Searchbar1
+            // shelfSearchBar
             // 
-            comp_Searchbar1.Font = new Font("Nourd-Regular", 9F);
-            comp_Searchbar1.Location = new Point(223, 173);
-            comp_Searchbar1.MainForm = null;
-            comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
-            comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(531, 33);
-            comp_Searchbar1.TabIndex = 24;
+            shelfSearchBar.Font = new Font("Nourd-Regular", 9F);
+            shelfSearchBar.Location = new Point(223, 158);
+            shelfSearchBar.MainForm = null;
+            shelfSearchBar.Margin = new Padding(3, 2, 3, 2);
+            shelfSearchBar.Name = "shelfSearchBar";
+            shelfSearchBar.Size = new Size(531, 33);
+            shelfSearchBar.TabIndex = 24;
             // 
             // completedBooks
             // 
@@ -147,31 +144,10 @@
             completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
             completedBooks.Location = new Point(687, 123);
             completedBooks.Name = "completedBooks";
-            completedBooks.Size = new Size(172, 19);
+            completedBooks.Size = new Size(156, 19);
             completedBooks.TabIndex = 25;
-            completedBooks.Text = "Completed Books";
+            completedBooks.Text = "Returned Books";
             completedBooks.Click += OnCompletedBooksNavigate;
-            // 
-            // backIcon
-            // 
-            backIcon.Image = Properties.Resources.back;
-            backIcon.Location = new Point(223, 42);
-            backIcon.Name = "backIcon";
-            backIcon.Size = new Size(14, 14);
-            backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
-            backIcon.TabIndex = 29;
-            backIcon.TabStop = false;
-            // 
-            // backBtn
-            // 
-            backBtn.AutoSize = true;
-            backBtn.Font = new Font("PP Hatton", 9F);
-            backBtn.ForeColor = Color.FromArgb(76, 76, 76);
-            backBtn.Location = new Point(243, 42);
-            backBtn.Name = "backBtn";
-            backBtn.Size = new Size(116, 14);
-            backBtn.TabIndex = 30;
-            backBtn.Text = "Back to Library";
             // 
             // MyShelf
             // 
@@ -179,10 +155,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(backBtn);
-            Controls.Add(backIcon);
             Controls.Add(completedBooks);
-            Controls.Add(comp_Searchbar1);
+            Controls.Add(shelfSearchBar);
             Controls.Add(cardListView);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
@@ -194,7 +168,6 @@
             Name = "MyShelf";
             Size = new Size(1000, 600);
             Load += MyShelf_Load;
-            ((System.ComponentModel.ISupportInitialize)backIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,9 +180,7 @@
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.List.CustomListView cardListView;
-        private Components.Comp_Searchbar comp_Searchbar1;
+        private Components.Comp_Searchbar shelfSearchBar;
         private Label completedBooks;
-        private PictureBox backIcon;
-        private Label backBtn;
     }
 }

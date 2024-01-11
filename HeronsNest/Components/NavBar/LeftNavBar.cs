@@ -1,4 +1,5 @@
-﻿using HeronsNest.Screens;
+﻿using HeronsNest.Components.Modal;
+using HeronsNest.Screens;
 using System.Diagnostics;
 
 namespace HeronsNest.Components
@@ -39,6 +40,7 @@ namespace HeronsNest.Components
             myShelfButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new MyShelf(MainForm));
             balanceButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Balance(MainForm));
             iconButton5.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new AboutUs(MainForm));
+            logoutBtn.OnIconButtonClicked += (object s, EventArgs e) => MainForm.ShowPopup(new LogoutWindow(MainForm));
         }
 
         private void NavigateTo(Control control)
@@ -94,7 +96,9 @@ namespace HeronsNest.Components
         {
         }
 
-        private void iconButton5Clicked(object sender, EventArgs e)
+        private void iconButton5Clicked(object sender, EventArgs e) {
+        }
+        private void LogoutClicked(object sender, EventArgs e)
         {
 
         }

@@ -98,6 +98,7 @@
             payBtn.TabIndex = 19;
             payBtn.Text = "PAY";
             payBtn.UseVisualStyleBackColor = false;
+            payBtn.Click += OnPayButtonClick;
             // 
             // penaltyVal
             // 

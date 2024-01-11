@@ -19,9 +19,9 @@ namespace HeronsNest.Modules.Books
             return _borrowRepository.BorrowBookAsync(borrowDetails);
         }
 
-        public Task<Response<BookBorrow?>> Return(string borrowId)
+        public Task<Response<BookBorrow?>> Return(string borrowId, User? user)
         {
-            return _borrowRepository.ReturnBookAsync(borrowId, UserSession.Instance.User);
+            return _borrowRepository.ReturnBookAsync(borrowId, user);
         }
 
         public Task<Response<Book?>> Revoke(string borrowId)
@@ -37,6 +37,11 @@ namespace HeronsNest.Modules.Books
         public Task<Response<bool>> CanBorrowBook(string borrowId)
         {
             return _borrowRepository.CanBorrowAsync(borrowId);   
+        }
+
+        public Task<Response<bool>> CanUserBorrow(User user)
+        {
+            return _borrowRepository.CanUserBorrow(user);
         }
     }
 }
