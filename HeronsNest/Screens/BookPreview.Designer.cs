@@ -329,15 +329,15 @@
             comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(382, 33);
+            comp_Searchbar1.Size = new Size(472, 33);
             comp_Searchbar1.TabIndex = 18;
             // 
             // comp_DateTime1
             // 
             comp_DateTime1.Font = new Font("Nourd-Regular", 9F);
-            comp_DateTime1.Location = new Point(577, 21);
+            comp_DateTime1.Location = new Point(683, 19);
             comp_DateTime1.Name = "comp_DateTime1";
-            comp_DateTime1.Size = new Size(249, 41);
+            comp_DateTime1.Size = new Size(271, 41);
             comp_DateTime1.TabIndex = 19;
             // 
             // imageList1
