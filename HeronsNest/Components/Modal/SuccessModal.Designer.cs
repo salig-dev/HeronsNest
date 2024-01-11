@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             pictureBox1 = new PictureBox();
             proceedButton = new Button();
+            processCompleteText = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(68, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(228, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Process Complete";
             // 
             // pictureBox1
             // 
@@ -57,15 +47,29 @@
             // proceedButton
             // 
             proceedButton.BackColor = Color.FromArgb(0, 149, 168);
-            proceedButton.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold);
+            proceedButton.FlatAppearance.BorderSize = 0;
+            proceedButton.FlatStyle = FlatStyle.Flat;
+            proceedButton.Font = new Font("PP Hatton", 10F);
             proceedButton.ForeColor = Color.White;
-            proceedButton.Location = new Point(103, 340);
+            proceedButton.Location = new Point(106, 324);
             proceedButton.Name = "proceedButton";
-            proceedButton.Size = new Size(149, 43);
+            proceedButton.Size = new Size(148, 40);
             proceedButton.TabIndex = 2;
             proceedButton.Text = "CONTINUE";
             proceedButton.UseVisualStyleBackColor = false;
             proceedButton.Click += OnModalClose;
+            // 
+            // processCompleteText
+            // 
+            processCompleteText.BackColor = Color.FromArgb(244, 244, 244);
+            processCompleteText.Font = new Font("PP Hatton", 16F);
+            processCompleteText.ForeColor = Color.FromArgb(0, 149, 168);
+            processCompleteText.Location = new Point(0, 53);
+            processCompleteText.Name = "processCompleteText";
+            processCompleteText.Size = new Size(360, 30);
+            processCompleteText.TabIndex = 9;
+            processCompleteText.Text = "Process Completed!";
+            processCompleteText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SuccessModal
             // 
@@ -73,18 +77,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(proceedButton);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
+            Controls.Add(processCompleteText);
             Name = "SuccessModal";
             Size = new Size(360, 420);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private PictureBox pictureBox1;
         private Button proceedButton;
+        private Label processCompleteText;
     }
 }
