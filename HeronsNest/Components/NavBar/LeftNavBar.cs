@@ -38,6 +38,7 @@ namespace HeronsNest.Components
             searchButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Search(MainForm));
             myShelfButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new MyShelf(MainForm));
             balanceButton.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new Balance(MainForm));
+            iconButton5.OnIconButtonClicked += (object s, EventArgs e) => NavigateTo(new AboutUs(MainForm));
         }
 
         private void NavigateTo(Control control)
@@ -91,6 +92,11 @@ namespace HeronsNest.Components
 
         private void iconButton8(object sender, EventArgs e)
         {
+        }
+
+        private void iconButton5Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

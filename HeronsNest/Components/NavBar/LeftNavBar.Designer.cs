@@ -161,6 +161,7 @@
             iconButton5.Size = new Size(150, 40);
             iconButton5.TabIndex = 0;
             iconButton5.Text = "About Salig Tech";
+            iconButton5.Click += iconButton5Clicked;
             // 
             // LeftNavBar
             // 
