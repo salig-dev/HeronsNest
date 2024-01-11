@@ -47,34 +47,37 @@
             leftNavBar1.Location = new Point(0, 0);
             leftNavBar1.MainForm = null;
             leftNavBar1.Name = "leftNavBar1";
-            leftNavBar1.Size = new Size(194, 600);
+            leftNavBar1.Size = new Size(206, 648);
             leftNavBar1.TabIndex = 0;
             // 
             // comp_Searchbar1
             // 
-            comp_Searchbar1.Location = new Point(215, 23);
+            comp_Searchbar1.Font = new Font("Nourd-Regular", 9F);
+            comp_Searchbar1.Location = new Point(215, 21);
             comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(480, 35);
+            comp_Searchbar1.Size = new Size(480, 33);
             comp_Searchbar1.TabIndex = 1;
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(669, 19);
+            comp_DateTime1.Font = new Font("Nourd-Regular", 9F);
+            comp_DateTime1.Location = new Point(698, 13);
             comp_DateTime1.Name = "comp_DateTime1";
-            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.Size = new Size(249, 41);
             comp_DateTime1.TabIndex = 2;
             // 
             // searchResultLabel
             // 
             searchResultLabel.AutoSize = true;
-            searchResultLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            searchResultLabel.Location = new Point(225, 68);
+            searchResultLabel.Font = new Font("PP Hatton", 16F);
+            searchResultLabel.ForeColor = Color.FromArgb(0, 149, 168);
+            searchResultLabel.Location = new Point(225, 72);
             searchResultLabel.Name = "searchResultLabel";
-            searchResultLabel.Size = new Size(264, 37);
+            searchResultLabel.Size = new Size(434, 26);
             searchResultLabel.TabIndex = 3;
-            searchResultLabel.Text = "Use the Search Bar!";
+            searchResultLabel.Text = "Discover more with the search bar!";
             // 
             // cardListView
             // 
@@ -88,50 +91,55 @@
             // timeTakenLabel
             // 
             timeTakenLabel.AutoSize = true;
+            timeTakenLabel.Font = new Font("Nourd-Regular", 8F);
             timeTakenLabel.ForeColor = SystemColors.ControlDark;
-            timeTakenLabel.Location = new Point(237, 113);
+            timeTakenLabel.Location = new Point(225, 113);
             timeTakenLabel.Name = "timeTakenLabel";
-            timeTakenLabel.Size = new Size(87, 15);
+            timeTakenLabel.Size = new Size(83, 13);
             timeTakenLabel.TabIndex = 5;
             timeTakenLabel.Text = "Time Taken: 0.0";
             // 
             // labelResults
             // 
             labelResults.AutoSize = true;
+            labelResults.Font = new Font("Nourd-Regular", 8F);
             labelResults.ForeColor = SystemColors.ControlDark;
-            labelResults.Location = new Point(339, 113);
+            labelResults.Location = new Point(370, 113);
             labelResults.Name = "labelResults";
-            labelResults.Size = new Size(56, 15);
+            labelResults.Size = new Size(56, 13);
             labelResults.TabIndex = 6;
             labelResults.Text = "Results: 0";
             // 
             // memoryUsedLabel
             // 
             memoryUsedLabel.AutoSize = true;
+            memoryUsedLabel.Font = new Font("Nourd-Regular", 8F);
             memoryUsedLabel.ForeColor = SystemColors.ControlDark;
-            memoryUsedLabel.Location = new Point(438, 113);
+            memoryUsedLabel.Location = new Point(488, 113);
             memoryUsedLabel.Name = "memoryUsedLabel";
-            memoryUsedLabel.Size = new Size(114, 15);
+            memoryUsedLabel.Size = new Size(108, 13);
             memoryUsedLabel.TabIndex = 7;
             memoryUsedLabel.Text = "Memory Used: 0 MB";
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Nourd-Regular", 9F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "ISBN", "High to Low Ratings", "Low to High Ratings", "High to Low Likes", "Low to High Likes" });
             comboBox1.Location = new Point(876, 105);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(121, 22);
             comboBox1.TabIndex = 8;
             comboBox1.SelectedIndexChanged += OnSelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.Location = new Point(941, 83);
+            label1.Font = new Font("PP Hatton", 9F);
+            label1.ForeColor = Color.FromArgb(76, 76, 76);
+            label1.Location = new Point(876, 80);
             label1.Name = "label1";
-            label1.Size = new Size(56, 15);
+            label1.Size = new Size(71, 14);
             label1.TabIndex = 9;
             label1.Text = "Sort By...";
             // 
