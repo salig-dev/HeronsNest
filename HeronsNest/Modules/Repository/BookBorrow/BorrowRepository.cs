@@ -12,9 +12,19 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<Book?>> BorrowBookAsync(Models.BookBorrow borrowDetails)
         {
+            var parsedReservedDate = DateTime.Now;
+            var parsedBorrowedDate = DateTime.Now;
             if (!(await CanBorrowAsync(borrowDetails.BookId)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
             if (!(await CanUserBorrow(borrowDetails.UserNavigation!)).Data) return new(null, Enums.ActionResult.Failed, "User has max borrows already!");
-            if (Context.BookReserves.Any(x => x.UserId == borrowDetails.User && x.Book == borrowDetails.BookId && DateTime.Parse(x.DateReserved) == DateTime.Parse(borrowDetails.DateBorrowed))) return new(null, Enums.ActionResult.Failed, "Already Reserved by Someone Else!");
+            if (Context.BookReserves.Any(x =>
+    x.UserId == borrowDetails.User &&
+    x.Book == borrowDetails.BookId &&
+    DateTime.TryParse(x.DateReserved, out parsedReservedDate) &&
+    DateTime.TryParse(borrowDetails.DateBorrowed, out parsedBorrowedDate) &&
+    parsedReservedDate == parsedBorrowedDate))
+            {
+                return new(null, Enums.ActionResult.Failed, "Already Reserved by Someone Else!");
+            }
 
             try
             {            
