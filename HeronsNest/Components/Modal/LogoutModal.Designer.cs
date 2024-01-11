@@ -28,39 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            confirmText = new Label();
             logout_No = new Button();
             logout_Yes = new Button();
             SuspendLayout();
             // 
-            // label1
+            // confirmText
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(50, 120);
-            label1.Name = "label1";
-            label1.Size = new Size(261, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Are you sure you want to logout?";
+            confirmText.Font = new Font("PP Hatton", 16F);
+            confirmText.ForeColor = Color.FromArgb(76, 76, 76);
+            confirmText.Location = new Point(30, 103);
+            confirmText.Name = "confirmText";
+            confirmText.Size = new Size(300, 122);
+            confirmText.TabIndex = 0;
+            confirmText.Text = "Are you sure you want to logout?";
+            confirmText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // logout_No
             // 
-            logout_No.Location = new Point(30, 248);
+            logout_No.BackColor = Color.FromArgb(82, 167, 133);
+            logout_No.FlatAppearance.BorderSize = 0;
+            logout_No.FlatStyle = FlatStyle.Flat;
+            logout_No.Font = new Font("PP Hatton", 12F);
+            logout_No.ForeColor = Color.White;
+            logout_No.Location = new Point(30, 274);
             logout_No.Name = "logout_No";
-            logout_No.Size = new Size(300, 23);
+            logout_No.Size = new Size(300, 40);
             logout_No.TabIndex = 1;
-            logout_No.Text = "No";
-            logout_No.UseVisualStyleBackColor = true;
+            logout_No.Text = "NO";
+            logout_No.UseVisualStyleBackColor = false;
             logout_No.Click += logout_No_Click;
             // 
             // logout_Yes
             // 
-            logout_Yes.Location = new Point(30, 210);
+            logout_Yes.BackColor = Color.FromArgb(0, 149, 168);
+            logout_Yes.FlatAppearance.BorderSize = 0;
+            logout_Yes.FlatStyle = FlatStyle.Flat;
+            logout_Yes.Font = new Font("PP Hatton", 12F);
+            logout_Yes.ForeColor = Color.White;
+            logout_Yes.Location = new Point(30, 228);
             logout_Yes.Name = "logout_Yes";
-            logout_Yes.Size = new Size(300, 23);
+            logout_Yes.Size = new Size(300, 40);
             logout_Yes.TabIndex = 2;
-            logout_Yes.Text = "Yes";
-            logout_Yes.UseVisualStyleBackColor = true;
+            logout_Yes.Text = "YES";
+            logout_Yes.UseVisualStyleBackColor = false;
             logout_Yes.Click += logout_Yes_Click;
             // 
             // LogoutWindow
@@ -69,16 +80,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(logout_Yes);
             Controls.Add(logout_No);
-            Controls.Add(label1);
+            Controls.Add(confirmText);
             Name = "LogoutWindow";
             Size = new Size(360, 420);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label confirmText;
         private Button logout_No;
         private Button logout_Yes;
     }
