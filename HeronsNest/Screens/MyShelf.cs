@@ -96,7 +96,7 @@ namespace HeronsNest.Screens
 
             foreach (BookReserve r in bookReserves)
             {
-                Book book = mainForm.BookTrie.Search(r.Book!)[0];
+                Book book = mainForm.BookTrie.Search(r.Book!.ToLowerInvariant())[0];
                 var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
@@ -119,7 +119,7 @@ namespace HeronsNest.Screens
 
             foreach (BookReserve r in bookReserves)
             {
-                Book book = mainForm.BookTrie.Search(r.Book!)[0];
+                Book book = mainForm.BookTrie.Search(r.Book!.ToLowerInvariant())[0];
                 var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
