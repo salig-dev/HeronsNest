@@ -30,7 +30,6 @@
         {
             leftNavBar1 = new Components.LeftNavBar();
             comp_Searchbar1 = new Components.Comp_Searchbar();
-            comp_DateTime1 = new Components.Comp_DateTime();
             searchResultLabel = new Label();
             cardListView = new Components.List.CustomListView();
             timeTakenLabel = new Label();
@@ -38,6 +37,7 @@
             memoryUsedLabel = new Label();
             comboBox1 = new ComboBox();
             label1 = new Label();
+            comp_DateTime1 = new Components.Comp_DateTime();
             SuspendLayout();
             // 
             // leftNavBar1
@@ -59,14 +59,6 @@
             comp_Searchbar1.Name = "comp_Searchbar1";
             comp_Searchbar1.Size = new Size(480, 33);
             comp_Searchbar1.TabIndex = 1;
-            // 
-            // comp_DateTime1
-            // 
-            comp_DateTime1.Font = new Font("Nourd-Regular", 9F);
-            comp_DateTime1.Location = new Point(698, 13);
-            comp_DateTime1.Name = "comp_DateTime1";
-            comp_DateTime1.Size = new Size(249, 41);
-            comp_DateTime1.TabIndex = 2;
             // 
             // searchResultLabel
             // 
@@ -143,10 +135,18 @@
             label1.TabIndex = 9;
             label1.Text = "Sort By...";
             // 
+            // comp_DateTime1
+            // 
+            comp_DateTime1.Location = new Point(701, 13);
+            comp_DateTime1.Name = "comp_DateTime1";
+            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.TabIndex = 10;
+            // 
             // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(comp_DateTime1);
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Controls.Add(memoryUsedLabel);
@@ -154,7 +154,6 @@
             Controls.Add(timeTakenLabel);
             Controls.Add(cardListView);
             Controls.Add(searchResultLabel);
-            Controls.Add(comp_DateTime1);
             Controls.Add(comp_Searchbar1);
             Controls.Add(leftNavBar1);
             Name = "Search";
