@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            leftNavBar1 = new Components.LeftNavBar();
             greetingLabel = new Label();
             categoryListView = new Components.List.CustomListView();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
+            leftNavBar1 = new Components.LeftNavBar();
             SuspendLayout();
-            // 
-            // leftNavBar1
-            // 
-            leftNavBar1.AutoSize = true;
-            leftNavBar1.BackColor = Color.White;
-            leftNavBar1.Location = new Point(0, 0);
-            leftNavBar1.MainForm = null;
-            leftNavBar1.Name = "leftNavBar1";
-            leftNavBar1.Size = new Size(200, 600);
-            leftNavBar1.TabIndex = 21;
             // 
             // greetingLabel
             // 
@@ -86,14 +76,24 @@
             comp_Searchbar1.Load += comp_Searchbar1_Load;
             comp_Searchbar1.MouseDown += OnSearchEnter;
             // 
+            // leftNavBar1
+            // 
+            leftNavBar1.AutoSize = true;
+            leftNavBar1.BackColor = Color.White;
+            leftNavBar1.Location = new Point(0, 0);
+            leftNavBar1.MainForm = null;
+            leftNavBar1.Name = "leftNavBar1";
+            leftNavBar1.Size = new Size(206, 648);
+            leftNavBar1.TabIndex = 27;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(leftNavBar1);
             Controls.Add(comp_Searchbar1);
             Controls.Add(categoryListView);
             Controls.Add(greetingLabel);
-            Controls.Add(leftNavBar1);
             Controls.Add(comp_DateTime1);
             Name = "Home";
             Size = new Size(1000, 600);
@@ -103,10 +103,10 @@
         }
 
         #endregion
-        private Components.LeftNavBar leftNavBar1;
         private Label greetingLabel;
         private Components.List.CustomListView categoryListView;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;
+        private Components.LeftNavBar leftNavBar1;
     }
 }
