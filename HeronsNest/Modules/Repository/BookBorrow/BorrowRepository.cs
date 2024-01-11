@@ -12,9 +12,19 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<Book?>> BorrowBookAsync(Models.BookBorrow borrowDetails)
         {
+            var parsedReservedDate = DateTime.Now;
+            var parsedBorrowedDate = DateTime.Now;
             if (!(await CanBorrowAsync(borrowDetails.BookId)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
             if (!(await CanUserBorrow(borrowDetails.UserNavigation!)).Data) return new(null, Enums.ActionResult.Failed, "User has max borrows already!");
-            if (Context.BookReserves.Any(x => x.UserId == borrowDetails.User && x.Book == borrowDetails.BookId && DateTime.Parse(x.DateReserved) == DateTime.Parse(borrowDetails.DateBorrowed))) return new(null, Enums.ActionResult.Failed, "Already Reserved by Someone Else!");
+            if (Context.BookReserves.Any(x =>
+    x.UserId == borrowDetails.User &&
+    x.Book == borrowDetails.BookId &&
+    DateTime.TryParse(x.DateReserved, out parsedReservedDate) &&
+    DateTime.TryParse(borrowDetails.DateBorrowed, out parsedBorrowedDate) &&
+    parsedReservedDate == parsedBorrowedDate))
+            {
+                return new(null, Enums.ActionResult.Failed, "Already Reserved by Someone Else!");
+            }
 
             try
             {            
@@ -48,6 +58,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
                 => x != null
                 && x.BookId == borrowId
                 && (x.DateBorrowed != null || x.DateBorrowed != string.Empty)
+                && string.IsNullOrEmpty(x.DateReturned)
                 && DateTime.TryParse(x.DateBorrowed, out DateTime res)
                 && res <= DateTime.Now.AddDays(3)
                 , null);
@@ -117,7 +128,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<bool>> CanUserBorrow(User user)
         {
-            var AllUserBorrowedBooks = (await GetBorrowedBooksAsync(user)).ToList();
+            var AllUserBorrowedBooks = (await GetBorrowedBooksAsync(user)).ToList().Where(x => string.IsNullOrEmpty(x.DateReturned)).ToList();
 
             if (Convert.ToBoolean(user.IsTeacher)) return new(AllUserBorrowedBooks.Count < 5, Enums.ActionResult.Success);
             return new(AllUserBorrowedBooks.Count < 3, Enums.ActionResult.Success);
