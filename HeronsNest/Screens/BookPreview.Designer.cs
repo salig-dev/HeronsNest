@@ -82,7 +82,7 @@
             // bookTitle
             // 
             bookTitle.AutoEllipsis = true;
-            bookTitle.Font = new Font("Microsoft Sans Serif", 12F);
+            bookTitle.Font = new Font("PP Hatton", 12F);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
             bookTitle.ImageAlign = ContentAlignment.MiddleLeft;
             bookTitle.Location = new Point(443, 119);
@@ -96,7 +96,7 @@
             // bookAuthor
             // 
             bookAuthor.AutoEllipsis = true;
-            bookAuthor.Font = new Font("Microsoft Sans Serif", 10F);
+            bookAuthor.Font = new Font("Nourd-Regular", 10F);
             bookAuthor.Location = new Point(443, 180);
             bookAuthor.Name = "bookAuthor";
             bookAuthor.Size = new Size(260, 20);
@@ -107,10 +107,10 @@
             // bookYear
             // 
             bookYear.AutoEllipsis = true;
-            bookYear.Font = new Font("Microsoft Sans Serif", 8F);
-            bookYear.Location = new Point(445, 211);
+            bookYear.Font = new Font("Nourd-Regular", 8F);
+            bookYear.Location = new Point(443, 211);
             bookYear.Name = "bookYear";
-            bookYear.Size = new Size(260, 20);
+            bookYear.Size = new Size(256, 20);
             bookYear.TabIndex = 5;
             bookYear.Text = "Year";
             bookYear.Click += label2_Click_1;
@@ -118,18 +118,18 @@
             // bookRating
             // 
             bookRating.AutoSize = true;
-            bookRating.Font = new Font("Microsoft Sans Serif", 10F);
+            bookRating.Font = new Font("PP Hatton", 10F);
             bookRating.ForeColor = Color.FromArgb(76, 76, 76);
             bookRating.Location = new Point(443, 261);
             bookRating.Name = "bookRating";
-            bookRating.Size = new Size(84, 17);
+            bookRating.Size = new Size(106, 17);
             bookRating.TabIndex = 6;
             bookRating.Text = "Rating Here";
             bookRating.Click += bookRating_Click;
             // 
             // statusText
             // 
-            statusText.Font = new Font("Microsoft Sans Serif", 8F);
+            statusText.Font = new Font("Nourd-Regular", 8F);
             statusText.Location = new Point(443, 289);
             statusText.Name = "statusText";
             statusText.Size = new Size(44, 20);
@@ -142,7 +142,7 @@
             // 
             bookStatus.BackColor = Color.FromArgb(82, 167, 133);
             bookStatus.FlatStyle = FlatStyle.Flat;
-            bookStatus.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold);
+            bookStatus.Font = new Font("Nourd-Regular", 8F);
             bookStatus.ForeColor = Color.White;
             bookStatus.Location = new Point(443, 309);
             bookStatus.Name = "bookStatus";
@@ -156,7 +156,7 @@
             borrowBtn.BackColor = Color.FromArgb(0, 149, 168);
             borrowBtn.FlatAppearance.BorderSize = 0;
             borrowBtn.FlatStyle = FlatStyle.Flat;
-            borrowBtn.Font = new Font("Microsoft Sans Serif", 9F);
+            borrowBtn.Font = new Font("PP Hatton", 9F);
             borrowBtn.ForeColor = Color.White;
             borrowBtn.Location = new Point(443, 366);
             borrowBtn.Name = "borrowBtn";
@@ -171,7 +171,7 @@
             reserveBtn.BackColor = Color.FromArgb(82, 167, 133);
             reserveBtn.FlatAppearance.BorderSize = 0;
             reserveBtn.FlatStyle = FlatStyle.Flat;
-            reserveBtn.Font = new Font("Microsoft Sans Serif", 9F);
+            reserveBtn.Font = new Font("PP Hatton", 9F);
             reserveBtn.ForeColor = Color.White;
             reserveBtn.Location = new Point(559, 366);
             reserveBtn.Name = "reserveBtn";
@@ -185,11 +185,11 @@
             // 
             bookAbout.AutoSize = true;
             bookAbout.BackColor = Color.Transparent;
-            bookAbout.Font = new Font("Microsoft Sans Serif", 12F);
+            bookAbout.Font = new Font("PP Hatton", 12F);
             bookAbout.ForeColor = Color.FromArgb(76, 76, 76);
             bookAbout.Location = new Point(229, 436);
             bookAbout.Name = "bookAbout";
-            bookAbout.Size = new Size(73, 20);
+            bookAbout.Size = new Size(88, 19);
             bookAbout.TabIndex = 13;
             bookAbout.Text = "Synopsis";
             bookAbout.Click += label2_Click_2;
@@ -199,10 +199,10 @@
             bookDetails.AutoEllipsis = true;
             bookDetails.AutoSize = true;
             bookDetails.BackColor = Color.Transparent;
-            bookDetails.Font = new Font("Microsoft Sans Serif", 10F);
+            bookDetails.Font = new Font("Nourd-Regular", 10F);
             bookDetails.Location = new Point(3, 0);
             bookDetails.Name = "bookDetails";
-            bookDetails.Size = new Size(736, 51);
+            bookDetails.Size = new Size(738, 48);
             bookDetails.TabIndex = 15;
             bookDetails.Text = resources.GetString("bookDetails.Text");
             bookDetails.Click += bookDetails_Click;
@@ -251,7 +251,7 @@
             // bookLikepercentage
             // 
             bookLikepercentage.AutoEllipsis = true;
-            bookLikepercentage.Font = new Font("Microsoft Sans Serif", 9F);
+            bookLikepercentage.Font = new Font("PP Hatton", 9F);
             bookLikepercentage.ForeColor = Color.FromArgb(76, 76, 76);
             bookLikepercentage.Location = new Point(6, 152);
             bookLikepercentage.Name = "bookLikepercentage";
@@ -262,7 +262,7 @@
             // bookPublisher
             // 
             bookPublisher.AutoEllipsis = true;
-            bookPublisher.Font = new Font("Microsoft Sans Serif", 10F);
+            bookPublisher.Font = new Font("Nourd-Regular", 10F);
             bookPublisher.Location = new Point(6, 56);
             bookPublisher.Name = "bookPublisher";
             bookPublisher.Size = new Size(260, 20);
@@ -272,7 +272,7 @@
             // bookGenre
             // 
             bookGenre.AutoEllipsis = true;
-            bookGenre.Font = new Font("Microsoft Sans Serif", 9F);
+            bookGenre.Font = new Font("Nourd-Regular", 10F);
             bookGenre.Location = new Point(6, 111);
             bookGenre.Name = "bookGenre";
             bookGenre.Size = new Size(260, 30);
@@ -282,7 +282,7 @@
             // bookSeries
             // 
             bookSeries.AutoEllipsis = true;
-            bookSeries.Font = new Font("Microsoft Sans Serif", 10F);
+            bookSeries.Font = new Font("Nourd-Regular", 10F);
             bookSeries.Location = new Point(6, 76);
             bookSeries.Name = "bookSeries";
             bookSeries.Size = new Size(260, 20);
@@ -292,7 +292,7 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Microsoft Sans Serif", 9F);
+            label1.Font = new Font("PP Hatton Italic", 9F);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.Location = new Point(6, 170);
             label1.Name = "label1";
@@ -303,11 +303,11 @@
             // aboutBook
             // 
             aboutBook.AutoSize = true;
-            aboutBook.Font = new Font("Microsoft Sans Serif", 12F);
+            aboutBook.Font = new Font("PP Hatton Italic", 12F);
             aboutBook.ForeColor = Color.FromArgb(76, 76, 76);
             aboutBook.Location = new Point(6, 19);
             aboutBook.Name = "aboutBook";
-            aboutBook.Size = new Size(99, 20);
+            aboutBook.Size = new Size(115, 21);
             aboutBook.TabIndex = 0;
             aboutBook.Text = "Book Details";
             aboutBook.TextAlign = ContentAlignment.MiddleLeft;
@@ -324,18 +324,20 @@
             // 
             // comp_Searchbar1
             // 
-            comp_Searchbar1.Location = new Point(205, 28);
+            comp_Searchbar1.Font = new Font("Nourd-Regular", 9F);
+            comp_Searchbar1.Location = new Point(205, 26);
             comp_Searchbar1.MainForm = null;
             comp_Searchbar1.Margin = new Padding(3, 2, 3, 2);
             comp_Searchbar1.Name = "comp_Searchbar1";
-            comp_Searchbar1.Size = new Size(382, 35);
+            comp_Searchbar1.Size = new Size(382, 33);
             comp_Searchbar1.TabIndex = 18;
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(577, 23);
+            comp_DateTime1.Font = new Font("Nourd-Regular", 9F);
+            comp_DateTime1.Location = new Point(577, 21);
             comp_DateTime1.Name = "comp_DateTime1";
-            comp_DateTime1.Size = new Size(249, 44);
+            comp_DateTime1.Size = new Size(249, 41);
             comp_DateTime1.TabIndex = 19;
             // 
             // imageList1
@@ -360,7 +362,7 @@
             // ISBN
             // 
             ISBN.AutoEllipsis = true;
-            ISBN.Font = new Font("Microsoft Sans Serif", 8F);
+            ISBN.Font = new Font("Nourd-Regular", 8F);
             ISBN.Location = new Point(443, 232);
             ISBN.Name = "ISBN";
             ISBN.Size = new Size(205, 18);
@@ -373,6 +375,7 @@
             customListView1.BackColor = Color.Transparent;
             customListView1.Controls.Add(bookDetails);
             customListView1.DataSource = null;
+            customListView1.Font = new Font("Nourd-Regular", 10F);
             customListView1.Location = new Point(229, 469);
             customListView1.Name = "customListView1";
             customListView1.Size = new Size(751, 119);
@@ -381,11 +384,11 @@
             // backBtn
             // 
             backBtn.AutoSize = true;
-            backBtn.Font = new Font("Microsoft Sans Serif", 9F);
+            backBtn.Font = new Font("PP Hatton", 9F);
             backBtn.ForeColor = Color.FromArgb(76, 76, 76);
             backBtn.Location = new Point(252, 92);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(87, 15);
+            backBtn.Size = new Size(116, 14);
             backBtn.TabIndex = 27;
             backBtn.Text = "Back to Library";
             backBtn.Click += backBtn_Click;
@@ -405,7 +408,7 @@
             // 
             borrowAndReserveDates.BackColor = Color.FromArgb(128, 128, 255);
             borrowAndReserveDates.FlatStyle = FlatStyle.Flat;
-            borrowAndReserveDates.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold);
+            borrowAndReserveDates.Font = new Font("Nourd-Regular", 8F);
             borrowAndReserveDates.ForeColor = Color.White;
             borrowAndReserveDates.Location = new Point(443, 337);
             borrowAndReserveDates.Name = "borrowAndReserveDates";
