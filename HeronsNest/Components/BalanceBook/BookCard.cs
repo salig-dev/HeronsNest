@@ -1,8 +1,8 @@
-﻿using HeronsNest.Models;
-using HeronsNest.Modules.Books;
-using System.Data;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Diagnostics;
-
+using HeronsNest.Models;
 
 namespace HeronsNest.Components
 {
@@ -18,7 +18,7 @@ namespace HeronsNest.Components
         public event EventHandler OnMainButtonClicked
         {
             add => onMainButtonClicked += value;
-            remove => onMainButtonClicked -= null;
+            remove => onMainButtonClicked -= value;
         }
 
         public BookCard(BookBorrow bookBorrow, Book book)
@@ -27,6 +27,8 @@ namespace HeronsNest.Components
 
             BookBorrow = bookBorrow;
             Book = book;
+
+            InitializeCard();
         }
 
         public BookCard(BookReserve bookReserve, Book book, bool canBorrow)
@@ -36,16 +38,16 @@ namespace HeronsNest.Components
             BookReserve = bookReserve;
             Book = book;
             CanBorrow = canBorrow;
+
+            InitializeCard();
         }
 
-        protected override void OnLoad(EventArgs e)
+        private void InitializeCard()
         {
-            base.OnLoad(e);
-
             if (BookBorrow != null)
             {
-                borrowedDate.Text = DateTime.Parse(BookBorrow.DateBorrowed!).ToShortDateString();
-                returnDate.Text = DateTime.Parse(BookBorrow.DateDue!).ToShortDateString();
+                SetDateText(borrowedDate, BookBorrow.DateBorrowed);
+                SetDateText(returnDate, BookBorrow.DateDue);
 
                 borrowedBtn.Text = "Borrowed";
                 borrowedBtn.BackColor = Color.FromArgb(0, 149, 168);
@@ -53,7 +55,7 @@ namespace HeronsNest.Components
 
             if (BookReserve != null)
             {
-                borrowedDate.Text = DateTime.Parse(BookReserve.DateReserved!).ToShortDateString();
+                SetDateText(borrowedDate, BookReserve.DateReserved);
                 returnDate.Text = "--";
 
                 borrowedBtn.Text = "Reserved";
@@ -61,6 +63,7 @@ namespace HeronsNest.Components
 
                 returnBtn.Text = CanBorrow ? "Borrow" : "Cannot be Borrowed";
                 returnBtn.BackColor = CanBorrow ? Color.FromArgb(0, 149, 168) : Color.OrangeRed;
+                returnBtn.Click += OnActionButtonClick;
             }
 
             bookAuthor.Text = Book.Author;
@@ -75,7 +78,14 @@ namespace HeronsNest.Components
             {
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }
+        }
 
+        private void SetDateText(Label label, string date)
+        {
+            if (!string.IsNullOrEmpty(date) && DateTime.TryParse(date, out var parsedDate))
+            {
+                label.Text = parsedDate.ToShortDateString();
+            }
         }
 
         private void OnActionButtonClick(object sender, EventArgs e)
