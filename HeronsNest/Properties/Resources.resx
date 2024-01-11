@@ -118,112 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="book_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\book-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="house-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\house-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="money-bills-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\money-bills-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="card_overdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\card-overdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HERONS-NEST-LOGO-TXT-HORIZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\HERONS-NEST-LOGO-TXT-HORIZ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chevron-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\chevron-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="modalCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\modalCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="about-us-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Icons\about-us-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="popup-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\popup-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="balance-card" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\balance-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sampleBook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Sample Images\sampleBook.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HERONS-NEST-LOGO-NOTXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\HERONS-NEST-LOGO-NOTXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sampleBook" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Sample Images\sampleBook.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HERONS-NEST-LOGO-TXT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\HERONS-NEST-LOGO-TXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeronsNestLogo" xml:space="preserve">
-    <value>../Assets/HERONS-NEST-LOGO-TXT.png</value>
-  </data>
   <data name="HERONS-NEST-LOGO-TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\HERONS-NEST-LOGO-TXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\book-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="card_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\card-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tandc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\tandc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="success-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\success-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SaligDevLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\SaligDevLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UMak-Gradient-Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\UMak-Gradient-Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifying-glass-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\magnifying-glass-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hamburger-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Icons\hamburger-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="balance-card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\balance-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shelfCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\shelfCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shelfCardOverdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\shelfCardOverdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hero_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\hero-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hero_bg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\hero-bg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\logo-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="previewCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\previewCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Icons\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="house-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\house-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bookCardHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Cards\bookCardHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modalCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Cards\modalCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="card_overdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\card-overdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="book_placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\book-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="book-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\book-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="popup-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\popup-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\card-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shelfCardOverdue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\shelfCardOverdue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hero_bg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\hero-bg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HERONS-NEST-LOGO-TXT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\HERONS-NEST-LOGO-TXT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="balance-card1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\balance-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="balance-card" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\balance-card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeronsNestLogo" xml:space="preserve">
+    <value>../Assets/HERONS-NEST-LOGO-TXT.png</value>
+  </data>
+  <data name="shelfCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\shelfCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hero_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\hero-bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hamburger-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\hamburger-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HERONS-NEST-LOGO-TXT-HORIZ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\HERONS-NEST-LOGO-TXT-HORIZ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_header" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\logo-header.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="previewCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Cards\previewCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaligDevLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\SaligDevLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magnifying-glass-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\magnifying-glass-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bookPlaceholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Cards\bookPlaceholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tandc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\tandc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="money-bills-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\money-bills-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bookPlaceholderError" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Cards\bookPlaceholderError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\chevron-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="success-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Icons\success-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="about-page-wo-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about-page-wo-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

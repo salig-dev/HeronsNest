@@ -63,6 +63,16 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_page_wo_button {
+            get {
+                object obj = ResourceManager.GetObject("about-page-wo-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap about_us_icon {
             get {
                 object obj = ResourceManager.GetObject("about-us-icon", resourceCulture);
