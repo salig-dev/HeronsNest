@@ -37,9 +37,6 @@
             cardListView = new Components.List.CustomListView();
             comp_Searchbar1 = new Components.Comp_Searchbar();
             completedBooks = new Label();
-            backIcon = new PictureBox();
-            backBtn = new Label();
-            ((System.ComponentModel.ISupportInitialize)backIcon).BeginInit();
             SuspendLayout();
             // 
             // myShelfTitle
@@ -65,11 +62,11 @@
             borrowedBooks.Font = new Font("PP Hatton", 12F);
             borrowedBooks.ForeColor = Color.FromArgb(76, 76, 76);
             borrowedBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            borrowedBooks.Location = new Point(520, 123);
+            borrowedBooks.Location = new Point(514, 123);
             borrowedBooks.Name = "borrowedBooks";
-            borrowedBooks.Size = new Size(145, 19);
+            borrowedBooks.Size = new Size(163, 19);
             borrowedBooks.TabIndex = 4;
-            borrowedBooks.Text = "Pending Books";
+            borrowedBooks.Text = "Borrowed Books";
             borrowedBooks.Click += OnPendingBooksNavigate;
             // 
             // reservedBooks
@@ -147,31 +144,10 @@
             completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
             completedBooks.Location = new Point(687, 123);
             completedBooks.Name = "completedBooks";
-            completedBooks.Size = new Size(172, 19);
+            completedBooks.Size = new Size(156, 19);
             completedBooks.TabIndex = 25;
-            completedBooks.Text = "Completed Books";
+            completedBooks.Text = "Returned Books";
             completedBooks.Click += OnCompletedBooksNavigate;
-            // 
-            // backIcon
-            // 
-            backIcon.Image = Properties.Resources.back;
-            backIcon.Location = new Point(223, 42);
-            backIcon.Name = "backIcon";
-            backIcon.Size = new Size(14, 14);
-            backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
-            backIcon.TabIndex = 29;
-            backIcon.TabStop = false;
-            // 
-            // backBtn
-            // 
-            backBtn.AutoSize = true;
-            backBtn.Font = new Font("PP Hatton", 9F);
-            backBtn.ForeColor = Color.FromArgb(76, 76, 76);
-            backBtn.Location = new Point(243, 42);
-            backBtn.Name = "backBtn";
-            backBtn.Size = new Size(116, 14);
-            backBtn.TabIndex = 30;
-            backBtn.Text = "Back to Library";
             // 
             // MyShelf
             // 
@@ -179,8 +155,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(backBtn);
-            Controls.Add(backIcon);
             Controls.Add(completedBooks);
             Controls.Add(comp_Searchbar1);
             Controls.Add(cardListView);
@@ -194,7 +168,6 @@
             Name = "MyShelf";
             Size = new Size(1000, 600);
             Load += MyShelf_Load;
-            ((System.ComponentModel.ISupportInitialize)backIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,7 +182,5 @@
         private Components.List.CustomListView cardListView;
         private Components.Comp_Searchbar comp_Searchbar1;
         private Label completedBooks;
-        private PictureBox backIcon;
-        private Label backBtn;
     }
 }

@@ -83,9 +83,9 @@
             toBorrow.ForeColor = Color.FromArgb(76, 76, 76);
             toBorrow.Location = new Point(31, 149);
             toBorrow.Name = "toBorrow";
-            toBorrow.Size = new Size(19, 14);
+            toBorrow.Size = new Size(70, 14);
             toBorrow.TabIndex = 4;
-            toBorrow.Text = "To";
+            toBorrow.Text = "Return Until";
             // 
             // DateBorrow
             // 
