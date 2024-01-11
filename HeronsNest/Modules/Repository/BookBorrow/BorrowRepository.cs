@@ -58,6 +58,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
                 => x != null
                 && x.BookId == borrowId
                 && (x.DateBorrowed != null || x.DateBorrowed != string.Empty)
+                && string.IsNullOrEmpty(x.DateReturned)
                 && DateTime.TryParse(x.DateBorrowed, out DateTime res)
                 && res <= DateTime.Now.AddDays(3)
                 , null);
@@ -127,7 +128,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<bool>> CanUserBorrow(User user)
         {
-            var AllUserBorrowedBooks = (await GetBorrowedBooksAsync(user)).ToList();
+            var AllUserBorrowedBooks = (await GetBorrowedBooksAsync(user)).ToList().Where(x => string.IsNullOrEmpty(x.DateReturned)).ToList();
 
             if (Convert.ToBoolean(user.IsTeacher)) return new(AllUserBorrowedBooks.Count < 5, Enums.ActionResult.Success);
             return new(AllUserBorrowedBooks.Count < 3, Enums.ActionResult.Success);
