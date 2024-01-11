@@ -70,12 +70,12 @@
             // 
             // searchResultLabel
             // 
-            searchResultLabel.AutoSize = true;
+            searchResultLabel.AutoEllipsis = true;
             searchResultLabel.Font = new Font("PP Hatton", 16F);
             searchResultLabel.ForeColor = Color.FromArgb(0, 149, 168);
             searchResultLabel.Location = new Point(225, 72);
             searchResultLabel.Name = "searchResultLabel";
-            searchResultLabel.Size = new Size(434, 26);
+            searchResultLabel.Size = new Size(470, 26);
             searchResultLabel.TabIndex = 3;
             searchResultLabel.Text = "Discover more with the search bar!";
             // 
