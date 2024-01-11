@@ -1,5 +1,6 @@
 ﻿using HeronsNest.Components.Modal;
 using HeronsNest.Models;
+using HeronsNest.Singleton;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -34,13 +35,15 @@ namespace HeronsNest.Screens
             bookPublisher.Text = "Publisher: " + Book.Publisher;
 
             var IsBookBorrowed = mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result;
-            var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book, DateTime.Now).Result;
+            var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book, DateTime.Now, UserSession.Instance.User.Id).Result;
 
             bookStatus.Text = IsBookReserved.Data ? "RESERVED TODAY" : (IsBookBorrowed.Data ? "BORROWED TODAY" : "AVAILABLE");
 
             bookStatus.BackColor = IsBookBorrowed.Data || IsBookReserved.Data ? Color.Orange : Color.Green;
 
-            bookLikepercentage.Text = "Liked: " + Book.LikedPercentage.ToString() + "%";
+            borrowAndReserveDates.Visible = IsBookBorrowed.Data || IsBookReserved.Data;
+
+            bookLikepercentage.Text = "Liked: " + Book.LikedPercentage!.ToString() + "%";
             try
             {
                 bookImg.LoadAsync(Book.CoverImg);

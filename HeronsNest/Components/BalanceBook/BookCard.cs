@@ -11,6 +11,15 @@ namespace HeronsNest.Components
         private readonly BookBorrow? BookBorrow;
         private readonly BookReserve? BookReserve;
         private readonly Book Book;
+        private readonly bool CanBorrow;
+
+        private EventHandler onMainButtonClicked;
+
+        public event EventHandler OnMainButtonClicked
+        {
+            add => onMainButtonClicked += value;
+            remove => onMainButtonClicked -= null;
+        }
 
         public BookCard(BookBorrow bookBorrow, Book book)
         {
@@ -20,12 +29,13 @@ namespace HeronsNest.Components
             Book = book;
         }
 
-        public BookCard(BookReserve bookReserve, Book book)
+        public BookCard(BookReserve bookReserve, Book book, bool canBorrow)
         {
             InitializeComponent();
 
             BookReserve = bookReserve;
             Book = book;
+            CanBorrow = canBorrow;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -36,12 +46,21 @@ namespace HeronsNest.Components
             {
                 borrowedDate.Text = DateTime.Parse(BookBorrow.DateBorrowed!).ToShortDateString();
                 returnDate.Text = DateTime.Parse(BookBorrow.DateDue!).ToShortDateString();
+
+                borrowedBtn.Text = "Borrowed";
+                borrowedBtn.BackColor = Color.FromArgb(0, 149, 168);
             }
 
             if (BookReserve != null)
             {
                 borrowedDate.Text = DateTime.Parse(BookReserve.DateReserved!).ToShortDateString();
                 returnDate.Text = "--";
+
+                borrowedBtn.Text = "Reserved";
+                borrowedBtn.BackColor = Color.FromArgb(255, 128, 0);
+
+                returnBtn.Text = CanBorrow ? "Borrow" : "Cannot be Borrowed";
+                returnBtn.BackColor = CanBorrow ? Color.FromArgb(0, 149, 168) : Color.OrangeRed;
             }
 
             bookAuthor.Text = Book.Author;
@@ -59,5 +78,9 @@ namespace HeronsNest.Components
 
         }
 
+        private void OnActionButtonClick(object sender, EventArgs e)
+        {
+            onMainButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

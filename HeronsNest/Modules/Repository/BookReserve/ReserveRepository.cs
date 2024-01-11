@@ -11,11 +11,12 @@ namespace HeronsNest.Modules.Repository.BookReserve
     {
         private readonly BookContext Context = context;
 
-        public async Task<Response<bool>> CanReserveAsync(Book? book, DateOnly Date)
+        public async Task<Response<bool>> CanReserveAsync(Book? book, DateOnly Date, string userId)
         {
             var Book = (await Context.BookReserves.ToListAsync()).Where(
                 x =>
                 x.Book.Equals(book.Isbn)
+                && x.UserId == userId
                 && DateOnly.FromDateTime(DateTime.Parse(x.DateReserved!)) == Date
                 );
             
