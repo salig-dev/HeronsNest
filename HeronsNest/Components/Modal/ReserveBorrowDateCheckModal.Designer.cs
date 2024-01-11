@@ -38,10 +38,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(10, 9);
+            label1.Font = new Font("PP Hatton", 12F);
+            label1.ForeColor = Color.FromArgb(76, 76, 76);
+            label1.Location = new Point(20, 27);
             label1.Name = "label1";
-            label1.Size = new Size(164, 28);
+            label1.Size = new Size(157, 19);
             label1.TabIndex = 0;
             label1.Text = "Borrowed Dates";
             // 
@@ -51,16 +52,17 @@
             borrowedDatesList.DataSource = null;
             borrowedDatesList.Location = new Point(20, 49);
             borrowedDatesList.Name = "borrowedDatesList";
-            borrowedDatesList.Size = new Size(318, 134);
+            borrowedDatesList.Size = new Size(320, 134);
             borrowedDatesList.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label2.Location = new Point(10, 192);
+            label2.Font = new Font("PP Hatton", 12F);
+            label2.ForeColor = Color.FromArgb(76, 76, 76);
+            label2.Location = new Point(20, 209);
             label2.Name = "label2";
-            label2.Size = new Size(159, 28);
+            label2.Size = new Size(152, 19);
             label2.TabIndex = 2;
             label2.Text = "Reserved Dates";
             // 
@@ -69,7 +71,7 @@
             reservedDatesList.DataSource = null;
             reservedDatesList.Location = new Point(20, 231);
             reservedDatesList.Name = "reservedDatesList";
-            reservedDatesList.Size = new Size(318, 133);
+            reservedDatesList.Size = new Size(320, 133);
             reservedDatesList.TabIndex = 2;
             // 
             // reserveBtn
@@ -77,11 +79,11 @@
             reserveBtn.BackColor = Color.FromArgb(82, 167, 133);
             reserveBtn.FlatAppearance.BorderSize = 0;
             reserveBtn.FlatStyle = FlatStyle.Flat;
-            reserveBtn.Font = new Font("Microsoft Sans Serif", 9F);
+            reserveBtn.Font = new Font("PP Hatton", 10F);
             reserveBtn.ForeColor = Color.White;
-            reserveBtn.Location = new Point(126, 378);
+            reserveBtn.Location = new Point(116, 374);
             reserveBtn.Name = "reserveBtn";
-            reserveBtn.Size = new Size(110, 30);
+            reserveBtn.Size = new Size(128, 30);
             reserveBtn.TabIndex = 11;
             reserveBtn.Text = "OK";
             reserveBtn.UseVisualStyleBackColor = false;

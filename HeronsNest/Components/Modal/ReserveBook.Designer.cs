@@ -56,9 +56,9 @@
             bookReserve.FlatStyle = FlatStyle.Flat;
             bookReserve.Font = new Font("PP Hatton", 10F);
             bookReserve.ForeColor = Color.White;
-            bookReserve.Location = new Point(113, 330);
+            bookReserve.Location = new Point(111, 330);
             bookReserve.Name = "bookReserve";
-            bookReserve.Size = new Size(137, 34);
+            bookReserve.Size = new Size(136, 34);
             bookReserve.TabIndex = 0;
             bookReserve.Text = "RESERVE";
             bookReserve.UseVisualStyleBackColor = false;
