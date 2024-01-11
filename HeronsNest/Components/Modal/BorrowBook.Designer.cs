@@ -44,7 +44,7 @@
             bookBorrow.BackColor = Color.FromArgb(0, 149, 168);
             bookBorrow.FlatAppearance.BorderSize = 0;
             bookBorrow.FlatStyle = FlatStyle.Flat;
-            bookBorrow.Font = new Font("Microsoft Sans Serif", 9F);
+            bookBorrow.Font = new Font("PP Hatton", 10F);
             bookBorrow.ForeColor = Color.White;
             bookBorrow.Location = new Point(112, 330);
             bookBorrow.Name = "bookBorrow";
@@ -56,8 +56,8 @@
             // 
             // borrowDetails
             // 
-            borrowDetails.Font = new Font("Microsoft Sans Serif", 12F);
-            borrowDetails.ForeColor = Color.FromArgb(76, 76, 76);
+            borrowDetails.Font = new Font("PP Hatton", 12F);
+            borrowDetails.ForeColor = Color.FromArgb(0, 144, 163);
             borrowDetails.Location = new Point(112, 53);
             borrowDetails.Name = "borrowDetails";
             borrowDetails.Size = new Size(137, 21);
@@ -68,41 +68,41 @@
             // fromBorrow
             // 
             fromBorrow.AutoSize = true;
-            fromBorrow.Font = new Font("Microsoft Sans Serif", 9F);
+            fromBorrow.Font = new Font("Nourd-Regular", 9F);
             fromBorrow.ForeColor = Color.FromArgb(76, 76, 76);
             fromBorrow.Location = new Point(31, 90);
             fromBorrow.Name = "fromBorrow";
-            fromBorrow.Size = new Size(36, 15);
+            fromBorrow.Size = new Size(34, 14);
             fromBorrow.TabIndex = 4;
             fromBorrow.Text = "From";
             // 
             // toBorrow
             // 
             toBorrow.AutoSize = true;
-            toBorrow.Font = new Font("Microsoft Sans Serif", 9F);
+            toBorrow.Font = new Font("Nourd-Regular", 9F);
             toBorrow.ForeColor = Color.FromArgb(76, 76, 76);
             toBorrow.Location = new Point(31, 149);
             toBorrow.Name = "toBorrow";
-            toBorrow.Size = new Size(21, 15);
+            toBorrow.Size = new Size(19, 14);
             toBorrow.TabIndex = 4;
             toBorrow.Text = "To";
             // 
             // DateBorrow
             // 
-            DateBorrow.Font = new Font("Microsoft Sans Serif", 9F);
+            DateBorrow.Font = new Font("Nourd-Regular", 10F);
             DateBorrow.Location = new Point(31, 107);
             DateBorrow.Name = "DateBorrow";
-            DateBorrow.Size = new Size(298, 21);
+            DateBorrow.Size = new Size(298, 23);
             DateBorrow.TabIndex = 6;
             DateBorrow.ValueChanged += OnDateValueChanged;
             // 
             // DateReturn
             // 
             DateReturn.Enabled = false;
-            DateReturn.Font = new Font("Microsoft Sans Serif", 9F);
+            DateReturn.Font = new Font("Nourd-Regular", 10F);
             DateReturn.Location = new Point(31, 166);
             DateReturn.Name = "DateReturn";
-            DateReturn.Size = new Size(298, 21);
+            DateReturn.Size = new Size(298, 23);
             DateReturn.TabIndex = 7;
             // 
             // actionMessageLbl
@@ -129,6 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(backBtn);
             Controls.Add(actionMessageLbl);
             Controls.Add(DateReturn);

@@ -39,11 +39,6 @@ namespace HeronsNest.Components.Modal
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            MainForm.RemovePopup();
-        }
-
         private void OnReserve(object sender, EventArgs e)
         {
             char[] x = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890#$^&*()".ToCharArray();
@@ -64,6 +59,11 @@ namespace HeronsNest.Components.Modal
 
             MainForm.RemovePopup();
             MainForm.SwitchView(new MyShelf(MainForm));
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            MainForm.RemovePopup();
         }
     }
 }
