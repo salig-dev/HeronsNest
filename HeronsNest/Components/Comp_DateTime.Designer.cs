@@ -47,10 +47,10 @@
             // 
             dateText.AutoSize = true;
             dateText.BackColor = Color.Transparent;
-            dateText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateText.Font = new Font("Nourd-Regular", 9F);
             dateText.Location = new Point(137, 13);
             dateText.Name = "dateText";
-            dateText.Size = new Size(80, 15);
+            dateText.Size = new Size(77, 14);
             dateText.TabIndex = 3;
             dateText.Text = "27 - 11 - 2023";
             dateText.TextAlign = ContentAlignment.MiddleCenter;
@@ -69,10 +69,10 @@
             // 
             timeText.AutoSize = true;
             timeText.BackColor = Color.Transparent;
-            timeText.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            timeText.Font = new Font("Nourd-Regular", 9F);
             timeText.Location = new Point(50, 12);
             timeText.Name = "timeText";
-            timeText.Size = new Size(38, 15);
+            timeText.Size = new Size(39, 14);
             timeText.TabIndex = 1;
             timeText.Text = "00:00";
             timeText.TextAlign = ContentAlignment.MiddleCenter;
