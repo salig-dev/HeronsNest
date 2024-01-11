@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeftNavBar));
             customListView1 = new List.CustomListView();
             homeButton = new IconButton();
             searchButton = new IconButton();
@@ -38,6 +39,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             customListView2 = new List.CustomListView();
             iconButton5 = new IconButton();
+            logoutBtn = new IconButton();
             customListView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -145,6 +147,7 @@
             // 
             customListView2.Anchor = AnchorStyles.Top;
             customListView2.Controls.Add(iconButton5);
+            customListView2.Controls.Add(logoutBtn);
             customListView2.DataSource = null;
             customListView2.FlowDirection = FlowDirection.TopDown;
             customListView2.Location = new Point(3, 416);
@@ -161,6 +164,17 @@
             iconButton5.Size = new Size(150, 40);
             iconButton5.TabIndex = 0;
             iconButton5.Text = "About SaligTech";
+            // 
+            // logoutBtn
+            // 
+            logoutBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            logoutBtn.Image = (Image)resources.GetObject("logoutBtn.Image");
+            logoutBtn.Location = new Point(3, 49);
+            logoutBtn.Name = "logoutBtn";
+            logoutBtn.Size = new Size(150, 40);
+            logoutBtn.TabIndex = 1;
+            logoutBtn.Text = "Log Out";
+            logoutBtn.Click += LogoutClicked;
             // 
             // LeftNavBar
             // 
@@ -191,5 +205,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private List.CustomListView customListView2;
         private IconButton iconButton5;
+        private IconButton logoutBtn;
     }
 }

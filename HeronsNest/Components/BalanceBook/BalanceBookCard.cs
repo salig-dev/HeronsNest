@@ -1,4 +1,5 @@
-﻿using HeronsNest.Models;
+﻿using HeronsNest.Components.Modal;
+using HeronsNest.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,11 @@ namespace HeronsNest.Components
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }
 
+        }
+
+        private void OnPayButtonClick(object sender, EventArgs e)
+        {
+            MainForm.ShowPopup(new ReturnBook(MainForm, BookBorrow));
         }
     }
 }
