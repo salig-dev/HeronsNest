@@ -56,7 +56,7 @@
             balanceTitle.AutoSize = true;
             balanceTitle.Font = new Font("PP Hatton", 20F);
             balanceTitle.ForeColor = Color.FromArgb(0, 149, 168);
-            balanceTitle.Location = new Point(231, 63);
+            balanceTitle.Location = new Point(231, 73);
             balanceTitle.Name = "balanceTitle";
             balanceTitle.Size = new Size(284, 32);
             balanceTitle.TabIndex = 1;
@@ -67,7 +67,7 @@
             titleText.AutoSize = true;
             titleText.Font = new Font("PP Hatton", 12F);
             titleText.ForeColor = Color.FromArgb(76, 76, 76);
-            titleText.Location = new Point(412, 119);
+            titleText.Location = new Point(412, 131);
             titleText.Name = "titleText";
             titleText.Size = new Size(49, 19);
             titleText.TabIndex = 7;
@@ -78,7 +78,7 @@
             statusText.AutoSize = true;
             statusText.Font = new Font("PP Hatton", 12F);
             statusText.ForeColor = Color.FromArgb(76, 76, 76);
-            statusText.Location = new Point(553, 119);
+            statusText.Location = new Point(553, 131);
             statusText.Name = "statusText";
             statusText.Size = new Size(66, 19);
             statusText.TabIndex = 10;
@@ -89,7 +89,7 @@
             penaltyText.AutoSize = true;
             penaltyText.Font = new Font("PP Hatton", 12F);
             penaltyText.ForeColor = Color.FromArgb(76, 76, 76);
-            penaltyText.Location = new Point(651, 119);
+            penaltyText.Location = new Point(651, 131);
             penaltyText.Name = "penaltyText";
             penaltyText.Size = new Size(74, 19);
             penaltyText.TabIndex = 12;
@@ -118,7 +118,7 @@
             backBtn.AutoSize = true;
             backBtn.Font = new Font("PP Hatton", 9F);
             backBtn.ForeColor = Color.FromArgb(76, 76, 76);
-            backBtn.Location = new Point(251, 33);
+            backBtn.Location = new Point(251, 43);
             backBtn.Name = "backBtn";
             backBtn.Size = new Size(116, 14);
             backBtn.TabIndex = 28;
@@ -128,7 +128,7 @@
             // backIcon
             // 
             backIcon.Image = Properties.Resources.back;
-            backIcon.Location = new Point(231, 33);
+            backIcon.Location = new Point(231, 43);
             backIcon.Name = "backIcon";
             backIcon.Size = new Size(14, 14);
             backIcon.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -175,7 +175,6 @@
         private Label penaltyText;
         private Label totalText;
         private Components.Comp_DateTime comp_DateTime1;
-        private Components.Comp_Searchbar comp_Searchbar2;
         private Button btn_Return;
         private Label backBtn;
         private PictureBox backIcon;
