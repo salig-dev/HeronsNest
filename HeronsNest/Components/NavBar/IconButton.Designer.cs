@@ -46,10 +46,10 @@
             // buttonTitle
             // 
             buttonTitle.AutoSize = true;
-            buttonTitle.Font = new Font("Segoe UI", 8F);
+            buttonTitle.Font = new Font("Nourd-Regular", 9F);
             buttonTitle.Location = new Point(55, 12);
             buttonTitle.Name = "buttonTitle";
-            buttonTitle.Size = new Size(65, 13);
+            buttonTitle.Size = new Size(66, 14);
             buttonTitle.TabIndex = 1;
             buttonTitle.Text = "Button Text";
             buttonTitle.TextAlign = ContentAlignment.MiddleCenter;

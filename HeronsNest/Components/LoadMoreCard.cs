@@ -27,5 +27,20 @@ namespace HeronsNest.Components
         {
             onCardClicked?.Invoke(this, EventArgs.Empty);
         }
+
+        private void bookCard_Click(object sender, EventArgs e)
+        {
+            onCardClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void loadingAnim_Click(object sender, EventArgs e)
+        {
+            onCardClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void loadMoreText_Click(object sender, EventArgs e)
+        {
+            onCardClicked?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            bookImage = new PictureBox();
             bookTitleLabel = new Label();
             authorInformationlabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -47,16 +47,19 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += OnCardClicked;
             // 
-            // pictureBox2
+            // bookImage
             // 
-            pictureBox2.BackColor = Color.Gray;
-            pictureBox2.Location = new Point(14, 10);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(160, 200);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += OnCardClicked;
+            bookImage.BackColor = Color.Gray;
+            bookImage.ErrorImage = Properties.Resources.bookPlaceholderError;
+            bookImage.Image = Properties.Resources.bookPlaceholder;
+            bookImage.InitialImage = Properties.Resources.bookPlaceholder;
+            bookImage.Location = new Point(14, 10);
+            bookImage.Name = "bookImage";
+            bookImage.Size = new Size(160, 200);
+            bookImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            bookImage.TabIndex = 1;
+            bookImage.TabStop = false;
+            bookImage.Click += OnCardClicked;
             // 
             // bookTitleLabel
             // 
@@ -91,12 +94,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(authorInformationlabel);
             Controls.Add(bookTitleLabel);
-            Controls.Add(pictureBox2);
+            Controls.Add(bookImage);
             Controls.Add(pictureBox1);
             Name = "CategoryListItem";
             Size = new Size(200, 280);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bookImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,7 +107,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox bookImage;
         private Label bookTitleLabel;
         private Label authorInformationlabel;
     }

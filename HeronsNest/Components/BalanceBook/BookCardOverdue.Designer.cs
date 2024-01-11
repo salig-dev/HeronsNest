@@ -56,7 +56,7 @@
             returnBtn.BackColor = Color.FromArgb(247, 107, 86);
             returnBtn.FlatAppearance.BorderSize = 0;
             returnBtn.FlatStyle = FlatStyle.Flat;
-            returnBtn.Font = new Font("PP Hatton Medium", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnBtn.Font = new Font("PP Hatton", 7F);
             returnBtn.ForeColor = Color.White;
             returnBtn.Location = new Point(114, 142);
             returnBtn.Margin = new Padding(3, 2, 3, 2);
@@ -71,7 +71,7 @@
             overdueBtn.BackColor = Color.FromArgb(242, 62, 62);
             overdueBtn.FlatAppearance.BorderSize = 0;
             overdueBtn.FlatStyle = FlatStyle.Flat;
-            overdueBtn.Font = new Font("PP Hatton Medium", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            overdueBtn.Font = new Font("PP Hatton", 7F);
             overdueBtn.ForeColor = Color.White;
             overdueBtn.Location = new Point(114, 108);
             overdueBtn.Margin = new Padding(3, 2, 3, 2);
@@ -85,11 +85,11 @@
             // 
             returnDate.AutoSize = true;
             returnDate.BackColor = Color.White;
-            returnDate.Font = new Font("Nourd-Bold", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnDate.Font = new Font("Nourd-Regular", 6F);
             returnDate.ForeColor = Color.FromArgb(116, 115, 115);
             returnDate.Location = new Point(114, 87);
             returnDate.Name = "returnDate";
-            returnDate.Size = new Size(56, 10);
+            returnDate.Size = new Size(54, 10);
             returnDate.TabIndex = 27;
             returnDate.Text = "25 Dec 2023";
             // 
@@ -97,11 +97,11 @@
             // 
             returnText.AutoSize = true;
             returnText.BackColor = Color.White;
-            returnText.Font = new Font("PP Hatton", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnText.Font = new Font("PP Hatton", 7F);
             returnText.ForeColor = Color.FromArgb(76, 76, 76);
             returnText.Location = new Point(114, 65);
             returnText.Name = "returnText";
-            returnText.Size = new Size(54, 11);
+            returnText.Size = new Size(61, 12);
             returnText.TabIndex = 26;
             returnText.Text = "Return by";
             // 
@@ -109,11 +109,11 @@
             // 
             borrowedDate.AutoSize = true;
             borrowedDate.BackColor = Color.White;
-            borrowedDate.Font = new Font("Nourd-Bold", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedDate.Font = new Font("Nourd-Regular", 6F);
             borrowedDate.ForeColor = Color.FromArgb(116, 116, 115);
             borrowedDate.Location = new Point(114, 44);
             borrowedDate.Name = "borrowedDate";
-            borrowedDate.Size = new Size(56, 10);
+            borrowedDate.Size = new Size(54, 10);
             borrowedDate.TabIndex = 25;
             borrowedDate.Text = "25 Dec 2023";
             // 
@@ -121,11 +121,11 @@
             // 
             borrowedText.AutoSize = true;
             borrowedText.BackColor = Color.White;
-            borrowedText.Font = new Font("PP Hatton", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedText.Font = new Font("PP Hatton", 7F);
             borrowedText.ForeColor = Color.FromArgb(76, 76, 76);
             borrowedText.Location = new Point(114, 22);
             borrowedText.Name = "borrowedText";
-            borrowedText.Size = new Size(73, 11);
+            borrowedText.Size = new Size(83, 12);
             borrowedText.TabIndex = 24;
             borrowedText.Text = "Borrowed on";
             // 
@@ -133,7 +133,7 @@
             // 
             bookAuthor.AutoEllipsis = true;
             bookAuthor.BackColor = Color.White;
-            bookAuthor.Font = new Font("Nourd-Bold", 5.99999952F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookAuthor.Font = new Font("Nourd-Regular", 6F);
             bookAuthor.ForeColor = Color.FromArgb(116, 115, 115);
             bookAuthor.Location = new Point(14, 157);
             bookAuthor.Name = "bookAuthor";
@@ -146,7 +146,7 @@
             bookTitle.AutoEllipsis = true;
             bookTitle.BackColor = Color.White;
             bookTitle.FlatStyle = FlatStyle.Flat;
-            bookTitle.Font = new Font("Nourd-Bold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookTitle.Font = new Font("PP Hatton", 9F);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
             bookTitle.Location = new Point(14, 142);
             bookTitle.Name = "bookTitle";

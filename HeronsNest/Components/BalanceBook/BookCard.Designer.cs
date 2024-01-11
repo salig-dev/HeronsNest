@@ -47,7 +47,7 @@
             bookTitle.AutoEllipsis = true;
             bookTitle.BackColor = Color.White;
             bookTitle.FlatStyle = FlatStyle.Flat;
-            bookTitle.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookTitle.Font = new Font("PP Hatton", 9F);
             bookTitle.ForeColor = Color.FromArgb(76, 76, 76);
             bookTitle.Location = new Point(14, 142);
             bookTitle.Name = "bookTitle";
@@ -59,7 +59,7 @@
             // 
             bookAuthor.AutoEllipsis = true;
             bookAuthor.BackColor = Color.White;
-            bookAuthor.Font = new Font("Microsoft Sans Serif", 5.99999952F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookAuthor.Font = new Font("Nourd-Regular", 6F);
             bookAuthor.ForeColor = Color.FromArgb(116, 115, 115);
             bookAuthor.Location = new Point(14, 157);
             bookAuthor.Name = "bookAuthor";
@@ -71,11 +71,11 @@
             // 
             borrowedText.AutoSize = true;
             borrowedText.BackColor = Color.White;
-            borrowedText.Font = new Font("Microsoft Sans Serif", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedText.Font = new Font("PP Hatton", 7F);
             borrowedText.ForeColor = Color.FromArgb(76, 76, 76);
             borrowedText.Location = new Point(114, 22);
             borrowedText.Name = "borrowedText";
-            borrowedText.Size = new Size(68, 12);
+            borrowedText.Size = new Size(83, 12);
             borrowedText.TabIndex = 10;
             borrowedText.Text = "Borrowed on";
             // 
@@ -83,11 +83,11 @@
             // 
             borrowedDate.AutoSize = true;
             borrowedDate.BackColor = Color.White;
-            borrowedDate.Font = new Font("Microsoft Sans Serif", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedDate.Font = new Font("Nourd-Regular", 6F);
             borrowedDate.ForeColor = Color.FromArgb(116, 116, 115);
             borrowedDate.Location = new Point(114, 44);
             borrowedDate.Name = "borrowedDate";
-            borrowedDate.Size = new Size(58, 9);
+            borrowedDate.Size = new Size(54, 10);
             borrowedDate.TabIndex = 11;
             borrowedDate.Text = "25 Dec 2023";
             // 
@@ -95,11 +95,11 @@
             // 
             returnText.AutoSize = true;
             returnText.BackColor = Color.White;
-            returnText.Font = new Font("Microsoft Sans Serif", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnText.Font = new Font("PP Hatton", 7F);
             returnText.ForeColor = Color.FromArgb(76, 76, 76);
             returnText.Location = new Point(114, 65);
             returnText.Name = "returnText";
-            returnText.Size = new Size(54, 12);
+            returnText.Size = new Size(61, 12);
             returnText.TabIndex = 14;
             returnText.Text = "Return by";
             // 
@@ -107,11 +107,11 @@
             // 
             returnDate.AutoSize = true;
             returnDate.BackColor = Color.White;
-            returnDate.Font = new Font("Microsoft Sans Serif", 5.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnDate.Font = new Font("Nourd-Regular", 6F);
             returnDate.ForeColor = Color.FromArgb(116, 115, 115);
             returnDate.Location = new Point(114, 87);
             returnDate.Name = "returnDate";
-            returnDate.Size = new Size(58, 9);
+            returnDate.Size = new Size(54, 10);
             returnDate.TabIndex = 16;
             returnDate.Text = "25 Dec 2023";
             // 
@@ -121,7 +121,7 @@
             borrowedBtn.Enabled = false;
             borrowedBtn.FlatAppearance.BorderSize = 0;
             borrowedBtn.FlatStyle = FlatStyle.Flat;
-            borrowedBtn.Font = new Font("Microsoft Sans Serif", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedBtn.Font = new Font("PP Hatton", 7F);
             borrowedBtn.ForeColor = Color.White;
             borrowedBtn.Location = new Point(114, 108);
             borrowedBtn.Margin = new Padding(3, 2, 3, 2);
@@ -136,7 +136,7 @@
             returnBtn.BackColor = Color.FromArgb(82, 167, 133);
             returnBtn.FlatAppearance.BorderSize = 0;
             returnBtn.FlatStyle = FlatStyle.Flat;
-            returnBtn.Font = new Font("Microsoft Sans Serif", 6.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnBtn.Font = new Font("PP Hatton", 7F);
             returnBtn.ForeColor = Color.White;
             returnBtn.Location = new Point(114, 142);
             returnBtn.Margin = new Padding(3, 2, 3, 2);

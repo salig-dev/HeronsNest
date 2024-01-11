@@ -133,6 +133,26 @@ namespace HeronsNest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookPlaceholder {
+            get {
+                object obj = ResourceManager.GetObject("bookPlaceholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bookPlaceholderError {
+            get {
+                object obj = ResourceManager.GetObject("bookPlaceholderError", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap card_active {
             get {
                 object obj = ResourceManager.GetObject("card_active", resourceCulture);
@@ -245,6 +265,16 @@ namespace HeronsNest.Properties {
         internal static System.Drawing.Bitmap house_solid {
             get {
                 object obj = ResourceManager.GetObject("house-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -388,7 +418,5 @@ namespace HeronsNest.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-
     }
 }
