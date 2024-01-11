@@ -47,10 +47,13 @@ namespace HeronsNest.Modules
         }
 
         public List<Book> SearchRelated(string term)
-        {
+{
             List<Book> relatedBooks = [];
 
-            // Find the node associated with the input ISBN
+            // Convert term to lowercase for case-insensitive search
+            term = term.ToLowerInvariant();
+
+            // Find the node associated with the lowercase term
             TrieNode? node = SearchByTerm(term);
 
             if (node != null)
@@ -62,13 +65,14 @@ namespace HeronsNest.Modules
             return relatedBooks;
         }
 
-        private TrieNode? SearchByTerm(string isbn)
+        private TrieNode? SearchByTerm(string term)
         {
             TrieNode? node = RootNode;
 
-            foreach (char c in isbn)
+            foreach (char c in term)
             {
-                if (!node.Children.TryGetValue(c, out node))
+                char lowercaseChar = char.ToLowerInvariant(c); // Use lowercase for comparison
+                if (!node.Children.TryGetValue(lowercaseChar, out node))
                 {
                     return null;
                 }
@@ -119,6 +123,12 @@ namespace HeronsNest.Modules
 
             // Check for author match (case-insensitive)
             if (book.Author.Contains(term, StringComparison.CurrentCultureIgnoreCase))
+            {
+                return true;
+            }
+
+            // Check for category match (case-insensitive)
+            if (book.Genres.Contains(term, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }

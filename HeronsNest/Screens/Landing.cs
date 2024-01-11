@@ -142,19 +142,19 @@ namespace HeronsNest
 
                 foreach (var book in allBooks)
                 {
-                    bookTrie.Insert(book, book.Isbn);
-                    authorBookTrie.Insert(book, book.Author ?? "");
-                    titleBookTrie.Insert(book, book.Title ?? "");
+                    bookTrie.Insert(book, book.Isbn.ToLowerInvariant());
+                    authorBookTrie.Insert(book, book.Author?.ToLowerInvariant() ?? "");
+                    titleBookTrie.Insert(book, book.Title?.ToLowerInvariant() ?? "");
 
                     // different loading way for category
                     var diffGenres = book.Genres.Split(",");
                     foreach(var genre in diffGenres)
                     {
-                        categoryBookTrie.Insert(book, genre);
+                        categoryBookTrie.Insert(book, genre.ToLower());
                     }
                 }
 
-                Debug.WriteLine("All books are loaded into Trie");
+                Debug.WriteLine("All books are loaded into Trie!");
             });
         }
 

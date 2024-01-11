@@ -1,4 +1,5 @@
-﻿using HeronsNest.Screens;
+﻿using HeronsNest.Modules.Enums;
+using HeronsNest.Screens;
 using HeronsNest.Singleton;
 using System;
 using System.Collections.Generic;
@@ -49,16 +50,22 @@ namespace HeronsNest.Components.Modal
                 generatedId += x[r.Next(0, x.Length - 1)];
             }
 
-            MainForm.ReserveBook.Reserve(new Models.BookReserve()
+            var response = MainForm.ReserveBook.Reserve(new Models.BookReserve()
             {
                 Book = BookIsbn,
                 DateReserved = reserveDate.Value.ToString(),
                 ReservationId = generatedId,
                 UserId = UserSession.Instance.User.Id
-            });
+            }).Result;
+
+            if (response.Result == ActionResult.Failed)
+            {
+                errorTextLabel.Text = response.Message;
+                return;
+            }
 
             MainForm.RemovePopup();
-            MainForm.SwitchView(new MyShelf(MainForm));
+            MainForm.ShowPopup(new SuccessModal(MainForm, new MyShelf(MainForm), "You have reserved the book!"));
         }
 
         private void backBtn_Click(object sender, EventArgs e)

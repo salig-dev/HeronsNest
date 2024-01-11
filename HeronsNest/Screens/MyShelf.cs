@@ -41,12 +41,17 @@ namespace HeronsNest.Screens
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
                 cardListView.Controls.Add(card);
+
+                card.OnMainButtonClicked += (object e, EventArgs a) =>
+                {
+                    mainForm.ShowPopup(new ReturnBook(mainForm, r));
+                };
             }
 
             foreach (BookReserve r in bookReserves)
             {
-                Book book = mainForm.BookTrie.Search(r.Book!)[0];
-                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                Book book = mainForm.BookTrie.Search(r.Book.ToLowerInvariant()!)[0];
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
 
@@ -76,17 +81,23 @@ namespace HeronsNest.Screens
         private void OnAllBooksNavigate(object sender, EventArgs e)
         {
             cardListView.Controls.Clear();
+            var completedBooks = bookBorrows.Where(x => string.IsNullOrEmpty(x.DateReturned));
 
-            foreach (BookBorrow r in bookBorrows)
+            foreach (BookBorrow r in completedBooks)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
                 cardListView.Controls.Add(card);
+
+                card.OnMainButtonClicked += (object e, EventArgs a) =>
+                {
+                    mainForm.ShowPopup(new ReturnBook(mainForm, r));
+                };
             }
 
             foreach (BookReserve r in bookReserves)
             {
                 Book book = mainForm.BookTrie.Search(r.Book!)[0];
-                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
 
@@ -109,7 +120,7 @@ namespace HeronsNest.Screens
             foreach (BookReserve r in bookReserves)
             {
                 Book book = mainForm.BookTrie.Search(r.Book!)[0];
-                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
 
@@ -140,11 +151,13 @@ namespace HeronsNest.Screens
         private void OnCompletedBooksNavigate(object sender, EventArgs e)
         {
             cardListView.Controls.Clear();
-
-            foreach (BookBorrow r in bookBorrows.Where(x => x.DateReturned != null || x.DateReturned != ""))
+            var completedBooks = bookBorrows.Where(x => !string.IsNullOrEmpty(x.DateReturned));
+            foreach (BookBorrow r in completedBooks)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
                 cardListView.Controls.Add(card);
+
+                
             }
         }
     }

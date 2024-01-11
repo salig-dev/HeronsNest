@@ -100,7 +100,7 @@
             totalText.AutoSize = true;
             totalText.Font = new Font("PP Hatton", 12F);
             totalText.ForeColor = Color.FromArgb(76, 76, 76);
-            totalText.Location = new Point(747, 214);
+            totalText.Location = new Point(747, 119);
             totalText.Name = "totalText";
             totalText.Size = new Size(53, 19);
             totalText.TabIndex = 14;
@@ -108,7 +108,7 @@
             // 
             // comp_DateTime1
             // 
-            comp_DateTime1.Location = new Point(598, 22);
+            comp_DateTime1.Location = new Point(725, 20);
             comp_DateTime1.Name = "comp_DateTime1";
             comp_DateTime1.Size = new Size(249, 44);
             comp_DateTime1.TabIndex = 21;
@@ -141,7 +141,7 @@
             balanceListView.DataSource = null;
             balanceListView.Location = new Point(231, 157);
             balanceListView.Name = "balanceListView";
-            balanceListView.Size = new Size(711, 360);
+            balanceListView.Size = new Size(711, 443);
             balanceListView.TabIndex = 30;
             // 
             // Balance

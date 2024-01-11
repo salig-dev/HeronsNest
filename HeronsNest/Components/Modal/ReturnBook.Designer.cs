@@ -34,12 +34,12 @@
             bookReturn = new Button();
             DaysPenalty = new TextBox();
             Penalty = new Label();
-            label2 = new Label();
-            BookBorrow = new TextBox();
-            Dateborrow = new DateTimePicker();
             DateReturn = new DateTimePicker();
             label3 = new Label();
             backBtn = new PictureBox();
+            Dateborrow = new DateTimePicker();
+            penaltyLabel = new Label();
+            errorText = new Label();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             toBorrow.AutoSize = true;
             toBorrow.Font = new Font("PP Hatton", 9F);
             toBorrow.ForeColor = Color.FromArgb(76, 76, 76);
-            toBorrow.Location = new Point(41, 183);
+            toBorrow.Location = new Point(41, 134);
             toBorrow.Name = "toBorrow";
             toBorrow.Size = new Size(106, 14);
             toBorrow.TabIndex = 15;
@@ -72,7 +72,7 @@
             fromBorrow.AutoSize = true;
             fromBorrow.Font = new Font("PP Hatton", 9F);
             fromBorrow.ForeColor = Color.FromArgb(76, 76, 76);
-            fromBorrow.Location = new Point(41, 129);
+            fromBorrow.Location = new Point(41, 80);
             fromBorrow.Name = "fromBorrow";
             fromBorrow.Size = new Size(113, 14);
             fromBorrow.TabIndex = 16;
@@ -91,10 +91,11 @@
             bookReturn.TabIndex = 6;
             bookReturn.Text = "RETURN";
             bookReturn.UseVisualStyleBackColor = false;
+            bookReturn.Click += OnBookReturn;
             // 
             // DaysPenalty
             // 
-            DaysPenalty.Location = new Point(41, 254);
+            DaysPenalty.Location = new Point(41, 249);
             DaysPenalty.Multiline = true;
             DaysPenalty.Name = "DaysPenalty";
             DaysPenalty.Size = new Size(278, 20);
@@ -106,41 +107,16 @@
             Penalty.AutoSize = true;
             Penalty.Font = new Font("PP Hatton", 9F);
             Penalty.ForeColor = Color.FromArgb(76, 76, 76);
-            Penalty.Location = new Point(41, 237);
+            Penalty.Location = new Point(41, 232);
             Penalty.Name = "Penalty";
-            Penalty.Size = new Size(57, 14);
+            Penalty.Size = new Size(84, 14);
             Penalty.TabIndex = 19;
-            Penalty.Text = "Penalty";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("PP Hatton", 9F);
-            label2.ForeColor = Color.FromArgb(76, 76, 76);
-            label2.Location = new Point(41, 75);
-            label2.Name = "label2";
-            label2.Size = new Size(118, 14);
-            label2.TabIndex = 20;
-            label2.Text = "Book Borrowed";
-            label2.Click += label2_Click;
-            // 
-            // BookBorrow
-            // 
-            BookBorrow.Location = new Point(41, 92);
-            BookBorrow.Name = "BookBorrow";
-            BookBorrow.Size = new Size(278, 23);
-            BookBorrow.TabIndex = 21;
-            // 
-            // Dateborrow
-            // 
-            Dateborrow.Location = new Point(41, 146);
-            Dateborrow.Name = "Dateborrow";
-            Dateborrow.Size = new Size(278, 23);
-            Dateborrow.TabIndex = 22;
+            Penalty.Text = "Pay Penalty";
             // 
             // DateReturn
             // 
-            DateReturn.Location = new Point(41, 200);
+            DateReturn.Enabled = false;
+            DateReturn.Location = new Point(41, 151);
             DateReturn.Name = "DateReturn";
             DateReturn.Size = new Size(278, 23);
             DateReturn.TabIndex = 23;
@@ -149,7 +125,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Nourd-Regular", 8F);
-            label3.Location = new Point(41, 288);
+            label3.Location = new Point(82, 284);
             label3.Name = "label3";
             label3.Size = new Size(213, 13);
             label3.TabIndex = 24;
@@ -166,16 +142,46 @@
             backBtn.TabStop = false;
             backBtn.Click += backBtn_Click;
             // 
+            // Dateborrow
+            // 
+            Dateborrow.Enabled = false;
+            Dateborrow.Location = new Point(41, 97);
+            Dateborrow.Name = "Dateborrow";
+            Dateborrow.Size = new Size(278, 23);
+            Dateborrow.TabIndex = 22;
+            // 
+            // penaltyLabel
+            // 
+            penaltyLabel.Font = new Font("PP Hatton", 12F);
+            penaltyLabel.ForeColor = Color.FromArgb(255, 128, 128);
+            penaltyLabel.Location = new Point(41, 200);
+            penaltyLabel.Name = "penaltyLabel";
+            penaltyLabel.Size = new Size(279, 21);
+            penaltyLabel.TabIndex = 34;
+            penaltyLabel.Text = "Penalty: 20";
+            penaltyLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // errorText
+            // 
+            errorText.BackColor = SystemColors.Control;
+            errorText.Font = new Font("Nourd-Regular", 8F);
+            errorText.ForeColor = Color.Red;
+            errorText.Location = new Point(41, 326);
+            errorText.Name = "errorText";
+            errorText.Size = new Size(279, 13);
+            errorText.TabIndex = 35;
+            errorText.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ReturnBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(errorText);
+            Controls.Add(penaltyLabel);
             Controls.Add(backBtn);
             Controls.Add(label3);
             Controls.Add(DateReturn);
             Controls.Add(Dateborrow);
-            Controls.Add(BookBorrow);
-            Controls.Add(label2);
             Controls.Add(Penalty);
             Controls.Add(DaysPenalty);
             Controls.Add(toBorrow);
@@ -196,11 +202,11 @@
         private Button bookReturn;
         private TextBox DaysPenalty;
         private Label Penalty;
-        private Label label2;
-        private TextBox BookBorrow;
-        private DateTimePicker Dateborrow;
         private DateTimePicker DateReturn;
         private Label label3;
         private PictureBox backBtn;
+        private DateTimePicker Dateborrow;
+        private Label penaltyLabel;
+        private Label errorText;
     }
 }

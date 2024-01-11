@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeronsNest.Singleton;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,9 @@ namespace HeronsNest.Components.Modal
 
         private void logout_Yes_Click(object sender, EventArgs e)
         {
-            MainForm.SwitchView(new Screens.Login(MainForm));
+            UserSession.Instance.User = null;
+            MainForm.RemovePopup();
+            MainForm.ShowPopup(new SuccessModal(MainForm, new Screens.Login(MainForm), "Logged out!"));
         }
     }
 }

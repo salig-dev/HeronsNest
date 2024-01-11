@@ -1,4 +1,5 @@
-﻿using HeronsNest.Models;
+﻿using HeronsNest.Components.Modal;
+using HeronsNest.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,28 +15,33 @@ namespace HeronsNest.Components
 {
     public partial class BalanceBookCard : UserControl
     {
-        private readonly BookReservation BookReservation;
-        private readonly Book Book;
+        private readonly BookBorrow BookBorrow;
+        private Book Book;
+        private readonly Landing MainForm;
 
-        public BalanceBookCard(BookReservation bookReservation, Book book)
+        public BalanceBookCard(Landing mainForm, BookBorrow bookBorrow)
         {
             InitializeComponent();
 
-            BookReservation = bookReservation;
-            Book = book;
+            BookBorrow = bookBorrow;
+            MainForm = mainForm;
         }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
+            Book = MainForm.BookTrie.Search(BookBorrow.BookId)[0];
             bookAuthor.Text = Book.Author;
             bookTitle.Text = Book.Title;
 
-            // bookStatus.Text = 
-            // penaltyVal.Text =
-            // totalValText = 
+            DateTime dateBorrow = DateTime.Parse(BookBorrow.DateBorrowed);
+            DateTime dateDue = DateTime.Parse(BookBorrow.DateDue);
 
-            // Load Image - di ko pa na test kung gumagana
+            TimeSpan span = dateDue - dateBorrow;
+
+            bookStatus.Text = "OVERDUE";
+            penaltyVal.Text = "20";
+            totalVal.Text = (20 * span.Days - 3).ToString();
+
             try
             {
                 bookImage.LoadAsync(Book.CoverImg);
@@ -45,6 +51,11 @@ namespace HeronsNest.Components
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }
 
+        }
+
+        private void OnPayButtonClick(object sender, EventArgs e)
+        {
+            MainForm.ShowPopup(new ReturnBook(MainForm, BookBorrow));
         }
     }
 }

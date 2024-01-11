@@ -35,6 +35,7 @@
             unavailableReservedDatesLbl = new Label();
             label1 = new Label();
             backBtn = new PictureBox();
+            errorTextLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             SuspendLayout();
             // 
@@ -115,11 +116,22 @@
             backBtn.TabStop = false;
             backBtn.Click += backBtn_Click;
             // 
+            // errorTextLabel
+            // 
+            errorTextLabel.AutoSize = true;
+            errorTextLabel.Font = new Font("PP Hatton", 8F);
+            errorTextLabel.ForeColor = Color.FromArgb(76, 76, 76);
+            errorTextLabel.Location = new Point(91, 378);
+            errorTextLabel.Name = "errorTextLabel";
+            errorTextLabel.Size = new Size(0, 13);
+            errorTextLabel.TabIndex = 33;
+            // 
             // ReserveBook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(errorTextLabel);
             Controls.Add(backBtn);
             Controls.Add(label1);
             Controls.Add(unavailableReservedDatesLbl);
@@ -146,5 +158,6 @@
         private Label unavailableReservedDatesLbl;
         private Label label1;
         private PictureBox backBtn;
+        private Label errorTextLabel;
     }
 }
