@@ -20,7 +20,7 @@ namespace HeronsNest.Components.Modal
             MainForm = mainForm;
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void backBtn_Click(object sender, EventArgs e)
         {
             MainForm.RemovePopup();
         }

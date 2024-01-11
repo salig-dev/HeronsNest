@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label = new Label();
+            summaryText = new Label();
             bookTitletext = new Label();
             BorrowerNameText = new Label();
             bookSerialNumberText = new Label();
@@ -40,146 +40,147 @@
             bookBorrowerName = new Label();
             bookDueDate = new Label();
             bookReturnHere = new Label();
-            btnReturn = new Button();
+            backBtn = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
             SuspendLayout();
             // 
-            // label
+            // summaryText
             // 
-            label.AutoSize = true;
-            label.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label.Location = new Point(125, 12);
-            label.Name = "label";
-            label.Size = new Size(98, 25);
-            label.TabIndex = 1;
-            label.Text = "Summary";
+            summaryText.Font = new Font("PP Hatton", 12F);
+            summaryText.ForeColor = Color.FromArgb(0, 149, 168);
+            summaryText.Location = new Point(36, 33);
+            summaryText.Name = "summaryText";
+            summaryText.Size = new Size(288, 25);
+            summaryText.TabIndex = 1;
+            summaryText.Text = "Summary";
+            summaryText.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // bookTitletext
             // 
             bookTitletext.AutoSize = true;
-            bookTitletext.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bookTitletext.Location = new Point(33, 70);
+            bookTitletext.Font = new Font("PP Hatton", 8F);
+            bookTitletext.Location = new Point(36, 89);
             bookTitletext.Name = "bookTitletext";
-            bookTitletext.Size = new Size(91, 21);
+            bookTitletext.Size = new Size(74, 13);
             bookTitletext.TabIndex = 2;
             bookTitletext.Text = "Book Title:";
             // 
             // BorrowerNameText
             // 
             BorrowerNameText.AutoSize = true;
-            BorrowerNameText.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BorrowerNameText.Location = new Point(33, 147);
+            BorrowerNameText.Font = new Font("PP Hatton", 9F);
+            BorrowerNameText.Location = new Point(36, 198);
             BorrowerNameText.Name = "BorrowerNameText";
-            BorrowerNameText.Size = new Size(134, 21);
+            BorrowerNameText.Size = new Size(121, 14);
             BorrowerNameText.TabIndex = 3;
             BorrowerNameText.Text = "Borrower Name:";
             // 
             // bookSerialNumberText
             // 
             bookSerialNumberText.AutoSize = true;
-            bookSerialNumberText.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bookSerialNumberText.Location = new Point(33, 108);
+            bookSerialNumberText.Font = new Font("PP Hatton", 9F);
+            bookSerialNumberText.Location = new Point(36, 153);
             bookSerialNumberText.Name = "bookSerialNumberText";
-            bookSerialNumberText.Size = new Size(168, 21);
+            bookSerialNumberText.Size = new Size(150, 14);
             bookSerialNumberText.TabIndex = 4;
             bookSerialNumberText.Text = "Book Serial Number:";
             // 
             // DueDateText
             // 
             DueDateText.AutoSize = true;
-            DueDateText.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DueDateText.Location = new Point(33, 187);
+            DueDateText.Font = new Font("PP Hatton", 9F);
+            DueDateText.Location = new Point(36, 244);
             DueDateText.Name = "DueDateText";
-            DueDateText.Size = new Size(85, 21);
+            DueDateText.Size = new Size(74, 14);
             DueDateText.TabIndex = 5;
             DueDateText.Text = "Due Date:";
             // 
             // ReturnDateText
             // 
             ReturnDateText.AutoSize = true;
-            ReturnDateText.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ReturnDateText.Location = new Point(33, 228);
+            ReturnDateText.Font = new Font("PP Hatton", 9F);
+            ReturnDateText.Location = new Point(36, 289);
             ReturnDateText.Name = "ReturnDateText";
-            ReturnDateText.Size = new Size(105, 21);
+            ReturnDateText.Size = new Size(93, 14);
             ReturnDateText.TabIndex = 6;
             ReturnDateText.Text = "Return Date:";
             // 
             // proceedButton
             // 
             proceedButton.BackColor = Color.FromArgb(0, 149, 168);
-            proceedButton.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold);
+            proceedButton.FlatAppearance.BorderSize = 0;
+            proceedButton.FlatStyle = FlatStyle.Flat;
+            proceedButton.Font = new Font("PP Hatton", 10F);
             proceedButton.ForeColor = Color.White;
-            proceedButton.Location = new Point(103, 308);
+            proceedButton.Location = new Point(106, 344);
             proceedButton.Name = "proceedButton";
-            proceedButton.Size = new Size(149, 43);
+            proceedButton.Size = new Size(148, 40);
             proceedButton.TabIndex = 8;
             proceedButton.Text = "CONTINUE";
             proceedButton.UseVisualStyleBackColor = false;
             // 
             // bookTitle
             // 
-            bookTitle.AutoSize = true;
-            bookTitle.Font = new Font("Segoe UI", 10F);
-            bookTitle.Location = new Point(125, 70);
+            bookTitle.AutoEllipsis = true;
+            bookTitle.Font = new Font("Nourd-Regular", 9F);
+            bookTitle.Location = new Point(36, 102);
             bookTitle.Name = "bookTitle";
-            bookTitle.Size = new Size(102, 19);
+            bookTitle.Size = new Size(288, 40);
             bookTitle.TabIndex = 9;
             bookTitle.Text = "Book Title Here";
             // 
             // bookSerialNumber
             // 
-            bookSerialNumber.AutoSize = true;
-            bookSerialNumber.Font = new Font("Segoe UI", 10F);
-            bookSerialNumber.Location = new Point(207, 111);
+            bookSerialNumber.Font = new Font("Nourd-Regular", 10F);
+            bookSerialNumber.Location = new Point(36, 167);
             bookSerialNumber.Name = "bookSerialNumber";
-            bookSerialNumber.Size = new Size(128, 19);
+            bookSerialNumber.Size = new Size(288, 20);
             bookSerialNumber.TabIndex = 10;
             bookSerialNumber.Text = "Serial Number Here";
             // 
             // bookBorrowerName
             // 
-            bookBorrowerName.AutoSize = true;
-            bookBorrowerName.Font = new Font("Segoe UI", 10F);
-            bookBorrowerName.Location = new Point(173, 150);
+            bookBorrowerName.Font = new Font("Nourd-Regular", 10F);
+            bookBorrowerName.Location = new Point(36, 213);
             bookBorrowerName.Name = "bookBorrowerName";
-            bookBorrowerName.Size = new Size(138, 19);
+            bookBorrowerName.Size = new Size(288, 20);
             bookBorrowerName.TabIndex = 11;
             bookBorrowerName.Text = "Borrower Name Here";
             // 
             // bookDueDate
             // 
-            bookDueDate.AutoSize = true;
-            bookDueDate.Font = new Font("Segoe UI", 10F);
-            bookDueDate.Location = new Point(124, 189);
+            bookDueDate.Font = new Font("Nourd-Regular", 10F);
+            bookDueDate.Location = new Point(36, 258);
             bookDueDate.Name = "bookDueDate";
-            bookDueDate.Size = new Size(100, 19);
+            bookDueDate.Size = new Size(288, 20);
             bookDueDate.TabIndex = 12;
             bookDueDate.Text = "Due Date Here";
             // 
             // bookReturnHere
             // 
-            bookReturnHere.AutoSize = true;
-            bookReturnHere.Font = new Font("Segoe UI", 10F);
-            bookReturnHere.Location = new Point(144, 231);
+            bookReturnHere.Font = new Font("Nourd-Regular", 10F);
+            bookReturnHere.Location = new Point(36, 303);
             bookReturnHere.Name = "bookReturnHere";
-            bookReturnHere.Size = new Size(116, 19);
+            bookReturnHere.Size = new Size(288, 20);
             bookReturnHere.TabIndex = 13;
             bookReturnHere.Text = "Return Date Here";
             // 
-            // btnReturn
+            // backBtn
             // 
-            btnReturn.Location = new Point(33, 12);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(47, 40);
-            btnReturn.TabIndex = 27;
-            btnReturn.Text = "<-";
-            btnReturn.UseVisualStyleBackColor = true;
-            btnReturn.Click += btnReturn_Click;
+            backBtn.Image = Properties.Resources.back;
+            backBtn.Location = new Point(36, 36);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(14, 14);
+            backBtn.SizeMode = PictureBoxSizeMode.AutoSize;
+            backBtn.TabIndex = 34;
+            backBtn.TabStop = false;
+            backBtn.Click += backBtn_Click;
             // 
             // SummaryModal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnReturn);
+            Controls.Add(backBtn);
             Controls.Add(bookReturnHere);
             Controls.Add(bookDueDate);
             Controls.Add(bookBorrowerName);
@@ -191,15 +192,16 @@
             Controls.Add(bookSerialNumberText);
             Controls.Add(BorrowerNameText);
             Controls.Add(bookTitletext);
-            Controls.Add(label);
+            Controls.Add(summaryText);
             Name = "SummaryModal";
             Size = new Size(360, 420);
+            ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label;
+        private Label summaryText;
         private Label bookTitletext;
         private Label BorrowerNameText;
         private Label bookSerialNumberText;
@@ -211,6 +213,6 @@
         private Label bookBorrowerName;
         private Label bookDueDate;
         private Label bookReturnHere;
-        private Button btnReturn;
+        private PictureBox backBtn;
     }
 }
