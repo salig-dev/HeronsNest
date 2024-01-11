@@ -238,7 +238,9 @@
             // 
             // otherBookCover
             // 
-            otherBookCover.Image = Properties.Resources.book_placeholder;
+            otherBookCover.ErrorImage = Properties.Resources.bookPlaceholderError;
+            otherBookCover.Image = Properties.Resources.bookPlaceholder;
+            otherBookCover.InitialImage = Properties.Resources.bookPlaceholder;
             otherBookCover.Location = new Point(3, 3);
             otherBookCover.Name = "otherBookCover";
             otherBookCover.Size = new Size(70, 100);
@@ -345,6 +347,9 @@
             // bookImg
             // 
             bookImg.BackColor = Color.Gray;
+            bookImg.ErrorImage = Properties.Resources.bookPlaceholderError;
+            bookImg.Image = Properties.Resources.bookPlaceholder;
+            bookImg.InitialImage = Properties.Resources.bookPlaceholder;
             bookImg.Location = new Point(243, 129);
             bookImg.Name = "bookImg";
             bookImg.Size = new Size(180, 250);
