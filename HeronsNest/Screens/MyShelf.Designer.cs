@@ -30,13 +30,14 @@
         {
             backBtn = new Button();
             myShelfTitle = new Label();
-            completedBooks = new Label();
-            pendingBooks = new Label();
+            borrowedBooks = new Label();
+            reservedBooks = new Label();
             allBooks = new Label();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
             cardListView = new Components.List.CustomListView();
             comp_Searchbar1 = new Components.Comp_Searchbar();
+            completedBooks = new Label();
             SuspendLayout();
             // 
             // backBtn
@@ -65,33 +66,38 @@
             myShelfTitle.Text = "My Shelf";
             myShelfTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // completedBooks
+            // borrowedBooks
             // 
-            completedBooks.AutoSize = true;
-            completedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            completedBooks.ForeColor = Color.FromArgb(76, 76, 76);
-            completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            completedBooks.Location = new Point(604, 123);
-            completedBooks.Name = "completedBooks";
-            completedBooks.Size = new Size(150, 20);
-            completedBooks.TabIndex = 4;
-            completedBooks.Text = "Completed Books";
+            borrowedBooks.AutoSize = true;
+            borrowedBooks.Cursor = Cursors.Hand;
+            borrowedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowedBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            borrowedBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            borrowedBooks.Location = new Point(520, 123);
+            borrowedBooks.Name = "borrowedBooks";
+            borrowedBooks.Size = new Size(129, 20);
+            borrowedBooks.TabIndex = 4;
+            borrowedBooks.Text = "Pending Books";
+            borrowedBooks.Click += OnPendingBooksNavigate;
             // 
-            // pendingBooks
+            // reservedBooks
             // 
-            pendingBooks.AutoSize = true;
-            pendingBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pendingBooks.ForeColor = Color.FromArgb(76, 76, 76);
-            pendingBooks.ImageAlign = ContentAlignment.MiddleLeft;
-            pendingBooks.Location = new Point(391, 124);
-            pendingBooks.Name = "pendingBooks";
-            pendingBooks.Size = new Size(129, 20);
-            pendingBooks.TabIndex = 13;
-            pendingBooks.Text = "Pending Books";
+            reservedBooks.AutoSize = true;
+            reservedBooks.Cursor = Cursors.Hand;
+            reservedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reservedBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            reservedBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            reservedBooks.Location = new Point(341, 124);
+            reservedBooks.Name = "reservedBooks";
+            reservedBooks.Size = new Size(140, 20);
+            reservedBooks.TabIndex = 13;
+            reservedBooks.Text = "Reserved Books";
+            reservedBooks.Click += OnReservedBooksNavigate;
             // 
             // allBooks
             // 
             allBooks.AutoSize = true;
+            allBooks.Cursor = Cursors.Hand;
             allBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allBooks.ForeColor = Color.FromArgb(76, 76, 76);
             allBooks.ImageAlign = ContentAlignment.MiddleLeft;
@@ -100,6 +106,7 @@
             allBooks.Size = new Size(84, 20);
             allBooks.TabIndex = 14;
             allBooks.Text = "All Books";
+            allBooks.Click += OnAllBooksNavigate;
             // 
             // leftNavBar1
             // 
@@ -120,6 +127,7 @@
             // 
             // cardListView
             // 
+            cardListView.AutoScroll = true;
             cardListView.DataSource = null;
             cardListView.Location = new Point(217, 211);
             cardListView.Name = "cardListView";
@@ -135,18 +143,33 @@
             comp_Searchbar1.Size = new Size(531, 35);
             comp_Searchbar1.TabIndex = 24;
             // 
+            // completedBooks
+            // 
+            completedBooks.AutoSize = true;
+            completedBooks.Cursor = Cursors.Hand;
+            completedBooks.Font = new Font("Microsoft Sans Serif", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            completedBooks.ForeColor = Color.FromArgb(76, 76, 76);
+            completedBooks.ImageAlign = ContentAlignment.MiddleLeft;
+            completedBooks.Location = new Point(687, 123);
+            completedBooks.Name = "completedBooks";
+            completedBooks.Size = new Size(150, 20);
+            completedBooks.TabIndex = 25;
+            completedBooks.Text = "Completed Books";
+            completedBooks.Click += OnCompletedBooksNavigate;
+            // 
             // MyShelf
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
+            Controls.Add(completedBooks);
             Controls.Add(comp_Searchbar1);
             Controls.Add(cardListView);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
-            Controls.Add(pendingBooks);
-            Controls.Add(completedBooks);
+            Controls.Add(reservedBooks);
+            Controls.Add(borrowedBooks);
             Controls.Add(myShelfTitle);
             Controls.Add(backBtn);
             Controls.Add(comp_DateTime1);
@@ -162,12 +185,13 @@
 
         private Button backBtn;
         private Label myShelfTitle;
-        private Label completedBooks;
-        private Label pendingBooks;
+        private Label borrowedBooks;
+        private Label reservedBooks;
         private Label allBooks;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.List.CustomListView cardListView;
         private Components.Comp_Searchbar comp_Searchbar1;
+        private Label completedBooks;
     }
 }

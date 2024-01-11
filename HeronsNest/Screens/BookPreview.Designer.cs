@@ -59,7 +59,7 @@
             customListView1 = new Components.List.CustomListView();
             backBtn = new Label();
             backIcon = new PictureBox();
-            label2 = new Label();
+            borrowAndReserveDates = new Label();
             ((System.ComponentModel.ISupportInitialize)bookImage).BeginInit();
             authorDetails.SuspendLayout();
             otherBooksList.SuspendLayout();
@@ -396,26 +396,26 @@
             backIcon.TabStop = false;
             backIcon.Click += backIcon_Click;
             // 
-            // label2
+            // borrowAndReserveDates
             // 
-            label2.BackColor = Color.FromArgb(128, 128, 255);
-            label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(443, 337);
-            label2.Name = "label2";
-            label2.Size = new Size(226, 20);
-            label2.TabIndex = 29;
-            label2.Text = "Check Borrow / Reserved Dates";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += OnBookBorrowReserveDateCheck;
+            borrowAndReserveDates.BackColor = Color.FromArgb(128, 128, 255);
+            borrowAndReserveDates.FlatStyle = FlatStyle.Flat;
+            borrowAndReserveDates.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Bold);
+            borrowAndReserveDates.ForeColor = Color.White;
+            borrowAndReserveDates.Location = new Point(443, 337);
+            borrowAndReserveDates.Name = "borrowAndReserveDates";
+            borrowAndReserveDates.Size = new Size(226, 20);
+            borrowAndReserveDates.TabIndex = 29;
+            borrowAndReserveDates.Text = "Check Borrow / Reserved Dates";
+            borrowAndReserveDates.TextAlign = ContentAlignment.MiddleCenter;
+            borrowAndReserveDates.Click += OnBookBorrowReserveDateCheck;
             // 
             // BookPreview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 243, 247);
-            Controls.Add(label2);
+            Controls.Add(borrowAndReserveDates);
             Controls.Add(backIcon);
             Controls.Add(backBtn);
             Controls.Add(customListView1);
@@ -498,5 +498,6 @@
         private Label backBtn;
         private PictureBox backIcon;
         private Label label2;
+        private Label borrowAndReserveDates;
     }
 }

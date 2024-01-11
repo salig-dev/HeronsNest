@@ -1,4 +1,5 @@
 ﻿using HeronsNest.Components;
+using HeronsNest.Components.Modal;
 using HeronsNest.Models;
 using HeronsNest.Singleton;
 using System;
@@ -18,6 +19,9 @@ namespace HeronsNest.Screens
 
         Landing mainForm;
 
+        List<BookBorrow> bookBorrows;
+        List<BookReserve> bookReserves;
+
         public MyShelf(Landing mainForm)
         {
             InitializeComponent();
@@ -30,18 +34,30 @@ namespace HeronsNest.Screens
         {
             base.OnLoad(e);
 
-            var BorrowedBooksUser = await mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User);
-            var ReservedBooksUser = await mainForm.ReserveBook.GetAllReservations(UserSession.Instance.User);
-            
-            foreach (BookBorrow r in BorrowedBooksUser)
+            bookBorrows = await mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User);
+            bookReserves = await mainForm.ReserveBook.GetAllReservations(UserSession.Instance.User);
+
+            foreach (BookBorrow r in bookBorrows)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
                 cardListView.Controls.Add(card);
             }
 
-            foreach (BookReserve r in ReservedBooksUser)
+            foreach (BookReserve r in bookReserves)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.Book!)[0]);
+                Book book = mainForm.BookTrie.Search(r.Book!)[0];
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                BookCard card = new(r, book, canReserve);
+
+
+                if (canReserve)
+                {
+                    card.OnMainButtonClicked += (object e, EventArgs a) =>
+                    {
+                        mainForm.ShowPopup(new BorrowBook(mainForm, book));
+                    };
+                }
+
                 cardListView.Controls.Add(card);
             }
         }
@@ -54,44 +70,82 @@ namespace HeronsNest.Screens
 
         private void button1_Click(object sender, EventArgs e)
         {
-            mainForm.SwitchView(new Home(mainForm));
         }
 
 
-
-        private void label1_Click(object sender, EventArgs e)
+        private void OnAllBooksNavigate(object sender, EventArgs e)
         {
+            cardListView.Controls.Clear();
+
+            foreach (BookBorrow r in bookBorrows)
+            {
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                cardListView.Controls.Add(card);
+            }
+
+            foreach (BookReserve r in bookReserves)
+            {
+                Book book = mainForm.BookTrie.Search(r.Book!)[0];
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                BookCard card = new(r, book, canReserve);
+
+
+                if (canReserve)
+                {
+                    card.OnMainButtonClicked += (object e, EventArgs a) =>
+                    {
+                        mainForm.ShowPopup(new BorrowBook(mainForm, book));
+                    };
+                }
+
+                cardListView.Controls.Add(card);
+            }
+        }
+
+        private void OnReservedBooksNavigate(object sender, EventArgs e)
+        {
+            cardListView.Controls.Clear();
+
+            foreach (BookReserve r in bookReserves)
+            {
+                Book book = mainForm.BookTrie.Search(r.Book!)[0];
+                var canReserve = mainForm.ReserveBook.CanReserveBook(book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                BookCard card = new(r, book, canReserve);
+
+
+                if (canReserve)
+                {
+                    card.OnMainButtonClicked += (object e, EventArgs a) =>
+                    {
+                        mainForm.ShowPopup(new BorrowBook(mainForm, book));
+                    };
+                }
+
+                cardListView.Controls.Add(card);
+            }
+        }
+
+        private void OnPendingBooksNavigate(object sender, EventArgs e)
+        {
+            cardListView.Controls.Clear();
+
+            foreach (BookBorrow r in bookBorrows)
+            {
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                cardListView.Controls.Add(card);
+            }
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void OnCompletedBooksNavigate(object sender, EventArgs e)
         {
+            cardListView.Controls.Clear();
 
-        }
-
-        private void pictureBox20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bookCard2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bookCard1_Load(object sender, EventArgs e)
-        {
-
+            foreach (BookBorrow r in bookBorrows.Where(x => x.DateReturned != null || x.DateReturned != ""))
+            {
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                cardListView.Controls.Add(card);
+            }
         }
     }
 }
