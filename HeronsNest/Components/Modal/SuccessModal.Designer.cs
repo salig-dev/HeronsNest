@@ -31,13 +31,14 @@
             pictureBox1 = new PictureBox();
             proceedButton = new Button();
             processCompleteText = new Label();
+            successDesc = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.success_icon;
-            pictureBox1.Location = new Point(80, 94);
+            pictureBox1.Location = new Point(81, 62);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -51,7 +52,7 @@
             proceedButton.FlatStyle = FlatStyle.Flat;
             proceedButton.Font = new Font("PP Hatton", 10F);
             proceedButton.ForeColor = Color.White;
-            proceedButton.Location = new Point(106, 324);
+            proceedButton.Location = new Point(106, 345);
             proceedButton.Name = "proceedButton";
             proceedButton.Size = new Size(148, 40);
             proceedButton.TabIndex = 2;
@@ -64,17 +65,27 @@
             processCompleteText.BackColor = Color.FromArgb(244, 244, 244);
             processCompleteText.Font = new Font("PP Hatton", 16F);
             processCompleteText.ForeColor = Color.FromArgb(0, 149, 168);
-            processCompleteText.Location = new Point(0, 53);
+            processCompleteText.Location = new Point(0, 29);
             processCompleteText.Name = "processCompleteText";
             processCompleteText.Size = new Size(360, 30);
             processCompleteText.TabIndex = 9;
             processCompleteText.Text = "Process Completed!";
             processCompleteText.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // successDesc
+            // 
+            successDesc.Location = new Point(34, 272);
+            successDesc.Name = "successDesc";
+            successDesc.Size = new Size(295, 67);
+            successDesc.TabIndex = 10;
+            successDesc.Text = "The process you performed successfully ran!";
+            successDesc.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // SuccessModal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(successDesc);
             Controls.Add(proceedButton);
             Controls.Add(pictureBox1);
             Controls.Add(processCompleteText);
@@ -88,5 +99,6 @@
         private PictureBox pictureBox1;
         private Button proceedButton;
         private Label processCompleteText;
+        private Label successDesc;
     }
 }

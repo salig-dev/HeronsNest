@@ -4,6 +4,7 @@ using HeronsNest.Modules.Repository.BookBorrow;
 using HeronsNest.Modules.Response;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace HeronsNest.Modules.Repository.BookReserve
 {
@@ -11,16 +12,21 @@ namespace HeronsNest.Modules.Repository.BookReserve
     {
         private readonly BookContext Context = context;
 
-        public async Task<Response<bool>> CanReserveAsync(Book? book, DateOnly Date, string userId)
+        public async Task<Response<bool>> CanReserveAsync(string bookIsbn, DateOnly Date, string userId = "")
         {
-            var Book = (await Context.BookReserves.ToListAsync()).Where(
-                x =>
-                x.Book.Equals(book.Isbn)
-                && x.UserId == userId
-                && DateOnly.FromDateTime(DateTime.Parse(x.DateReserved!)) == Date
-                );
-            
-            return new(Book.Any(), Enums.ActionResult.Success);
+            var query = Context.BookReserves.AsQueryable();
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                query = query.Where(x => x.UserId == userId);
+            }
+
+            query = query.Where(x => x.Book.Equals(bookIsbn));
+
+
+            var isBookReserved = query.ToList().Any(x => DateOnly.FromDateTime(DateTime.Parse(x.DateReserved!)) == Date);
+
+            return new(isBookReserved, Enums.ActionResult.Success);
         }
 
         public async Task<IEnumerable<Models.BookReserve>> GetReservedBooksAsync(User? user, string bookIsbn = "")
@@ -43,6 +49,7 @@ namespace HeronsNest.Modules.Repository.BookReserve
 
         public async Task<Response<Book?>> ReserveBookAsync(Models.BookReserve book)
         {
+            if ((await CanReserveAsync(book.Book, DateOnly.FromDateTime(DateTime.Parse(book.DateReserved)), null)).Data) return new ReserveResponse<Book?>(null, Enums.ActionResult.Failed, "Book is already reserved on this day!");
             var Response = await Context.BookReserves.AddAsync(book);
             SaveChanges();
 

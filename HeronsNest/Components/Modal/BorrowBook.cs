@@ -2,17 +2,7 @@
 using HeronsNest.Modules.Enums;
 using HeronsNest.Screens;
 using HeronsNest.Singleton;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+    
 namespace HeronsNest.Components.Modal
 {
     public partial class BorrowBook : UserControl
@@ -28,6 +18,7 @@ namespace HeronsNest.Components.Modal
 
             DateBorrow.MinDate = DateTime.Now;
             DateReturn.Value = DateBorrow.Value.AddDays(3);
+            DateReturn.Enabled = Convert.ToBoolean(UserSession.Instance.User.IsTeacher);
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -58,6 +49,7 @@ namespace HeronsNest.Components.Modal
                 DateDue = DateBorrow.Value.AddDays(3).ToString(),
                 DateReturned = "",
                 User = UserSession.Instance.User.Id,
+                UserNavigation = UserSession.Instance.User,
                 Id = generatedId
             }).Result;
 
@@ -69,7 +61,7 @@ namespace HeronsNest.Components.Modal
             actionMessageLbl.Text = "";
 
             MainForm.RemovePopup();
-            MainForm.SwitchView(new MyShelf(MainForm));
+            MainForm.ShowPopup(new SuccessModal(MainForm, new MyShelf(MainForm), "You have borrowed the book!"));
         }
 
         private void OnDateValueChanged(object sender, EventArgs e)

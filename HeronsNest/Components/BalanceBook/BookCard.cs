@@ -61,7 +61,7 @@ namespace HeronsNest.Components
                 borrowedBtn.Text = "Reserved";
                 borrowedBtn.BackColor = Color.FromArgb(255, 128, 0);
 
-                returnBtn.Text = CanBorrow ? "Borrow" : "Cannot be Borrowed";
+                returnBtn.Text = CanBorrow ? "Borrow" : "Can't Borrow";
                 returnBtn.BackColor = CanBorrow ? Color.FromArgb(0, 149, 168) : Color.OrangeRed;
                 returnBtn.Click += OnActionButtonClick;
             }
