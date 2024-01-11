@@ -62,9 +62,9 @@
             // 
             homeButton.Anchor = AnchorStyles.None;
             homeButton.Image = Properties.Resources.house_solid;
-            homeButton.Location = new Point(8, 3);
+            homeButton.Location = new Point(3, 3);
             homeButton.Name = "homeButton";
-            homeButton.Size = new Size(151, 43);
+            homeButton.Size = new Size(150, 40);
             homeButton.TabIndex = 0;
             homeButton.Text = "Home";
             homeButton.Click += HomeClicked;
@@ -73,9 +73,9 @@
             // 
             searchButton.Anchor = AnchorStyles.None;
             searchButton.Image = Properties.Resources.magnifying_glass_solid;
-            searchButton.Location = new Point(4, 52);
+            searchButton.Location = new Point(3, 49);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(159, 38);
+            searchButton.Size = new Size(150, 40);
             searchButton.TabIndex = 1;
             searchButton.Text = "Search";
             searchButton.Click += SearchClicked;
@@ -84,9 +84,9 @@
             // 
             myShelfButton.Anchor = AnchorStyles.None;
             myShelfButton.Image = Properties.Resources.book_solid;
-            myShelfButton.Location = new Point(3, 96);
+            myShelfButton.Location = new Point(3, 95);
             myShelfButton.Name = "myShelfButton";
-            myShelfButton.Size = new Size(161, 39);
+            myShelfButton.Size = new Size(150, 40);
             myShelfButton.TabIndex = 2;
             myShelfButton.Text = "My Shelf";
             myShelfButton.Click += MyShelfClicked;
@@ -95,9 +95,9 @@
             // 
             balanceButton.Anchor = AnchorStyles.None;
             balanceButton.Image = Properties.Resources.money_bills_solid;
-            balanceButton.Location = new Point(5, 141);
+            balanceButton.Location = new Point(3, 141);
             balanceButton.Name = "balanceButton";
-            balanceButton.Size = new Size(156, 39);
+            balanceButton.Size = new Size(150, 40);
             balanceButton.TabIndex = 3;
             balanceButton.Text = "Balance";
             balanceButton.Click += BalanceClicked;
@@ -114,9 +114,9 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.HERONS_NEST_LOGO_TXT_HORIZ;
-            pictureBox1.Location = new Point(43, 27);
+            pictureBox1.Location = new Point(42, 29);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(119, 53);
+            pictureBox1.Size = new Size(122, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -128,9 +128,9 @@
             tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(customListView1, 0, 1);
             tableLayoutPanel1.Controls.Add(customListView2, 0, 2);
+            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -147,19 +147,18 @@
             customListView2.Controls.Add(iconButton5);
             customListView2.DataSource = null;
             customListView2.FlowDirection = FlowDirection.TopDown;
-            customListView2.Location = new Point(9, 416);
+            customListView2.Location = new Point(3, 416);
             customListView2.Name = "customListView2";
-            customListView2.Size = new Size(188, 173);
+            customListView2.Size = new Size(200, 173);
             customListView2.TabIndex = 4;
             // 
             // iconButton5
             // 
-            iconButton5.AutoSize = true;
             iconButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             iconButton5.Image = Properties.Resources.about_us_icon;
             iconButton5.Location = new Point(3, 3);
             iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(148, 28);
+            iconButton5.Size = new Size(150, 40);
             iconButton5.TabIndex = 0;
             iconButton5.Text = "About SaligTech";
             // 
@@ -176,7 +175,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             customListView2.ResumeLayout(false);
-            customListView2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

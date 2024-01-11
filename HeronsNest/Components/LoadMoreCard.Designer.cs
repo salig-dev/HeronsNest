@@ -28,34 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            bookCard = new PictureBox();
+            loadingAnim = new PictureBox();
+            loadMoreText = new Label();
+            ((System.ComponentModel.ISupportInitialize)bookCard).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loadingAnim).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // bookCard
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(36, 137);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Load More...";
+            bookCard.Image = Properties.Resources.bookCardHome;
+            bookCard.Location = new Point(0, 0);
+            bookCard.Name = "bookCard";
+            bookCard.Size = new Size(188, 268);
+            bookCard.SizeMode = PictureBoxSizeMode.AutoSize;
+            bookCard.TabIndex = 1;
+            bookCard.TabStop = false;
+            bookCard.Click += bookCard_Click;
+            // 
+            // loadingAnim
+            // 
+            loadingAnim.BackColor = Color.Gray;
+            loadingAnim.Image = Properties.Resources.loading;
+            loadingAnim.Location = new Point(14, 10);
+            loadingAnim.Name = "loadingAnim";
+            loadingAnim.Size = new Size(160, 200);
+            loadingAnim.SizeMode = PictureBoxSizeMode.AutoSize;
+            loadingAnim.TabIndex = 2;
+            loadingAnim.TabStop = false;
+            loadingAnim.Click += loadingAnim_Click;
+            // 
+            // loadMoreText
+            // 
+            loadMoreText.BackColor = Color.White;
+            loadMoreText.Font = new Font("PP Hatton", 10F);
+            loadMoreText.ForeColor = Color.FromArgb(76, 76, 76);
+            loadMoreText.Location = new Point(16, 215);
+            loadMoreText.Name = "loadMoreText";
+            loadMoreText.Size = new Size(160, 20);
+            loadMoreText.TabIndex = 3;
+            loadMoreText.Text = "Load More...";
+            loadMoreText.TextAlign = ContentAlignment.MiddleCenter;
+            loadMoreText.Click += loadMoreText_Click;
             // 
             // LoadMoreCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
-            Controls.Add(label1);
+            BackColor = Color.Transparent;
+            Controls.Add(loadMoreText);
+            Controls.Add(loadingAnim);
+            Controls.Add(bookCard);
             Name = "LoadMoreCard";
-            Size = new Size(184, 290);
+            Size = new Size(200, 280);
             Click += OnCardClicked;
+            ((System.ComponentModel.ISupportInitialize)bookCard).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loadingAnim).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
+        private PictureBox bookCard;
+        private PictureBox loadingAnim;
+        private Label loadMoreText;
     }
 }

@@ -42,7 +42,7 @@ namespace HeronsNest.Components.Home
             bookTitleLabel.Text = Book.Title;
             try
             {
-                pictureBox2.LoadAsync(Book.CoverImg);
+                bookImage.LoadAsync(Book.CoverImg);
             } catch {
                 Debug.WriteLine($"{Book.Isbn} does not have a proper image path!");
             }

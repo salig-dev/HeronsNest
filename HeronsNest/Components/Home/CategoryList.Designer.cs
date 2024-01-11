@@ -35,11 +35,11 @@
             // categoryLabel
             // 
             categoryLabel.AutoSize = true;
-            categoryLabel.Font = new Font("Microsoft Sans Serif", 16F);
+            categoryLabel.Font = new Font("PP Hatton", 16F);
             categoryLabel.ForeColor = Color.FromArgb(0, 149, 168);
             categoryLabel.Location = new Point(10, 5);
             categoryLabel.Name = "categoryLabel";
-            categoryLabel.Size = new Size(100, 26);
+            categoryLabel.Size = new Size(129, 26);
             categoryLabel.TabIndex = 0;
             categoryLabel.Text = "Category";
             // 
@@ -47,6 +47,7 @@
             // 
             cardListView.AutoScroll = true;
             cardListView.DataSource = null;
+            cardListView.Font = new Font("Nourd-Regular", 9F);
             cardListView.Location = new Point(15, 40);
             cardListView.Name = "cardListView";
             cardListView.Size = new Size(772, 297);
