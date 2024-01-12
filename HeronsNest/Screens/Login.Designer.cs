@@ -54,6 +54,7 @@
             passwordTextBox.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             passwordTextBox.Location = new Point(583, 350);
             passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.PasswordChar = '*';
             passwordTextBox.PlaceholderText = "Password";
             passwordTextBox.Size = new Size(360, 20);
             passwordTextBox.TabIndex = 3;

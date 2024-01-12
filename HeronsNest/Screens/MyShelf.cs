@@ -52,7 +52,7 @@ namespace HeronsNest.Screens
             foreach (BookReserve r in bookReserves)
             {
                 Book book = mainForm.BookTrie.Search(r.Book.ToLowerInvariant()!)[0];
-                var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                var canReserve = !mainForm.ReserveBook.CanReserveBook(r.Book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
 
@@ -147,7 +147,7 @@ namespace HeronsNest.Screens
 
                 TimeSpan span = dateDue - dateBorrow;
 
-                return span.Days <= 3 && string.IsNullOrEmpty(x.DateReturned);
+                return string.IsNullOrEmpty(x.DateReturned);
             });
             foreach (BookBorrow r in borrowedBooks)
             {

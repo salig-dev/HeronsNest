@@ -53,8 +53,8 @@ namespace HeronsNest.Components
                 SetDateText(borrowedDate, BookBorrow.DateBorrowed);
                 SetDateText(returnDate, BookBorrow.DateDue);
 
-                DateTime dateBorrow = DateTime.ParseExact(BookBorrow.DateBorrowed!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
-                DateTime dateDue = DateTime.ParseExact(BookBorrow.DateDue!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime dateBorrow = DateTime.ParseExact(BookBorrow.DateBorrowed!, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime dateDue = DateTime.ParseExact(BookBorrow.DateDue!, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
                 TimeSpan span = dateDue - dateBorrow;
 
@@ -99,9 +99,10 @@ namespace HeronsNest.Components
 
         private void SetDateText(Label label, string date)
         {
-            if (!string.IsNullOrEmpty(date) && DateTime.TryParse(date, out var parsedDate))
+            var dateParsed = DateTime.Now;
+            if (!string.IsNullOrEmpty(date) && DateTime.TryParseExact(date, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateParsed))
             {
-                label.Text = parsedDate.ToShortDateString();
+                label.Text = dateParsed.ToShortDateString();
             }
         }
 
