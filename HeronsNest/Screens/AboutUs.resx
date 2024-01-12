@@ -121,17 +121,17 @@
   <data name="backBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACIAAAAgCAYAAAB3j6rJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAAOVJREFUWEft1z0OgyAch+EekJ0DcDadZfcU7uywu2N+RhKhtMrHHxl8E2K0g09Q
+        EQAACxEBf2RfkQAAAOVJREFUWEft1z0OgyAch+EekJ0DcDadZfcU7uywu2N+RhKhtMrHHxl8E2K0g09Q
         If3YTnohYUUQY4xd1/U4KysbMgyDZYxZIcRxpawsyDRNO+JRyDzPHgKPp0ZJECoEug2hRKBbEGoEuoS0
         QKC/kFYI9BOilGqGQFEIEJzzHYEjzqn7gpwRGFi8lmWpOmKz60G01h6CauAe4R7lQfBjK0g4K5ePRkoZ
         nd6SEdux+31ZXWfMY5+vq4sFzdXFEu/qYtNzUWNuQxAlJgmCqDDJEBRiapQFQeM49gFB2CQf/4NVuxfi
         Z+0GXKjV6N4+t5wAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="saligAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABBoAAAJsCAYAAABTd8C5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAA/7JJREFUeF7s/euvb112Fga+/wB1tV1Vb1W57jdj1802Lq42OFwSk7g6cYgxibGN
+        DwAACw8BkvkDpQAA/7JJREFUeF7s/euvb112Fga+/wB1tV1Vb1W57jdj1802Lq42OFwSk7g6cYgxibGN
         8QUTyqhBUdJK26B0pyPaVCWtqBuTNFY+NJA07VYnHQgK7ShI5KJ0O1FAQKRgNSaWUFBoo3xI95fd8xlj
         PHM+c6wx12/tffY+7znnnUN6NMd9zrnW+l3G2Ou39mtf/bWfu7uJ9xe86u4DxKXYrwqoznAyh/mLnfGW
         q+knWfjSX1DZqaOM/OC/BrrgqavQc5z4TLYVXwH2Wz4r3CPO9rrAma3jA5+v9c8E5lzlVj34p1iD49Ix

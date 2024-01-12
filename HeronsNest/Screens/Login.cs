@@ -25,8 +25,8 @@ namespace HeronsNest.Screens
         {
             var Result = mainForm.Authenticator!.LoginUser(new Models.DTO.UserDTO()
             {
-                Id = usernameTextBox.Text,
-                Password = passwordTextBox.Text,
+                Id = userText.Text,
+                Password = passText.Text,
             });
 
             tipTextLabel.Text = "Loading...";

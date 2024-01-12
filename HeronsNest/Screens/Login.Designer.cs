@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            usernameTextBox = new TextBox();
-            passwordTextBox = new TextBox();
+            userText = new TextBox();
+            passText = new TextBox();
             loginButton = new Button();
             tipTextLabel = new Label();
             loginFormBackground = new PictureBox();
-            pictureBox1 = new PictureBox();
+            titleBox = new PictureBox();
             loginBackground = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)loginFormBackground).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)titleBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)loginBackground).BeginInit();
             SuspendLayout();
             // 
-            // usernameTextBox
+            // userText
             // 
-            usernameTextBox.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            usernameTextBox.Location = new Point(583, 310);
-            usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.PlaceholderText = "Username";
-            usernameTextBox.Size = new Size(360, 20);
-            usernameTextBox.TabIndex = 2;
+            userText.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userText.Location = new Point(583, 310);
+            userText.Name = "userText";
+            userText.PlaceholderText = "Username";
+            userText.Size = new Size(360, 20);
+            userText.TabIndex = 2;
             // 
-            // passwordTextBox
+            // passText
             // 
-            passwordTextBox.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordTextBox.Location = new Point(583, 350);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.PlaceholderText = "Password";
-            passwordTextBox.Size = new Size(360, 20);
-            passwordTextBox.TabIndex = 3;
+            passText.Font = new Font("Nourd-Regular", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passText.Location = new Point(583, 350);
+            passText.Name = "passText";
+            passText.PlaceholderText = "Password";
+            passText.Size = new Size(360, 20);
+            passText.TabIndex = 3;
             // 
             // loginButton
             // 
@@ -92,15 +92,15 @@
             loginFormBackground.TabIndex = 6;
             loginFormBackground.TabStop = false;
             // 
-            // pictureBox1
+            // titleBox
             // 
-            pictureBox1.Image = Properties.Resources.logo_header;
-            pictureBox1.Location = new Point(583, 131);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(360, 137);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            titleBox.Image = Properties.Resources.logo_header;
+            titleBox.Location = new Point(583, 131);
+            titleBox.Name = "titleBox";
+            titleBox.Size = new Size(360, 137);
+            titleBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            titleBox.TabIndex = 7;
+            titleBox.TabStop = false;
             // 
             // loginBackground
             // 
@@ -118,29 +118,29 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 246, 246);
             BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(pictureBox1);
+            Controls.Add(titleBox);
             Controls.Add(tipTextLabel);
             Controls.Add(loginButton);
-            Controls.Add(passwordTextBox);
-            Controls.Add(usernameTextBox);
+            Controls.Add(passText);
+            Controls.Add(userText);
             Controls.Add(loginFormBackground);
             Controls.Add(loginBackground);
             Name = "Login";
             Size = new Size(1000, 600);
             ((System.ComponentModel.ISupportInitialize)loginFormBackground).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)titleBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)loginBackground).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox usernameTextBox;
-        private TextBox passwordTextBox;
+        private TextBox userText;
+        private TextBox passText;
         private Button loginButton;
         private Label tipTextLabel;
         private PictureBox loginFormBackground;
-        private PictureBox pictureBox1;
+        private PictureBox titleBox;
         private PictureBox loginBackground;
     }
 }

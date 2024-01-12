@@ -56,7 +56,7 @@
             imageList1 = new ImageList(components);
             bookImg = new PictureBox();
             ISBN = new Label();
-            customListView1 = new Components.List.CustomListView();
+            bookbox = new Components.List.CustomListView();
             backBtn = new Label();
             backIcon = new PictureBox();
             borrowAndReserveDates = new Label();
@@ -65,7 +65,7 @@
             otherBooksList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)otherBookCover).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).BeginInit();
-            customListView1.SuspendLayout();
+            bookbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)backIcon).BeginInit();
             SuspendLayout();
             // 
@@ -292,7 +292,7 @@
             // 
             // label1
             // 
-            label1.Font = new Font("PP Hatton Italic", 9F);
+            label1.Font = new Font("Microsoft Sans Serif", 9F);
             label1.ForeColor = Color.FromArgb(76, 76, 76);
             label1.Location = new Point(6, 170);
             label1.Name = "label1";
@@ -303,11 +303,11 @@
             // aboutBook
             // 
             aboutBook.AutoSize = true;
-            aboutBook.Font = new Font("PP Hatton Italic", 12F);
+            aboutBook.Font = new Font("Microsoft Sans Serif", 12F);
             aboutBook.ForeColor = Color.FromArgb(76, 76, 76);
             aboutBook.Location = new Point(6, 19);
             aboutBook.Name = "aboutBook";
-            aboutBook.Size = new Size(115, 21);
+            aboutBook.Size = new Size(99, 20);
             aboutBook.TabIndex = 0;
             aboutBook.Text = "Book Details";
             aboutBook.TextAlign = ContentAlignment.MiddleLeft;
@@ -369,17 +369,17 @@
             ISBN.TabIndex = 24;
             ISBN.Text = "ISBN Here";
             // 
-            // customListView1
+            // bookbox
             // 
-            customListView1.AutoScroll = true;
-            customListView1.BackColor = Color.Transparent;
-            customListView1.Controls.Add(bookDetails);
-            customListView1.DataSource = null;
-            customListView1.Font = new Font("Nourd-Regular", 10F);
-            customListView1.Location = new Point(229, 469);
-            customListView1.Name = "customListView1";
-            customListView1.Size = new Size(751, 119);
-            customListView1.TabIndex = 26;
+            bookbox.AutoScroll = true;
+            bookbox.BackColor = Color.Transparent;
+            bookbox.Controls.Add(bookDetails);
+            bookbox.DataSource = null;
+            bookbox.Font = new Font("Nourd-Regular", 10F);
+            bookbox.Location = new Point(229, 469);
+            bookbox.Name = "bookbox";
+            bookbox.Size = new Size(751, 119);
+            bookbox.TabIndex = 26;
             // 
             // backBtn
             // 
@@ -426,7 +426,7 @@
             Controls.Add(borrowAndReserveDates);
             Controls.Add(backIcon);
             Controls.Add(backBtn);
-            Controls.Add(customListView1);
+            Controls.Add(bookbox);
             Controls.Add(ISBN);
             Controls.Add(bookImg);
             Controls.Add(comp_Searchbar1);
@@ -453,8 +453,8 @@
             otherBooksList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)otherBookCover).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookImg).EndInit();
-            customListView1.ResumeLayout(false);
-            customListView1.PerformLayout();
+            bookbox.ResumeLayout(false);
+            bookbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)backIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -493,7 +493,7 @@
         private Label likepercentageText;
         private Components.List.CustomListView otherBooksList;
         private PictureBox otherBookCover;
-        private Components.List.CustomListView customListView1;
+        private Components.List.CustomListView bookbox;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;

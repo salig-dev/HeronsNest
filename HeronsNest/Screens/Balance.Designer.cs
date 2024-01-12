@@ -67,7 +67,7 @@
             titleText.AutoSize = true;
             titleText.Font = new Font("PP Hatton", 12F);
             titleText.ForeColor = Color.FromArgb(76, 76, 76);
-            titleText.Location = new Point(412, 131);
+            titleText.Location = new Point(348, 131);
             titleText.Name = "titleText";
             titleText.Size = new Size(49, 19);
             titleText.TabIndex = 7;
@@ -78,7 +78,7 @@
             statusText.AutoSize = true;
             statusText.Font = new Font("PP Hatton", 12F);
             statusText.ForeColor = Color.FromArgb(76, 76, 76);
-            statusText.Location = new Point(553, 131);
+            statusText.Location = new Point(486, 131);
             statusText.Name = "statusText";
             statusText.Size = new Size(66, 19);
             statusText.TabIndex = 10;
@@ -89,7 +89,7 @@
             penaltyText.AutoSize = true;
             penaltyText.Font = new Font("PP Hatton", 12F);
             penaltyText.ForeColor = Color.FromArgb(76, 76, 76);
-            penaltyText.Location = new Point(651, 131);
+            penaltyText.Location = new Point(600, 131);
             penaltyText.Name = "penaltyText";
             penaltyText.Size = new Size(74, 19);
             penaltyText.TabIndex = 12;
@@ -100,7 +100,7 @@
             totalText.AutoSize = true;
             totalText.Font = new Font("PP Hatton", 12F);
             totalText.ForeColor = Color.FromArgb(76, 76, 76);
-            totalText.Location = new Point(747, 119);
+            totalText.Location = new Point(725, 131);
             totalText.Name = "totalText";
             totalText.Size = new Size(53, 19);
             totalText.TabIndex = 14;

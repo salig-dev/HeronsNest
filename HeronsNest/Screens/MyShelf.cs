@@ -40,7 +40,7 @@ namespace HeronsNest.Screens
             foreach (BookBorrow r in bookBorrows)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
                 {
@@ -63,7 +63,7 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
             }
         }
 
@@ -80,13 +80,13 @@ namespace HeronsNest.Screens
 
         private void OnAllBooksNavigate(object sender, EventArgs e)
         {
-            cardListView.Controls.Clear();
+            cardBox.Controls.Clear();
             var completedBooks = bookBorrows.Where(x => string.IsNullOrEmpty(x.DateReturned));
 
             foreach (BookBorrow r in completedBooks)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
                 {
@@ -109,13 +109,13 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
             }
         }
 
         private void OnReservedBooksNavigate(object sender, EventArgs e)
         {
-            cardListView.Controls.Clear();
+            cardBox.Controls.Clear();
 
             foreach (BookReserve r in bookReserves)
             {
@@ -132,30 +132,30 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
             }
         }
 
         private void OnPendingBooksNavigate(object sender, EventArgs e)
         {
-            cardListView.Controls.Clear();
+            cardBox.Controls.Clear();
 
             foreach (BookBorrow r in bookBorrows)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
             }
 
         }
 
         private void OnCompletedBooksNavigate(object sender, EventArgs e)
         {
-            cardListView.Controls.Clear();
+            cardBox.Controls.Clear();
             var completedBooks = bookBorrows.Where(x => !string.IsNullOrEmpty(x.DateReturned));
             foreach (BookBorrow r in completedBooks)
             {
                 BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardListView.Controls.Add(card);
+                cardBox.Controls.Add(card);
 
                 
             }
