@@ -36,7 +36,7 @@ namespace HeronsNest.Screens
 
             if (!Book.Genres.Contains("Academ"))
             {
-                var IsBookBorrowed = !mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result.Data;
+                var IsBookBorrowed = mainForm.BorrowBook.CanBorrowBook(Book.Isbn).Result.Data;
                 var IsBookReserved = mainForm.ReserveBook.CanReserveBook(Book.Isbn, DateTime.Now, "").Result.Data
                     || mainForm.ReserveBook.CanReserveBook(Book.Isbn, DateTime.Now, "").Result.Data;
                 var CanUserBorrow = !mainForm.BorrowBook.CanUserBorrow(UserSession.Instance.User).Result.Data;
@@ -48,8 +48,8 @@ namespace HeronsNest.Screens
                 bookStatus.BackColor = IsBookBorrowed || IsBookReserved || CanUserBorrow ? Color.Orange : Color.Green;
 
                 borrowAndReserveDates.Visible = IsBookBorrowed || IsBookReserved;
-
-            } else
+            }
+            else
             {
                 
 
