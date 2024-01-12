@@ -15,9 +15,9 @@ namespace HeronsNest.Screens
             InitializeComponent();
             this.mainForm = mainForm;
 
-            categoryListView.AutoScroll = false;
-            categoryListView.WrapContents = false;
-            categoryListView.AutoScroll = true;
+            homeBox.AutoScroll = false;
+            homeBox.WrapContents = false;
+            homeBox.AutoScroll = true;
 
             leftNavBar1.MainForm = mainForm;
             comp_Searchbar1.MainForm = mainForm;
@@ -62,7 +62,7 @@ namespace HeronsNest.Screens
                 if (relatedBooks is not null && relatedBooks.Count != 0)
                 {
                     CategoryList list = new(categories[i], relatedBooks, mainForm);
-                    categoryListView.Controls.Add(list);
+                    homeBox.Controls.Add(list);
                 }
             }
         }

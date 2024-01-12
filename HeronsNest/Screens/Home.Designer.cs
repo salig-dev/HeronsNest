@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             greetingLabel = new Label();
-            categoryListView = new Components.List.CustomListView();
+            homeBox = new Components.List.CustomListView();
             comp_DateTime1 = new Components.Comp_DateTime();
             comp_Searchbar1 = new Components.Comp_Searchbar();
             leftNavBar1 = new Components.LeftNavBar();
@@ -46,17 +46,17 @@
             greetingLabel.TabIndex = 22;
             greetingLabel.Text = "Good Morning, User!";
             // 
-            // categoryListView
+            // homeBox
             // 
-            categoryListView.Anchor = AnchorStyles.None;
-            categoryListView.AutoScroll = true;
-            categoryListView.DataSource = null;
-            categoryListView.FlowDirection = FlowDirection.TopDown;
-            categoryListView.Location = new Point(215, 128);
-            categoryListView.Name = "categoryListView";
-            categoryListView.Size = new Size(769, 451);
-            categoryListView.TabIndex = 24;
-            categoryListView.WrapContents = false;
+            homeBox.Anchor = AnchorStyles.None;
+            homeBox.AutoScroll = true;
+            homeBox.DataSource = null;
+            homeBox.FlowDirection = FlowDirection.TopDown;
+            homeBox.Location = new Point(215, 128);
+            homeBox.Name = "homeBox";
+            homeBox.Size = new Size(769, 451);
+            homeBox.TabIndex = 24;
+            homeBox.WrapContents = false;
             // 
             // comp_DateTime1
             // 
@@ -92,7 +92,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(leftNavBar1);
             Controls.Add(comp_Searchbar1);
-            Controls.Add(categoryListView);
+            Controls.Add(homeBox);
             Controls.Add(greetingLabel);
             Controls.Add(comp_DateTime1);
             Name = "Home";
@@ -104,7 +104,7 @@
 
         #endregion
         private Label greetingLabel;
-        private Components.List.CustomListView categoryListView;
+        private Components.List.CustomListView homeBox;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.Comp_Searchbar comp_Searchbar1;
         private Components.LeftNavBar leftNavBar1;

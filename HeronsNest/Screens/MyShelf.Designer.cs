@@ -34,7 +34,7 @@
             allBooks = new Label();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
-            cardListView = new Components.List.CustomListView();
+            cardBox = new Components.List.CustomListView();
             shelfSearchBar = new Components.Comp_Searchbar();
             completedBooks = new Label();
             SuspendLayout();
@@ -115,15 +115,15 @@
             comp_DateTime1.Size = new Size(249, 41);
             comp_DateTime1.TabIndex = 22;
             // 
-            // cardListView
+            // cardBox
             // 
-            cardListView.AutoScroll = true;
-            cardListView.DataSource = null;
-            cardListView.Font = new Font("Nourd-Regular", 9F);
-            cardListView.Location = new Point(217, 211);
-            cardListView.Name = "cardListView";
-            cardListView.Size = new Size(760, 363);
-            cardListView.TabIndex = 23;
+            cardBox.AutoScroll = true;
+            cardBox.DataSource = null;
+            cardBox.Font = new Font("Nourd-Regular", 9F);
+            cardBox.Location = new Point(217, 211);
+            cardBox.Name = "cardBox";
+            cardBox.Size = new Size(760, 363);
+            cardBox.TabIndex = 23;
             // 
             // shelfSearchBar
             // 
@@ -157,7 +157,7 @@
             BackColor = Color.FromArgb(243, 243, 247);
             Controls.Add(completedBooks);
             Controls.Add(shelfSearchBar);
-            Controls.Add(cardListView);
+            Controls.Add(cardBox);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
             Controls.Add(reservedBooks);
@@ -179,7 +179,7 @@
         private Label allBooks;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
-        private Components.List.CustomListView cardListView;
+        private Components.List.CustomListView cardBox;
         private Components.Comp_Searchbar shelfSearchBar;
         private Label completedBooks;
     }

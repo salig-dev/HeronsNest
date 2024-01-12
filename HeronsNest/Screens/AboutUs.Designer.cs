@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutUs));
             backBtn = new PictureBox();
-            pictureBox2 = new PictureBox();
+            saligAbout = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)backBtn).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)saligAbout).BeginInit();
             SuspendLayout();
             // 
             // backBtn
@@ -45,26 +45,26 @@
             backBtn.TabIndex = 32;
             backBtn.TabStop = false;
             // 
-            // pictureBox2
+            // saligAbout
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, -27);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1050, 620);
-            pictureBox2.TabIndex = 33;
-            pictureBox2.TabStop = false;
+            saligAbout.Image = (Image)resources.GetObject("saligAbout.Image");
+            saligAbout.Location = new Point(0, -27);
+            saligAbout.Name = "saligAbout";
+            saligAbout.Size = new Size(1050, 620);
+            saligAbout.TabIndex = 33;
+            saligAbout.TabStop = false;
             // 
             // AboutUs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(backBtn);
-            Controls.Add(pictureBox2);
+            Controls.Add(saligAbout);
             Name = "AboutUs";
             Size = new Size(1050, 575);
             Load += AboutUs_Load;
             ((System.ComponentModel.ISupportInitialize)backBtn).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)saligAbout).EndInit();
             ResumeLayout(false);
         }
 
@@ -72,6 +72,6 @@
 
         private PictureBox backBtn;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox saligAbout;
     }
 }
