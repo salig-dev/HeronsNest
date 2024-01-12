@@ -105,6 +105,7 @@
             totalText.Size = new Size(53, 19);
             totalText.TabIndex = 14;
             totalText.Text = "Total";
+            totalText.Click += totalText_Click;
             // 
             // comp_DateTime1
             // 
