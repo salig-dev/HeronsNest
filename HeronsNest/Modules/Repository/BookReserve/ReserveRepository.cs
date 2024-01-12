@@ -23,8 +23,11 @@ namespace HeronsNest.Modules.Repository.BookReserve
 
             query = query.Where(x => x.Book.Equals(bookIsbn));
 
-
-            var isBookReserved = query.ToList().Any(x => DateOnly.FromDateTime(DateTime.Parse(x.DateReserved!)) == Date);
+            var parsedDate = DateTime.Now;
+            var isBookReserved = query.ToList().Any(x =>
+                DateTime.TryParse(x.DateReserved!, out parsedDate) && 
+                DateOnly.FromDateTime(parsedDate) == Date 
+            );
 
             return new(isBookReserved, Enums.ActionResult.Success);
         }

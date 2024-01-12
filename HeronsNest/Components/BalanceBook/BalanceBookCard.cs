@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,8 @@ namespace HeronsNest.Components
             bookAuthor.Text = Book.Author;
             bookTitle.Text = Book.Title;
 
-            DateTime dateBorrow = DateTime.Parse(BookBorrow.DateBorrowed);
-            DateTime dateDue = DateTime.Parse(BookBorrow.DateDue);
+            DateTime dateBorrow = DateTime.ParseExact(BookBorrow.DateBorrowed!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+            DateTime dateDue = DateTime.ParseExact(BookBorrow.DateDue!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
             TimeSpan span = dateDue - dateBorrow;
 

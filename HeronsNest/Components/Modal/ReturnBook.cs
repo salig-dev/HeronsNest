@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +29,10 @@ namespace HeronsNest.Components.Modal
             MainForm = mainForm;
             BorrowDetails = borrow;
 
-            Dateborrow.Value = DateTime.Parse(borrow.DateBorrowed);
-            DateReturn.Value = DateTime.Parse(borrow.DateDue);
+            Dateborrow.Value = DateTime.ParseExact(borrow.DateBorrowed!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+            DateReturn.Value = DateTime.ParseExact(borrow.DateDue!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
-            TimeSpan span = DateTime.Parse(borrow.DateDue) - DateTime.Parse(borrow.DateBorrowed);
+            TimeSpan span = DateReturn.Value - Dateborrow.Value;
             DaysPassed = span.Days;
             if (span.Days <= 3 || Convert.ToBoolean(UserSession.Instance.User.IsTeacher))
             {

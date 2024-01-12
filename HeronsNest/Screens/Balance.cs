@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,8 @@ namespace HeronsNest.Screens
             var overdueUserBorrows = mainForm.BorrowBook.GetAllBorrows(UserSession.Instance.User).Result.Where(
                 x =>
                 {
-                    DateTime dateBorrowed = DateTime.Parse(x.DateBorrowed);
-                    DateTime dateDue = DateTime.Parse(x.DateDue);
+                    DateTime dateBorrowed = DateTime.ParseExact(x.DateBorrowed!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                    DateTime dateDue = DateTime.ParseExact(x.DateDue!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
                     TimeSpan span = dateDue - dateBorrowed;
                     return span.Days > 3;
                 }
