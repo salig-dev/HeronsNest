@@ -38,7 +38,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.success_icon;
-            pictureBox1.Location = new Point(81, 62);
+            pictureBox1.Location = new Point(81, 79);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(200, 200);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -65,7 +65,7 @@
             processCompleteText.BackColor = Color.FromArgb(244, 244, 244);
             processCompleteText.Font = new Font("PP Hatton", 16F);
             processCompleteText.ForeColor = Color.FromArgb(0, 149, 168);
-            processCompleteText.Location = new Point(0, 29);
+            processCompleteText.Location = new Point(0, 33);
             processCompleteText.Name = "processCompleteText";
             processCompleteText.Size = new Size(360, 30);
             processCompleteText.TabIndex = 9;
@@ -74,9 +74,11 @@
             // 
             // successDesc
             // 
-            successDesc.Location = new Point(34, 272);
+            successDesc.Font = new Font("PP Hatton", 9F);
+            successDesc.ForeColor = Color.FromArgb(82, 167, 133);
+            successDesc.Location = new Point(32, 292);
             successDesc.Name = "successDesc";
-            successDesc.Size = new Size(295, 67);
+            successDesc.Size = new Size(296, 50);
             successDesc.TabIndex = 10;
             successDesc.Text = "The process you performed successfully ran!";
             successDesc.TextAlign = ContentAlignment.MiddleCenter;
