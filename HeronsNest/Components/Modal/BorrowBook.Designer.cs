@@ -107,7 +107,8 @@
             // 
             // actionMessageLbl
             // 
-            actionMessageLbl.Font = new Font("Microsoft Sans Serif", 8F);
+            actionMessageLbl.Font = new Font("PP Hatton", 9F);
+            actionMessageLbl.ForeColor = Color.FromArgb(76, 76, 76);
             actionMessageLbl.Location = new Point(31, 208);
             actionMessageLbl.Name = "actionMessageLbl";
             actionMessageLbl.Size = new Size(298, 20);
