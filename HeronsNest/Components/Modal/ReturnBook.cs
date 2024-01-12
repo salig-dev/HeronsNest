@@ -44,7 +44,7 @@ namespace HeronsNest.Components.Modal
 
             PayPenalty = 20 * (span.Days - 3);
 
-            penaltyLabel.Text = $"Penalty: ${PayPenalty}";
+            penaltyLabel.Text = $"Penalty: ₱{PayPenalty}";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
