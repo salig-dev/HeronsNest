@@ -53,7 +53,7 @@ namespace HeronsNest.Screens
 
                     Invoke((MethodInvoker)delegate
                     {
-                        UpdateProcessLabels((double)elapsedMilliseconds / 1000000, results.Count, memoryPercentage, memoryUsed, maxMemory, args.Keyword);
+                        UpdateProcessLabels((double)elapsedMilliseconds / 1000000000, results.Count, memoryPercentage, memoryUsed, maxMemory, args.Keyword);
                         if (SelectedIndex != -1) SortList((int)SelectedIndex);
                         PopulateList();
                     });
@@ -88,7 +88,7 @@ namespace HeronsNest.Screens
             long maxMemory,
             string resultTerm)
         {
-            timeTakenLabel.Text = $"Time Taken: {timeTaken:0.000000}";
+            timeTakenLabel.Text = $"Time Taken: {timeTaken:0.000000000}";
             labelResults.Text = $"Results: {resultCount}";
             searchResultLabel.Text = $"Search Results for \"{resultTerm}\"";
 
