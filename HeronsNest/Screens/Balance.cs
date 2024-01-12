@@ -55,5 +55,9 @@ namespace HeronsNest.Screens
 
         }
 
+        private void totalText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
