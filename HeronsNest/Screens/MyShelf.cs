@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,8 +40,8 @@ namespace HeronsNest.Screens
 
             foreach (BookBorrow r in bookBorrows)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardBox.Controls.Add(card);
+                BookCard card = new(mainForm, r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
+                cardListView.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
                 {
@@ -51,7 +52,7 @@ namespace HeronsNest.Screens
             foreach (BookReserve r in bookReserves)
             {
                 Book book = mainForm.BookTrie.Search(r.Book.ToLowerInvariant()!)[0];
-                var canReserve = mainForm.ReserveBook.CanReserveBook(book.Isbn, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
+                var canReserve = !mainForm.ReserveBook.CanReserveBook(r.Book, DateTime.Now, UserSession.Instance.User.Id).Result.Data;
                 BookCard card = new(r, book, canReserve);
 
 
@@ -63,7 +64,7 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardBox.Controls.Add(card);
+                cardListView.Controls.Add(card);
             }
         }
 
@@ -80,13 +81,13 @@ namespace HeronsNest.Screens
 
         private void OnAllBooksNavigate(object sender, EventArgs e)
         {
-            cardBox.Controls.Clear();
+            cardListView.Controls.Clear();
             var completedBooks = bookBorrows.Where(x => string.IsNullOrEmpty(x.DateReturned));
 
             foreach (BookBorrow r in completedBooks)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardBox.Controls.Add(card);
+                BookCard card = new(mainForm, r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
+                cardListView.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
                 {
@@ -109,13 +110,13 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardBox.Controls.Add(card);
+                cardListView.Controls.Add(card);
             }
         }
 
         private void OnReservedBooksNavigate(object sender, EventArgs e)
         {
-            cardBox.Controls.Clear();
+            cardListView.Controls.Clear();
 
             foreach (BookReserve r in bookReserves)
             {
@@ -132,30 +133,43 @@ namespace HeronsNest.Screens
                     };
                 }
 
-                cardBox.Controls.Add(card);
+                cardListView.Controls.Add(card);
             }
         }
 
         private void OnPendingBooksNavigate(object sender, EventArgs e)
         {
-            cardBox.Controls.Clear();
-
-            foreach (BookBorrow r in bookBorrows)
+            cardListView.Controls.Clear();
+            var borrowedBooks = bookBorrows.Where(x =>
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardBox.Controls.Add(card);
+                DateTime dateBorrow = DateTime.ParseExact(x.DateBorrowed!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime dateDue = DateTime.ParseExact(x.DateDue!, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+
+                TimeSpan span = dateDue - dateBorrow;
+
+                return string.IsNullOrEmpty(x.DateReturned);
+            });
+            foreach (BookBorrow r in borrowedBooks)
+            {
+                BookCard card = new(mainForm, r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
+                cardListView.Controls.Add(card);
+
+                card.OnMainButtonClicked += (object e, EventArgs a) =>
+                {
+                    mainForm.ShowPopup(new ReturnBook(mainForm, r));
+                };
             }
 
         }
 
         private void OnCompletedBooksNavigate(object sender, EventArgs e)
         {
-            cardBox.Controls.Clear();
+            cardListView.Controls.Clear();
             var completedBooks = bookBorrows.Where(x => !string.IsNullOrEmpty(x.DateReturned));
             foreach (BookBorrow r in completedBooks)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
-                cardBox.Controls.Add(card);
+                BookCard card = new(mainForm, r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
+                cardListView.Controls.Add(card);
 
                 
             }

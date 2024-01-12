@@ -34,8 +34,7 @@
             allBooks = new Label();
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
-            cardBox = new Components.List.CustomListView();
-            shelfSearchBar = new Components.Comp_Searchbar();
+            cardListView = new Components.List.CustomListView();
             completedBooks = new Label();
             SuspendLayout();
             // 
@@ -47,7 +46,7 @@
             myShelfTitle.Font = new Font("PP Hatton", 20F);
             myShelfTitle.ForeColor = Color.FromArgb(0, 149, 168);
             myShelfTitle.ImageAlign = ContentAlignment.MiddleLeft;
-            myShelfTitle.Location = new Point(217, 79);
+            myShelfTitle.Location = new Point(217, 43);
             myShelfTitle.Margin = new Padding(0);
             myShelfTitle.Name = "myShelfTitle";
             myShelfTitle.Size = new Size(142, 32);
@@ -115,25 +114,15 @@
             comp_DateTime1.Size = new Size(249, 41);
             comp_DateTime1.TabIndex = 22;
             // 
-            // cardBox
+            // cardListView
             // 
-            cardBox.AutoScroll = true;
-            cardBox.DataSource = null;
-            cardBox.Font = new Font("Nourd-Regular", 9F);
-            cardBox.Location = new Point(217, 211);
-            cardBox.Name = "cardBox";
-            cardBox.Size = new Size(760, 363);
-            cardBox.TabIndex = 23;
-            // 
-            // shelfSearchBar
-            // 
-            shelfSearchBar.Font = new Font("Nourd-Regular", 9F);
-            shelfSearchBar.Location = new Point(223, 158);
-            shelfSearchBar.MainForm = null;
-            shelfSearchBar.Margin = new Padding(3, 2, 3, 2);
-            shelfSearchBar.Name = "shelfSearchBar";
-            shelfSearchBar.Size = new Size(531, 33);
-            shelfSearchBar.TabIndex = 24;
+            cardListView.AutoScroll = true;
+            cardListView.DataSource = null;
+            cardListView.Font = new Font("Nourd-Regular", 9F);
+            cardListView.Location = new Point(217, 163);
+            cardListView.Name = "cardListView";
+            cardListView.Size = new Size(760, 411);
+            cardListView.TabIndex = 23;
             // 
             // completedBooks
             // 
@@ -156,8 +145,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
             Controls.Add(completedBooks);
-            Controls.Add(shelfSearchBar);
-            Controls.Add(cardBox);
+            Controls.Add(cardListView);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
             Controls.Add(reservedBooks);
@@ -179,8 +167,7 @@
         private Label allBooks;
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
-        private Components.List.CustomListView cardBox;
-        private Components.Comp_Searchbar shelfSearchBar;
+        private Components.List.CustomListView cardListView;
         private Label completedBooks;
     }
 }

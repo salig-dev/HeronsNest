@@ -53,7 +53,7 @@ namespace HeronsNest.Components.Modal
             var response = MainForm.ReserveBook.Reserve(new Models.BookReserve()
             {
                 Book = BookIsbn,
-                DateReserved = reserveDate.Value.ToString(),
+                DateReserved = reserveDate.Value.ToString("MM/dd/yyyy h:mm:ss tt"),
                 ReservationId = generatedId,
                 UserId = UserSession.Instance.User.Id
             }).Result;

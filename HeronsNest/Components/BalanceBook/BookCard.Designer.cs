@@ -54,6 +54,7 @@
             bookTitle.Size = new Size(90, 15);
             bookTitle.TabIndex = 6;
             bookTitle.Text = "Book Title";
+            bookTitle.Click += OnCardClicked;
             // 
             // bookAuthor
             // 
@@ -66,6 +67,7 @@
             bookAuthor.Size = new Size(90, 10);
             bookAuthor.TabIndex = 7;
             bookAuthor.Text = "Author Name, Date";
+            bookAuthor.Click += OnCardClicked;
             // 
             // borrowedText
             // 
@@ -78,6 +80,7 @@
             borrowedText.Size = new Size(83, 12);
             borrowedText.TabIndex = 10;
             borrowedText.Text = "Borrowed on";
+            borrowedText.Click += OnCardClicked;
             // 
             // borrowedDate
             // 
@@ -90,6 +93,7 @@
             borrowedDate.Size = new Size(54, 10);
             borrowedDate.TabIndex = 11;
             borrowedDate.Text = "25 Dec 2023";
+            borrowedDate.Click += OnCardClicked;
             // 
             // returnText
             // 
@@ -102,6 +106,7 @@
             returnText.Size = new Size(61, 12);
             returnText.TabIndex = 14;
             returnText.Text = "Return by";
+            returnText.Click += OnCardClicked;
             // 
             // returnDate
             // 
@@ -114,6 +119,7 @@
             returnDate.Size = new Size(54, 10);
             returnDate.TabIndex = 16;
             returnDate.Text = "25 Dec 2023";
+            returnDate.Click += OnCardClicked;
             // 
             // borrowedBtn
             // 
@@ -157,6 +163,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += OnCardClicked;
             // 
             // bookImage
             // 
@@ -167,6 +174,7 @@
             bookImage.SizeMode = PictureBoxSizeMode.StretchImage;
             bookImage.TabIndex = 20;
             bookImage.TabStop = false;
+            bookImage.Click += OnCardClicked;
             // 
             // BookCard
             // 

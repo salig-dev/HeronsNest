@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
 using HeronsNest.Models;
+using HeronsNest.Screens;
+using System.Globalization;
 
 namespace HeronsNest.Components
 {
@@ -12,6 +14,7 @@ namespace HeronsNest.Components
         private readonly BookReserve? BookReserve;
         private readonly Book Book;
         private readonly bool CanBorrow;
+        private readonly Landing MainForm;
 
         private EventHandler onMainButtonClicked;
 
@@ -21,12 +24,13 @@ namespace HeronsNest.Components
             remove => onMainButtonClicked -= value;
         }
 
-        public BookCard(BookBorrow bookBorrow, Book book)
+        public BookCard(Landing mainForm, BookBorrow bookBorrow, Book book)
         {
             InitializeComponent();
 
             BookBorrow = bookBorrow;
             Book = book;
+            MainForm = mainForm;
 
             InitializeCard();
         }
@@ -49,8 +53,21 @@ namespace HeronsNest.Components
                 SetDateText(borrowedDate, BookBorrow.DateBorrowed);
                 SetDateText(returnDate, BookBorrow.DateDue);
 
+                DateTime dateBorrow = DateTime.ParseExact(BookBorrow.DateBorrowed!, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime dateDue = DateTime.ParseExact(BookBorrow.DateDue!, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+
+                TimeSpan span = dateDue - dateBorrow;
+
+
                 borrowedBtn.Text = "Borrowed";
                 borrowedBtn.BackColor = Color.FromArgb(0, 149, 168);
+
+                
+                if (span.Days < 3 && string.IsNullOrEmpty(BookBorrow.DateReturned))
+                {
+                    borrowedBtn.Visible = false;
+                    pictureBox1.Image = Properties.Resources.card_overdue;
+                }
             }
 
             if (BookReserve != null)
@@ -82,15 +99,21 @@ namespace HeronsNest.Components
 
         private void SetDateText(Label label, string date)
         {
-            if (!string.IsNullOrEmpty(date) && DateTime.TryParse(date, out var parsedDate))
+            var dateParsed = DateTime.Now;
+            if (!string.IsNullOrEmpty(date) && DateTime.TryParseExact(date, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateParsed))
             {
-                label.Text = parsedDate.ToShortDateString();
+                label.Text = dateParsed.ToShortDateString();
             }
         }
 
         private void OnActionButtonClick(object sender, EventArgs e)
         {
             onMainButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void OnCardClicked(object sender, EventArgs e)
+        {
+            MainForm.SwitchView(new BookPreview(MainForm, Book));
         }
     }
 }

@@ -133,6 +133,7 @@
             balanceCard.SizeMode = PictureBoxSizeMode.AutoSize;
             balanceCard.TabIndex = 0;
             balanceCard.TabStop = false;
+            balanceCard.Click += OnCardClicked;
             // 
             // BalanceBookCard
             // 

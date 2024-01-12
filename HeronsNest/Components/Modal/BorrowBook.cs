@@ -45,8 +45,8 @@ namespace HeronsNest.Components.Modal
             var Response = MainForm.BorrowBook.Borrow(new()
             {
                 BookId = Book.Isbn,
-                DateBorrowed = DateBorrow.Value.ToString(),
-                DateDue = DateBorrow.Value.AddDays(3).ToString(),
+                DateBorrowed = DateBorrow.Value.ToString("MM/d/yyyy h:mm:ss tt"),
+                DateDue = DateBorrow.Value.AddDays(3).ToString("MM/d/yyyy h:mm:ss tt"),
                 DateReturned = "",
                 User = UserSession.Instance.User.Id,
                 UserNavigation = UserSession.Instance.User,
