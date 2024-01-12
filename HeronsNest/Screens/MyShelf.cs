@@ -39,7 +39,7 @@ namespace HeronsNest.Screens
 
             foreach (BookBorrow r in bookBorrows)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
                 cardListView.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
@@ -85,7 +85,7 @@ namespace HeronsNest.Screens
 
             foreach (BookBorrow r in completedBooks)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
                 cardListView.Controls.Add(card);
 
                 card.OnMainButtonClicked += (object e, EventArgs a) =>
@@ -142,7 +142,7 @@ namespace HeronsNest.Screens
 
             foreach (BookBorrow r in bookBorrows)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
                 cardListView.Controls.Add(card);
             }
 
@@ -154,7 +154,7 @@ namespace HeronsNest.Screens
             var completedBooks = bookBorrows.Where(x => !string.IsNullOrEmpty(x.DateReturned));
             foreach (BookBorrow r in completedBooks)
             {
-                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!)[0]);
+                BookCard card = new(r, mainForm.BookTrie.Search(r.BookId!.ToLowerInvariant())[0]);
                 cardListView.Controls.Add(card);
 
                 
