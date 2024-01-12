@@ -2,7 +2,11 @@
 using HeronsNest.Models;
 using HeronsNest.Modules.Response;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
+using System.Globalization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using User = HeronsNest.Models.User;
 
 namespace HeronsNest.Modules.Repository.BookBorrow
 {
@@ -14,7 +18,7 @@ namespace HeronsNest.Modules.Repository.BookBorrow
         {
             var parsedReservedDate = DateTime.Now;
             var parsedBorrowedDate = DateTime.Now;
-            if (!(await CanBorrowAsync(borrowDetails.BookId)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
+            if ((await CanBorrowAsync(borrowDetails.BookId)).Data) return new(null, Enums.ActionResult.Failed, "Already borrowed by someone else on this date");
             if (!(await CanUserBorrow(borrowDetails.UserNavigation!)).Data) return new(null, Enums.ActionResult.Failed, "User has max borrows already!");
             if (Context.BookReserves.Any(x =>
     x.UserId == borrowDetails.User &&
@@ -52,19 +56,17 @@ namespace HeronsNest.Modules.Repository.BookBorrow
 
         public async Task<Response<bool>> CanBorrowAsync(string borrowId)
         {
+            var query = Context.BookBorrows.AsQueryable();
 
-            var IsAlreadyBorrowed = (await Context.BookBorrows.ToListAsync()).FirstOrDefault(
-                x 
-                => x != null
-                && x.BookId == borrowId
-                && (x.DateBorrowed != null || x.DateBorrowed != string.Empty)
-                && string.IsNullOrEmpty(x.DateReturned)
-                && DateTime.TryParse(x.DateBorrowed, out DateTime res)
-                && res <= DateTime.Now.AddDays(3)
-                , null);
+            query = query.Where(x => x.BookId.Equals(borrowId));
 
-            return new(IsAlreadyBorrowed == null, Enums.ActionResult.Success);
+            DateTime parsedDate;
+            var isBookReserved = query.ToList().Any(x =>
+                DateTime.TryParseExact(x.DateBorrowed!, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) &&
+                DateOnly.FromDateTime(parsedDate.Date) == DateOnly.FromDateTime(DateTime.Now)
+            );  // Check for matches on both user and date
 
+            return new(isBookReserved, Enums.ActionResult.Success);
         }
 
         public async Task<IEnumerable<Models.BookBorrow?>> GetBorrowedBooksAsync(Models.User? user, string bookIsbn = "")

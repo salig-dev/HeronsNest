@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,8 +33,8 @@ namespace HeronsNest.Components.Modal
             foreach (var borrow in allBorrows)
             {
                 Label l = new();
-                DateTime dateBorrowed = DateTime.Parse(borrow.DateBorrowed);
-                DateTime dateDue = DateTime.Parse(borrow.DateDue);
+                DateTime dateBorrowed = DateTime.ParseExact(borrow.DateBorrowed, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime dateDue = DateTime.ParseExact(borrow.DateDue, "MM/dd/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
 
                 l.BackColor = dateBorrowed >= dateDue ? Color.Red : Color.LightGreen;
                 l.TextAlign = ContentAlignment.MiddleCenter;
