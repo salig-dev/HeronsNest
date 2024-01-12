@@ -35,7 +35,6 @@
             leftNavBar1 = new Components.LeftNavBar();
             comp_DateTime1 = new Components.Comp_DateTime();
             cardListView = new Components.List.CustomListView();
-            shelfSearchBar = new Components.Comp_Searchbar();
             completedBooks = new Label();
             SuspendLayout();
             // 
@@ -47,7 +46,7 @@
             myShelfTitle.Font = new Font("PP Hatton", 20F);
             myShelfTitle.ForeColor = Color.FromArgb(0, 149, 168);
             myShelfTitle.ImageAlign = ContentAlignment.MiddleLeft;
-            myShelfTitle.Location = new Point(217, 79);
+            myShelfTitle.Location = new Point(217, 43);
             myShelfTitle.Margin = new Padding(0);
             myShelfTitle.Name = "myShelfTitle";
             myShelfTitle.Size = new Size(142, 32);
@@ -120,20 +119,10 @@
             cardListView.AutoScroll = true;
             cardListView.DataSource = null;
             cardListView.Font = new Font("Nourd-Regular", 9F);
-            cardListView.Location = new Point(217, 211);
+            cardListView.Location = new Point(217, 163);
             cardListView.Name = "cardListView";
-            cardListView.Size = new Size(760, 363);
+            cardListView.Size = new Size(760, 411);
             cardListView.TabIndex = 23;
-            // 
-            // shelfSearchBar
-            // 
-            shelfSearchBar.Font = new Font("Nourd-Regular", 9F);
-            shelfSearchBar.Location = new Point(223, 158);
-            shelfSearchBar.MainForm = null;
-            shelfSearchBar.Margin = new Padding(3, 2, 3, 2);
-            shelfSearchBar.Name = "shelfSearchBar";
-            shelfSearchBar.Size = new Size(531, 33);
-            shelfSearchBar.TabIndex = 24;
             // 
             // completedBooks
             // 
@@ -156,7 +145,6 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(243, 243, 247);
             Controls.Add(completedBooks);
-            Controls.Add(shelfSearchBar);
             Controls.Add(cardListView);
             Controls.Add(leftNavBar1);
             Controls.Add(allBooks);
@@ -180,7 +168,6 @@
         private Components.LeftNavBar leftNavBar1;
         private Components.Comp_DateTime comp_DateTime1;
         private Components.List.CustomListView cardListView;
-        private Components.Comp_Searchbar shelfSearchBar;
         private Label completedBooks;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using HeronsNest.Components.Modal;
 using HeronsNest.Models;
+using HeronsNest.Screens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,11 @@ namespace HeronsNest.Components
         private void OnPayButtonClick(object sender, EventArgs e)
         {
             MainForm.ShowPopup(new ReturnBook(MainForm, BookBorrow));
+        }
+
+        private void OnCardClicked(object sender, EventArgs e)
+        {
+            MainForm.SwitchView(new BookPreview(MainForm, Book));
         }
     }
 }
